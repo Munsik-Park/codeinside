@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """커밋 SHA로 질의할 codebadger 그래프를 고른다 (docs/plan.md 단계 6, 조상 그래프 대체).
 
-대응 기록은 opensre 커밋 상태 `codeinside/joern-cpg`다. 분석 워크플로가 그래프를 만들면
+대응 기록은 대상 레포의 커밋 상태 `codeinside/joern-cpg`다. 분석 워크플로가 그래프를 만들면
 success 상태의 설명에 `codebase_hash=<hash>`를 적는다.
 
 고르는 순서:
@@ -15,7 +15,7 @@ success 상태의 설명에 `codebase_hash=<hash>`를 적는다.
 상태 조회는 GraphQL 한 번에 묶는다(`gh api graphql`, 작업자 쪽 gh 인증을 쓴다).
 
 사용:
-  python3 resolve_graph.py --checkout <opensre 체크아웃> --sha <SHA> [--repo Munsik-Park/opensre]
+  python3 resolve_graph.py --checkout <대상 체크아웃> --sha <SHA> --repo <owner/repo>
                            [--mcp-url http://127.0.0.1:<터널 포트>/mcp] [--max-ancestors 100]
 출력: JSON 한 줄
 """
@@ -68,7 +68,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--checkout", required=True)
     ap.add_argument("--sha", required=True)
-    ap.add_argument("--repo", default="Munsik-Park/opensre")
+    ap.add_argument("--repo", required=True, help="owner/repo")
     ap.add_argument("--mcp-url")
     ap.add_argument("--max-ancestors", type=int, default=100)
     a = ap.parse_args()

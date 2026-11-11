@@ -1,0 +1,39 @@
+# Munsik-Park/crewAI 포크 정리 (Actions 켜기 전)
+# 포크는 사용자가 만들었다(2026-11-11T18:30:26Z 생성, 브랜치 main 하나).
+
+## 포크 직후, Actions 켜기 전
+fork=true parent=crewAIInc/crewAI default_branch=main visibility=public
+main = 71d68117e38f620dff02ec1dc358f37a1f74a740 (2026-11-11T18:15:27Z, 업스트림 main과 같음) -> 기준 커밋
+actions/permissions: {"enabled":true,"allowed_actions":"all","sha_pinning_required":false}
+actions/runs total_count=0
+actions/workflows total_count=0   (.github/workflows/ 파일은 19개)
+PUT actions/workflows/tests.yml/disable -> HTTP 404 (등록 전이라 끌 수 없음)
+has_issues=false
+fork-pr-contributor-approval: first_time_contributors -> all_external_contributors
+
+## 업스트림 워크플로 19개 (파일: 트리거 | runs-on)
+agents-md-eval.yml: pull_request_target | ubuntu-latest
+agents-md.yml: pull_request | ubuntu-latest
+build-uv-cache.yml: push,schedule,workflow_dispatch | ubuntu-latest
+close-associated-prs.yml: issues | ubuntu-latest
+codeql.yml: push,pull_request | matrix(macos-latest/ubuntu-latest)
+docs-broken-links.yml: pull_request,push,workflow_dispatch | ubuntu-latest
+first-contributor-welcome.yml: pull_request_target | ubuntu-latest
+ftc-require-issue.yml: pull_request_target | ubuntu-latest
+generate-tool-specs.yml: pull_request,workflow_dispatch | ubuntu-latest
+linter.yml: pull_request | ubuntu-latest
+nightly.yml: schedule,workflow_dispatch | ubuntu-latest
+pr-size.yml: pull_request | ubuntu-latest
+pr-title.yml: pull_request | ubuntu-latest
+publish.yml: workflow_dispatch | ubuntu-latest
+stale.yml: schedule,workflow_dispatch | ubuntu-latest
+tests.yml: pull_request | ubuntu-latest
+type-checker.yml: pull_request | ubuntu-latest
+update-test-durations.yml: push,workflow_dispatch | ubuntu-latest
+vulnerability-scan.yml: pull_request,push,schedule | ubuntu-latest
+(schedule 포함 4개: build-uv-cache, nightly, stale, vulnerability-scan)
+
+## 워크플로 파일 이동 (Actions 켜기 전)
+git mv .github/workflows/*.yml .github/workflows-upstream/ + README.md
+commit b4654c1a4253219f1093fedcbd73690b5b2be4d2 (parent 71d68117) pushed to main
+push 뒤: actions/runs total_count=0, actions/workflows total_count=0, contents/.github/workflows -> 404

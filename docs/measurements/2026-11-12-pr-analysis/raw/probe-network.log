@@ -1,0 +1,22 @@
+== containers on codeinside-joern-ci: codeinside-joern-runner codeinside-mcp-proxy 
+== containers on codebadger: codebadger-redis codebadger-joern-server codebadger-joern-a5b31c170fa23d65 codebadger-mcp codebadger-postgres codeinside-mcp-proxy 
+== codeinside-joern-runner: cpuset=30-39,70-79 mems=3 memory=2147483648 memory_swap=2147483648 nanocpus=4000000000 user=runner capdrop=[ALL] secopt=[no-new-privileges] readonly=false ports={}
+== codeinside-mcp-proxy: cpuset=30-39,70-79 mems=3 memory=134217728 memory_swap=134217728 nanocpus=1000000000 user=65534:65534 capdrop=[ALL] secopt=[no-new-privileges] readonly=true ports={}
+== runner cgroup: cpus=30-39,70-79 mems=3 memory.max=2147483648 cpu.max=400000 100000
+== runner env ACTIONS_RESULTS_URL (pid 1 environ): 0 / Runner.Listener: 0
+== MCP initialize via proxy
+http 200 text/event-stream
+"serverInfo":{"name":"CodeBadger Server","version":"4.1.8"}
+== reachability from a probe container on the runner network
+proxy 4242: OPEN
+proxy 8080: blocked
+query-worker 8080: blocked
+codebadger-mcp-direct 4242: blocked
+codebadger-mcp-by-name 4242: blocked
+postgres 5432: blocked
+redis 6379: blocked
+host-gateway 4242: blocked
+host-gateway 55432: blocked
+host-gateway 56379: blocked
+host-gateway 13371: blocked
+github api 200
