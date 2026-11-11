@@ -1,0 +1,16 @@
+# codebadger 이미지 부팅 복원 (docs/plan.md 단계 5).
+# Xeon의 Docker 저장소는 RAM tmpfs라 재부팅하면 이미지가 사라진다. 러너 이미지 복원 유닛과 같은 방식으로,
+# 이미지가 하나라도 없으면 디스크의 docker save 묶음을 docker load 한다.
+[Unit]
+Description=codebadger boot image restore (RAM-tier tmpfs data-root)
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=-/etc/codebadger/codebadger.conf
+ExecStart=/bin/sh -c 'for i in ${CODEBADGER_IMAGES}; do docker image inspect "$i" >/dev/null 2>&1 || { docker load -i "${CODEBADGER_IMAGE_TARBALL}"; exit $?; }; done'
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,77 @@
+2026-11-11T16:50:47 - src.startup_tuning - INFO - ======================================================================
+2026-11-11T16:50:47 - src.startup_tuning - INFO - CodeBadger — recommended configuration (memory-aware)
+2026-11-11T16:50:47 - src.startup_tuning - INFO - ======================================================================
+2026-11-11T16:50:47 - src.startup_tuning - INFO - Host: 503.8 GB RAM, 80 cores  (detected via psutil)
+2026-11-11T16:50:47 - src.startup_tuning - INFO - Budget: headroom=24GB  joern=479GB  (generation reserve=35GB, query pool=444GB)
+2026-11-11T16:50:47 - src.startup_tuning - INFO - Worker mode: pool
+2026-11-11T16:50:47 - src.startup_tuning - INFO - ----------------------------------------------------------------------
+2026-11-11T16:50:47 - src.startup_tuning - INFO - Recommended constants:
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   JOERN_JAVA_OPTS heap (-Xmx)   : 4G
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   MAX_ACTIVE_JOERN_SERVERS      : 88
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   CPG_BUILD_WORKERS             : 5
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   MAX_MCP_CONNECTIONS           : 101
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   rss_eviction_threshold_mb     : 441446
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   JOERN_MEMORY_BUDGET_MB        : 454656  (worker ledger)
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   CPG_GENERATION_TIMEOUT        : 1800
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   docker-compose mem_limit      : 35g  (joern-server container)
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   -> pool mode invariant: build container cap (35GB) + worker budget (444GB) = joern budget (479GB).
+2026-11-11T16:50:47 - src.startup_tuning - INFO -      The joern-server container ONLY builds CPGs in pool mode, so set its mem_limit to 35g (JOERN_MEM_LIMIT) — NOT the full budget.
+2026-11-11T16:50:47 - src.startup_tuning - INFO - ----------------------------------------------------------------------
+2026-11-11T16:50:47 - src.startup_tuning - INFO - Per-CPG size tiers (memory-budget scheduler):
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   tier CPG .bin      heap   cap    fit*  example
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   S    <=1 GB        2G     3G     148   libsoup, small libxml2 modules
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   M    <=4 GB        6G     8G     55    ImageMagick, php, wireshark dissectors
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   L    <=12 GB       16G    20G    22    full wireshark, large php
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   XL   > prev        28G    32G    13    v8 (keep 1-2 concurrent)
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   *fit = how many live CPGs of that tier fit the query pool alone
+2026-11-11T16:50:47 - src.startup_tuning - INFO - ----------------------------------------------------------------------
+2026-11-11T16:50:47 - src.startup_tuning - INFO - Env-var snippet:
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   export JOERN_JAVA_OPTS='-Xmx4G -Xms2G -XX:+UseG1GC -XX:+UseStringDeduplication -Dfile.encoding=UTF-8'
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   export MAX_ACTIVE_JOERN_SERVERS=88
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   export CPG_BUILD_WORKERS=5
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   export MAX_MCP_CONNECTIONS=101
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   export CPG_GENERATION_TIMEOUT=1800
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   export JOERN_MEMORY_BUDGET_MB=454656
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   export JOERN_WORKER_MODE=pool
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   export JOERN_MEM_LIMIT=35g   # joern-server BUILD container only (query workers are capped separately by JOERN_MEMORY_BUDGET_MB)
+2026-11-11T16:50:47 - src.startup_tuning - INFO - 
+2026-11-11T16:50:47 - src.startup_tuning - INFO - config.yaml snippet:
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   joern:
+2026-11-11T16:50:47 - src.startup_tuning - INFO -     java_opts: '-Xmx4G -Xms2G -XX:+UseG1GC -XX:+UseStringDeduplication -Dfile.encoding=UTF-8'
+2026-11-11T16:50:47 - src.startup_tuning - INFO -     max_active_servers: 88
+2026-11-11T16:50:47 - src.startup_tuning - INFO -     rss_eviction_threshold_mb: 441446
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   cpg:
+2026-11-11T16:50:47 - src.startup_tuning - INFO -     build_workers: 5
+2026-11-11T16:50:47 - src.startup_tuning - INFO -     generation_timeout: 1800
+2026-11-11T16:50:47 - src.startup_tuning - INFO - 
+2026-11-11T16:50:47 - src.startup_tuning - INFO - docker-compose.yml snippet (cap the container so it can't OOM the host):
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   codebadger-joern-server:
+2026-11-11T16:50:47 - src.startup_tuning - INFO -     mem_limit: 35g
+2026-11-11T16:50:47 - src.startup_tuning - INFO -     cpus: 80
+2026-11-11T16:50:47 - src.startup_tuning - INFO - ----------------------------------------------------------------------
+2026-11-11T16:50:47 - src.startup_tuning - INFO - ⚠ Live-config drift:
+2026-11-11T16:50:47 - src.startup_tuning - INFO -   ⚠ rss_eviction_threshold_mb is disabled (0) -- no memory-pressure backstop; recommend 441446.
+2026-11-11T16:50:47 - src.startup_tuning - INFO - ======================================================================
+2026-11-11T16:50:47 - src.startup_tuning - INFO - Auto-tuned Joern memory_budget_mb=454656 (444GB query pool from 503.8GB host). Set JOERN_MEMORY_BUDGET_MB or AUTO_TUNE_MEMORY=false to override.
+2026-11-11T16:50:47 - src.startup_tuning - INFO - Auto-tuned Joern rss_eviction_threshold_mb=441446
+2026-11-11T16:50:47 - src.utils.postgres_job_store - INFO - Postgres job store schema ready
+2026-11-11T16:50:47 - src.utils.postgres_db_manager - INFO - Postgres catalog/cache/findings schema ready
+2026-11-11T16:50:47 - __main__ - INFO - CodeBadger Server is ready
+2026-11-11T16:51:12 - src.tools.core_tools - INFO - CPG directory ready: /app/playground/cpgs/a5b31c170fa23d65
+2026-11-11T16:51:15 - src.tools.core_tools - INFO - Applied 1 exclusion patterns
+2026-11-11T16:51:15 - src.tools.core_tools - INFO - Executing CPG generation in container (frontend -Xmx4G): /opt/joern/joern-cli/pysrc2cpg /playground/codebases/a5b31c170fa23d65 -o /playground/cpgs/a5b31c170fa23d65/cpg.bin --exclude-regex (tests(?:/.*)?)
+2026-11-11T16:51:28 - src.services.joern_server_manager - INFO - Sizing a5b31c170fa23d65: fixed heap 4G from JOERN_WORKER_HEAP_GB
+2026-11-11T16:51:28 - src.services.joern_server_manager - INFO - Launching worker container codebadger-joern-a5b31c170fa23d65 (image codebadger-joern-server:latest, mem_limit 5120MB) on network codebadger:8080
+2026-11-11T16:51:28 - src.services.joern_server_manager - INFO - Worker codebadger-joern-a5b31c170fa23d65: cpuset_cpus='30-39,70-79' cpuset_mems='3'
+2026-11-11T16:51:41 - src.services.joern_server_manager - INFO - Pooled Joern server for a5b31c170fa23d65 ready on port 14004
+2026-11-11T16:52:42 - src.services.joern_server_manager - INFO - CPG loaded successfully for a5b31c170fa23d65
+2026-11-11T16:52:42 - src.tools.core_tools - INFO - CPG loaded into Joern server on port 14004
+2026-11-11T16:52:50 - __main__ - INFO - CPGs   : 1 registered  ready=1
+2026-11-11T16:52:50 - __main__ - INFO -   a5b31c170fa23d65  python      ready       :14004   ...playground/codebases/opensre-a5c1acbd
+2026-11-11T16:53:51 - __main__ - INFO - CPGs   : 1 registered  ready=1
+2026-11-11T16:53:51 - __main__ - INFO -   a5b31c170fa23d65  python      ready       :14004   ...playground/codebases/opensre-a5c1acbd
+2026-11-11T16:54:52 - __main__ - INFO - CPGs   : 1 registered  ready=1
+2026-11-11T16:54:52 - __main__ - INFO -   a5b31c170fa23d65  python      ready       :14004   ...playground/codebases/opensre-a5c1acbd
+2026-11-11T16:51:41 - src.services.joern_server_manager - INFO - Pooled Joern server for a5b31c170fa23d65 ready on port 14004
+2026-11-11T16:52:42 - src.services.joern_server_manager - INFO - CPG loaded successfully for a5b31c170fa23d65
+2026-11-11T16:52:42 - src.tools.core_tools - INFO - CPG generation complete for a5b31c170fa23d65, port: 14004

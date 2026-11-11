@@ -1,0 +1,18 @@
+# codebadger v0.7.0-beta docker-compose.yml 위에 얹는 설정 (docs/plan.md 단계 5).
+# scripts/xeon/deploy-codebadger.sh가 codebadger 체크아웃에 복사한다. 값은 같은 폴더의 .env(커밋하지 않음)에서 읽는다.
+services:
+  codebadger-joern-server:
+    # 그래프 생성(pysrc2cpg)이 도는 컨테이너. compose에는 cpuset_mems가 없어 CPU만 여기서 고정하고,
+    # 메모리 노드는 배포 스크립트가 `docker update --cpuset-mems`로 건다.
+    cpuset: "${JOERN_WORKER_CPUSET_CPUS}"
+  codebadger-mcp:
+    environment:
+      # codebadger-v0.7.0-beta.patch가 읽는 값
+      JOERN_WORKER_CPUSET_CPUS: "${JOERN_WORKER_CPUSET_CPUS}"
+      JOERN_WORKER_CPUSET_MEMS: "${JOERN_WORKER_CPUSET_MEMS}"
+      JOERN_WORKER_HEAP_GB: "${JOERN_WORKER_HEAP_GB}"
+      # 업스트림 compose의 고정 비밀번호 대신 .env의 값을 쓴다
+      DATABASE_URL: "postgresql://codebadger:${POSTGRES_PASSWORD}@codebadger-postgres:5432/codebadger"
+  codebadger-postgres:
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"

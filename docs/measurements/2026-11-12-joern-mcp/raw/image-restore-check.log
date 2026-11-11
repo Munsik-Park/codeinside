@@ -1,0 +1,24 @@
+== 2026-11-11T17:37:20Z read-only check after save-codebadger-images.sh
+conf: CODEBADGER_DIR=/opt/codebadger CODEBADGER_IMAGE_TARBALL=/var/lib/codebadger/images/codebadger-images.tar CODEBADGER_IMAGES="codebadger-joern-server:latest codebadger-mcp:latest postgres:16 redis:7" 
+tarball /var/lib/codebadger/images/codebadger-images.tar 2636829184 bytes owner=root mode=600
+manifest entries: 4
+tags: ['codebadger-joern-server:latest', 'codebadger-mcp:latest', 'postgres:16', 'redis:7']
+== tarball index.json digests
+docker.io/library/codebadger-joern-server:latest sha256:4565fbf26a2c511751a73be121c13509270296905fe160fad386b48d2af1f02f
+docker.io/library/codebadger-mcp:latest sha256:387c16173378eaf64a4a249b86a2ae47cf974b8f2e1155d774b333f15583332c
+docker.io/library/postgres:16 sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+docker.io/library/redis:7 sha256:2e3eb11462c4e3759e6972678dd051d150ff54b1e60714b3c33b701260172a90
+== daemon image ids
+codebadger-joern-server:latest sha256:4565fbf26a2c511751a73be121c13509270296905fe160fad386b48d2af1f02f
+codebadger-mcp:latest sha256:387c16173378eaf64a4a249b86a2ae47cf974b8f2e1155d774b333f15583332c
+postgres:16 sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+redis:7 sha256:2e3eb11462c4e3759e6972678dd051d150ff54b1e60714b3c33b701260172a90
+== units
+codebadger-image-restore enabled=enabled active=inactive
+codebadger-stack enabled=enabled active=inactive
+Requires=codebadger-image-restore.service system.slice sysinit.target
+WantedBy=multi-user.target
+After=basic.target system.slice sysinit.target systemd-journald.socket codebadger-image-restore.service
+systemd-analyze verify output:
+(end)
+installed units match repo copies

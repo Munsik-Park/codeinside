@@ -1,0 +1,23 @@
+== 2026-11-11T17:25:47Z numastat -m (MB), after JOERN_MEMORY_BUDGET_MB=81920 JOERN_MEM_LIMIT=8g
+                          Node 0          Node 1          Node 2          Node 3           Total
+                 --------------- --------------- --------------- --------------- ---------------
+MemTotal               128843.96       129017.04       128973.72       129011.08       515845.80
+MemFree                 89118.00        91101.35        92678.12        85534.03       358431.50
+MemUsed                 39725.97        37915.68        36295.60        43477.05       157414.30
+FilePages               34670.61        33032.77        30792.65        35684.97       134181.01
+AnonPages                 190.25          192.38         1228.12         3623.66         5234.41
+Shmem                    7998.04        10216.16        10874.98        14285.09        43374.27
+== numactl -H
+node 0 size: 128843 MB
+node 0 free: 89117 MB
+node 1 size: 129017 MB
+node 1 free: 91101 MB
+node 2 size: 128973 MB
+node 2 free: 92678 MB
+node 3 size: 129011 MB
+node 3 free: 85534 MB
+== codebadger containers
+codebadger-joern-server cpus=30-39,70-79 mems=3 memory.max=8589934592 memory.current=1040384
+codebadger-joern-a5b31c170fa23d65 cpus=30-39,70-79 mems=3 memory.max=5368709120 memory.current=3505790976
+== /health memory
+{'budget_mb': 81920, 'reserved_mb': 5120, 'free_mb': 76800, 'reserved_servers': 1}

@@ -1,0 +1,15 @@
+query-sync with auth: HTTP 200
+query-sync without auth: HTTP 401
+== JVMs of this user
+pid=3714655 java_command: io.joern.joerncli.console.ReplBridge --server --server-host 127.0.0.1 --server-port 18080 --server-auth-username <redacted> --server-auth-password <redacted>
+-XX:MaxHeapSize=4294967296
+-XX:SoftMaxHeapSize=4294967296
+Cpus_allowed_list:	30-39,70-79
+numa_maps policy:     454 bind:3 
+numa_maps pages on node: N0=6404 N1=436 N2=298 N3=155636 
+== listening
+[::ffff:127.0.0.1]:18080
+Picked up JAVA_TOOL_OPTIONS: -Xmx4G
+using jar from inherited classpath: /opt/joern/v4.0.680/joern-cli/lib/com.github.scopt.scopt_3-4.1.0.jar
+using jar from inherited classpath: /opt/joern/v4.0.680/joern-cli/lib/org.jline.jline-terminal-4.0.14.jar
+remaining joern servers: 0

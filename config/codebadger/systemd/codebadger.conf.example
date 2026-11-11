@@ -1,0 +1,4 @@
+# /etc/codebadger/codebadger.conf 로 복사한다. codebadger-image-restore.service와 codebadger-stack.service가 읽는다.
+CODEBADGER_DIR=/opt/codebadger
+CODEBADGER_IMAGE_TARBALL=/var/lib/codebadger/images/codebadger-images.tar
+CODEBADGER_IMAGES="codebadger-joern-server:latest codebadger-mcp:latest postgres:16 redis:7"
