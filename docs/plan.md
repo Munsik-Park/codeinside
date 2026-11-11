@@ -24,7 +24,7 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 | Ryzen 9 5900 머신 | 지금처럼 러너로만 씀 | 메모리 64GB. 3단계 측정으로 Xeon만으로 충분하다는 것이 확인됐다 |
 | 넓게 찾기(Screening) | ast-grep + 공식 MCP | DB 없이 그때그때 검색한다. MIT |
 | 정확한 참조(정의·호출처) | Serena + Pyright(Serena 기본 언어 서버) | Joern은 Python 호출을 이름으로 잇는다(3단계). 타입으로 실제 대상만 찾는다. 흔한 이름에서 Joern 결과 14개 중 실제 호출자는 1개였다(4단계). 앱 GPL-3.0 |
-| 깊게 따라가기(In-depth) | Joern | 미리 만든 그래프에서 데이터 흐름과 제어 흐름을 따라간다. Apache 2.0. MCP는 codebadger 시험 뒤 정한다 |
+| 깊게 따라가기(In-depth) | Joern | 미리 만든 그래프에서 데이터 흐름과 제어 흐름을 따라간다. Apache 2.0. MCP는 codebadger(5단계) |
 | 앞단 | 도구별 MCP를 나란히 붙임 | 통합 앞단은 AI가 도구 선택을 헷갈리는 게 보일 때 만든다 |
 | Java | OpenJDK 21 | Joern README의 요구 버전. Xeon에 설치했다(2단계) |
 | 실행 주체 | codeinside 폴더의 Claude Code 작업자 | 작업자가 서버 접속 정보를 갖고 있다 |
@@ -68,17 +68,20 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 
 ### Joern 서버 (Xeon)
 
-- `joern --server`로 상주시키고 basic auth를 건다. 문서에 "격리가 없다"고 명시돼 있어 내부망에서만 연다.
+- `joern --server`로 상주시키고 basic auth를 건다. 문서에 "격리가 없다"고 명시돼 있어 내부망에서만 연다. codebadger 질의 워커는 인증 없이 뜨지만 호스트로 포트를 공개하지 않고 codebadger 브리지 네트워크에만 붙는다(5단계).
 - 메모리는 부담이 작다. opensre 전체 기준 그래프 생성은 1G로도 되고 적재는 2G부터 된다. 4G나 8G로 올려도 빨라지지 않았다(3단계).
-- 메모리 상한은 `JAVA_TOOL_OPTIONS`로 준다. `joern --script`는 JVM을 하나 더 띄우는데 `-J-Xmx`는 그 자식 JVM에 닿지 않는다(3단계 실측). 서버 모드에서도 같은지는 5단계에서 확인한다.
+- 메모리 상한은 `JAVA_TOOL_OPTIONS`로 준다. `joern --script`는 JVM을 하나 더 띄우는데 `-J-Xmx`는 그 자식 JVM에 닿지 않는다(3단계 실측). 서버 모드는 JVM 하나로 떠서 JAVA_TOOL_OPTIONS가 그대로 닿는다(5단계 실측).
 - 프런트엔드(pysrc2cpg)를 따로 돌려 그래프 파일을 만들고 `importCpg`로 올린다.
-- NUMA 노드 하나(3단계에서는 노드 3)를 Joern 전용으로 둔다. 메모리 때문이 아니라 러너와 섞이지 않게 하려는 것이다.
+- NUMA 노드 3을 Joern 몫으로 둔다. codebadger 질의 워커와 그래프 생성 컨테이너를 cpuset으로 노드 3(CPU 30-39, 70-79)에 고정했다(5단계). CI 러너 5개가 CPU 80개를 모두 나눠 가져서 runner-5 전부와 runner-4 일부는 노드 3과 겹친다.
+- 메모리 예산: 질의 워커는 heap 4G(예약 5G)에 전체 예산 80G, 그래프 생성 컨테이너는 8G다. 노드 3(126G)에 runner-5(32G)까지 더해 120G다. runner-4가 노드 3을 얼마나 쓰는지는 재지 않았다(5단계).
 
 ### Joern MCP
 
-- 5단계에서 codebadger를 먼저 시험한다. 그래프를 내용 해시로 캐시하고 그래프마다 Joern 서버를 띄웠다 재우는 구조라, 직접 만들려던 것과 거의 같다.
-- 확인할 것: 3단계와 같은 커밋·질의(Q1~Q5)에서 같은 결과가 나오는지, 메모리 상한과 NUMA 고정이 먹히는지. Docker, Postgres, Redis가 필요하고 라이선스는 GPL-3.0이다.
-- 안 맞으면 Joern 서버에 HTTP로 질의하는 얇은 래퍼를 직접 만든다(`/query-sync`). 3단계 질의 스크립트를 그대로 쓸 수 있다.
+- codebadger v0.7.0-beta를 쓴다(5단계 결정). 그래프를 내용 해시로 캐시하고 그래프마다 Joern 서버를 띄웠다 재우는 구조다. `/query-sync` 래퍼는 만들지 않았다.
+- 패치 2개를 얹는다. 워커에 cpuset과 고정 heap을 넘기고, 그래프 제외 규칙을 최상위 `tests/` 하나로 줄인다. 이미지의 Joern은 4.0.680으로 바꿨다. 기본 4.0.594에서는 Q5가 1건 많고 메서드 수도 달랐다.
+- MCP는 Xeon 루프백에만 열고 작업자 쪽은 SSH 터널로 붙는다. codebadger에는 MCP 인증 기능이 없다.
+- Docker 저장소가 RAM tmpfs라 이미지를 디스크에 저장해 두고 부팅 때 복원한다. 재부팅 확인은 아직이다.
+- Docker 소켓을 쓰므로 codebadger는 호스트 root와 같은 권한을 갖는다. Xeon은 CI 전용 서버라 받아들인다.
 
 ### 트리거와 저장
 
@@ -100,9 +103,8 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
     - opensre `a5c1acbd`의 core와 전체로 그래프 생성, 적재, 질의 시간을 재고 부분 갱신 여부를 확인했다. 결과는 측정·검증 표 1~3행과 위험 표에 있다.
 4. **ast-grep과 Serena 연결 (완료, PR #5)**
     - ast-grep 0.51.2와 공식 MCP, Serena 2.1.0(Pyright 1.1.403)을 작업자 쪽에 붙였다. Serena는 읽기 도구 5개만 켰다. Screening 규칙 5개와 후보 목록 스크립트를 넣었다. 결과는 위험 표와 [4단계 기록](measurements/2026-11-12-serena-joern/README.md)에 있다.
-5. **Joern 서버와 MCP 연결**
-    - codebadger를 Xeon에 올려 3단계 Q1~Q5를 다시 돌린다. 결과와 메모리 통제가 맞으면 쓰고, 아니면 얇은 래퍼를 직접 만든다.
-    - 끝: 작업 세션에서 MCP로 데이터 흐름을 물어 답을 받는다.
+5. **Joern 서버와 MCP 연결 (완료, PR #7)**
+    - codebadger를 Xeon에 올렸다. 패치 2개와 Joern 4.0.680 이미지로 Q1~Q5 결과와 그래프 규모가 3단계와 같았다. 질의 워커는 노드 3, heap 4G로 고정됐다. 작업 세션에서 Joern, ast-grep, Serena MCP를 모두 불러 답을 받았다. 결과는 위험 표와 [5단계 기록](measurements/2026-11-12-joern-mcp/README.md)에 있다.
 6. **PR 자동 분석**
     - opensre의 업스트림 워크플로를 끄고, Xeon 러너 라벨과 분석 워크플로를 넣는다. 커밋마다 그래프를 새로 만들어 SHA별로 저장하고, 만드는 동안에는 조상 그래프로 답한다.
     - 끝: 시험 PR을 하나 열면 그 SHA의 그래프가 저장되고 MCP로 질의된다.
@@ -134,24 +136,28 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 | Joern 부분 갱신 | 없음(3단계 확인) | 커밋마다 새로 만든다. 만드는 동안에는 조상 그래프로 답한다 |
 | Joern의 Python 호출 연결 | 이름으로 잇는다(3단계). 흔한 이름은 실제 호출자 5개 중 1개만 맞음(4단계) | 정확한 참조는 Serena가 맡는다. 흔한 이름이나 다시 내보낸 심볼은 Joern 호출 관계를 쓰지 않는다 |
 | Python 3.12 `type` 문 파싱 실패 | opensre에서 9개 파일(3단계) | 파일 전체가 빠지지는 않는다. 데모에서 한계로 설명한다 |
-| `-J-Xmx`가 스크립트 JVM에 안 닿음 | 3단계 실측 | `JAVA_TOOL_OPTIONS`로 준다. 서버 모드와 codebadger는 5단계에서 확인한다 |
+| `-J-Xmx`가 스크립트 JVM에 안 닿음 | 3단계 실측 | `JAVA_TOOL_OPTIONS`로 준다. 서버 모드는 JVM 하나라 그대로 닿는다(5단계) |
 | ast-grep 공식 MCP | 스스로 실험 단계라고 밝힘 | 사전 스크립트는 MCP 없이 CLI를 직접 부른다 |
-| Joern 서버 격리 없음 | 문서에 명시 | 내부망 전용, basic auth, 외부 노출 금지 |
+| Joern 서버 격리 없음 | 문서에 명시 | 내부망 전용, 외부 노출 금지. codebadger 질의 워커는 인증 없이 브리지 네트워크 안에만 열린다. 외부에서 닿는지는 시험 안 함 |
 | Serena·codebadger 라이선스 | 둘 다 GPL-3.0(Serena는 앱만) | 사내 사용은 문제없다. 고친 버전을 배포할 때만 소스 공개 의무가 생긴다 |
 | Serena 편집·셸 도구 | 읽기 도구 5개만 켬(4단계 확인) | 도구 인터페이스, fixed_tools, read_only. 편집·셸 도구를 부르면 Unknown tool로 거부된다 |
 | Pyright 가상환경 | opensre 의존성 없이 돌림(4단계) | 서드파티 타입이 풀리지 않는다. 가상환경을 주면 결과가 달라지는지는 확인 안 됨 |
-| 작업 세션의 MCP 질의 | 등록과 연결만 확인(4단계) | 5단계에서 Joern MCP와 함께 작업 세션에서 직접 물어 확인한다 |
+| 작업 세션의 MCP 질의 | 세 MCP 모두 작업 세션에서 호출 확인(5단계) | 해결됨. 헤드리스 세션에서 Q4 데이터 흐름과 ast-grep·Serena 참조를 받았다 |
 | opensre 정답지 | 없음 | 지난 autoflow PR에서 사례를 골라 사람이 결정 코드를 확인해 둔다 |
 | SHA별 그래프 누적 | 커밋당 30MB(파일) 또는 142MB(프로젝트) | 저장 형태와 보관 개수를 정한다 |
+| Docker 저장소가 RAM tmpfs | 재부팅하면 이미지와 컨테이너가 사라짐 | 이미지를 디스크에 저장하고 부팅 복원 유닛 2개를 켰다(5단계). 재부팅 확인 안 됨 |
+| codebadger MCP 인증 | 기능 없음 | Xeon 루프백에만 열고 작업자 쪽은 SSH 터널로 붙는다 |
+| 노드 3 메모리 | 질의 80G + 생성 8G + runner-5 32G = 120G / 126G | runner-4가 노드 3을 얼마나 쓰는지는 재지 않음 |
+| codebadger 패치 | v0.7.0-beta에 패치 2개 | codebadger를 올릴 때 패치가 맞는지 다시 확인한다. 이미지를 다시 빌드하면 디스크 저장도 다시 한다 |
 
 ## 남은 결정
 
-5단계 전에 정할 것은 Joern 메모리 상한과 노드 고정이다. 나머지는 진행하면서 정한다.
+6단계 전에 정할 것은 그래프 저장 형태다. 나머지는 진행하면서 정한다.
 
 - [x] codeinside 레포: Munsik-Park/codeinside, 공개로 정함
 - [x] 뒤에 붙일 도구: ast-grep, Serena, Joern
-- [ ] Joern MCP: codebadger 시험 결과에 따라 (단계 5)
-- [ ] Joern 메모리 상한과 노드 고정: 측정상 2G면 적재됨. 여유를 두어 4G, 노드 3 고정을 제안 (단계 5 전)
+- [x] Joern MCP: codebadger(패치 2개, Joern 4.0.680)로 정함 (단계 5)
+- [x] Joern 메모리와 노드: 워커 heap 4G, 질의 예산 80G, 생성 컨테이너 8G, 노드 3 고정으로 정함 (단계 5)
 - [ ] 그래프 저장 형태와 보관 개수: 여는 데 1초인 적재된 프로젝트 저장을 제안 (단계 6 전)
 - [ ] opensre 정답 사례로 쓸 이슈·PR (단계 7 전)
 - [ ] 통합 MCP 앞단: AI가 도구 선택을 헷갈릴 때 (보류)
@@ -167,5 +173,7 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 - [3단계 측정 기록](measurements/2026-11-11-baseline/README.md)
 - [4단계 비교 기록 — ast-grep 재현성, Serena·Joern 비교](measurements/2026-11-12-serena-joern/README.md)
 - [Serena 설정 — 도구 인터페이스와 REPL](https://github.com/oraios/serena/blob/v2.1.0/docs/02-usage/050_configuration.md)
+- [5단계 기록 — codebadger 설치, Q1~Q5 비교, 메모리·NUMA 고정](measurements/2026-11-12-joern-mcp/README.md)
+- [codebadger 보안 문서 — Docker 소켓, 전용 호스트 권장](https://github.com/Lekssays/codebadger/blob/v0.7.0-beta/docs/security.md)
 - [Intel Xeon E7-4820 v4 사양](https://www.intel.com/content/www/us/en/products/sku/93814/intel-xeon-processor-e74820-v4-25m-cache-2-00-ghz/specifications.html)
 - [포크 해제 — 이슈·PR 소실](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/detaching-a-fork)
