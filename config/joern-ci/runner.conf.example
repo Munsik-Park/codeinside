@@ -3,8 +3,13 @@
 # PAT는 /etc/codeinside-joern-ci/runner.env(RUNNER_REG_PAT=..., 권한 600)에 따로 둔다.
 JOERN_CI_REPO=Munsik-Park/opensre
 JOERN_CI_LABELS=joern
-# librechat 러너 이미지를 entrypoint만 바꿔 쓴다. 부팅 때 librechat-ci-image-restore.service가 복원한다.
-JOERN_CI_RUNNER_IMAGE=librechat-ci-runner:latest
+# librechat 러너 이미지(부팅 때 librechat-ci-image-restore.service가 복원) 위에 전용 uid 사용자를 더해 쓴다.
+# 이미지는 codeinside-joern-ci-net.service가 build-runner-image.sh로 만든다.
+JOERN_CI_BASE_IMAGE=librechat-ci-runner:latest
+JOERN_CI_RUNNER_IMAGE=codeinside-joern-runner:latest
+# 러너 컨테이너의 uid/gid. install.sh가 호스트 시스템 계정 codeinside-runner를 만들고 그 값으로 채운다.
+JOERN_CI_RUNNER_UID=
+JOERN_CI_RUNNER_GID=
 JOERN_CI_RUNNER_NAME=codeinside-joern-runner
 JOERN_CI_RUNNER_MEMORY=2g
 JOERN_CI_RUNNER_CPUS=4

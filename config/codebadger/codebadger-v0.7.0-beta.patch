@@ -2,7 +2,7 @@ diff --git a/config.example.yaml b/config.example.yaml
 index b74a0fa..7cbbfd6 100644
 --- a/config.example.yaml
 +++ b/config.example.yaml
-@@ -85,130 +85,11 @@ cpg:
+@@ -85,130 +85,15 @@ cpg:
    # `(?:^|.*/)` form matches a whole path component under both regimes and also
    # lets root-level dirs (e.g. `vendor/`) match. See:
    # https://github.com/Lekssays/codebadger/issues/23
@@ -134,6 +134,10 @@ index b74a0fa..7cbbfd6 100644
 -    - ".*Thumbs\\.db$"
 -
 +    - "tests(?:/.*)?"
++    # crewAI (step 6): per-package test folders under lib/ and one generated
++    # 7.8MB module. No opensre path matches these (opensre has no lib/).
++    - "lib/[^/]+/tests(?:/.*)?"
++    - "lib/crewai-core/src/crewai_core/platform_catalog\\.py"
    languages_with_exclusions:
      - c
      - cpp

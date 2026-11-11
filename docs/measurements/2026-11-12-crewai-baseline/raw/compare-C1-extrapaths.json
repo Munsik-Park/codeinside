@@ -1,0 +1,38 @@
+{
+ "both": 0,
+ "joern": {
+  "callers": 7,
+  "callsites": 7
+ },
+ "joern_only": [
+  "lib/crewai-tools/src/crewai_tools/tools/singlestore_search_tool/singlestore_search_tool.py::SingleStoreSearchTool._initialize_tables",
+  "lib/crewai-tools/src/crewai_tools/tools/singlestore_search_tool/singlestore_search_tool.py::SingleStoreSearchTool._run",
+  "lib/crewai-tools/src/crewai_tools/tools/snowflake_search_tool/snowflake_search_tool.py::SnowflakeSearchTool._execute_query",
+  "lib/crewai/src/crewai/agent/core.py::Agent._execute_without_timeout",
+  "lib/crewai/src/crewai/llms/providers/azure/completion.py::AzureCompletion.aclose",
+  "lib/crewai/src/crewai/memory/unified_memory.py::Memory.close",
+  "lib/crewai/src/crewai/memory/unified_memory.py::Memory.close<metaClassAdapter>"
+ ],
+ "joern_only_callsites": [
+  "lib/crewai-tools/src/crewai_tools/tools/singlestore_search_tool/singlestore_search_tool.py:315::conn.close()",
+  "lib/crewai-tools/src/crewai_tools/tools/singlestore_search_tool/singlestore_search_tool.py:415::conn.close()",
+  "lib/crewai-tools/src/crewai_tools/tools/snowflake_search_tool/snowflake_search_tool.py:233::cursor.close()",
+  "lib/crewai/src/crewai/agent/core.py:1152::invoke_result.close()",
+  "lib/crewai/src/crewai/llms/providers/azure/completion.py:1428::self._async_client.close()",
+  "lib/crewai/src/crewai/memory/unified_memory.py:370::close(self)",
+  "lib/crewai/src/crewai/memory/unified_memory.py:374::self._storage.close()"
+ ],
+ "name": "close",
+ "query": "C1",
+ "serena": {
+  "any_pairs": 0,
+  "call_pairs": 0,
+  "excluded_prefix": "tests/",
+  "references_all": 3,
+  "references_excluding_prefix": 0,
+  "usage_counts": {}
+ },
+ "serena_non_call_refs": [],
+ "serena_only": [],
+ "serena_only_refs": []
+}

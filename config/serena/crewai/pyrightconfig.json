@@ -1,0 +1,11 @@
+{
+  "//": "crewAI 모노레포용 Pyright 설정(docs/plan.md 단계 6). 분석 대상 체크아웃 루트에 복사해 쓴다. 패키지가 lib/*/src 아래 있어 루트 기준 import 해석(루트, extraPaths, 루트의 src)으로는 패키지 간 import가 풀리지 않는다(Pyright docs/import-resolution.md).",
+  "extraPaths": [
+    "lib/cli/src",
+    "lib/crewai/src",
+    "lib/crewai-core/src",
+    "lib/crewai-files/src",
+    "lib/crewai-tools/src",
+    "lib/devtools/src"
+  ]
+}

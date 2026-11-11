@@ -1,0 +1,14 @@
+# crewAI PR #1 run 43080344648 (head 60ab746e631b, runner label joern) 작업 로그 중 작업 스크립트 출력
+2026-11-11T18:43:06.5358970Z [18:43:06] commit status pending: building Joern CPG
+2026-11-11T18:43:10.2338946Z [18:43:10] extracted crewAI-60ab746e631b76c0bc121e9783568eda9888bc90
+2026-11-11T18:43:25.5278134Z [18:43:25] generate_cpg: codebase_hash=59ff33405a489c79 status=generating
+2026-11-11T18:43:25.5437398Z [18:43:25] cpg status: generating
+2026-11-11T18:59:44.3612527Z [18:59:44] cpg status: failed
+2026-11-11T18:59:44.8923252Z [18:59:44] commit status failure: RuntimeError: cpg 59ff33405a489c79 failed: CPG generated but failed to load into Joern server
+2026-11-11T18:59:44.8926365Z Traceback (most recent call last):
+2026-11-11T18:59:44.8940005Z     raise RuntimeError(f"cpg {codebase_hash} {status}: {st.get('error') or st.get('message')}")
+2026-11-11T18:59:44.8942360Z RuntimeError: cpg 59ff33405a489c79 failed: CPG generated but failed to load into Joern server
+
+# 커밋 상태
+2026-11-11T18:59:44Z	failure	codeinside/joern-cpg	RuntimeError: cpg 59ff33405a489c79 failed: CPG generated but failed to load into Joern server
+2026-11-11T18:43:06Z	pending	codeinside/joern-cpg	building Joern CPG

@@ -2,7 +2,7 @@
 # opensre 분석 러너 supervisor (docs/plan.md 단계 6). codeinside-joern-runner.service가 띄운다.
 # librechat 러너 supervisor와 같은 ephemeral 방식이다.
 #   1. PAT로 opensre 레포 단위 등록 토큰을 발급한다(작업마다, 저장하지 않음).
-#   2. 러너 컨테이너 하나를 띄운다: 노드 3 cpuset·메모리 노드, 메모리 상한, non-root, 프록시 네트워크.
+#   2. 러너 컨테이너 하나를 띄운다: 노드 3 cpuset·메모리 노드, 메모리 상한, 전용 uid(non-root), 프록시 네트워크.
 #   3. 컨테이너가 작업 하나를 끝내고 지워지면, 남은 등록이 있으면 지우고 1로 돌아간다.
 #
 # 필수 환경 변수: RUNNER_REG_PAT (/etc/codeinside-joern-ci/runner.env, 권한 600, 커밋하지 않음)
@@ -21,6 +21,7 @@ SRC_HOST_DIR="${JOERN_CI_SRC_HOST_DIR:?}"
 SRC_MCP_DIR="${JOERN_CI_SRC_MCP_DIR:?}"
 MCP_URL="${JOERN_CI_MCP_URL:?}"
 CONTAINER="${JOERN_CI_RUNNER_NAME:-codeinside-joern-runner}"
+RUNNER_USER="${JOERN_CI_RUNNER_UID:?}:${JOERN_CI_RUNNER_GID:?}"
 
 log() { printf '[%s] joern-runner-supervisor: %s\n' "$(date -u +%FT%TZ)" "$*"; }
 stop_container() { docker stop -t 30 "${CONTAINER}" >/dev/null 2>&1 || true; }
@@ -60,7 +61,7 @@ while true; do
   docker run --rm --name "${CONTAINER}" \
     --memory="${MEMORY}" --memory-swap="${MEMORY}" \
     --cpus="${CPUS}" --cpuset-cpus="${CPUSET_CPUS}" --cpuset-mems="${CPUSET_MEMS}" \
-    --user runner --cap-drop ALL --security-opt no-new-privileges \
+    --user "${RUNNER_USER}" --cap-drop ALL --security-opt no-new-privileges \
     --network "${NET}" \
     -e JOERN_CI_REPO_URL="https://github.com/${REPO}" \
     -e CODEBADGER_MCP_URL="${MCP_URL}" \

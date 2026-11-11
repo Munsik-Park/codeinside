@@ -1,0 +1,26 @@
+2026-11-11T23:45:39 - src.tools.core_tools - INFO - Processing codebase with hash: fafd8959bb1b7ee0
+2026-11-11T23:45:39 - src.tools.core_tools - INFO - Preparing source code for fafd8959bb1b7ee0
+2026-11-11T23:45:39 - src.tools.core_tools - INFO - Copying source from /app/playground/codebases/crewAI-71d68117 to /app/playground/codebases/fafd8959bb1b7ee0
+2026-11-11T23:45:47 - src.tools.core_tools - INFO - Source copied successfully to /app/playground/codebases/fafd8959bb1b7ee0
+2026-11-11T23:45:47 - src.tools.core_tools - INFO - CPG directory ready: /app/playground/cpgs/fafd8959bb1b7ee0
+2026-11-11T23:45:47 - src.services.codebase_tracker - INFO - Saved codebase info for hash fafd8959bb1b7ee0
+2026-11-11T23:45:49 - src.tools.core_tools - INFO - Starting async CPG generation for fafd8959bb1b7ee0
+2026-11-11T23:45:51 - src.tools.core_tools - INFO - Executing CPG generation in container (frontend -Xmx4G): /opt/joern/joern-cli/pysrc2cpg /playground/codebases/fafd8959bb1b7ee0 -o /playground/cpgs/fafd8959bb1b7ee0/cpg.bin --exclude-regex (tests(?:/.*)?)|(lib/[^/]+/tests(?:/.*)?)|(lib/crewai-core/src/crewai_core/platform_catalog\.py)
+2026-11-11T23:46:04 - src.tools.core_tools - INFO - CPG generated successfully: /app/playground/cpgs/fafd8959bb1b7ee0/cpg.bin
+2026-11-11T23:46:04 - src.tools.core_tools - INFO - Spawning Joern server and loading CPG for fafd8959bb1b7ee0
+2026-11-11T23:46:04 - src.services.joern_server_manager - INFO - Sizing fafd8959bb1b7ee0: fixed heap 4G from JOERN_WORKER_HEAP_GB
+2026-11-11T23:46:04 - src.services.joern_server_manager - INFO - Starting pooled Joern server for fafd8959bb1b7ee0 on port 14082 (heap 4G, reserve 5120MB)
+2026-11-11T23:46:04 - src.services.joern_server_manager - INFO - _start_worker_container fafd8959bb1b7ee0: worker_mode='pool' docker_network='codebadger' -> network (by container name)
+2026-11-11T23:46:04 - src.services.joern_server_manager - INFO - Launching worker container codebadger-joern-fafd8959bb1b7ee0 (image codebadger-joern-server:latest, mem_limit 5120MB) on network codebadger:8080
+2026-11-11T23:46:04 - src.services.joern_server_manager - INFO - Worker codebadger-joern-fafd8959bb1b7ee0: cpuset_cpus='30-39,70-79' cpuset_mems='3'
+2026-11-11T23:46:18 - src.services.joern_server_manager - INFO - Pooled Joern server for fafd8959bb1b7ee0 ready on port 14082
+2026-11-11T23:46:18 - src.services.joern_server_manager - INFO - Loading CPG /playground/cpgs/fafd8959bb1b7ee0/cpg.bin (container: /playground/cpgs/fafd8959bb1b7ee0/cpg.bin) into Joern server for fafd8959bb1b7ee0 (port 14082, timeout 300s)
+2026-11-11T23:46:18 - src.services.joern_client - INFO - Loading CPG from /playground/cpgs/fafd8959bb1b7ee0/cpg.bin as project 'fafd8959bb1b7ee0' (timeout=300s)
+2026-11-11T23:47:00 - src.services.joern_server_manager - INFO - CPG loaded successfully for fafd8959bb1b7ee0
+2026-11-11T23:47:00 - src.tools.core_tools - INFO - CPG generation complete for fafd8959bb1b7ee0, port: 14082
+2026-11-11T23:47:02 - src.tools.core_tools - INFO - Reclaimed source snapshot /app/playground/codebases/fafd8959bb1b7ee0 (ephemeral source)
+2026-11-11T23:47:02 - src.tools.core_tools - INFO - Scheduling background cache warm-up for fafd8959bb1b7ee0
+2026-11-11T23:47:02 - src.services.code_browsing_service - INFO - Warming up cache for codebase fafd8959bb1b7ee0
+2026-11-11T23:47:04 - src.services.code_browsing_service - INFO - Cache warm-up task list_methods completed for fafd8959bb1b7ee0
+2026-11-11T23:47:04 - src.services.code_browsing_service - INFO - Cache warm-up task list_calls completed for fafd8959bb1b7ee0
+2026-11-11T23:47:05 - src.services.code_browsing_service - INFO - Cache warm-up task list_parameters completed for fafd8959bb1b7ee0

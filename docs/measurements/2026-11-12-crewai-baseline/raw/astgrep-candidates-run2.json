@@ -1,0 +1,6313 @@
+{
+ "candidates": [
+  {
+   "end": [
+    202,
+    13
+   ],
+   "file": "conftest.py",
+   "rule": "py-except-swallow",
+   "start": [
+    201,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    281,
+    45
+   ],
+   "file": "conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    281,
+    26
+   ],
+   "text": "os.environ.get(key)"
+  },
+  {
+   "end": [
+    458,
+    67
+   ],
+   "file": "conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    458,
+    24
+   ],
+   "text": "os.getenv(\"PYTEST_VCR_RECORD_MODE\", \"once\")"
+  },
+  {
+   "end": [
+    466,
+    35
+   ],
+   "file": "conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    466,
+    8
+   ],
+   "text": "os.getenv(\"GITHUB_ACTIONS\")"
+  },
+  {
+   "end": [
+    308,
+    66
+   ],
+   "file": "lib/cli/src/crewai_cli/api_keys.py",
+   "rule": "py-env-read",
+   "start": [
+    308,
+    31
+   ],
+   "text": "os.environ.get(PASTED_KEYS_ENV, \"\")"
+  },
+  {
+   "end": [
+    651,
+    57
+   ],
+   "file": "lib/cli/src/crewai_cli/api_keys.py",
+   "rule": "py-env-read",
+   "start": [
+    651,
+    22
+   ],
+   "text": "os.environ.get(PASTED_KEYS_ENV, \"\")"
+  },
+  {
+   "end": [
+    655,
+    33
+   ],
+   "file": "lib/cli/src/crewai_cli/api_keys.py",
+   "rule": "py-env-read",
+   "start": [
+    655,
+    17
+   ],
+   "text": "os.environ[name]"
+  },
+  {
+   "end": [
+    657,
+    37
+   ],
+   "file": "lib/cli/src/crewai_cli/api_keys.py",
+   "rule": "py-env-read",
+   "start": [
+    657,
+    17
+   ],
+   "text": "os.environ.get(name)"
+  },
+  {
+   "end": [
+    29,
+    13
+   ],
+   "file": "lib/cli/src/crewai_cli/checkpoint_cli.py",
+   "rule": "py-except-swallow",
+   "start": [
+    28,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110 - telemetry must never break a command"
+  },
+  {
+   "end": [
+    677,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/checkpoint_cli.py",
+   "rule": "py-except-swallow",
+   "start": [
+    676,
+    9
+   ],
+   "text": "except OSError:  # noqa: PERF203"
+  },
+  {
+   "end": [
+    684,
+    21
+   ],
+   "file": "lib/cli/src/crewai_cli/checkpoint_cli.py",
+   "rule": "py-except-swallow",
+   "start": [
+    683,
+    13
+   ],
+   "text": "except OSError:"
+  },
+  {
+   "end": [
+    123,
+    13
+   ],
+   "file": "lib/cli/src/crewai_cli/cli.py",
+   "rule": "py-except-swallow",
+   "start": [
+    122,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    1360,
+    61
+   ],
+   "file": "lib/cli/src/crewai_cli/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1360,
+    22
+   ],
+   "text": "os.getenv(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    1374,
+    53
+   ],
+   "file": "lib/cli/src/crewai_cli/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1374,
+    22
+   ],
+   "text": "os.getenv(\"CREWAI_TESTING\", \"\")"
+  },
+  {
+   "end": [
+    1378,
+    53
+   ],
+   "file": "lib/cli/src/crewai_cli/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1378,
+    22
+   ],
+   "text": "os.getenv(\"CREWAI_USER_ID\", \"\")"
+  },
+  {
+   "end": [
+    1382,
+    51
+   ],
+   "file": "lib/cli/src/crewai_cli/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1382,
+    21
+   ],
+   "text": "os.getenv(\"CREWAI_ORG_ID\", \"\")"
+  },
+  {
+   "end": [
+    1481,
+    54
+   ],
+   "file": "lib/cli/src/crewai_cli/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1481,
+    19
+   ],
+   "text": "os.getenv(\"CREWAI_TRACING_ENABLED\")"
+  },
+  {
+   "end": [
+    1318,
+    70
+   ],
+   "file": "lib/cli/src/crewai_cli/create_json_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1318,
+    13
+   ],
+   "text": "os.environ.get(\"CREWAI_ENTERPRISE_ACTION_AUTH_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    79,
+    13
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    78,
+    5
+   ],
+   "text": "except (ValueError, TypeError, RecursionError):"
+  },
+  {
+   "end": [
+    102,
+    13
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    101,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    435,
+    48
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-env-read",
+   "start": [
+    435,
+    14
+   ],
+   "text": "os.environ.get(_AWAITING_EVAL_ENV)"
+  },
+  {
+   "end": [
+    479,
+    47
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-env-read",
+   "start": [
+    479,
+    13
+   ],
+   "text": "os.environ.get(_AWAITING_EVAL_ENV)"
+  },
+  {
+   "end": [
+    1021,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1020,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    1119,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1118,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    1133,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1132,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    1139,
+    21
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1138,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    1237,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1236,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    1439,
+    51
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-env-read",
+   "start": [
+    1439,
+    12
+   ],
+   "text": "os.getenv(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    1454,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1453,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    1762,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1761,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    1777,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1776,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    2153,
+    25
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    2152,
+    17
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    2241,
+    21
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    2240,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    2359,
+    21
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    2358,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    2479,
+    29
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    2476,
+    21
+   ],
+   "text": "except (ValueError, KeyError):"
+  },
+  {
+   "end": [
+    2631,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/crew_run_tui.py",
+   "rule": "py-except-swallow",
+   "start": [
+    2630,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    199,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/deploy/validate.py",
+   "rule": "py-except-swallow",
+   "start": [
+    198,
+    9
+   ],
+   "text": "except json.JSONDecodeError:"
+  },
+  {
+   "end": [
+    586,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/deploy/validate.py",
+   "rule": "py-except-swallow",
+   "start": [
+    585,
+    9
+   ],
+   "text": "except OSError:"
+  },
+  {
+   "end": [
+    169,
+    13
+   ],
+   "file": "lib/cli/src/crewai_cli/experimental/eval_crew.py",
+   "rule": "py-except-swallow",
+   "start": [
+    168,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110 - telemetry must never break a command"
+  },
+  {
+   "end": [
+    297,
+    48
+   ],
+   "file": "lib/cli/src/crewai_cli/experimental/eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    297,
+    17
+   ],
+   "text": "os.environ.get(TRACING_ENV_VAR)"
+  },
+  {
+   "end": [
+    328,
+    13
+   ],
+   "file": "lib/cli/src/crewai_cli/experimental/eval_crew.py",
+   "rule": "py-except-swallow",
+   "start": [
+    327,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110 - telemetry must never break a command"
+  },
+  {
+   "end": [
+    708,
+    42
+   ],
+   "file": "lib/cli/src/crewai_cli/experimental/eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    708,
+    9
+   ],
+   "text": "os.environ.get(\"CREWAI_PLUS_URL\")"
+  },
+  {
+   "end": [
+    1024,
+    51
+   ],
+   "file": "lib/cli/src/crewai_cli/experimental/eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1024,
+    16
+   ],
+   "text": "os.environ.get(TRACING_ENV_VAR, \"\")"
+  },
+  {
+   "end": [
+    1533,
+    13
+   ],
+   "file": "lib/cli/src/crewai_cli/experimental/eval_crew.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1532,
+    5
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    1847,
+    13
+   ],
+   "file": "lib/cli/src/crewai_cli/experimental/eval_crew.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1846,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110 - telemetry must never break a command"
+  },
+  {
+   "end": [
+    79,
+    36
+   ],
+   "file": "lib/cli/src/crewai_cli/model_catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    79,
+    17
+   ],
+   "text": "os.environ.get(env)"
+  },
+  {
+   "end": [
+    302,
+    42
+   ],
+   "file": "lib/cli/src/crewai_cli/model_catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    302,
+    9
+   ],
+   "text": "os.environ.get(\"OLLAMA_API_BASE\")"
+  },
+  {
+   "end": [
+    303,
+    38
+   ],
+   "file": "lib/cli/src/crewai_cli/model_catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    303,
+    12
+   ],
+   "text": "os.environ.get(\"API_BASE\")"
+  },
+  {
+   "end": [
+    304,
+    41
+   ],
+   "file": "lib/cli/src/crewai_cli/model_catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    304,
+    12
+   ],
+   "text": "os.environ.get(\"OLLAMA_HOST\")"
+  },
+  {
+   "end": [
+    349,
+    25
+   ],
+   "file": "lib/cli/src/crewai_cli/model_catalog.py",
+   "rule": "py-global-state",
+   "start": [
+    349,
+    5
+   ],
+   "text": "global _litellm_memo"
+  },
+  {
+   "end": [
+    383,
+    25
+   ],
+   "file": "lib/cli/src/crewai_cli/model_catalog.py",
+   "rule": "py-global-state",
+   "start": [
+    383,
+    5
+   ],
+   "text": "global _litellm_memo"
+  },
+  {
+   "end": [
+    550,
+    49
+   ],
+   "file": "lib/cli/src/crewai_cli/model_catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    550,
+    18
+   ],
+   "text": "os.environ.get(\"SSL_CERT_FILE\")"
+  },
+  {
+   "end": [
+    45,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/provider.py",
+   "rule": "py-except-swallow",
+   "start": [
+    44,
+    9
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    153,
+    59
+   ],
+   "file": "lib/cli/src/crewai_cli/run_agent.py",
+   "rule": "py-env-read",
+   "start": [
+    153,
+    43
+   ],
+   "text": "os.environ[name]"
+  },
+  {
+   "end": [
+    690,
+    13
+   ],
+   "file": "lib/cli/src/crewai_cli/run_crew.py",
+   "rule": "py-except-swallow",
+   "start": [
+    689,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110 - telemetry must never break a command"
+  },
+  {
+   "end": [
+    856,
+    39
+   ],
+   "file": "lib/cli/src/crewai_cli/run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    856,
+    8
+   ],
+   "text": "os.environ.get(RUN_COUNTED_ENV)"
+  },
+  {
+   "end": [
+    933,
+    42
+   ],
+   "file": "lib/cli/src/crewai_cli/run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    933,
+    12
+   ],
+   "text": "os.environ.get(EVAL_TOKEN_ENV)"
+  },
+  {
+   "end": [
+    934,
+    66
+   ],
+   "file": "lib/cli/src/crewai_cli/run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    934,
+    31
+   ],
+   "text": "os.environ.get(PASTED_KEYS_ENV, \"\")"
+  },
+  {
+   "end": [
+    945,
+    37
+   ],
+   "file": "lib/cli/src/crewai_cli/run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    945,
+    17
+   ],
+   "text": "os.environ.get(name)"
+  },
+  {
+   "end": [
+    1198,
+    44
+   ],
+   "file": "lib/cli/src/crewai_cli/run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1198,
+    13
+   ],
+   "text": "os.environ.get(RUN_COUNTED_ENV)"
+  },
+  {
+   "end": [
+    612,
+    52
+   ],
+   "file": "lib/cli/src/crewai_cli/run_declarative_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    612,
+    12
+   ],
+   "text": "os.environ.get(\"UV_RUN_RECURSION_DEPTH\")"
+  },
+  {
+   "end": [
+    45,
+    62
+   ],
+   "file": "lib/cli/src/crewai_cli/settings/main.py",
+   "rule": "py-env-read",
+   "start": [
+    45,
+    23
+   ],
+   "text": "os.getenv(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    479,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/skills/main.py",
+   "rule": "py-except-swallow",
+   "start": [
+    478,
+    9
+   ],
+   "text": "except tarfile.TarError:"
+  },
+  {
+   "end": [
+    509,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/skills/main.py",
+   "rule": "py-except-swallow",
+   "start": [
+    508,
+    9
+   ],
+   "text": "except ImportError:"
+  },
+  {
+   "end": [
+    25,
+    58
+   ],
+   "file": "lib/cli/src/crewai_cli/templates/agent/src/{{package_name}}/agent.py",
+   "rule": "py-env-read",
+   "start": [
+    25,
+    19
+   ],
+   "text": "os.getenv(\"MODEL\", \"openai/gpt-6-luna\")"
+  },
+  {
+   "end": [
+    116,
+    45
+   ],
+   "file": "lib/cli/src/crewai_cli/tools/main.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    116,
+    9
+   ],
+   "text": "assert isinstance(project_name, str)"
+  },
+  {
+   "end": [
+    119,
+    48
+   ],
+   "file": "lib/cli/src/crewai_cli/tools/main.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    119,
+    9
+   ],
+   "text": "assert isinstance(project_version, str)"
+  },
+  {
+   "end": [
+    158,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/tools/main.py",
+   "rule": "py-except-swallow",
+   "start": [
+    157,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    414,
+    17
+   ],
+   "file": "lib/cli/src/crewai_cli/tui_picker.py",
+   "rule": "py-except-swallow",
+   "start": [
+    412,
+    9
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    102,
+    41
+   ],
+   "file": "lib/cli/src/crewai_cli/utils.py",
+   "rule": "py-env-read",
+   "start": [
+    102,
+    13
+   ],
+   "text": "os.environ.get(\"CREWAI_DMN\")"
+  },
+  {
+   "end": [
+    301,
+    58
+   ],
+   "file": "lib/cli/src/crewai_cli/utils.py",
+   "rule": "py-env-read",
+   "start": [
+    301,
+    38
+   ],
+   "text": "os.environ.get(name)"
+  },
+  {
+   "end": [
+    156,
+    69
+   ],
+   "file": "lib/cli/tests/experimental/test_eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    156,
+    36
+   ],
+   "text": "os.environ.get(\"CREWAI_PLUS_URL\")"
+  },
+  {
+   "end": [
+    869,
+    67
+   ],
+   "file": "lib/cli/tests/experimental/test_eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    869,
+    27
+   ],
+   "text": "os.environ.get(\"CREWAI_TRACING_ENABLED\")"
+  },
+  {
+   "end": [
+    1357,
+    73
+   ],
+   "file": "lib/cli/tests/experimental/test_eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1357,
+    35
+   ],
+   "text": "os.environ[\"CREWAI_EVAL_AWAITING_RUN\"]"
+  },
+  {
+   "end": [
+    3541,
+    65
+   ],
+   "file": "lib/cli/tests/experimental/test_eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    3541,
+    21
+   ],
+   "text": "os.environ.get(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    3602,
+    64
+   ],
+   "file": "lib/cli/tests/experimental/test_eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    3602,
+    20
+   ],
+   "text": "os.environ.get(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    3646,
+    64
+   ],
+   "file": "lib/cli/tests/experimental/test_eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    3646,
+    20
+   ],
+   "text": "os.environ.get(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    3838,
+    62
+   ],
+   "file": "lib/cli/tests/experimental/test_eval_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    3838,
+    22
+   ],
+   "text": "os.environ.get(\"CREWAI_TRACING_ENABLED\")"
+  },
+  {
+   "end": [
+    556,
+    48
+   ],
+   "file": "lib/cli/tests/test_api_keys.py",
+   "rule": "py-env-read",
+   "start": [
+    556,
+    12
+   ],
+   "text": "os.environ[\"CREWAI_PASTED_API_KEYS\"]"
+  },
+  {
+   "end": [
+    1066,
+    61
+   ],
+   "file": "lib/cli/tests/test_create_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1066,
+    12
+   ],
+   "text": "os.environ[\"CREWAI_ENTERPRISE_ACTION_AUTH_TOKEN\"]"
+  },
+  {
+   "end": [
+    2786,
+    57
+   ],
+   "file": "lib/cli/tests/test_crew_run_tui.py",
+   "rule": "py-env-read",
+   "start": [
+    2786,
+    17
+   ],
+   "text": "os.environ.get(\"CREWAI_TRACING_ENABLED\")"
+  },
+  {
+   "end": [
+    155,
+    44
+   ],
+   "file": "lib/cli/tests/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    155,
+    16
+   ],
+   "text": "os.getenv('CREWAI_PLUS_URL')"
+  },
+  {
+   "end": [
+    173,
+    73
+   ],
+   "file": "lib/cli/tests/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    173,
+    45
+   ],
+   "text": "os.getenv('CREWAI_PLUS_URL')"
+  },
+  {
+   "end": [
+    205,
+    73
+   ],
+   "file": "lib/cli/tests/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    205,
+    45
+   ],
+   "text": "os.getenv('CREWAI_PLUS_URL')"
+  },
+  {
+   "end": [
+    254,
+    73
+   ],
+   "file": "lib/cli/tests/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    254,
+    45
+   ],
+   "text": "os.getenv('CREWAI_PLUS_URL')"
+  },
+  {
+   "end": [
+    540,
+    69
+   ],
+   "file": "lib/cli/tests/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    540,
+    41
+   ],
+   "text": "os.getenv(\"CREWAI_PLUS_URL\")"
+  },
+  {
+   "end": [
+    94,
+    55
+   ],
+   "file": "lib/cli/tests/test_run_agent.py",
+   "rule": "py-env-read",
+   "start": [
+    94,
+    16
+   ],
+   "text": "os.environ[\"MANAGED_AGENT_TEST_CONFIG\"]"
+  },
+  {
+   "end": [
+    713,
+    58
+   ],
+   "file": "lib/cli/tests/test_run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    713,
+    16
+   ],
+   "text": "os.environ[CREWAI_TRAINED_AGENTS_FILE_ENV]"
+  },
+  {
+   "end": [
+    1839,
+    54
+   ],
+   "file": "lib/cli/tests/test_run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1839,
+    12
+   ],
+   "text": "os.environ.get(\"CREWAI_EVAL_AWAITING_RUN\")"
+  },
+  {
+   "end": [
+    1840,
+    42
+   ],
+   "file": "lib/cli/tests/test_run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1840,
+    12
+   ],
+   "text": "os.environ[\"FROM_THE_PROJECT\"]"
+  },
+  {
+   "end": [
+    1857,
+    40
+   ],
+   "file": "lib/cli/tests/test_run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1857,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_API_KEY\"]"
+  },
+  {
+   "end": [
+    1858,
+    42
+   ],
+   "file": "lib/cli/tests/test_run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1858,
+    12
+   ],
+   "text": "os.environ[\"FROM_THE_PROJECT\"]"
+  },
+  {
+   "end": [
+    1879,
+    40
+   ],
+   "file": "lib/cli/tests/test_run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1879,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_API_KEY\"]"
+  },
+  {
+   "end": [
+    1892,
+    40
+   ],
+   "file": "lib/cli/tests/test_run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1892,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_API_KEY\"]"
+  },
+  {
+   "end": [
+    1905,
+    40
+   ],
+   "file": "lib/cli/tests/test_run_crew.py",
+   "rule": "py-env-read",
+   "start": [
+    1905,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_API_KEY\"]"
+  },
+  {
+   "end": [
+    386,
+    45
+   ],
+   "file": "lib/cli/tests/test_run_declarative_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    386,
+    12
+   ],
+   "text": "os.environ[\"DECL_FLOW_ENV_PROBE\"]"
+  },
+  {
+   "end": [
+    1597,
+    40
+   ],
+   "file": "lib/cli/tests/test_run_usage.py",
+   "rule": "py-env-read",
+   "start": [
+    1597,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_API_KEY\"]"
+  },
+  {
+   "end": [
+    1892,
+    40
+   ],
+   "file": "lib/cli/tests/test_run_usage.py",
+   "rule": "py-env-read",
+   "start": [
+    1892,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_API_KEY\"]"
+  },
+  {
+   "end": [
+    80,
+    41
+   ],
+   "file": "lib/crewai-core/src/crewai_core/eval_handshake.py",
+   "rule": "py-env-read",
+   "start": [
+    80,
+    13
+   ],
+   "text": "os.environ.get(AWAITING_ENV)"
+  },
+  {
+   "end": [
+    151,
+    42
+   ],
+   "file": "lib/crewai-core/src/crewai_core/eval_handshake.py",
+   "rule": "py-env-read",
+   "start": [
+    151,
+    14
+   ],
+   "text": "os.environ.get(AWAITING_ENV)"
+  },
+  {
+   "end": [
+    33,
+    53
+   ],
+   "file": "lib/crewai-core/src/crewai_core/lock_store.py",
+   "rule": "py-env-read",
+   "start": [
+    33,
+    26
+   ],
+   "text": "os.environ.get(\"REDIS_URL\")"
+  },
+  {
+   "end": [
+    53,
+    20
+   ],
+   "file": "lib/crewai-core/src/crewai_core/lock_store.py",
+   "rule": "py-global-state",
+   "start": [
+    53,
+    5
+   ],
+   "text": "global _backend"
+  },
+  {
+   "end": [
+    13,
+    65
+   ],
+   "file": "lib/crewai-core/src/crewai_core/paths.py",
+   "rule": "py-env-read",
+   "start": [
+    13,
+    12
+   ],
+   "text": "os.environ.get(\"CREWAI_STORAGE_DIR\", Path.cwd().name)"
+  },
+  {
+   "end": [
+    291,
+    44
+   ],
+   "file": "lib/crewai-core/src/crewai_core/plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    291,
+    16
+   ],
+   "text": "os.getenv(\"CREWAI_PLUS_URL\")"
+  },
+  {
+   "end": [
+    237,
+    39
+   ],
+   "file": "lib/crewai-core/src/crewai_core/runtime_env.py",
+   "rule": "py-env-read",
+   "start": [
+    237,
+    16
+   ],
+   "text": "os.environ.get(env_var)"
+  },
+  {
+   "end": [
+    276,
+    35
+   ],
+   "file": "lib/crewai-core/src/crewai_core/runtime_env.py",
+   "rule": "py-env-read",
+   "start": [
+    276,
+    12
+   ],
+   "text": "os.environ.get(env_var)"
+  },
+  {
+   "end": [
+    262,
+    17
+   ],
+   "file": "lib/crewai-core/src/crewai_core/settings.py",
+   "rule": "py-except-swallow",
+   "start": [
+    261,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    200,
+    17
+   ],
+   "file": "lib/crewai-core/src/crewai_core/telemetry.py",
+   "rule": "py-except-swallow",
+   "start": [
+    199,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110 - telemetry must never break execution"
+  },
+  {
+   "end": [
+    334,
+    30
+   ],
+   "file": "lib/crewai-core/src/crewai_core/telemetry.py",
+   "rule": "py-env-read",
+   "start": [
+    334,
+    15
+   ],
+   "text": "os.getenv(name)"
+  },
+  {
+   "end": [
+    88,
+    55
+   ],
+   "file": "lib/crewai-core/src/crewai_core/token_manager.py",
+   "rule": "py-env-read",
+   "start": [
+    88,
+    25
+   ],
+   "text": "os.environ.get(\"LOCALAPPDATA\")"
+  },
+  {
+   "end": [
+    105,
+    17
+   ],
+   "file": "lib/crewai-core/src/crewai_core/token_manager.py",
+   "rule": "py-except-swallow",
+   "start": [
+    102,
+    9
+   ],
+   "text": "except OSError:"
+  },
+  {
+   "end": [
+    54,
+    13
+   ],
+   "file": "lib/crewai-core/src/crewai_core/tool_credentials.py",
+   "rule": "py-except-swallow",
+   "start": [
+    53,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    86,
+    56
+   ],
+   "file": "lib/crewai-core/src/crewai_core/user_data.py",
+   "rule": "py-env-read",
+   "start": [
+    86,
+    17
+   ],
+   "text": "os.getenv(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    34,
+    13
+   ],
+   "file": "lib/crewai-core/src/crewai_core/version.py",
+   "rule": "py-except-swallow",
+   "start": [
+    33,
+    5
+   ],
+   "text": "except importlib.metadata.PackageNotFoundError:"
+  },
+  {
+   "end": [
+    122,
+    17
+   ],
+   "file": "lib/crewai-core/src/crewai_core/version.py",
+   "rule": "py-except-swallow",
+   "start": [
+    121,
+    9
+   ],
+   "text": "except (json.JSONDecodeError, OSError):"
+  },
+  {
+   "end": [
+    163,
+    17
+   ],
+   "file": "lib/crewai-core/src/crewai_core/version.py",
+   "rule": "py-except-swallow",
+   "start": [
+    162,
+    9
+   ],
+   "text": "except (json.JSONDecodeError, OSError):"
+  },
+  {
+   "end": [
+    26,
+    56
+   ],
+   "file": "lib/crewai-core/tests/test_eval_handshake.py",
+   "rule": "py-env-read",
+   "start": [
+    26,
+    17
+   ],
+   "text": "os.environ[eval_handshake.AWAITING_ENV]"
+  },
+  {
+   "end": [
+    47,
+    55
+   ],
+   "file": "lib/crewai-core/tests/test_eval_handshake.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    16
+   ],
+   "text": "os.environ[eval_handshake.AWAITING_ENV]"
+  },
+  {
+   "end": [
+    48,
+    51
+   ],
+   "file": "lib/crewai-core/tests/test_eval_handshake.py",
+   "rule": "py-env-read",
+   "start": [
+    48,
+    12
+   ],
+   "text": "os.environ[eval_handshake.AWAITING_ENV]"
+  },
+  {
+   "end": [
+    520,
+    26
+   ],
+   "file": "lib/crewai-files/src/crewai_files/cache/upload_cache.py",
+   "rule": "py-global-state",
+   "start": [
+    520,
+    5
+   ],
+   "text": "global _default_cache"
+  },
+  {
+   "end": [
+    533,
+    26
+   ],
+   "file": "lib/crewai-files/src/crewai_files/cache/upload_cache.py",
+   "rule": "py-global-state",
+   "start": [
+    533,
+    5
+   ],
+   "text": "global _default_cache"
+  },
+  {
+   "end": [
+    541,
+    26
+   ],
+   "file": "lib/crewai-files/src/crewai_files/cache/upload_cache.py",
+   "rule": "py-global-state",
+   "start": [
+    541,
+    5
+   ],
+   "text": "global _default_cache"
+  },
+  {
+   "end": [
+    82,
+    17
+   ],
+   "file": "lib/crewai-files/src/crewai_files/core/sources.py",
+   "rule": "py-except-swallow",
+   "start": [
+    81,
+    9
+   ],
+   "text": "except json.JSONDecodeError:"
+  },
+  {
+   "end": [
+    294,
+    63
+   ],
+   "file": "lib/crewai-files/src/crewai_files/formatting/api.py",
+   "rule": "py-env-read",
+   "start": [
+    294,
+    21
+   ],
+   "text": "os.environ.get(\"CREWAI_BEDROCK_S3_BUCKET\")"
+  },
+  {
+   "end": [
+    333,
+    75
+   ],
+   "file": "lib/crewai-files/src/crewai_files/formatting/api.py",
+   "rule": "py-env-read",
+   "start": [
+    333,
+    27
+   ],
+   "text": "os.environ.get(\"CREWAI_BEDROCK_S3_BUCKET_OWNER\")"
+  },
+  {
+   "end": [
+    592,
+    13
+   ],
+   "file": "lib/crewai-files/src/crewai_files/spreadsheets/reading.py",
+   "rule": "py-except-swallow",
+   "start": [
+    591,
+    5
+   ],
+   "text": "except UnicodeDecodeError:"
+  },
+  {
+   "end": [
+    598,
+    17
+   ],
+   "file": "lib/crewai-files/src/crewai_files/spreadsheets/reading.py",
+   "rule": "py-except-swallow",
+   "start": [
+    597,
+    9
+   ],
+   "text": "except (UnicodeDecodeError, LookupError):"
+  },
+  {
+   "end": [
+    39,
+    71
+   ],
+   "file": "lib/crewai-files/src/crewai_files/uploaders/anthropic.py",
+   "rule": "py-env-read",
+   "start": [
+    39,
+    36
+   ],
+   "text": "os.environ.get(\"ANTHROPIC_API_KEY\")"
+  },
+  {
+   "end": [
+    129,
+    86
+   ],
+   "file": "lib/crewai-files/src/crewai_files/uploaders/bedrock.py",
+   "rule": "py-env-read",
+   "start": [
+    129,
+    44
+   ],
+   "text": "os.environ.get(\"CREWAI_BEDROCK_S3_BUCKET\")"
+  },
+  {
+   "end": [
+    132,
+    10
+   ],
+   "file": "lib/crewai-files/src/crewai_files/uploaders/bedrock.py",
+   "rule": "py-env-read",
+   "start": [
+    130,
+    46
+   ],
+   "text": "os.environ.get("
+  },
+  {
+   "end": [
+    136,
+    10
+   ],
+   "file": "lib/crewai-files/src/crewai_files/uploaders/bedrock.py",
+   "rule": "py-env-read",
+   "start": [
+    134,
+    34
+   ],
+   "text": "os.environ.get("
+  },
+  {
+   "end": [
+    135,
+    63
+   ],
+   "file": "lib/crewai-files/src/crewai_files/uploaders/bedrock.py",
+   "rule": "py-env-read",
+   "start": [
+    135,
+    27
+   ],
+   "text": "os.environ.get(\"AWS_DEFAULT_REGION\")"
+  },
+  {
+   "end": [
+    196,
+    58
+   ],
+   "file": "lib/crewai-files/src/crewai_files/uploaders/factory.py",
+   "rule": "py-env-read",
+   "start": [
+    196,
+    16
+   ],
+   "text": "os.environ.get(\"CREWAI_BEDROCK_S3_BUCKET\")"
+  },
+  {
+   "end": [
+    108,
+    68
+   ],
+   "file": "lib/crewai-files/src/crewai_files/uploaders/gemini.py",
+   "rule": "py-env-read",
+   "start": [
+    108,
+    36
+   ],
+   "text": "os.environ.get(\"GOOGLE_API_KEY\")"
+  },
+  {
+   "end": [
+    136,
+    68
+   ],
+   "file": "lib/crewai-files/src/crewai_files/uploaders/openai.py",
+   "rule": "py-env-read",
+   "start": [
+    136,
+    36
+   ],
+   "text": "os.environ.get(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    14,
+    70
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/adapters/enterprise_adapter.py",
+   "rule": "py-env-read",
+   "start": [
+    14,
+    16
+   ],
+   "text": "os.getenv(\"CREWAI_PLUS_URL\", \"https://app.crewai.com\")"
+  },
+  {
+   "end": [
+    421,
+    10
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/adapters/enterprise_adapter.py",
+   "rule": "py-env-read",
+   "start": [
+    419,
+    44
+   ],
+   "text": "os.environ.get("
+  },
+  {
+   "end": [
+    62,
+    62
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/adapters/zapier_adapter.py",
+   "rule": "py-env-read",
+   "start": [
+    62,
+    35
+   ],
+   "text": "os.getenv(\"ZAPIER_API_KEY\")"
+  },
+  {
+   "end": [
+    60,
+    66
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/bedrock/agents/invoke_agent_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    60,
+    37
+   ],
+   "text": "os.getenv(\"BEDROCK_AGENT_ID\")"
+  },
+  {
+   "end": [
+    61,
+    84
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/bedrock/agents/invoke_agent_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    61,
+    49
+   ],
+   "text": "os.getenv(\"BEDROCK_AGENT_ALIAS_ID\")"
+  },
+  {
+   "end": [
+    107,
+    18
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/bedrock/agents/invoke_agent_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    105,
+    29
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    106,
+    79
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/bedrock/agents/invoke_agent_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    106,
+    35
+   ],
+   "text": "os.getenv(\"AWS_DEFAULT_REGION\", \"us-west-2\")"
+  },
+  {
+   "end": [
+    530,
+    17
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/bedrock/browser/browser_toolkit.py",
+   "rule": "py-except-swallow",
+   "start": [
+    529,
+    9
+   ],
+   "text": "except RuntimeError:"
+  },
+  {
+   "end": [
+    60,
+    81
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/bedrock/knowledge_base/retriever_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    60,
+    55
+   ],
+   "text": "os.getenv(\"BEDROCK_KB_ID\")"
+  },
+  {
+   "end": [
+    198,
+    18
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/bedrock/knowledge_base/retriever_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    196,
+    29
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    197,
+    79
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/bedrock/knowledge_base/retriever_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    197,
+    35
+   ],
+   "text": "os.getenv(\"AWS_DEFAULT_REGION\", \"us-east-1\")"
+  },
+  {
+   "end": [
+    36,
+    70
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/s3/reader_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    36,
+    29
+   ],
+   "text": "os.getenv(\"CREW_AWS_REGION\", \"us-east-1\")"
+  },
+  {
+   "end": [
+    37,
+    70
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/s3/reader_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    37,
+    35
+   ],
+   "text": "os.getenv(\"CREW_AWS_ACCESS_KEY_ID\")"
+  },
+  {
+   "end": [
+    38,
+    75
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/s3/reader_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    38,
+    39
+   ],
+   "text": "os.getenv(\"CREW_AWS_SEC_ACCESS_KEY\")"
+  },
+  {
+   "end": [
+    36,
+    70
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/s3/writer_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    36,
+    29
+   ],
+   "text": "os.getenv(\"CREW_AWS_REGION\", \"us-east-1\")"
+  },
+  {
+   "end": [
+    37,
+    70
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/s3/writer_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    37,
+    35
+   ],
+   "text": "os.getenv(\"CREW_AWS_ACCESS_KEY_ID\")"
+  },
+  {
+   "end": [
+    38,
+    75
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/aws/s3/writer_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    38,
+    39
+   ],
+   "text": "os.getenv(\"CREW_AWS_SEC_ACCESS_KEY\")"
+  },
+  {
+   "end": [
+    72,
+    17
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/generate_tool_specs.py",
+   "rule": "py-except-swallow",
+   "start": [
+    71,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    239,
+    17
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/rag/core.py",
+   "rule": "py-except-swallow",
+   "start": [
+    238,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    116,
+    21
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/rag/data_types.py",
+   "rule": "py-except-swallow",
+   "start": [
+    115,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    115,
+    38
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/rag/embedding_service.py",
+   "rule": "py-env-read",
+   "start": [
+    115,
+    20
+   ],
+   "text": "os.getenv(env_key)"
+  },
+  {
+   "end": [
+    115,
+    21
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/rag/loaders/directory_loader.py",
+   "rule": "py-except-swallow",
+   "start": [
+    114,
+    13
+   ],
+   "text": "except PermissionError:"
+  },
+  {
+   "end": [
+    62,
+    21
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/rag/loaders/github_loader.py",
+   "rule": "py-except-swallow",
+   "start": [
+    61,
+    13
+   ],
+   "text": "except GithubException:"
+  },
+  {
+   "end": [
+    74,
+    21
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/rag/loaders/github_loader.py",
+   "rule": "py-except-swallow",
+   "start": [
+    73,
+    13
+   ],
+   "text": "except GithubException:"
+  },
+  {
+   "end": [
+    87,
+    25
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/rag/loaders/youtube_video_loader.py",
+   "rule": "py-except-swallow",
+   "start": [
+    86,
+    17
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    132,
+    17
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/rag/loaders/youtube_video_loader.py",
+   "rule": "py-except-swallow",
+   "start": [
+    131,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    76,
+    36
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/security/safe_path.py",
+   "rule": "py-env-read",
+   "start": [
+    76,
+    12
+   ],
+   "text": "os.environ.get(name, \"\")"
+  },
+  {
+   "end": [
+    47,
+    61
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/ai_mind_tool/ai_mind_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    35
+   ],
+   "text": "os.getenv(\"MINDS_API_KEY\")"
+  },
+  {
+   "end": [
+    58,
+    49
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/apify_actors_tool/apify_actors_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    58,
+    16
+   ],
+   "text": "os.environ.get(\"APIFY_API_TOKEN\")"
+  },
+  {
+   "end": [
+    59,
+    10
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/azure_documentdb_vector_search_tool/vector_search.py",
+   "rule": "py-env-read",
+   "start": [
+    57,
+    33
+   ],
+   "text": "os.environ.get("
+  },
+  {
+   "end": [
+    177,
+    55
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/azure_documentdb_vector_search_tool/vector_search.py",
+   "rule": "py-env-read",
+   "start": [
+    177,
+    16
+   ],
+   "text": "os.environ.get(\"AZURE_OPENAI_ENDPOINT\")"
+  },
+  {
+   "end": [
+    193,
+    50
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/azure_documentdb_vector_search_tool/vector_search.py",
+   "rule": "py-env-read",
+   "start": [
+    193,
+    18
+   ],
+   "text": "os.environ.get(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    78,
+    17
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brave_search_tool/base.py",
+   "rule": "py-except-swallow",
+   "start": [
+    77,
+    9
+   ],
+   "text": "except (ValueError, TypeError):"
+  },
+  {
+   "end": [
+    126,
+    67
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brave_search_tool/base.py",
+   "rule": "py-env-read",
+   "start": [
+    126,
+    36
+   ],
+   "text": "os.environ.get(\"BRAVE_API_KEY\")"
+  },
+  {
+   "end": [
+    129,
+    68
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brave_search_tool/brave_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    129,
+    41
+   ],
+   "text": "os.environ[\"BRAVE_API_KEY\"]"
+  },
+  {
+   "end": [
+    20,
+    87
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_dataset.py",
+   "rule": "py-env-read",
+   "start": [
+    20,
+    21
+   ],
+   "text": "os.environ.get(\"BRIGHTDATA_API_URL\", \"https://api.brightdata.com\")"
+  },
+  {
+   "end": [
+    21,
+    84
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_dataset.py",
+   "rule": "py-env-read",
+   "start": [
+    21,
+    33
+   ],
+   "text": "os.environ.get(\"BRIGHTDATA_DEFAULT_TIMEOUT\", \"600\")"
+  },
+  {
+   "end": [
+    23,
+    75
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_dataset.py",
+   "rule": "py-env-read",
+   "start": [
+    23,
+    17
+   ],
+   "text": "os.environ.get(\"BRIGHTDATA_DEFAULT_POLLING_INTERVAL\", \"1\")"
+  },
+  {
+   "end": [
+    481,
+    51
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_dataset.py",
+   "rule": "py-env-read",
+   "start": [
+    481,
+    19
+   ],
+   "text": "os.getenv(\"BRIGHT_DATA_API_KEY\")"
+  },
+  {
+   "end": [
+    578,
+    51
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_dataset.py",
+   "rule": "py-env-read",
+   "start": [
+    578,
+    19
+   ],
+   "text": "os.getenv(\"BRIGHT_DATA_API_KEY\")"
+  },
+  {
+   "end": [
+    20,
+    14
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_serp.py",
+   "rule": "py-env-read",
+   "start": [
+    18,
+    21
+   ],
+   "text": "os.environ.get("
+  },
+  {
+   "end": [
+    125,
+    56
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_serp.py",
+   "rule": "py-env-read",
+   "start": [
+    125,
+    24
+   ],
+   "text": "os.getenv(\"BRIGHT_DATA_API_KEY\")"
+  },
+  {
+   "end": [
+    126,
+    50
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_serp.py",
+   "rule": "py-env-read",
+   "start": [
+    126,
+    21
+   ],
+   "text": "os.getenv(\"BRIGHT_DATA_ZONE\")"
+  },
+  {
+   "end": [
+    21,
+    14
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_unlocker.py",
+   "rule": "py-env-read",
+   "start": [
+    19,
+    21
+   ],
+   "text": "os.environ.get("
+  },
+  {
+   "end": [
+    99,
+    56
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_unlocker.py",
+   "rule": "py-env-read",
+   "start": [
+    99,
+    24
+   ],
+   "text": "os.getenv(\"BRIGHT_DATA_API_KEY\")"
+  },
+  {
+   "end": [
+    100,
+    50
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/brightdata_tool/brightdata_unlocker.py",
+   "rule": "py-env-read",
+   "start": [
+    100,
+    21
+   ],
+   "text": "os.getenv(\"BRIGHT_DATA_ZONE\")"
+  },
+  {
+   "end": [
+    16,
+    59
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/browserbase_load_tool/browserbase_load_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    16,
+    27
+   ],
+   "text": "os.getenv(\"BROWSERBASE_API_KEY\")"
+  },
+  {
+   "end": [
+    17,
+    65
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/browserbase_load_tool/browserbase_load_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    17,
+    30
+   ],
+   "text": "os.getenv(\"BROWSERBASE_PROJECT_ID\")"
+  },
+  {
+   "end": [
+    92,
+    29
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/contextualai_query_tool/contextual_query_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    91,
+    21
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    161,
+    65
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/crewai_platform_tools/integrations_client.py",
+   "rule": "py-env-read",
+   "start": [
+    161,
+    24
+   ],
+   "text": "os.environ.get(\"CREWAI_FACTORY\", \"false\")"
+  },
+  {
+   "end": [
+    199,
+    61
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/crewai_platform_tools/integrations_client.py",
+   "rule": "py-env-read",
+   "start": [
+    199,
+    20
+   ],
+   "text": "os.environ.get(\"CREWAI_FACTORY\", \"false\")"
+  },
+  {
+   "end": [
+    229,
+    80
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/crewai_platform_tools/integrations_client.py",
+   "rule": "py-env-read",
+   "start": [
+    229,
+    36
+   ],
+   "text": "os.getenv(\"CREWAI_DEPLOYMENT_INSTANCE_UUID\")"
+  },
+  {
+   "end": [
+    256,
+    61
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/crewai_platform_tools/integrations_client.py",
+   "rule": "py-env-read",
+   "start": [
+    256,
+    20
+   ],
+   "text": "os.environ.get(\"CREWAI_FACTORY\", \"false\")"
+  },
+  {
+   "end": [
+    306,
+    61
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/crewai_platform_tools/integrations_client.py",
+   "rule": "py-env-read",
+   "start": [
+    306,
+    20
+   ],
+   "text": "os.environ.get(\"CREWAI_FACTORY\", \"false\")"
+  },
+  {
+   "end": [
+    9,
+    6
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/crewai_platform_tools/misc.py",
+   "rule": "py-env-read",
+   "start": [
+    6,
+    13
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    8,
+    59
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/crewai_platform_tools/misc.py",
+   "rule": "py-env-read",
+   "start": [
+    8,
+    9
+   ],
+   "text": "os.getenv(\"CREWAI_PLATFORM_INTEGRATION_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    35,
+    61
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/daytona_sandbox_tool/daytona_base_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    35,
+    33
+   ],
+   "text": "os.getenv(\"DAYTONA_API_KEY\")"
+  },
+  {
+   "end": [
+    40,
+    61
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/daytona_sandbox_tool/daytona_base_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    40,
+    33
+   ],
+   "text": "os.getenv(\"DAYTONA_API_URL\")"
+  },
+  {
+   "end": [
+    45,
+    60
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/daytona_sandbox_tool/daytona_base_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    45,
+    33
+   ],
+   "text": "os.getenv(\"DAYTONA_TARGET\")"
+  },
+  {
+   "end": [
+    213,
+    50
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/db2_search_tool/db2_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    213,
+    23
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    318,
+    43
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/db2_search_tool/db2_search_tool.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    318,
+    13
+   ],
+   "text": "assert self.cursor is not None"
+  },
+  {
+   "end": [
+    36,
+    63
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/e2b_sandbox_tool/e2b_base_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    36,
+    39
+   ],
+   "text": "os.getenv(\"E2B_API_KEY\")"
+  },
+  {
+   "end": [
+    43,
+    56
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/e2b_sandbox_tool/e2b_base_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    43,
+    33
+   ],
+   "text": "os.getenv(\"E2B_DOMAIN\")"
+  },
+  {
+   "end": [
+    58,
+    57
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/exa_tools/exa_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    58,
+    33
+   ],
+   "text": "os.getenv(\"EXA_API_KEY\")"
+  },
+  {
+   "end": [
+    63,
+    58
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/exa_tools/exa_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    63,
+    33
+   ],
+   "text": "os.getenv(\"EXA_BASE_URL\")"
+  },
+  {
+   "end": [
+    93,
+    19
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/exa_tools/exa_search_tool.py",
+   "rule": "py-global-state",
+   "start": [
+    93,
+    9
+   ],
+   "text": "global Exa"
+  },
+  {
+   "end": [
+    122,
+    9
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/firecrawl_crawl_website_tool/firecrawl_crawl_website_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    121,
+    1
+   ],
+   "text": "except ImportError:"
+  },
+  {
+   "end": [
+    122,
+    9
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/firecrawl_scrape_website_tool/firecrawl_scrape_website_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    121,
+    1
+   ],
+   "text": "except ImportError:"
+  },
+  {
+   "end": [
+    126,
+    9
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/firecrawl_search_tool/firecrawl_search_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    125,
+    1
+   ],
+   "text": "except ImportError:"
+  },
+  {
+   "end": [
+    28,
+    87
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/generate_crewai_automation_tool/generate_crewai_automation_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    28,
+    33
+   ],
+   "text": "os.getenv(\"CREWAI_PLUS_URL\", \"https://app.crewai.com\")"
+  },
+  {
+   "end": [
+    32,
+    74
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/generate_crewai_automation_tool/generate_crewai_automation_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    32,
+    33
+   ],
+   "text": "os.getenv(\"CREWAI_PERSONAL_ACCESS_TOKEN\")"
+  },
+  {
+   "end": [
+    49,
+    68
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/hyperbrowser_load_tool/hyperbrowser_load_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    49,
+    35
+   ],
+   "text": "os.getenv(\"HYPERBROWSER_API_KEY\")"
+  },
+  {
+   "end": [
+    54,
+    83
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/linkup/linkup_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    54,
+    56
+   ],
+   "text": "os.getenv(\"LINKUP_API_KEY\")"
+  },
+  {
+   "end": [
+    65,
+    58
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/merge_agent_handler_tool/merge_agent_handler_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    65,
+    19
+   ],
+   "text": "os.environ.get(\"AGENT_HANDLER_API_KEY\")"
+  },
+  {
+   "end": [
+    52,
+    79
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/multion_tool/multion_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    52,
+    51
+   ],
+   "text": "os.getenv(\"MULTION_API_KEY\")"
+  },
+  {
+   "end": [
+    272,
+    57
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/nl2sql/nl2sql_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    272,
+    12
+   ],
+   "text": "os.environ.get(\"CREWAI_NL2SQL_ALLOW_DML\", \"\")"
+  },
+  {
+   "end": [
+    543,
+    44
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/oracle_vector_search_tool/vector_search.py",
+   "rule": "py-global-state",
+   "start": [
+    543,
+    9
+   ],
+   "text": "global ORACLEDB_AVAILABLE, oracledb"
+  },
+  {
+   "end": [
+    180,
+    54
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/oxylabs_base_tool/oxylabs_base_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    180,
+    20
+   ],
+   "text": "os.environ.get(\"OXYLABS_USERNAME\")"
+  },
+  {
+   "end": [
+    181,
+    54
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/oxylabs_base_tool/oxylabs_base_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    181,
+    20
+   ],
+   "text": "os.environ.get(\"OXYLABS_PASSWORD\")"
+  },
+  {
+   "end": [
+    78,
+    53
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/parallel_tools/parallel_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    78,
+    19
+   ],
+   "text": "os.environ.get(\"PARALLEL_API_KEY\")"
+  },
+  {
+   "end": [
+    43,
+    64
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/patronus_eval_tool/patronus_eval_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    43,
+    34
+   ],
+   "text": "os.environ[\"PATRONUS_API_KEY\"]"
+  },
+  {
+   "end": [
+    66,
+    64
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/patronus_eval_tool/patronus_eval_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    66,
+    34
+   ],
+   "text": "os.environ[\"PATRONUS_API_KEY\"]"
+  },
+  {
+   "end": [
+    138,
+    52
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/patronus_eval_tool/patronus_eval_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    138,
+    19
+   ],
+   "text": "os.getenv(\"PATRONUS_API_KEY\", \"\")"
+  },
+  {
+   "end": [
+    110,
+    9
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/patronus_eval_tool/patronus_local_evaluator_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    109,
+    1
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    60,
+    52
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/patronus_eval_tool/patronus_predefined_criteria_eval_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    60,
+    19
+   ],
+   "text": "os.getenv(\"PATRONUS_API_KEY\", \"\")"
+  },
+  {
+   "end": [
+    113,
+    64
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/qdrant_vector_search_tool/qdrant_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    113,
+    37
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    68,
+    77
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/scrape_element_from_website/scrape_element_from_website.py",
+   "rule": "py-env-read",
+   "start": [
+    68,
+    50
+   ],
+   "text": "os.getenv(cookies[\"value\"])"
+  },
+  {
+   "end": [
+    67,
+    77
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/scrape_website_tool/scrape_website_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    67,
+    50
+   ],
+   "text": "os.getenv(cookies[\"value\"])"
+  },
+  {
+   "end": [
+    113,
+    67
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/scrapegraph_scrape_tool/scrapegraph_scrape_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    113,
+    35
+   ],
+   "text": "os.getenv(\"SCRAPEGRAPH_API_KEY\")"
+  },
+  {
+   "end": [
+    66,
+    84
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/scrapfly_scrape_website_tool/scrapfly_scrape_website_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    66,
+    55
+   ],
+   "text": "os.getenv(\"SCRAPFLY_API_KEY\")"
+  },
+  {
+   "end": [
+    44,
+    47
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/serpapi_tool/serpapi_base_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    44,
+    19
+   ],
+   "text": "os.getenv(\"SERPAPI_API_KEY\")"
+  },
+  {
+   "end": [
+    251,
+    54
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/serper_dev_tool/serper_dev_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    251,
+    26
+   ],
+   "text": "os.environ[\"SERPER_API_KEY\"]"
+  },
+  {
+   "end": [
+    52,
+    50
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/serper_scrape_website_tool/serper_scrape_website_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    52,
+    23
+   ],
+   "text": "os.getenv(\"SERPER_API_KEY\")"
+  },
+  {
+   "end": [
+    47,
+    54
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/serply_api_tool/serply_job_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    26
+   ],
+   "text": "os.environ[\"SERPLY_API_KEY\"]"
+  },
+  {
+   "end": [
+    47,
+    54
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/serply_api_tool/serply_news_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    26
+   ],
+   "text": "os.environ[\"SERPLY_API_KEY\"]"
+  },
+  {
+   "end": [
+    51,
+    54
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/serply_api_tool/serply_scholar_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    51,
+    26
+   ],
+   "text": "os.environ[\"SERPLY_API_KEY\"]"
+  },
+  {
+   "end": [
+    67,
+    54
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/serply_api_tool/serply_web_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    67,
+    26
+   ],
+   "text": "os.environ[\"SERPLY_API_KEY\"]"
+  },
+  {
+   "end": [
+    31,
+    54
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/serply_api_tool/serply_webpage_to_markdown_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    31,
+    26
+   ],
+   "text": "os.environ[\"SERPLY_API_KEY\"]"
+  },
+  {
+   "end": [
+    276,
+    29
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/snowflake_search_tool/snowflake_search_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    275,
+    21
+   ],
+   "text": "except Exception:  # noqa: PERF203, S110"
+  },
+  {
+   "end": [
+    280,
+    17
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/snowflake_search_tool/snowflake_search_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    279,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    288,
+    9
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/snowflake_search_tool/snowflake_search_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    287,
+    1
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    34,
+    60
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/example.py",
+   "rule": "py-env-read",
+   "start": [
+    34,
+    23
+   ],
+   "text": "os.environ.get(\"BROWSERBASE_API_KEY\")"
+  },
+  {
+   "end": [
+    35,
+    66
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/example.py",
+   "rule": "py-env-read",
+   "start": [
+    35,
+    26
+   ],
+   "text": "os.environ.get(\"BROWSERBASE_PROJECT_ID\")"
+  },
+  {
+   "end": [
+    36,
+    49
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/example.py",
+   "rule": "py-env-read",
+   "start": [
+    36,
+    17
+   ],
+   "text": "os.environ.get(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    208,
+    67
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/stagehand_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    208,
+    35
+   ],
+   "text": "os.getenv(\"BROWSERBASE_API_KEY\")"
+  },
+  {
+   "end": [
+    209,
+    76
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/stagehand_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    209,
+    41
+   ],
+   "text": "os.getenv(\"BROWSERBASE_PROJECT_ID\")"
+  },
+  {
+   "end": [
+    257,
+    17
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/stagehand_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    256,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    263,
+    69
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/stagehand_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    263,
+    42
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    265,
+    72
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/stagehand_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    265,
+    42
+   ],
+   "text": "os.getenv(\"ANTHROPIC_API_KEY\")"
+  },
+  {
+   "end": [
+    267,
+    69
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/stagehand_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    267,
+    42
+   ],
+   "text": "os.getenv(\"GOOGLE_API_KEY\")"
+  },
+  {
+   "end": [
+    271,
+    43
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/stagehand_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    271,
+    16
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    272,
+    46
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/stagehand_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    272,
+    16
+   ],
+   "text": "os.getenv(\"ANTHROPIC_API_KEY\")"
+  },
+  {
+   "end": [
+    713,
+    21
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/stagehand_tool/stagehand_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    712,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    62,
+    60
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/tavily_extractor_tool/tavily_extractor_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    62,
+    33
+   ],
+   "text": "os.getenv(\"TAVILY_API_KEY\")"
+  },
+  {
+   "end": [
+    56,
+    50
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/tavily_get_research_tool/tavily_get_research_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    56,
+    23
+   ],
+   "text": "os.getenv(\"TAVILY_API_KEY\")"
+  },
+  {
+   "end": [
+    92,
+    50
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/tavily_research_tool/tavily_research_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    92,
+    23
+   ],
+   "text": "os.getenv(\"TAVILY_API_KEY\")"
+  },
+  {
+   "end": [
+    61,
+    60
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/tavily_search_tool/tavily_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    61,
+    33
+   ],
+   "text": "os.getenv(\"TAVILY_API_KEY\")"
+  },
+  {
+   "end": [
+    89,
+    62
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/weaviate_tool/vector_search.py",
+   "rule": "py-env-read",
+   "start": [
+    89,
+    30
+   ],
+   "text": "os.environ.get(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    23,
+    53
+   ],
+   "file": "lib/crewai-tools/src/crewai_tools/tools/zapier_action_tool/zapier_action_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    23,
+    26
+   ],
+   "text": "os.getenv(\"ZAPIER_API_KEY\")"
+  },
+  {
+   "end": [
+    26,
+    13
+   ],
+   "file": "lib/crewai-tools/tests/rag/test_text_loaders.py",
+   "rule": "py-except-swallow",
+   "start": [
+    25,
+    5
+   ],
+   "text": "except FileNotFoundError:"
+  },
+  {
+   "end": [
+    46,
+    13
+   ],
+   "file": "lib/crewai-tools/tests/tools/selenium_scraping_tool_test.py",
+   "rule": "py-except-swallow",
+   "start": [
+    45,
+    5
+   ],
+   "text": "except:"
+  },
+  {
+   "end": [
+    41,
+    13
+   ],
+   "file": "lib/crewai-tools/tests/tools/singlestore_search_tool_test.py",
+   "rule": "py-except-swallow",
+   "start": [
+    40,
+    5
+   ],
+   "text": "except Exception:"
+  },
+  {
+   "end": [
+    21,
+    68
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    21,
+    12
+   ],
+   "text": "os.environ.get(\"AZURE_DOCUMENTDB_E2E_CONNECTION_STRING\")"
+  },
+  {
+   "end": [
+    69,
+    79
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    69,
+    27
+   ],
+   "text": "os.environ[\"AZURE_DOCUMENTDB_E2E_CONNECTION_STRING\"]"
+  },
+  {
+   "end": [
+    151,
+    66
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    151,
+    9
+   ],
+   "text": "os.environ.get(\"AZURE_DOCUMENTDB_LIVE_CONNECTION_STRING\")"
+  },
+  {
+   "end": [
+    158,
+    67
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    158,
+    16
+   ],
+   "text": "os.environ[\"AZURE_DOCUMENTDB_LIVE_OPENAI_ENDPOINT\"]"
+  },
+  {
+   "end": [
+    159,
+    74
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    159,
+    18
+   ],
+   "text": "os.environ[\"AZURE_DOCUMENTDB_LIVE_EMBEDDING_DEPLOYMENT\"]"
+  },
+  {
+   "end": [
+    160,
+    73
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    160,
+    19
+   ],
+   "text": "os.environ[\"AZURE_DOCUMENTDB_LIVE_OPENAI_API_VERSION\"]"
+  },
+  {
+   "end": [
+    168,
+    79
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    168,
+    16
+   ],
+   "text": "os.environ.get(\"AZURE_DOCUMENTDB_LIVE_IDENTITY\", \"environment\")"
+  },
+  {
+   "end": [
+    171,
+    68
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    171,
+    23
+   ],
+   "text": "os.environ[\"AZURE_DOCUMENTDB_LIVE_TENANT_ID\"]"
+  },
+  {
+   "end": [
+    181,
+    84
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    181,
+    31
+   ],
+   "text": "os.environ[\"AZURE_DOCUMENTDB_LIVE_CONNECTION_STRING\"]"
+  },
+  {
+   "end": [
+    184,
+    14
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_azure_documentdb_vector_search_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    182,
+    27
+   ],
+   "text": "os.environ.get("
+  },
+  {
+   "end": [
+    149,
+    46
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    149,
+    16
+   ],
+   "text": "os.getenv(ORACLE_USERNAME_ENV)"
+  },
+  {
+   "end": [
+    150,
+    42
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    150,
+    16
+   ],
+   "text": "os.getenv(ORACLE_PASS_ENV)"
+  },
+  {
+   "end": [
+    151,
+    36
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    151,
+    11
+   ],
+   "text": "os.getenv(ORACLE_DSN_ENV)"
+  },
+  {
+   "end": [
+    173,
+    13
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    172,
+    5
+   ],
+   "text": "except Exception:"
+  },
+  {
+   "end": [
+    180,
+    17
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    179,
+    9
+   ],
+   "text": "except Exception:"
+  },
+  {
+   "end": [
+    187,
+    17
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool.py",
+   "rule": "py-except-swallow",
+   "start": [
+    186,
+    9
+   ],
+   "text": "except Exception:"
+  },
+  {
+   "end": [
+    15,
+    46
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    15,
+    16
+   ],
+   "text": "os.getenv(ORACLE_USERNAME_ENV)"
+  },
+  {
+   "end": [
+    16,
+    46
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    16,
+    16
+   ],
+   "text": "os.getenv(ORACLE_PASSWORD_ENV)"
+  },
+  {
+   "end": [
+    17,
+    36
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    17,
+    11
+   ],
+   "text": "os.getenv(ORACLE_DSN_ENV)"
+  },
+  {
+   "end": [
+    166,
+    13
+   ],
+   "file": "lib/crewai-tools/tests/tools/test_oracle_vector_search_tool_integration.py",
+   "rule": "py-except-swallow",
+   "start": [
+    165,
+    5
+   ],
+   "text": "except Exception:"
+  },
+  {
+   "end": [
+    123,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/__init__.py",
+   "rule": "py-except-swallow",
+   "start": [
+    122,
+    5
+   ],
+   "text": "except ImportError:"
+  },
+  {
+   "end": [
+    183,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/__init__.py",
+   "rule": "py-except-swallow",
+   "start": [
+    182,
+    5
+   ],
+   "text": "except PydanticUserError:"
+  },
+  {
+   "end": [
+    151,
+    44
+   ],
+   "file": "lib/crewai/src/crewai/a2a/auth/server_schemes.py",
+   "rule": "py-env-read",
+   "start": [
+    151,
+    16
+   ],
+   "text": "os.environ.get(\"AUTH_TOKEN\")"
+  },
+  {
+   "end": [
+    96,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/a2a/utils/task.py",
+   "rule": "py-except-swallow",
+   "start": [
+    95,
+    9
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    102,
+    41
+   ],
+   "file": "lib/crewai/src/crewai/a2a/utils/task.py",
+   "rule": "py-env-read",
+   "start": [
+    102,
+    14
+   ],
+   "text": "os.environ.get(\"REDIS_URL\")"
+  },
+  {
+   "end": [
+    188,
+    25
+   ],
+   "file": "lib/crewai/src/crewai/a2a/utils/task.py",
+   "rule": "py-except-swallow",
+   "start": [
+    187,
+    17
+   ],
+   "text": "except asyncio.CancelledError:"
+  },
+  {
+   "end": [
+    568,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/a2a/utils/task.py",
+   "rule": "py-except-swallow",
+   "start": [
+    567,
+    9
+   ],
+   "text": "except (ValueError, UnicodeDecodeError):"
+  },
+  {
+   "end": [
+    1553,
+    85
+   ],
+   "file": "lib/crewai/src/crewai/agent/core.py",
+   "rule": "py-env-read",
+   "start": [
+    1553,
+    18
+   ],
+   "text": "os.getenv(CREWAI_TRAINED_AGENTS_FILE_ENV, TRAINED_AGENTS_DATA_FILE)"
+  },
+  {
+   "end": [
+    2201,
+    25
+   ],
+   "file": "lib/crewai/src/crewai/agent/core.py",
+   "rule": "py-except-swallow",
+   "start": [
+    2199,
+    17
+   ],
+   "text": "except ConverterError:"
+  },
+  {
+   "end": [
+    650,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/agents/agent_executor.py",
+   "rule": "py-except-swallow",
+   "start": [
+    649,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    676,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/agents/agent_executor.py",
+   "rule": "py-except-swallow",
+   "start": [
+    675,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    346,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/agents/planner_observer.py",
+   "rule": "py-except-swallow",
+   "start": [
+    345,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    355,
+    25
+   ],
+   "file": "lib/crewai/src/crewai/agents/planner_observer.py",
+   "rule": "py-except-swallow",
+   "start": [
+    354,
+    17
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    361,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/agents/planner_observer.py",
+   "rule": "py-except-swallow",
+   "start": [
+    360,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    47,
+    65
+   ],
+   "file": "lib/crewai/src/crewai/context.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    17
+   ],
+   "text": "os.getenv(\"CREWAI_ENTERPRISE_ACTION_AUTH_TOKEN\")"
+  },
+  {
+   "end": [
+    2033,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/crew.py",
+   "rule": "py-except-swallow",
+   "start": [
+    2032,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110 - aborting an already-failed execution is meaningless"
+  },
+  {
+   "end": [
+    2153,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/crew.py",
+   "rule": "py-except-swallow",
+   "start": [
+    2152,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    337,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/crews/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    336,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    157,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/first_time_trace_handler.py",
+   "rule": "py-except-swallow",
+   "start": [
+    156,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    203,
+    64
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/trace_listener.py",
+   "rule": "py-env-read",
+   "start": [
+    203,
+    24
+   ],
+   "text": "os.getenv(\"CREWAI_USER_ID\", \"anonymous\")"
+  },
+  {
+   "end": [
+    204,
+    62
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/trace_listener.py",
+   "rule": "py-env-read",
+   "start": [
+    204,
+    32
+   ],
+   "text": "os.getenv(\"CREWAI_ORG_ID\", \"\")"
+  },
+  {
+   "end": [
+    137,
+    51
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-env-read",
+   "start": [
+    137,
+    12
+   ],
+   "text": "os.getenv(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    168,
+    56
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-env-read",
+   "start": [
+    168,
+    17
+   ],
+   "text": "os.getenv(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    232,
+    48
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-env-read",
+   "start": [
+    232,
+    12
+   ],
+   "text": "os.environ.get(\"CREWAI_TESTING\", \"\")"
+  },
+  {
+   "end": [
+    245,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    244,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    267,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    266,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    293,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    292,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    300,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    299,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    308,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    307,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    313,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    312,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    319,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    318,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    359,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    358,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    375,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    374,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    382,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    381,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    387,
+    14
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-env-read",
+   "start": [
+    385,
+    28
+   ],
+   "text": "os.environ.get("
+  },
+  {
+   "end": [
+    386,
+    63
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-env-read",
+   "start": [
+    386,
+    29
+   ],
+   "text": "os.environ.get(\"CONTAINER_ID\", \"\")"
+  },
+  {
+   "end": [
+    391,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    390,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    397,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/events/listeners/tracing/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    396,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    72,
+    31
+   ],
+   "file": "lib/crewai/src/crewai/events/utils/console_formatter.py",
+   "rule": "py-env-read",
+   "start": [
+    72,
+    12
+   ],
+   "text": "os.getenv(\"CI\", \"\")"
+  },
+  {
+   "end": [
+    75,
+    57
+   ],
+   "file": "lib/crewai/src/crewai/events/utils/console_formatter.py",
+   "rule": "py-env-read",
+   "start": [
+    75,
+    12
+   ],
+   "text": "os.getenv(\"CREWAI_DISABLE_VERSION_CHECK\", \"\")"
+  },
+  {
+   "end": [
+    114,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/events/utils/console_formatter.py",
+   "rule": "py-except-swallow",
+   "start": [
+    112,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    1236,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/events/utils/console_formatter.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1235,
+    13
+   ],
+   "text": "except (json.JSONDecodeError, TypeError, ValueError):"
+  },
+  {
+   "end": [
+    150,
+    52
+   ],
+   "file": "lib/crewai/src/crewai/execution.py",
+   "rule": "py-env-read",
+   "start": [
+    150,
+    13
+   ],
+   "text": "os.getenv(\"CREWAI_TRACING_ENABLED\", \"\")"
+  },
+  {
+   "end": [
+    13,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/experimental/evaluation/json_parser.py",
+   "rule": "py-except-swallow",
+   "start": [
+    12,
+    5
+   ],
+   "text": "except json.JSONDecodeError:"
+  },
+  {
+   "end": [
+    44,
+    20
+   ],
+   "file": "lib/crewai/src/crewai/flow/persistence/factory.py",
+   "rule": "py-global-state",
+   "start": [
+    44,
+    5
+   ],
+   "text": "global _factory"
+  },
+  {
+   "end": [
+    2669,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/flow/runtime/__init__.py",
+   "rule": "py-except-swallow",
+   "start": [
+    2668,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110 - aborting an already-failed execution is meaningless"
+  },
+  {
+   "end": [
+    333,
+    66
+   ],
+   "file": "lib/crewai/src/crewai/flow/runtime/_actions.py",
+   "rule": "py-env-read",
+   "start": [
+    333,
+    15
+   ],
+   "text": "os.environ.get(_ALLOW_SCRIPT_EXECUTION_ENV_VAR, \"\")"
+  },
+  {
+   "end": [
+    249,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/hooks/dispatch.py",
+   "rule": "py-except-swallow",
+   "start": [
+    248,
+    5
+   ],
+   "text": "except Exception:  # noqa: S110 - telemetry must never break dispatch"
+  },
+  {
+   "end": [
+    43,
+    20
+   ],
+   "file": "lib/crewai/src/crewai/knowledge/storage/factory.py",
+   "rule": "py-global-state",
+   "start": [
+    43,
+    5
+   ],
+   "text": "global _factory"
+  },
+  {
+   "end": [
+    1069,
+    9
+   ],
+   "file": "lib/crewai/src/crewai/lite_agent.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1068,
+    1
+   ],
+   "text": "except ImportError:"
+  },
+  {
+   "end": [
+    139,
+    46
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-global-state",
+   "start": [
+    139,
+    5
+   ],
+   "text": "global _litellm_loaded, LITELLM_AVAILABLE"
+  },
+  {
+   "end": [
+    140,
+    70
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-global-state",
+   "start": [
+    140,
+    5
+   ],
+   "text": "global litellm, Choices, LiteLLMDelta, Message, ModelResponseBase"
+  },
+  {
+   "end": [
+    141,
+    85
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-global-state",
+   "start": [
+    141,
+    5
+   ],
+   "text": "global ModelResponseStream, LiteLLMStreamingChoices, get_supported_openai_params"
+  },
+  {
+   "end": [
+    142,
+    84
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-global-state",
+   "start": [
+    142,
+    5
+   ],
+   "text": "global ChatCompletionDeltaCustomToolCall, ChatCompletionDeltaToolCall, Function"
+  },
+  {
+   "end": [
+    143,
+    51
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-global-state",
+   "start": [
+    143,
+    5
+   ],
+   "text": "global ModelResponse, supports_response_schema"
+  },
+  {
+   "end": [
+    188,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-except-swallow",
+   "start": [
+    187,
+    9
+   ],
+   "text": "except ImportError:"
+  },
+  {
+   "end": [
+    608,
+    44
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-env-read",
+   "start": [
+    608,
+    16
+   ],
+   "text": "os.getenv(\"OPENAI_BASE_URL\")"
+  },
+  {
+   "end": [
+    609,
+    44
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-env-read",
+   "start": [
+    609,
+    16
+   ],
+   "text": "os.getenv(\"OPENAI_API_BASE\")"
+  },
+  {
+   "end": [
+    1742,
+    25
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1741,
+    17
+   ],
+   "text": "except (AttributeError, KeyError, IndexError, TypeError):"
+  },
+  {
+   "end": [
+    2696,
+    84
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-env-read",
+   "start": [
+    2696,
+    37
+   ],
+   "text": "os.environ.get(\"LITELLM_SUCCESS_CALLBACKS\", \"\")"
+  },
+  {
+   "end": [
+    2703,
+    84
+   ],
+   "file": "lib/crewai/src/crewai/llm.py",
+   "rule": "py-env-read",
+   "start": [
+    2703,
+    37
+   ],
+   "text": "os.environ.get(\"LITELLM_FAILURE_CALLBACKS\", \"\")"
+  },
+  {
+   "end": [
+    300,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/llm_overlay.py",
+   "rule": "py-except-swallow",
+   "start": [
+    295,
+    5
+   ],
+   "text": "except TypeError:"
+  },
+  {
+   "end": [
+    321,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/anthropic/completion.py",
+   "rule": "py-except-swallow",
+   "start": [
+    320,
+    9
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    457,
+    79
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/anthropic/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    457,
+    49
+   ],
+   "text": "os.getenv(\"ANTHROPIC_API_KEY\")"
+  },
+  {
+   "end": [
+    131,
+    76
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    131,
+    50
+   ],
+   "text": "os.getenv(\"AZURE_API_KEY\")"
+  },
+  {
+   "end": [
+    134,
+    43
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    134,
+    16
+   ],
+   "text": "os.getenv(\"AZURE_ENDPOINT\")"
+  },
+  {
+   "end": [
+    135,
+    50
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    135,
+    16
+   ],
+   "text": "os.getenv(\"AZURE_OPENAI_ENDPOINT\")"
+  },
+  {
+   "end": [
+    136,
+    43
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    136,
+    16
+   ],
+   "text": "os.getenv(\"AZURE_API_BASE\")"
+  },
+  {
+   "end": [
+    139,
+    70
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    139,
+    40
+   ],
+   "text": "os.getenv(\"AZURE_API_VERSION\")"
+  },
+  {
+   "end": [
+    173,
+    51
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    173,
+    15
+   ],
+   "text": "os.getenv(\"AZURE_CREDENTIAL_SCOPES\")"
+  },
+  {
+   "end": [
+    192,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-except-swallow",
+   "start": [
+    191,
+    9
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    207,
+    63
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    207,
+    37
+   ],
+   "text": "os.getenv(\"AZURE_API_KEY\")"
+  },
+  {
+   "end": [
+    211,
+    40
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    211,
+    13
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    308,
+    75
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    308,
+    49
+   ],
+   "text": "os.getenv(\"AZURE_API_KEY\")"
+  },
+  {
+   "end": [
+    311,
+    44
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    311,
+    17
+   ],
+   "text": "os.getenv(\"AZURE_ENDPOINT\")"
+  },
+  {
+   "end": [
+    312,
+    54
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    312,
+    20
+   ],
+   "text": "os.getenv(\"AZURE_OPENAI_ENDPOINT\")"
+  },
+  {
+   "end": [
+    313,
+    47
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/azure/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    313,
+    20
+   ],
+   "text": "os.getenv(\"AZURE_API_BASE\")"
+  },
+  {
+   "end": [
+    302,
+    10
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/bedrock/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    300,
+    70
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    305,
+    10
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/bedrock/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    303,
+    78
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    308,
+    10
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/bedrock/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    306,
+    70
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    311,
+    47
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/bedrock/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    311,
+    16
+   ],
+   "text": "os.getenv(\"AWS_DEFAULT_REGION\")"
+  },
+  {
+   "end": [
+    312,
+    44
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/bedrock/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    312,
+    16
+   ],
+   "text": "os.getenv(\"AWS_REGION_NAME\")"
+  },
+  {
+   "end": [
+    53,
+    57
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/gemini/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    53,
+    30
+   ],
+   "text": "os.getenv(\"GOOGLE_API_KEY\")"
+  },
+  {
+   "end": [
+    53,
+    86
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/gemini/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    53,
+    59
+   ],
+   "text": "os.getenv(\"GEMINI_API_KEY\")"
+  },
+  {
+   "end": [
+    106,
+    83
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/gemini/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    106,
+    50
+   ],
+   "text": "os.getenv(\"GOOGLE_CLOUD_PROJECT\")"
+  },
+  {
+   "end": [
+    108,
+    71
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/gemini/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    108,
+    37
+   ],
+   "text": "os.getenv(\"GOOGLE_CLOUD_LOCATION\")"
+  },
+  {
+   "end": [
+    113,
+    64
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/gemini/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    113,
+    22
+   ],
+   "text": "os.getenv(\"GOOGLE_GENAI_USE_VERTEXAI\", \"\")"
+  },
+  {
+   "end": [
+    144,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/gemini/completion.py",
+   "rule": "py-except-swallow",
+   "start": [
+    143,
+    9
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    153,
+    65
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/gemini/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    153,
+    32
+   ],
+   "text": "os.getenv(\"GOOGLE_CLOUD_PROJECT\")"
+  },
+  {
+   "end": [
+    429,
+    48
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    429,
+    20
+   ],
+   "text": "os.getenv(\"OPENAI_BASE_URL\")"
+  },
+  {
+   "end": [
+    430,
+    48
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    430,
+    20
+   ],
+   "text": "os.getenv(\"OPENAI_API_BASE\")"
+  },
+  {
+   "end": [
+    444,
+    81
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    444,
+    54
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    462,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-except-swallow",
+   "start": [
+    461,
+    9
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    558,
+    48
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    558,
+    20
+   ],
+   "text": "os.getenv(\"OPENAI_BASE_URL\")"
+  },
+  {
+   "end": [
+    559,
+    48
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    559,
+    20
+   ],
+   "text": "os.getenv(\"OPENAI_API_BASE\")"
+  },
+  {
+   "end": [
+    568,
+    76
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    568,
+    49
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    578,
+    44
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    578,
+    16
+   ],
+   "text": "os.getenv(\"OPENAI_BASE_URL\")"
+  },
+  {
+   "end": [
+    579,
+    44
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    579,
+    16
+   ],
+   "text": "os.getenv(\"OPENAI_API_BASE\")"
+  },
+  {
+   "end": [
+    2139,
+    44
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    2139,
+    16
+   ],
+   "text": "os.getenv(\"OPENAI_BASE_URL\")"
+  },
+  {
+   "end": [
+    2140,
+    44
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    2140,
+    16
+   ],
+   "text": "os.getenv(\"OPENAI_API_BASE\")"
+  },
+  {
+   "end": [
+    209,
+    66
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai_compatible/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    209,
+    37
+   ],
+   "text": "os.getenv(config.api_key_env)"
+  },
+  {
+   "end": [
+    244,
+    55
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/openai_compatible/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    244,
+    25
+   ],
+   "text": "os.getenv(config.base_url_env)"
+  },
+  {
+   "end": [
+    93,
+    43
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/snowflake/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    93,
+    25
+   ],
+   "text": "os.getenv(env_var)"
+  },
+  {
+   "end": [
+    114,
+    84
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/snowflake/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    114,
+    50
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_ACCOUNT_URL\")"
+  },
+  {
+   "end": [
+    122,
+    46
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/snowflake/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    122,
+    16
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_ACCOUNT\")"
+  },
+  {
+   "end": [
+    123,
+    49
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/snowflake/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    123,
+    16
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_ACCOUNT_ID\")"
+  },
+  {
+   "end": [
+    124,
+    57
+   ],
+   "file": "lib/crewai/src/crewai/llms/providers/snowflake/completion.py",
+   "rule": "py-env-read",
+   "start": [
+    124,
+    16
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_ACCOUNT_IDENTIFIER\")"
+  },
+  {
+   "end": [
+    232,
+    25
+   ],
+   "file": "lib/crewai/src/crewai/memory/recall_flow.py",
+   "rule": "py-except-swallow",
+   "start": [
+    231,
+    17
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    44,
+    20
+   ],
+   "file": "lib/crewai/src/crewai/memory/storage/factory.py",
+   "rule": "py-global-state",
+   "start": [
+    44,
+    5
+   ],
+   "text": "global _factory"
+  },
+  {
+   "end": [
+    92,
+    63
+   ],
+   "file": "lib/crewai/src/crewai/memory/storage/lancedb_storage.py",
+   "rule": "py-env-read",
+   "start": [
+    92,
+    27
+   ],
+   "text": "os.environ.get(\"CREWAI_STORAGE_DIR\")"
+  },
+  {
+   "end": [
+    579,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/memory/storage/lancedb_storage.py",
+   "rule": "py-except-swallow",
+   "start": [
+    578,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    105,
+    63
+   ],
+   "file": "lib/crewai/src/crewai/memory/storage/qdrant_edge_storage.py",
+   "rule": "py-env-read",
+   "start": [
+    105,
+    27
+   ],
+   "text": "os.environ.get(\"CREWAI_STORAGE_DIR\")"
+  },
+  {
+   "end": [
+    680,
+    25
+   ],
+   "file": "lib/crewai/src/crewai/memory/storage/qdrant_edge_storage.py",
+   "rule": "py-except-swallow",
+   "start": [
+    679,
+    17
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    60,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/project/agent_project.py",
+   "rule": "py-except-swallow",
+   "start": [
+    59,
+    5
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    61,
+    48
+   ],
+   "file": "lib/crewai/src/crewai/rag/chromadb/config.py",
+   "rule": "py-env-read",
+   "start": [
+    61,
+    21
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    54,
+    62
+   ],
+   "file": "lib/crewai/src/crewai/rag/embeddings/providers/openai/embedding_callable.py",
+   "rule": "py-env-read",
+   "start": [
+    54,
+    35
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    251,
+    49
+   ],
+   "file": "lib/crewai/src/crewai/skills/registry.py",
+   "rule": "py-env-read",
+   "start": [
+    251,
+    21
+   ],
+   "text": "os.getenv(\"CREWAI_USER_PAT\")"
+  },
+  {
+   "end": [
+    254,
+    66
+   ],
+   "file": "lib/crewai/src/crewai/skills/registry.py",
+   "rule": "py-env-read",
+   "start": [
+    254,
+    29
+   ],
+   "text": "os.getenv(\"CREWAI_ORGANIZATION_UUID\")"
+  },
+  {
+   "end": [
+    45,
+    32
+   ],
+   "file": "lib/crewai/src/crewai/state/checkpoint_listener.py",
+   "rule": "py-global-state",
+   "start": [
+    45,
+    5
+   ],
+   "text": "global _handlers_registered"
+  },
+  {
+   "end": [
+    33,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/state/provider/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    32,
+    5
+   ],
+   "text": "except OSError:"
+  },
+  {
+   "end": [
+    58,
+    26
+   ],
+   "file": "lib/crewai/src/crewai/telemetry/tracing/ephemeral.py",
+   "rule": "py-env-read",
+   "start": [
+    58,
+    11
+   ],
+   "text": "os.getenv(name)"
+  },
+  {
+   "end": [
+    67,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/telemetry/tracing/ephemeral.py",
+   "rule": "py-except-swallow",
+   "start": [
+    65,
+    5
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    253,
+    25
+   ],
+   "file": "lib/crewai/src/crewai/telemetry/tracing/gen_ai_shapes.py",
+   "rule": "py-except-swallow",
+   "start": [
+    245,
+    17
+   ],
+   "text": "except Exception:  # noqa: S110 - intentional: see below"
+  },
+  {
+   "end": [
+    400,
+    31
+   ],
+   "file": "lib/crewai/src/crewai/telemetry/tracing/gen_ai_shapes.py",
+   "rule": "py-env-read",
+   "start": [
+    400,
+    11
+   ],
+   "text": "os.environ.get(name)"
+  },
+  {
+   "end": [
+    422,
+    27
+   ],
+   "file": "lib/crewai/src/crewai/telemetry/tracing/gen_ai_shapes.py",
+   "rule": "py-env-read",
+   "start": [
+    422,
+    11
+   ],
+   "text": "os.environ[name]"
+  },
+  {
+   "end": [
+    141,
+    45
+   ],
+   "file": "lib/crewai/src/crewai/telemetry/tracing/grants.py",
+   "rule": "py-env-read",
+   "start": [
+    141,
+    17
+   ],
+   "text": "os.getenv(\"CREWAI_USER_PAT\")"
+  },
+  {
+   "end": [
+    182,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/telemetry/tracing/grants.py",
+   "rule": "py-except-swallow",
+   "start": [
+    181,
+    5
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    53,
+    48
+   ],
+   "file": "lib/crewai/src/crewai/telemetry/tracing/last_run.py",
+   "rule": "py-env-read",
+   "start": [
+    53,
+    12
+   ],
+   "text": "os.environ.get(\"CREWAI_TESTING\", \"\")"
+  },
+  {
+   "end": [
+    953,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/tools/tool_usage.py",
+   "rule": "py-except-swallow",
+   "start": [
+    952,
+    9
+   ],
+   "text": "except (JSONDecodeError, TypeError):"
+  },
+  {
+   "end": [
+    967,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/tools/tool_usage.py",
+   "rule": "py-except-swallow",
+   "start": [
+    966,
+    9
+   ],
+   "text": "except (JSONDecodeError, ValueError, TypeError):"
+  },
+  {
+   "end": [
+    1108,
+    25
+   ],
+   "file": "lib/crewai/src/crewai/tools/tool_usage.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1107,
+    17
+   ],
+   "text": "except AttributeError:"
+  },
+  {
+   "end": [
+    1118,
+    25
+   ],
+   "file": "lib/crewai/src/crewai/tools/tool_usage.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1117,
+    17
+   ],
+   "text": "except AttributeError:"
+  },
+  {
+   "end": [
+    28,
+    61
+   ],
+   "file": "lib/crewai/src/crewai/types/callback.py",
+   "rule": "py-env-read",
+   "start": [
+    28,
+    11
+   ],
+   "text": "os.environ.get(\"CREWAI_DESERIALIZE_CALLBACKS\", \"\")"
+  },
+  {
+   "end": [
+    37,
+    35
+   ],
+   "file": "lib/crewai/src/crewai/utilities/env.py",
+   "rule": "py-env-read",
+   "start": [
+    37,
+    16
+   ],
+   "text": "os.environ.get(var)"
+  },
+  {
+   "end": [
+    501,
+    32
+   ],
+   "file": "lib/crewai/src/crewai/utilities/llm_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    501,
+    9
+   ],
+   "text": "os.environ.get(\"MODEL\")"
+  },
+  {
+   "end": [
+    502,
+    40
+   ],
+   "file": "lib/crewai/src/crewai/utilities/llm_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    502,
+    12
+   ],
+   "text": "os.environ.get(\"MODEL_NAME\")"
+  },
+  {
+   "end": [
+    503,
+    47
+   ],
+   "file": "lib/crewai/src/crewai/utilities/llm_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    503,
+    12
+   ],
+   "text": "os.environ.get(\"OPENAI_MODEL_NAME\")"
+  },
+  {
+   "end": [
+    527,
+    35
+   ],
+   "file": "lib/crewai/src/crewai/utilities/llm_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    527,
+    9
+   ],
+   "text": "os.environ.get(\"BASE_URL\")"
+  },
+  {
+   "end": [
+    528,
+    45
+   ],
+   "file": "lib/crewai/src/crewai/utilities/llm_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    528,
+    12
+   ],
+   "text": "os.environ.get(\"OPENAI_API_BASE\")"
+  },
+  {
+   "end": [
+    529,
+    45
+   ],
+   "file": "lib/crewai/src/crewai/utilities/llm_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    529,
+    12
+   ],
+   "text": "os.environ.get(\"OPENAI_BASE_URL\")"
+  },
+  {
+   "end": [
+    532,
+    42
+   ],
+   "file": "lib/crewai/src/crewai/utilities/llm_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    532,
+    16
+   ],
+   "text": "os.environ.get(\"API_BASE\")"
+  },
+  {
+   "end": [
+    532,
+    78
+   ],
+   "file": "lib/crewai/src/crewai/utilities/llm_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    532,
+    46
+   ],
+   "text": "os.environ.get(\"AZURE_API_BASE\")"
+  },
+  {
+   "end": [
+    575,
+    57
+   ],
+   "file": "lib/crewai/src/crewai/utilities/llm_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    575,
+    33
+   ],
+   "text": "os.environ.get(key_name)"
+  },
+  {
+   "end": [
+    207,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/utilities/reasoning_handler.py",
+   "rule": "py-except-swallow",
+   "start": [
+    206,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    310,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/utilities/reasoning_handler.py",
+   "rule": "py-except-swallow",
+   "start": [
+    309,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    340,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/utilities/reasoning_handler.py",
+   "rule": "py-except-swallow",
+   "start": [
+    339,
+    13
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    408,
+    21
+   ],
+   "file": "lib/crewai/src/crewai/utilities/reasoning_handler.py",
+   "rule": "py-except-swallow",
+   "start": [
+    407,
+    13
+   ],
+   "text": "except (json.JSONDecodeError, KeyError):"
+  },
+  {
+   "end": [
+    38,
+    13
+   ],
+   "file": "lib/crewai/src/crewai/utilities/reset_memories.py",
+   "rule": "py-except-swallow",
+   "start": [
+    36,
+    5
+   ],
+   "text": "except FileNotFoundError:"
+  },
+  {
+   "end": [
+    327,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/utilities/streaming.py",
+   "rule": "py-except-swallow",
+   "start": [
+    326,
+    9
+   ],
+   "text": "except asyncio.CancelledError:"
+  },
+  {
+   "end": [
+    563,
+    17
+   ],
+   "file": "lib/crewai/src/crewai/utilities/streaming.py",
+   "rule": "py-except-swallow",
+   "start": [
+    562,
+    9
+   ],
+   "text": "except asyncio.CancelledError:"
+  },
+  {
+   "end": [
+    16,
+    76
+   ],
+   "file": "lib/crewai/tests/a2a/test_a2a_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    16,
+    21
+   ],
+   "text": "os.getenv(\"A2A_TEST_ENDPOINT\", \"http://localhost:9999\")"
+  },
+  {
+   "end": [
+    46,
+    56
+   ],
+   "file": "lib/crewai/tests/agents/test_agent.py",
+   "rule": "py-env-read",
+   "start": [
+    46,
+    24
+   ],
+   "text": "os.environ.get(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    47,
+    58
+   ],
+   "file": "lib/crewai/tests/agents/test_agent.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    25
+   ],
+   "text": "os.environ.get(\"OPENAI_API_BASE\")"
+  },
+  {
+   "end": [
+    48,
+    62
+   ],
+   "file": "lib/crewai/tests/agents/test_agent.py",
+   "rule": "py-env-read",
+   "start": [
+    48,
+    27
+   ],
+   "text": "os.environ.get(\"OPENAI_MODEL_NAME\")"
+  },
+  {
+   "end": [
+    1978,
+    52
+   ],
+   "file": "lib/crewai/tests/agents/test_agent.py",
+   "rule": "py-env-read",
+   "start": [
+    1978,
+    21
+   ],
+   "text": "os.getenv(\"OPENROUTER_API_KEY\")"
+  },
+  {
+   "end": [
+    2030,
+    52
+   ],
+   "file": "lib/crewai/tests/agents/test_agent.py",
+   "rule": "py-env-read",
+   "start": [
+    2030,
+    21
+   ],
+   "text": "os.getenv(\"OPENROUTER_API_KEY\")"
+  },
+  {
+   "end": [
+    3112,
+    17
+   ],
+   "file": "lib/crewai/tests/agents/test_agent.py",
+   "rule": "py-except-swallow",
+   "start": [
+    3111,
+    9
+   ],
+   "text": "except RuntimeError:"
+  },
+  {
+   "end": [
+    15,
+    2
+   ],
+   "file": "lib/crewai/tests/agents/test_agent_a2a_kickoff.py",
+   "rule": "py-env-read",
+   "start": [
+    13,
+    21
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    800,
+    72
+   ],
+   "file": "lib/crewai/tests/agents/test_native_tool_calling.py",
+   "rule": "py-env-read",
+   "start": [
+    800,
+    28
+   ],
+   "text": "os.getenv(\"RUN_BEDROCK_LIVE_TESTS\", \"false\")"
+  },
+  {
+   "end": [
+    808,
+    56
+   ],
+   "file": "lib/crewai/tests/agents/test_native_tool_calling.py",
+   "rule": "py-env-read",
+   "start": [
+    808,
+    22
+   ],
+   "text": "os.getenv(\"AWS_ACCESS_KEY_ID\", \"\")"
+  },
+  {
+   "end": [
+    809,
+    60
+   ],
+   "file": "lib/crewai/tests/agents/test_native_tool_calling.py",
+   "rule": "py-env-read",
+   "start": [
+    809,
+    22
+   ],
+   "text": "os.getenv(\"AWS_SECRET_ACCESS_KEY\", \"\")"
+  },
+  {
+   "end": [
+    268,
+    57
+   ],
+   "file": "lib/crewai/tests/cli/test_crew_chat.py",
+   "rule": "py-env-read",
+   "start": [
+    268,
+    28
+   ],
+   "text": "os.environ.get(_ENV_SENTINEL)"
+  },
+  {
+   "end": [
+    53,
+    44
+   ],
+   "file": "lib/crewai/tests/cli/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    53,
+    16
+   ],
+   "text": "os.getenv('CREWAI_PLUS_URL')"
+  },
+  {
+   "end": [
+    71,
+    73
+   ],
+   "file": "lib/crewai/tests/cli/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    71,
+    45
+   ],
+   "text": "os.getenv('CREWAI_PLUS_URL')"
+  },
+  {
+   "end": [
+    103,
+    73
+   ],
+   "file": "lib/crewai/tests/cli/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    103,
+    45
+   ],
+   "text": "os.getenv('CREWAI_PLUS_URL')"
+  },
+  {
+   "end": [
+    152,
+    73
+   ],
+   "file": "lib/crewai/tests/cli/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    152,
+    45
+   ],
+   "text": "os.getenv('CREWAI_PLUS_URL')"
+  },
+  {
+   "end": [
+    463,
+    69
+   ],
+   "file": "lib/crewai/tests/cli/test_plus_api.py",
+   "rule": "py-env-read",
+   "start": [
+    463,
+    41
+   ],
+   "text": "os.getenv(\"CREWAI_PLUS_URL\")"
+  },
+  {
+   "end": [
+    181,
+    17
+   ],
+   "file": "lib/crewai/tests/events/test_event_context.py",
+   "rule": "py-except-swallow",
+   "start": [
+    180,
+    9
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    1224,
+    21
+   ],
+   "file": "lib/crewai/tests/events/test_event_ordering.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1223,
+    13
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    446,
+    48
+   ],
+   "file": "lib/crewai/tests/hooks/test_llm_hooks.py",
+   "rule": "py-env-read",
+   "start": [
+    446,
+    16
+   ],
+   "text": "os.environ.get(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    533,
+    48
+   ],
+   "file": "lib/crewai/tests/hooks/test_llm_hooks.py",
+   "rule": "py-env-read",
+   "start": [
+    533,
+    16
+   ],
+   "text": "os.environ.get(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    504,
+    48
+   ],
+   "file": "lib/crewai/tests/hooks/test_tool_hooks.py",
+   "rule": "py-env-read",
+   "start": [
+    504,
+    16
+   ],
+   "text": "os.environ.get(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    41,
+    90
+   ],
+   "file": "lib/crewai/tests/rag/embeddings/test_google_vertex_memory_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    41,
+    27
+   ],
+   "text": "os.getenv(\"GOOGLE_CLOUD_PROJECT\", \"gen-lang-client-0393486657\")"
+  },
+  {
+   "end": [
+    133,
+    51
+   ],
+   "file": "lib/crewai/tests/rag/embeddings/test_google_vertex_memory_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    133,
+    18
+   ],
+   "text": "os.getenv(\"GOOGLE_CLOUD_PROJECT\")"
+  },
+  {
+   "end": [
+    20,
+    50
+   ],
+   "file": "lib/crewai/tests/rag/embeddings/test_oracle_memory_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    20,
+    16
+   ],
+   "text": "os.getenv(ORACLE_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    21,
+    50
+   ],
+   "file": "lib/crewai/tests/rag/embeddings/test_oracle_memory_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    21,
+    16
+   ],
+   "text": "os.getenv(ORACLE_PASSWORD_ENV, \"\")"
+  },
+  {
+   "end": [
+    22,
+    40
+   ],
+   "file": "lib/crewai/tests/rag/embeddings/test_oracle_memory_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    22,
+    11
+   ],
+   "text": "os.getenv(ORACLE_DSN_ENV, \"\")"
+  },
+  {
+   "end": [
+    45,
+    66
+   ],
+   "file": "lib/crewai/tests/rag/embeddings/test_oracle_memory_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    45,
+    18
+   ],
+   "text": "os.getenv(ORACLE_MODEL_ENV, \"ALL_MINILM_L12_V2\")"
+  },
+  {
+   "end": [
+    17,
+    68
+   ],
+   "file": "lib/crewai/tests/telemetry/test_execution_span_assignment.py",
+   "rule": "py-env-read",
+   "start": [
+    17,
+    26
+   ],
+   "text": "os.environ.get(\"CREWAI_DISABLE_TELEMETRY\")"
+  },
+  {
+   "end": [
+    18,
+    56
+   ],
+   "file": "lib/crewai/tests/telemetry/test_execution_span_assignment.py",
+   "rule": "py-env-read",
+   "start": [
+    18,
+    21
+   ],
+   "text": "os.environ.get(\"OTEL_SDK_DISABLED\")"
+  },
+  {
+   "end": [
+    56,
+    68
+   ],
+   "file": "lib/crewai/tests/telemetry/test_flow_crew_span_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    56,
+    26
+   ],
+   "text": "os.environ.get(\"CREWAI_DISABLE_TELEMETRY\")"
+  },
+  {
+   "end": [
+    57,
+    56
+   ],
+   "file": "lib/crewai/tests/telemetry/test_flow_crew_span_integration.py",
+   "rule": "py-env-read",
+   "start": [
+    57,
+    21
+   ],
+   "text": "os.environ.get(\"OTEL_SDK_DISABLED\")"
+  },
+  {
+   "end": [
+    173,
+    17
+   ],
+   "file": "lib/crewai/tests/test_flow_from_definition.py",
+   "rule": "py-except-swallow",
+   "start": [
+    172,
+    9
+   ],
+   "text": "except RuntimeError:"
+  },
+  {
+   "end": [
+    587,
+    44
+   ],
+   "file": "lib/crewai/tests/test_llm.py",
+   "rule": "py-env-read",
+   "start": [
+    587,
+    12
+   ],
+   "text": "os.getenv(\"OPEN_ROUTER_API_KEY\")"
+  },
+  {
+   "end": [
+    593,
+    49
+   ],
+   "file": "lib/crewai/tests/test_llm.py",
+   "rule": "py-env-read",
+   "start": [
+    593,
+    17
+   ],
+   "text": "os.getenv(\"OPEN_ROUTER_API_KEY\")"
+  },
+  {
+   "end": [
+    13,
+    49
+   ],
+   "file": "lib/crewai/tests/test_multimodal_validation.py",
+   "rule": "py-env-read",
+   "start": [
+    13,
+    22
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    15,
+    54
+   ],
+   "file": "lib/crewai/tests/test_test_environment.py",
+   "rule": "py-env-read",
+   "start": [
+    15,
+    12
+   ],
+   "text": "os.environ.get(\"CREWAI_DISABLE_TELEMETRY\")"
+  },
+  {
+   "end": [
+    16,
+    47
+   ],
+   "file": "lib/crewai/tests/test_test_environment.py",
+   "rule": "py-env-read",
+   "start": [
+    16,
+    12
+   ],
+   "text": "os.environ.get(\"OTEL_SDK_DISABLED\")"
+  },
+  {
+   "end": [
+    149,
+    17
+   ],
+   "file": "lib/crewai/tests/tracing/test_tracing.py",
+   "rule": "py-except-swallow",
+   "start": [
+    148,
+    9
+   ],
+   "text": "except (LookupError, AttributeError):"
+  },
+  {
+   "end": [
+    276,
+    13
+   ],
+   "file": "lib/crewai/tests/utilities/events/test_rw_lock.py",
+   "rule": "py-except-swallow",
+   "start": [
+    275,
+    5
+   ],
+   "text": "except KeyboardInterrupt:"
+  },
+  {
+   "end": [
+    299,
+    13
+   ],
+   "file": "lib/crewai/tests/utilities/events/test_rw_lock.py",
+   "rule": "py-except-swallow",
+   "start": [
+    298,
+    5
+   ],
+   "text": "except KeyboardInterrupt:"
+  },
+  {
+   "end": [
+    33,
+    17
+   ],
+   "file": "lib/crewai/tests/utils.py",
+   "rule": "py-except-swallow",
+   "start": [
+    32,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    245,
+    43
+   ],
+   "file": "lib/devtools/src/crewai_devtools/agents_md_eval.py",
+   "rule": "py-env-read",
+   "start": [
+    245,
+    15
+   ],
+   "text": "os.environ[\"OPENAI_API_KEY\"]"
+  },
+  {
+   "end": [
+    137,
+    21
+   ],
+   "file": "lib/devtools/src/crewai_devtools/cli.py",
+   "rule": "py-except-swallow",
+   "start": [
+    136,
+    13
+   ],
+   "text": "except (subprocess.CalledProcessError, FileNotFoundError):"
+  },
+  {
+   "end": [
+    1006,
+    71
+   ],
+   "file": "lib/devtools/src/crewai_devtools/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1006,
+    44
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    1308,
+    67
+   ],
+   "file": "lib/devtools/src/crewai_devtools/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1308,
+    39
+   ],
+   "text": "os.getenv(\"ENTERPRISE_REPO\")"
+  },
+  {
+   "end": [
+    1310,
+    64
+   ],
+   "file": "lib/devtools/src/crewai_devtools/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1310,
+    24
+   ],
+   "text": "os.getenv(\"ENTERPRISE_VERSION_DIRS\", \"\")"
+  },
+  {
+   "end": [
+    1312,
+    89
+   ],
+   "file": "lib/devtools/src/crewai_devtools/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1312,
+    50
+   ],
+   "text": "os.getenv(\"ENTERPRISE_CREWAI_DEP_PATH\")"
+  },
+  {
+   "end": [
+    1315,
+    56
+   ],
+   "file": "lib/devtools/src/crewai_devtools/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1315,
+    14
+   ],
+   "text": "os.getenv(\"ENTERPRISE_EXTRA_PACKAGES\", \"\")"
+  },
+  {
+   "end": [
+    1320,
+    56
+   ],
+   "file": "lib/devtools/src/crewai_devtools/cli.py",
+   "rule": "py-env-read",
+   "start": [
+    1320,
+    14
+   ],
+   "text": "os.getenv(\"ENTERPRISE_WORKFLOW_PATHS\", \"\")"
+  },
+  {
+   "end": [
+    1755,
+    17
+   ],
+   "file": "lib/devtools/src/crewai_devtools/cli.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1754,
+    9
+   ],
+   "text": "except Exception:  # noqa: S110"
+  },
+  {
+   "end": [
+    109,
+    71
+   ],
+   "file": "scripts/age90_file_input_runner.py",
+   "rule": "py-env-read",
+   "start": [
+    109,
+    44
+   ],
+   "text": "os.getenv(\"OPENAI_API_KEY\")"
+  },
+  {
+   "end": [
+    128,
+    38
+   ],
+   "file": "scripts/docs/freeze_historical_versions.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    128,
+    5
+   ],
+   "text": "assert archive.stdout is not None"
+  },
+  {
+   "end": [
+    70,
+    50
+   ],
+   "file": "scripts/wharf_runner.py",
+   "rule": "py-env-read",
+   "start": [
+    70,
+    11
+   ],
+   "text": "os.environ.get(\"FIRECRAWL_API_KEY\", \"\")"
+  },
+  {
+   "end": [
+    141,
+    57
+   ],
+   "file": "scripts/wharf_runner.py",
+   "rule": "py-env-read",
+   "start": [
+    141,
+    17
+   ],
+   "text": "os.getenv(\"MODEL\", \"openai/gpt-4o-mini\")"
+  },
+  {
+   "end": [
+    159,
+    57
+   ],
+   "file": "scripts/wharf_runner.py",
+   "rule": "py-env-read",
+   "start": [
+    159,
+    17
+   ],
+   "text": "os.getenv(\"MODEL\", \"openai/gpt-4o-mini\")"
+  },
+  {
+   "end": [
+    178,
+    57
+   ],
+   "file": "scripts/wharf_runner.py",
+   "rule": "py-env-read",
+   "start": [
+    178,
+    17
+   ],
+   "text": "os.getenv(\"MODEL\", \"openai/gpt-4o-mini\")"
+  }
+ ],
+ "counts": {
+  "py-env-read": 325,
+  "py-except-swallow": 138,
+  "py-global-state": 17,
+  "py-runtime-assert": 4,
+  "py-subprocess-shell": 0
+ },
+ "repo_dirty": false,
+ "repo_sha": "71d68117e38f620dff02ec1dc358f37a1f74a740",
+ "rules": [
+  "py-env-read",
+  "py-except-swallow",
+  "py-global-state",
+  "py-runtime-assert",
+  "py-subprocess-shell"
+ ],
+ "tool": "ast-grep 0.51.2"
+}

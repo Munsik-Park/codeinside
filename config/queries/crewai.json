@@ -1,0 +1,7 @@
+{
+  "Q1": "cpg.method.fullNameExact(\"lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event\").callIn.method.fullName.dedup.l",
+  "Q2": "cpg.method.fullNameExact(\"lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._apply_stop_words\").callOut.name.dedup.l",
+  "Q3": "cpg.method.fullNameExact(\"lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event\").callIn.method.callIn.method.fullName.dedup.l",
+  "Q4": "{ def source = cpg.method.fullNameExact(\"lib/devtools/src/crewai_devtools/cli.py:<module>.run_command\").parameter; def sink = cpg.call.methodFullNameExact(\"subprocess.py:<module>.run\").argument; sink.reachableByFlows(source).l }",
+  "Q5": "{ def source = cpg.method.fullNameExact(\"lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event\").callIn.method.parameter; def sink = cpg.method.fullNameExact(\"lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event\").callIn.argument; sink.reachableByFlows(source).l }"
+}
