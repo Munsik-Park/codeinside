@@ -1,0 +1,174 @@
+diff --git a/config.example.yaml b/config.example.yaml
+index b74a0fa..7cbbfd6 100644
+--- a/config.example.yaml
++++ b/config.example.yaml
+@@ -85,130 +85,11 @@ cpg:
+   # `(?:^|.*/)` form matches a whole path component under both regimes and also
+   # lets root-level dirs (e.g. `vendor/`) match. See:
+   # https://github.com/Lekssays/codebadger/issues/23
++  # codeinside patch: exclude only the top-level tests/ folder, same as the step 3
++  # baseline (pysrc2cpg --exclude tests). Joern matches this against the path
++  # relative to the input directory (x2cpg SourceFiles.isIgnoredByRegex).
+   exclusion_patterns:
+-    # Hidden files and directories
+-    - "(?:^|.*/)\\..*"
+-
+-    # Tests and fuzzing
+-    - "(?:^|.*/)test.*"
+-    - "(?:^|.*/)fuzz.*"
+-    - "(?:^|.*/)Testing.*"
+-    - "(?:^|.*/)spec.*"
+-    - "(?:^|.*/)__tests__/.*"
+-    - "(?:^|.*/)e2e.*"
+-    - "(?:^|.*/)integration.*"
+-    - "(?:^|.*/)unit.*"
+-    - "(?:^|.*/)benchmark.*"
+-    - "(?:^|.*/)perf.*"
+-
+-    # Docs and examples
+-    - "(?:^|.*/)docs?/.*"
+-    - "(?:^|.*/)documentation.*"
+-    - "(?:^|.*/)example.*"
+-    - "(?:^|.*/)sample.*"
+-    - "(?:^|.*/)demo.*"
+-    - "(?:^|.*/)tutorial.*"
+-    - "(?:^|.*/)guide.*"
+-
+-    # Build and dev artifacts
+-    - "(?:^|.*/)build.*/.*"
+-    - "(?:^|.*/).*_build/.*"
+-    - "(?:^|.*/)target/.*"
+-    - "(?:^|.*/)out/.*"
+-    - "(?:^|.*/)dist/.*"
+-    - "(?:^|.*/)bin/.*"
+-    - "(?:^|.*/)obj/.*"
+-    - "(?:^|.*/)Debug/.*"
+-    - "(?:^|.*/)Release/.*"
+-    - "(?:^|.*/)cmake/.*"
+-    - "(?:^|.*/)m4/.*"
+-    - "(?:^|.*/)autom4te.*/.*"
+-    - "(?:^|.*/)autotools/.*"
+-
+-    # Version control and dependencies
+-    - "(?:^|.*/)\\.git/.*"
+-    - "(?:^|.*/)\\.svn/.*"
+-    - "(?:^|.*/)\\.hg/.*"
+-    - "(?:^|.*/)\\.deps/.*"
+-    - "(?:^|.*/)node_modules/.*"
+-    - "(?:^|.*/)vendor/.*"
+-    - "(?:^|.*/)third_party/.*"
+-    - "(?:^|.*/)extern/.*"
+-    - "(?:^|.*/)external/.*"
+-    - "(?:^|.*/)packages/.*"
+-
+-    # Performance and profiling
+-    - "(?:^|.*/)benchmark.*/.*"
+-    - "(?:^|.*/)perf.*/.*"
+-    - "(?:^|.*/)profile.*/.*"
+-    - "(?:^|.*/)bench/.*"
+-
+-    # Tools and scripts
+-    - "(?:^|.*/)tool.*/.*"
+-    - "(?:^|.*/)script.*/.*"
+-    - "(?:^|.*/)utils/.*"
+-    - "(?:^|.*/)util/.*"
+-    - "(?:^|.*/)helper.*/.*"
+-    - "(?:^|.*/)misc/.*"
+-
+-    # Language-specific binding/wrapper directories
+-    - "(?:^|.*/)python/.*"
+-    - "(?:^|.*/)java/.*"
+-    - "(?:^|.*/)ruby/.*"
+-    - "(?:^|.*/)perl/.*"
+-    - "(?:^|.*/)php/.*"
+-    - "(?:^|.*/)csharp/.*"
+-    - "(?:^|.*/)dotnet/.*"
+-    - "(?:^|.*/)go/.*"
+-
+-    # Generated and temporary files
+-    - "(?:^|.*/)generated/.*"
+-    - "(?:^|.*/)gen/.*"
+-    - "(?:^|.*/)temp/.*"
+-    - "(?:^|.*/)tmp/.*"
+-    - "(?:^|.*/)cache/.*"
+-    - "(?:^|.*/)\\.cache/.*"
+-    - "(?:^|.*/)log.*/.*"
+-    - "(?:^|.*/)logs/.*"
+-    - "(?:^|.*/)result.*/.*"
+-    - "(?:^|.*/)results/.*"
+-    - "(?:^|.*/)output/.*"
+-
+-    # Config and metadata files
+-    - ".*\\.md$"
+-    - ".*\\.txt$"
+-    - ".*\\.xml$"
+-    - ".*\\.json$"
+-    - ".*\\.yaml$"
+-    - ".*\\.yml$"
+-    - ".*\\.toml$"
+-    - ".*\\.ini$"
+-    - ".*\\.cfg$"
+-    - ".*\\.conf$"
+-    - ".*\\.properties$"
+-    - ".*\\.cmake$"
+-    - ".*Makefile.*"
+-    - ".*makefile.*"
+-    - ".*configure.*"
+-    - ".*\\.am$"
+-    - ".*\\.in$"
+-    - ".*\\.ac$"
+-    - ".*\\.log$"
+-    - ".*\\.cache$"
+-    - ".*\\.lock$"
+-    - ".*\\.tmp$"
+-    - ".*\\.bak$"
+-    - ".*\\.orig$"
+-    - ".*\\.swp$"
+-    - ".*~$"
+-
+-    # IDE and editor files
+-    - ".*/\\.vscode/.*"
+-    - ".*/\\.idea/.*"
+-    - ".*/\\.eclipse/.*"
+-    - ".*\\.DS_Store$"
+-    - ".*Thumbs\\.db$"
+-
++    - "tests(?:/.*)?"
+   languages_with_exclusions:
+     - c
+     - cpp
+diff --git a/src/services/joern_server_manager.py b/src/services/joern_server_manager.py
+index c64e96b..d45a6bd 100644
+--- a/src/services/joern_server_manager.py
++++ b/src/services/joern_server_manager.py
+@@ -426,6 +426,13 @@ class JoernServerManager:
+         single configured heap.
+         """
+         default_heap = self._default_heap_gb()
++        # codeinside patch: JOERN_WORKER_HEAP_GB fixes the per-server heap and skips
++        # the S/M/L/XL tiering (reservation = heap + 1G, same as the non-tiered path).
++        fixed_heap = os.getenv("JOERN_WORKER_HEAP_GB", "").strip()
++        if fixed_heap:
++            heap = max(1, int(fixed_heap))
++            logger.info(f"Sizing {codebase_hash}: fixed heap {heap}G from JOERN_WORKER_HEAP_GB")
++            return heap, (heap + 1) * 1024
+         if self._memory_budget_mb > 0:
+             size_gb = self._cpg_size_gb(codebase_hash)
+             if size_gb is not None:
+@@ -715,6 +722,16 @@ class JoernServerManager:
+                 ports={f"{self.worker_internal_port}/tcp": ("127.0.0.1", port)},
+             )
+ 
++        # codeinside patch: pin pool workers to a NUMA node when configured.
++        cpuset_cpus = os.getenv("JOERN_WORKER_CPUSET_CPUS", "").strip()
++        cpuset_mems = os.getenv("JOERN_WORKER_CPUSET_MEMS", "").strip()
++        if cpuset_cpus:
++            run_kwargs["cpuset_cpus"] = cpuset_cpus
++        if cpuset_mems:
++            run_kwargs["cpuset_mems"] = cpuset_mems
++        if cpuset_cpus or cpuset_mems:
++            logger.info(f"Worker {name}: cpuset_cpus={cpuset_cpus!r} cpuset_mems={cpuset_mems!r}")
++
+         try:
+             self.docker_client.containers.run(
+                 image=self.worker_image,

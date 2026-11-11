@@ -1,0 +1,12 @@
+status=ready generate_to_ready_seconds=95
+STATS files=2353 methods=49754 calls=469749 overlays=base,controlflow,typerel,callgraph,dataflowOss,pysrc2cpg-postprocessing version=4.0.680
+RESULT Q1 run=1 size=131 joern_ms=22.195281 mcp_seconds=0.265
+RESULT Q2 run=1 size=20 joern_ms=0.186261 mcp_seconds=0.192
+RESULT Q3 run=1 size=2 joern_ms=2.14774 mcp_seconds=0.152
+RESULT Q4 run=1 size=4 joern_ms=1275.612924 mcp_seconds=1.426
+RESULT Q5 run=1 size=331 joern_ms=1304.500602 mcp_seconds=1.48
+RESULT Q1 run=2 size=131 joern_ms=0.414942 mcp_seconds=0.136
+RESULT Q2 run=2 size=20 joern_ms=0.176756 mcp_seconds=0.128
+RESULT Q3 run=2 size=2 joern_ms=1.285578 mcp_seconds=0.166
+RESULT Q4 run=2 size=4 joern_ms=717.682427 mcp_seconds=0.894
+RESULT Q5 run=2 size=331 joern_ms=820.897345 mcp_seconds=0.989

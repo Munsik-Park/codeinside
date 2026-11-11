@@ -1,0 +1,40 @@
+#20 [codebadger-mcp] exporting to image
+#20 DONE 34.8s
+#21 [codebadger-mcp] resolving provenance for metadata file
+#21 DONE 0.0s
+#15 [codebadger-joern-server 3/7] RUN set -eux;     case "$(uname -m)" in       x86_64)        joern_platform=linux-x86_64 ;;       aarch64|arm64) joern_platform=linux-arm64 ;;       *) echo "unsupported architecture: $(uname -m)" >&2; exit 1 ;;     esac;     joern_zip="joern-cli-${joern_platform}.zip";     base_url="https://github.com/joernio/joern/releases/download/v4.0.594";     mkdir -p /opt/joern;     cd /tmp;     wget -q "${base_url}/${joern_zip}";     wget -q "${base_url}/${joern_zip}.sha512";     echo "$(cut -d' ' -f1 "${joern_zip}.sha512")  ${joern_zip}" | sha512sum -c -;     unzip -q -d /opt/joern "${joern_zip}";     test -x /opt/joern/joern-cli/joern;     rm -f "${joern_zip}" "${joern_zip}.sha512"
+#15 DONE 141.5s
+#22 [codebadger-joern-server 4/7] RUN curl -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable
+#22 DONE 17.9s
+#23 [codebadger-joern-server 5/7] RUN mkdir -p /playground
+#23 DONE 0.4s
+#24 [codebadger-joern-server 6/7] RUN joern --help && rustc --version && cargo --version
+#24 1.097   --script <value>         path to script file: will execute and exit
+#24 DONE 1.2s
+#25 [codebadger-joern-server 7/7] RUN echo '#!/bin/bash\nset -e\ntail -f /dev/null\n' > /entrypoint.sh && chmod +x /entrypoint.sh
+#25 DONE 0.3s
+#26 [codebadger-joern-server] exporting to image
+#26 DONE 204.7s
+#27 [codebadger-joern-server] resolving provenance for metadata file
+#27 DONE 0.0s
+ Container codebadger-joern-server Creating 
+ Container codebadger-postgres Creating 
+ Container codebadger-redis Creating 
+ Container codebadger-redis Created 
+ Container codebadger-joern-server Created 
+ Container codebadger-postgres Created 
+ Container codebadger-mcp Creating 
+ Container codebadger-mcp Created 
+ Container codebadger-joern-server Starting 
+ Container codebadger-postgres Starting 
+ Container codebadger-redis Starting 
+ Container codebadger-postgres Started 
+ Container codebadger-redis Started 
+ Container codebadger-joern-server Started 
+ Container codebadger-postgres Waiting 
+ Container codebadger-redis Waiting 
+ Container codebadger-redis Healthy 
+ Container codebadger-postgres Healthy 
+ Container codebadger-mcp Starting 
+ Container codebadger-mcp Started 
+{"status":"up","mcp":"codebadger","version":"0.6.2-beta","uptime":{"seconds":4.8,"human":"4s"},"dependencies":{"joern":"up","postgres":"up","redis":"up","docker":"up","cpg_queue":"up"},"capacity":{"accept_query":true,"accept_generation":true},"checks":{"joern":{"status":"up","container":{"container_name":"codebadger-joern-server","running":true,"status":"running"},"servers":{"worker_mode":"pool","admission":"memory","active":0,"sleeping":0,"count_cap":15,"lru_evictions":0,"port_pool":{"allocated":0,"available":1000}},"memory":{"mode":"memory","ledger":"redis","budget_mb":454656,"reserved_mb":0,"free_mb":454656,"utilization_pct":0.0,"rss_threshold_mb":441446,"reserved_servers":0,"container_rss_mb":1.0,"rss_scope":"build_container"}},"postgres":{"status":"up","target":"codebadger-postgres:5432/codebadger","latency_ms":3.01},"redis":{"status":"up","target":"redis://codebadger-redis:6379/0","backend":"redis","latency_ms":2.14},"docker":{"status":"up","container_name":"codebadger-joern-server","container_status":"running"},"cpg_queue":{"status":"up","depth":0,"in_flight":0,"maxsize":64,"full":false,"workers":1,"backend":"durable"}},"codebases":{"total":0,"by_status":{}},"resources":{"process_memory_mb":123.3,"system_memory_available_gb":456.09,"disk":{"total_gb":64.0,"used_gb":37.14,"free_gb":26.86,"percent_used":58.0},"cpg_cache_mb":0.0},"issues":["INSECURE EXPOSURE: MCP is bound to all interfaces (MCP_HOST=<IP>) with source_type='local' enabled (CHAT_DEPLOY=false) and no ALLOWED_SOURCE_ROOTS — any client that reaches this port can read arbitrary host paths. Bind to <IP>, set CHAT_DEPLOY=true, set ALLOWED_SOURCE_ROOTS, and/or front the MCP with authenticated TLS."]}

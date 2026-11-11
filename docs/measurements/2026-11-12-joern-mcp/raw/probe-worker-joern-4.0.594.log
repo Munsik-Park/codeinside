@@ -1,0 +1,36 @@
+== codebadger-joern-a5b31c170fa23d65
+image=codebadger-joern-server:latest cpuset_cpus=30-39,70-79 cpuset_mems=3 memory=5368709120 networks=codebadger 
+published host bind addresses:       1  
+published port count: 0
+cgroup cpuset.cpus.effective=30-39,70-79
+cgroup cpuset.mems.effective=3
+cgroup memory.max=5368709120
+cgroup memory.peak=4534525952
+JOERN_VERSION=4.0.594
+Cpus_allowed_list:	30-39,70-79
+Mems_allowed_list:	3
+jvm pid=10 java_command: io.joern.joerncli.console.ReplBridge --server --server-host 0.0.0.0 --server-port 8080
+-XX:InitialHeapSize=2147483648
+-XX:MaxHeapSize=4294967296
+-XX:SoftMaxHeapSize=4294967296
+jvm_args: -Xmx4G -Xms2G -XX:+UseG1GC -XX:+UseStringDeduplication -Dfile.encoding=UTF-8 -XX:+UseG1GC -XX:CompressedClassSpaceSize=128m -Dlog4j.configurationFile=
+Cpus_allowed_list:	30-39,70-79
+Mems_allowed_list:	3
+== codebadger-joern-server
+image=codebadger-joern-server:latest cpuset_cpus=30-39,70-79 cpuset_mems=3 memory=17179869184 networks=codebadger 
+published host bind addresses:       1      500 127.0.0.1 
+published port count: 500
+cgroup cpuset.cpus.effective=30-39,70-79
+cgroup cpuset.mems.effective=3
+cgroup memory.max=17179869184
+cgroup memory.peak=3404304384
+JOERN_VERSION=4.0.594
+Cpus_allowed_list:	30-39,70-79
+Mems_allowed_list:	3
+== host listening sockets for codebadger ports
+    503 127.0.0.1
+== worker containers: listening sockets inside (joern --server)
+codebadger-joern-a5b31c170fa23d65 listen(hex) 00000000000000000000000000000000:1F90
+codebadger-joern-a5b31c170fa23d65 listen(hex) 0B00007F:AC9F
+== containers on network codebadger
+codebadger-redis codebadger-mcp codebadger-joern-a5b31c170fa23d65 codebadger-joern-server codebadger-postgres 
