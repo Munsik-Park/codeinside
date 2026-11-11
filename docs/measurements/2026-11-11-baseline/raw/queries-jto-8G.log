@@ -1,0 +1,51 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx8G
+Picked up JAVA_TOOL_OPTIONS: -Xmx8G
+executing /var/lib/joern/measure/queries.sc
+Creating working copy of CPG to be safe
+Loading base CPG from: /var/lib/joern/workspace/full.bin/cpg.bin.tmp
+TIME open 1144.2 ms
+OVERLAYS List(base, controlflow, typerel, callgraph, dataflowOss, pysrc2cpg-postprocessing)
+TIME Q1 callers(record_evidence_entry) run1 73.1 ms
+RESULT Q1 131
+TIME Q2 callees(maybe_raise_credit_exhausted) run1 5.6 ms
+RESULT Q2 20
+TIME Q3 callers-depth2(record_evidence_entry) run1 3.1 ms
+RESULT Q3 2
+TIME Q4 flow git.param->check_output.arg run1 1240.4 ms
+RESULT Q4 4
+TIME Q5 flow callers.param->record_evidence_entry.arg run1 1066.1 ms
+RESULT Q5 331
+TIME Q1 callers(record_evidence_entry) run2 0.7 ms
+RESULT Q1 131
+TIME Q2 callees(maybe_raise_credit_exhausted) run2 0.2 ms
+RESULT Q2 20
+TIME Q3 callers-depth2(record_evidence_entry) run2 1.1 ms
+RESULT Q3 2
+TIME Q4 flow git.param->check_output.arg run2 814.9 ms
+RESULT Q4 4
+TIME Q5 flow callers.param->record_evidence_entry.arg run2 1144.3 ms
+RESULT Q5 331
+closing/saving project `full.bin`
+	Command being timed: "timeout 1800 /opt/joern/current/joern-cli/joern --script /var/lib/joern/measure/queries.sc"
+	User time (seconds): 92.77
+	System time (seconds): 6.64
+	Percent of CPU this job got: 604%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.45
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2414892
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 780966
+	Voluntary context switches: 417573
+	Involuntary context switches: 3671
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 291560
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

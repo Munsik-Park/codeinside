@@ -1,0 +1,35 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+executing /var/lib/joern/measure/rebuild.sc
+Creating project `mod.bin` for CPG at `/var/lib/joern/cpg/mod.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /var/lib/joern/workspace/mod.bin/cpg.bin.tmp
+Adding default overlays to base CPG
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+TIME importCpg mod 47041.7 ms
+RESULT probe_fn List(core/domain/types/evidence.py:<module>.codeinside_incremental_probe)
+RESULT probe_callers 1
+	Command being timed: "/opt/joern/current/joern-cli/joern --script /var/lib/joern/measure/rebuild.sc"
+	User time (seconds): 651.67
+	System time (seconds): 8.90
+	Percent of CPU this job got: 1103%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:59.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3771576
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1106949
+	Voluntary context switches: 177406
+	Involuntary context switches: 59846
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 268680
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

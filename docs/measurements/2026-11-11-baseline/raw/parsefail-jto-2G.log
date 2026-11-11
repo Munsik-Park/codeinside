@@ -1,0 +1,15 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+executing /var/lib/joern/measure/parsefail.sc
+Creating working copy of CPG to be safe
+Loading base CPG from: /var/lib/joern/workspace/full.bin/cpg.bin.tmp
+RESULT core/agent_harness/turns/turn_snapshot.py file_nodes=1 methods=38
+RESULT core/domain/memory/recall.py file_nodes=1 methods=12
+RESULT core/messages/runtime_message_types.py file_nodes=1 methods=13
+RESULT core/tool_framework/utils/tool_availability.py file_nodes=1 methods=11
+RESULT infrastructure/analytics/provider.py file_nodes=1 methods=116
+RESULT infrastructure/analytics/usage_context.py file_nodes=1 methods=20
+RESULT integrations/_relational.py file_nodes=1 methods=19
+RESULT surfaces/interactive_shell/session/connection_checks.py file_nodes=1 methods=4
+RESULT tools/interactive_shell/shell/output_capture.py file_nodes=1 methods=11
+closing/saving project `full.bin`
