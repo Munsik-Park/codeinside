@@ -1,0 +1,338 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+executing /var/lib/joern/measure/step4-callers.sc
+Creating working copy of CPG to be safe
+Loading base CPG from: /var/lib/joern/workspace/full.bin/cpg.bin.tmp
+TIME Q1 callers 75.2 ms
+RESULT Q1 131
+CALLER Q1	integrations/alertmanager/tools/__init__.py:<module>._map_alertmanager_alerts
+CALLER Q1	integrations/alertmanager/tools/__init__.py:<module>._map_alertmanager_silences
+CALLER Q1	integrations/argocd/tools/_evidence.py:<module>.map_argocd_application_diff
+CALLER Q1	integrations/argocd/tools/_evidence.py:<module>.map_argocd_application_status
+CALLER Q1	integrations/aws/tools/aws_operation_tool/__init__.py:<module>._map_aws_operation
+CALLER Q1	integrations/betterstack/tools/betterstack_logs_tool/__init__.py:<module>._map_query_betterstack_logs
+CALLER Q1	integrations/bitbucket/tools/bitbucket_commits_tool/_evidence.py:<module>.map_list_bitbucket_commits
+CALLER Q1	integrations/bitbucket/tools/bitbucket_file_contents_tool/_evidence.py:<module>.map_get_bitbucket_file_contents
+CALLER Q1	integrations/bitbucket/tools/bitbucket_search_code_tool/_evidence.py:<module>.map_search_bitbucket_code
+CALLER Q1	integrations/clickhouse/tools/clickhouse_query_activity_tool/__init__.py:<module>._map_get_clickhouse_query_activity
+CALLER Q1	integrations/clickhouse/tools/clickhouse_system_health_tool/__init__.py:<module>._map_get_clickhouse_system_health
+CALLER Q1	integrations/cloudtrail/tools/cloudtrail_events_tool/__init__.py:<module>._map_lookup_cloudtrail_events
+CALLER Q1	integrations/coralogix/tools/__init__.py:<module>._map_query_coralogix_logs
+CALLER Q1	integrations/ec2/tools/ec2_instances_by_tag_tool/_evidence.py:<module>.map_ec2_instances_by_tag
+CALLER Q1	integrations/elasticsearch/tools/__init__.py:<module>._map_elasticsearch_logs
+CALLER Q1	integrations/elb/tools/elb_target_health_tool/_evidence.py:<module>.map_get_elb_target_health
+CALLER Q1	integrations/github/tools/actions.py:<module>._map_get_github_actions_step_log
+CALLER Q1	integrations/github/tools/actions.py:<module>._map_list_github_actions_active_runs
+CALLER Q1	integrations/github/tools/actions.py:<module>._map_list_github_actions_run_jobs
+CALLER Q1	integrations/github/tools/actions.py:<module>._map_list_github_actions_workflow_runs
+CALLER Q1	integrations/github/tools/ci_analytics/tool.py:<module>._map_evidence
+CALLER Q1	integrations/github/tools/ci_health_scan/tool.py:<module>._map_evidence
+CALLER Q1	integrations/github/tools/commits.py:<module>._map_list_github_commits
+CALLER Q1	integrations/github/tools/community_followup_tool/mapper.py:<module>._map_summarize_community_followups
+CALLER Q1	integrations/github/tools/file_contents.py:<module>._map_get_github_file_contents
+CALLER Q1	integrations/github/tools/git_deploy_timeline_tool/__init__.py:<module>._map_get_git_deploy_timeline
+CALLER Q1	integrations/github/tools/issues.py:<module>._map_search_github_issues
+CALLER Q1	integrations/github/tools/repository.py:<module>._map_get_github_repository
+CALLER Q1	integrations/github/tools/repository_tree.py:<module>._map_get_github_repository_tree
+CALLER Q1	integrations/github/tools/search_code.py:<module>._map_search_github_code
+CALLER Q1	integrations/github/tools/stargazers.py:<module>._map_get_github_star_history
+CALLER Q1	integrations/github/tools/work_status.py:<module>._map_list_github_security_alerts
+CALLER Q1	integrations/github/tools/work_status.py:<module>._map_list_github_work_items
+CALLER Q1	integrations/github/tools/work_status.py:<module>._map_summarize_github_pr_status
+CALLER Q1	integrations/github/tools/work_status_report_tool/__init__.py:<module>._map_generate_work_status_report
+CALLER Q1	integrations/gitlab/tools/gitlab_commits_tool/__init__.py:<module>._map_list_gitlab_commits
+CALLER Q1	integrations/gitlab/tools/gitlab_file_tool/__init__.py:<module>._map_get_gitlab_file_contents
+CALLER Q1	integrations/gitlab/tools/gitlab_mrs_tool/__init__.py:<module>._map_list_gitlab_mrs
+CALLER Q1	integrations/gitlab/tools/gitlab_pipelines_tool/__init__.py:<module>._map_list_gitlab_pipelines
+CALLER Q1	integrations/grafana/tools/grafana_alert_rules_tool/__init__.py:<module>._map_grafana_alert_rules
+CALLER Q1	integrations/grafana/tools/grafana_metrics_tool/__init__.py:<module>._map_grafana_metrics
+CALLER Q1	integrations/grafana/tools/grafana_service_names_tool/__init__.py:<module>._map_grafana_service_names
+CALLER Q1	integrations/grafana/tools/grafana_traces_tool/__init__.py:<module>._map_grafana_traces
+CALLER Q1	integrations/groundcover/tools/_evidence.py:<module>._map_signal_query
+CALLER Q1	integrations/groundcover/tools/_evidence.py:<module>.map_get_groundcover_query_reference
+CALLER Q1	integrations/honeycomb/tools/__init__.py:<module>._map_query_honeycomb_traces
+CALLER Q1	integrations/incident_io/tools/__init__.py:<module>._map_incident_io_incidents
+CALLER Q1	integrations/jenkins/tools/_evidence.py:<module>.map_get_jenkins_build_log
+CALLER Q1	integrations/jenkins/tools/_evidence.py:<module>.map_get_jenkins_pipeline_stages
+CALLER Q1	integrations/jenkins/tools/_evidence.py:<module>.map_list_jenkins_builds
+CALLER Q1	integrations/jenkins/tools/_evidence.py:<module>.map_list_jenkins_jobs
+CALLER Q1	integrations/jenkins/tools/_evidence.py:<module>.map_list_jenkins_running_builds
+CALLER Q1	integrations/jira/tools/__init__.py:<module>._map_jira_issue_detail
+CALLER Q1	integrations/jira/tools/__init__.py:<module>._map_jira_search_issues
+CALLER Q1	integrations/kafka/tools/kafka_consumer_group_tool/__init__.py:<module>._map_get_kafka_consumer_group_lag
+CALLER Q1	integrations/kafka/tools/kafka_topic_health_tool/__init__.py:<module>._map_get_kafka_topic_health
+CALLER Q1	integrations/mariadb/tools/mariadb_innodb_status_tool/__init__.py:<module>._map_get_mariadb_innodb_status
+CALLER Q1	integrations/mariadb/tools/mariadb_process_list_tool/__init__.py:<module>._map_get_mariadb_process_list
+CALLER Q1	integrations/mariadb/tools/mariadb_replication_tool/__init__.py:<module>._map_get_mariadb_replication_status
+CALLER Q1	integrations/mariadb/tools/mariadb_slow_queries_tool/__init__.py:<module>._map_get_mariadb_slow_queries
+CALLER Q1	integrations/mariadb/tools/mariadb_status_tool/__init__.py:<module>._map_get_mariadb_global_status
+CALLER Q1	integrations/mongodb/tools/mongodb_collection_stats_tool/__init__.py:<module>._map_get_mongodb_collection_stats
+CALLER Q1	integrations/mongodb/tools/mongodb_current_ops_tool/__init__.py:<module>._map_get_mongodb_current_ops
+CALLER Q1	integrations/mongodb/tools/mongodb_profiler_tool/__init__.py:<module>._map_get_mongodb_profiler_data
+CALLER Q1	integrations/mongodb/tools/mongodb_replica_status_tool/__init__.py:<module>._map_get_mongodb_replica_status
+CALLER Q1	integrations/mongodb/tools/mongodb_server_status_tool/__init__.py:<module>._map_get_mongodb_server_status
+CALLER Q1	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_alerts
+CALLER Q1	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_cluster_events
+CALLER Q1	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_cluster_metrics
+CALLER Q1	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_clusters
+CALLER Q1	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_performance_advisor
+CALLER Q1	integrations/mysql/tools/mysql_current_processes_tool/__init__.py:<module>._map_get_mysql_current_processes
+CALLER Q1	integrations/mysql/tools/mysql_replication_status_tool/__init__.py:<module>._map_get_mysql_replication_status
+CALLER Q1	integrations/mysql/tools/mysql_server_status_tool/__init__.py:<module>._map_get_mysql_server_status
+CALLER Q1	integrations/mysql/tools/mysql_slow_queries_tool/__init__.py:<module>._map_get_mysql_slow_queries
+CALLER Q1	integrations/mysql/tools/mysql_table_stats_tool/__init__.py:<module>._map_get_mysql_table_stats
+CALLER Q1	integrations/new_relic/tools/new_relic_alerts_tool/tool.py:<module>._map_query_new_relic_alerts
+CALLER Q1	integrations/new_relic/tools/new_relic_metrics_tool/tool.py:<module>._map_query_new_relic_metrics
+CALLER Q1	integrations/openobserve/tools/openobserve_logs_tool/__init__.py:<module>._map_query_openobserve_logs
+CALLER Q1	integrations/opensearch/tools/opensearch_analytics_tool/__init__.py:<module>._map_query_opensearch_analytics
+CALLER Q1	integrations/opsgenie/tools/__init__.py:<module>._map_opsgenie_alert_detail
+CALLER Q1	integrations/opsgenie/tools/__init__.py:<module>._map_opsgenie_alerts
+CALLER Q1	integrations/pagerduty/tools/__init__.py:<module>._map_pagerduty_incident_detail
+CALLER Q1	integrations/pagerduty/tools/__init__.py:<module>._map_pagerduty_incidents
+CALLER Q1	integrations/pagerduty/tools/__init__.py:<module>._map_pagerduty_oncall
+CALLER Q1	integrations/pagerduty/tools/__init__.py:<module>._map_pagerduty_services
+CALLER Q1	integrations/prefect/tools/__init__.py:<module>._map_prefect_flow_runs
+CALLER Q1	integrations/prefect/tools/__init__.py:<module>._map_prefect_worker_health
+CALLER Q1	integrations/rabbitmq/tools/rabbitmq_broker_overview_tool/__init__.py:<module>._map_get_rabbitmq_broker_overview
+CALLER Q1	integrations/rabbitmq/tools/rabbitmq_connection_stats_tool/__init__.py:<module>._map_get_rabbitmq_connection_stats
+CALLER Q1	integrations/rabbitmq/tools/rabbitmq_consumer_health_tool/__init__.py:<module>._map_get_rabbitmq_consumer_health
+CALLER Q1	integrations/rabbitmq/tools/rabbitmq_node_health_tool/__init__.py:<module>._map_get_rabbitmq_node_health
+CALLER Q1	integrations/rabbitmq/tools/rabbitmq_queue_backlog_tool/__init__.py:<module>._map_get_rabbitmq_queue_backlog
+CALLER Q1	integrations/railway/tools/railway_deployment_tool/inspect_tool.py:<module>._map_inspect_railway_deployment
+CALLER Q1	integrations/rds/tools/rds_describe_instance_tool/__init__.py:<module>._map_describe_rds_instance
+CALLER Q1	integrations/rds/tools/rds_events_tool/__init__.py:<module>._map_describe_rds_events
+CALLER Q1	integrations/sentry/tools/sentry_issue_details_tool/__init__.py:<module>._map_get_sentry_issue_details
+CALLER Q1	integrations/sentry/tools/sentry_issue_events_tool/__init__.py:<module>._map_list_sentry_issue_events
+CALLER Q1	integrations/sentry/tools/sentry_list_uptime_alerts_tool/__init__.py:<module>._map_list_sentry_uptime_alerts
+CALLER Q1	integrations/sentry/tools/sentry_search_issues_tool/__init__.py:<module>._map_search_sentry_issues
+CALLER Q1	integrations/signoz/tools/query_signoz_logs_tool/tool.py:<module>._map_query_signoz_logs
+CALLER Q1	integrations/signoz/tools/query_signoz_metrics_tool/tool.py:<module>._map_query_signoz_metrics
+CALLER Q1	integrations/signoz/tools/query_signoz_traces_tool/tool.py:<module>._map_query_signoz_traces
+CALLER Q1	integrations/slack/tools/slack_list_members_tool/tool.py:<module>._map_slack_list_team_members
+CALLER Q1	integrations/slack/tools/slack_read_list_tool/tool.py:<module>._map_slack_read_list
+CALLER Q1	integrations/slack/tools/slack_read_messages_tool/tool.py:<module>._map_slack_read_messages
+CALLER Q1	integrations/slack/tools/slack_search_messages_tool/tool.py:<module>._map_slack_search_messages
+CALLER Q1	integrations/slack/tools/slack_thread_replay_tool/tool.py:<module>._map_replay_slack_thread_locally
+CALLER Q1	integrations/snowflake/tools/snowflake_query_history_tool/__init__.py:<module>._map_query_snowflake_history
+CALLER Q1	integrations/splunk/tools/__init__.py:<module>._map_query_splunk_logs
+CALLER Q1	integrations/sqs/tools/sqs_queue_attributes_tool/__init__.py:<module>._map_get_sqs_queue_attributes
+CALLER Q1	integrations/supabase/tools/supabase_health_tool/__init__.py:<module>._map_get_supabase_service_health
+CALLER Q1	integrations/supabase/tools/supabase_storage_tool/__init__.py:<module>._map_get_supabase_storage_buckets
+CALLER Q1	integrations/tempo/tools/__init__.py:<module>._map_query_tempo
+CALLER Q1	integrations/temporal/tools/__init__.py:<module>._map_temporal_namespace_info
+CALLER Q1	integrations/temporal/tools/__init__.py:<module>._map_temporal_task_queue
+CALLER Q1	integrations/temporal/tools/__init__.py:<module>._map_temporal_workflow_history
+CALLER Q1	integrations/temporal/tools/__init__.py:<module>._map_temporal_workflows
+CALLER Q1	integrations/tracer/tools/tracer_airflow_dag_tool/_evidence.py:<module>.map_get_airflow_dag_runs
+CALLER Q1	integrations/tracer/tools/tracer_airflow_dag_tool/_evidence.py:<module>.map_get_airflow_task_instances
+CALLER Q1	integrations/tracer/tools/tracer_airflow_dag_tool/_evidence.py:<module>.map_get_recent_airflow_failures
+CALLER Q1	integrations/tracer/tools/tracer_failed_jobs_tool/__init__.py:<module>._map_failed_jobs
+CALLER Q1	integrations/vercel/tools/_evidence.py:<module>.map_vercel_deployment_logs
+CALLER Q1	integrations/vercel/tools/_evidence.py:<module>.map_vercel_deployment_status
+CALLER Q1	integrations/victoria_logs/tools/_evidence.py:<module>.map_victoria_logs_query
+CALLER Q1	tools/system/agent_memory/_evidence.py:<module>.map_memory_recall
+CALLER Q1	tools/system/python_execution_tool/_evidence.py:<module>.map_execute_python_code
+CALLER Q1	tools/system/runbook_guidance_tool/_evidence.py:<module>.map_runbook_guidance
+CALLER Q1	tools/system/sre_guidance_tool/_evidence.py:<module>.map_get_sre_guidance
+CALLER Q1	tools/system/work_items/_evidence.py:<module>.map_work_task_list
+CALLER Q1	tools/system/work_items/_evidence.py:<module>.map_work_task_prioritize
+CALLSITE Q1	integrations/alertmanager/tools/__init__.py	39	integrations/alertmanager/tools/__init__.py:<module>._map_alertmanager_alerts	record_evidence_entry(evidence, source = "alertmanager_alerts", label = "Alertmanager Alerts", summary = f"{len(alerts)} alerts, {len(firing)} firing")
+CALLSITE Q1	integrations/alertmanager/tools/__init__.py	225	integrations/alertmanager/tools/__init__.py:<module>._map_alertmanager_silences	record_evidence_entry(evidence, source = "alertmanager_silences", label = "Alertmanager Silences", summary = f"{len(silences)} silences, {len(active)} active")
+CALLSITE Q1	integrations/argocd/tools/_evidence.py	29	integrations/argocd/tools/_evidence.py:<module>.map_argocd_application_diff	record_evidence_entry(evidence, source = "argocd_application_diff", label = "Argo CD Application Diff", summary = summary)
+CALLSITE Q1	integrations/argocd/tools/_evidence.py	47	integrations/argocd/tools/_evidence.py:<module>.map_argocd_application_status	record_evidence_entry(evidence, source = "argocd_application_status", label = "Argo CD Application Status", summary = f"{application['name']}: sync={sync_status}, health={health_status}")
+CALLSITE Q1	integrations/argocd/tools/_evidence.py	56	integrations/argocd/tools/_evidence.py:<module>.map_argocd_application_status	record_evidence_entry(evidence, source = "argocd_application_status", label = "Argo CD Applications", summary = f"{len(applications)} application(s) listed")
+CALLSITE Q1	integrations/aws/tools/aws_operation_tool/__init__.py	47	integrations/aws/tools/aws_operation_tool/__init__.py:<module>._map_aws_operation	record_evidence_entry(evidence, source = "execute_aws_operation", label = f"AWS {qualified}", summary = _summarize_aws_result(output.get("result")))
+CALLSITE Q1	integrations/betterstack/tools/betterstack_logs_tool/__init__.py	38	integrations/betterstack/tools/betterstack_logs_tool/__init__.py:<module>._map_query_betterstack_logs	record_evidence_entry(evidence, source = "query_betterstack_logs", label = "Better Stack Logs", summary = summary)
+CALLSITE Q1	integrations/bitbucket/tools/bitbucket_commits_tool/_evidence.py	31	integrations/bitbucket/tools/bitbucket_commits_tool/_evidence.py:<module>.map_list_bitbucket_commits	record_evidence_entry(evidence, source = "list_bitbucket_commits", label = "Bitbucket Commits", summary = summary)
+CALLSITE Q1	integrations/bitbucket/tools/bitbucket_file_contents_tool/_evidence.py	42	integrations/bitbucket/tools/bitbucket_file_contents_tool/_evidence.py:<module>.map_get_bitbucket_file_contents	record_evidence_entry(evidence, source = "get_bitbucket_file_contents", label = "Bitbucket File Contents", summary = ", ".join(parts))
+CALLSITE Q1	integrations/bitbucket/tools/bitbucket_search_code_tool/_evidence.py	33	integrations/bitbucket/tools/bitbucket_search_code_tool/_evidence.py:<module>.map_search_bitbucket_code	record_evidence_entry(evidence, source = "search_bitbucket_code", label = "Bitbucket Code Search", summary = summary)
+CALLSITE Q1	integrations/clickhouse/tools/clickhouse_query_activity_tool/__init__.py	33	integrations/clickhouse/tools/clickhouse_query_activity_tool/__init__.py:<module>._map_get_clickhouse_query_activity	record_evidence_entry(evidence, source = "get_clickhouse_query_activity", label = "ClickHouse Query Activity", summary = summary)
+CALLSITE Q1	integrations/clickhouse/tools/clickhouse_system_health_tool/__init__.py	37	integrations/clickhouse/tools/clickhouse_system_health_tool/__init__.py:<module>._map_get_clickhouse_system_health	record_evidence_entry(evidence, source = "get_clickhouse_system_health", label = "ClickHouse System Health", summary = ", ".join(parts))
+CALLSITE Q1	integrations/cloudtrail/tools/cloudtrail_events_tool/__init__.py	81	integrations/cloudtrail/tools/cloudtrail_events_tool/__init__.py:<module>._map_lookup_cloudtrail_events	record_evidence_entry(evidence, source = "lookup_cloudtrail_events", label = "CloudTrail Events", summary = ", ".join(parts))
+CALLSITE Q1	integrations/coralogix/tools/__init__.py	70	integrations/coralogix/tools/__init__.py:<module>._map_query_coralogix_logs	record_evidence_entry(evidence, source = "query_coralogix_logs", label = "Coralogix Logs", summary = ", ".join(parts))
+CALLSITE Q1	integrations/ec2/tools/ec2_instances_by_tag_tool/_evidence.py	32	integrations/ec2/tools/ec2_instances_by_tag_tool/_evidence.py:<module>.map_ec2_instances_by_tag	record_evidence_entry(evidence, source = "ec2_instances_by_tag", label = "EC2 Instances", summary = ", ".join(parts))
+CALLSITE Q1	integrations/elasticsearch/tools/__init__.py	40	integrations/elasticsearch/tools/__init__.py:<module>._map_elasticsearch_logs	record_evidence_entry(evidence, source = "query_elasticsearch_logs", label = "Elasticsearch Logs", summary = ", ".join(summary_parts))
+CALLSITE Q1	integrations/elb/tools/elb_target_health_tool/_evidence.py	34	integrations/elb/tools/elb_target_health_tool/_evidence.py:<module>.map_get_elb_target_health	record_evidence_entry(evidence, source = "get_elb_target_health", label = "ELB Target Health", summary = ", ".join(parts))
+CALLSITE Q1	integrations/github/tools/actions.py	707	integrations/github/tools/actions.py:<module>._map_list_github_actions_workflow_runs	record_evidence_entry(evidence, source = "list_github_actions_workflow_runs", label = "GitHub Workflow Runs", summary = f"{count} {word}")
+CALLSITE Q1	integrations/github/tools/actions.py	924	integrations/github/tools/actions.py:<module>._map_list_github_actions_active_runs	record_evidence_entry(evidence, source = "list_github_actions_active_runs", label = "GitHub Active Runs", summary = f"{count} {word}")
+CALLSITE Q1	integrations/github/tools/actions.py	1054	integrations/github/tools/actions.py:<module>._map_list_github_actions_run_jobs	record_evidence_entry(evidence, source = "list_github_actions_run_jobs", label = "GitHub Run Jobs", summary = f"{count} {word}")
+CALLSITE Q1	integrations/github/tools/actions.py	1189	integrations/github/tools/actions.py:<module>._map_get_github_actions_step_log	record_evidence_entry(evidence, source = "get_github_actions_step_log", label = "GitHub Actions Step Log", summary = f"{lines_count} {word}")
+CALLSITE Q1	integrations/github/tools/ci_analytics/tool.py	151	integrations/github/tools/ci_analytics/tool.py:<module>._map_evidence	record_evidence_entry(evidence, source = TOOL_NAME, label = "GitHub CI reliability", summary = str(output.get("summary") or ""))
+CALLSITE Q1	integrations/github/tools/ci_health_scan/tool.py	109	integrations/github/tools/ci_health_scan/tool.py:<module>._map_evidence	record_evidence_entry(evidence, source = TOOL_NAME, label = "GitHub CI health scan", summary = str(output.get("summary") or ""))
+CALLSITE Q1	integrations/github/tools/commits.py	64	integrations/github/tools/commits.py:<module>._map_list_github_commits	record_evidence_entry(evidence, source = "list_github_commits", label = "GitHub Commits", summary = f"{count} {word}")
+CALLSITE Q1	integrations/github/tools/community_followup_tool/mapper.py	23	integrations/github/tools/community_followup_tool/mapper.py:<module>._map_summarize_community_followups	record_evidence_entry(evidence, source = "summarize_community_followups", label = "GitHub Community Follow-ups", summary = ", ".join(parts))
+CALLSITE Q1	integrations/github/tools/file_contents.py	63	integrations/github/tools/file_contents.py:<module>._map_get_github_file_contents	record_evidence_entry(evidence, source = "get_github_file_contents", label = "GitHub File Contents", summary = f"File: {path}")
+CALLSITE Q1	integrations/github/tools/git_deploy_timeline_tool/__init__.py	170	integrations/github/tools/git_deploy_timeline_tool/__init__.py:<module>._map_get_git_deploy_timeline	record_evidence_entry(evidence, source = "get_git_deploy_timeline", label = "Git Deploy Timeline", summary = f"{count} {word}")
+CALLSITE Q1	integrations/github/tools/issues.py	52	integrations/github/tools/issues.py:<module>._map_search_github_issues	record_evidence_entry(evidence, source = "search_github_issues", label = "GitHub Issues Search", summary = f"{len(issues)} matches: {query}" if query else f"{len(issues)} matches")
+CALLSITE Q1	integrations/github/tools/repository.py	72	integrations/github/tools/repository.py:<module>._map_get_github_repository	record_evidence_entry(evidence, source = "get_github_repository", label = "GitHub Repository Info", summary = f"{owner}/{repo}")
+CALLSITE Q1	integrations/github/tools/repository_tree.py	50	integrations/github/tools/repository_tree.py:<module>._map_get_github_repository_tree	record_evidence_entry(evidence, source = "get_github_repository_tree", label = "GitHub Repository Tree", summary = f"{count} {word}")
+CALLSITE Q1	integrations/github/tools/search_code.py	51	integrations/github/tools/search_code.py:<module>._map_search_github_code	record_evidence_entry(evidence, source = "search_github_code", label = "GitHub Code Search", summary = f"{len(matches)} matches: {query}" if query else f"{len(matches)} matches")
+CALLSITE Q1	integrations/github/tools/stargazers.py	112	integrations/github/tools/stargazers.py:<module>._map_get_github_star_history	record_evidence_entry(evidence, source = "get_github_star_history", label = "GitHub Star History", summary = f"{count} {word} recorded")
+CALLSITE Q1	integrations/github/tools/work_status.py	121	integrations/github/tools/work_status.py:<module>._map_list_github_work_items	record_evidence_entry(evidence, source = "list_github_work_items", label = "GitHub Work Items", summary = f"{len(items)} items: {counts.get('taken', 0)} taken, " f"{counts.get('up_for_grabs', 0)} up for grabs, " f"{counts.get('unassigned', 0)} unassigned")
+CALLSITE Q1	integrations/github/tools/work_status.py	140	integrations/github/tools/work_status.py:<module>._map_summarize_github_pr_status	record_evidence_entry(evidence, source = "summarize_github_pr_status", label = "GitHub PR Status", summary = f"{len(prs)} PRs: {counts.get('mergeable', 0)} mergeable, " f"{counts.get('blocked', 0)} blocked, " f"{counts.get('unknown', 0)} unknown")
+CALLSITE Q1	integrations/github/tools/work_status.py	512	integrations/github/tools/work_status.py:<module>._map_list_github_security_alerts	record_evidence_entry(evidence, source = "list_github_security_alerts", label = "GitHub Security Alerts", summary = f"{count} {word}")
+CALLSITE Q1	integrations/github/tools/work_status_report_tool/__init__.py	36	integrations/github/tools/work_status_report_tool/__init__.py:<module>._map_generate_work_status_report	record_evidence_entry(evidence, source = "generate_work_status_report", label = "Work Status Report", summary = "Engineering work status report")
+CALLSITE Q1	integrations/gitlab/tools/gitlab_commits_tool/__init__.py	99	integrations/gitlab/tools/gitlab_commits_tool/__init__.py:<module>._map_list_gitlab_commits	record_evidence_entry(evidence, source = "list_gitlab_commits", label = "GitLab Commits", summary = f"{label} commit(s)")
+CALLSITE Q1	integrations/gitlab/tools/gitlab_file_tool/__init__.py	33	integrations/gitlab/tools/gitlab_file_tool/__init__.py:<module>._map_get_gitlab_file_contents	record_evidence_entry(evidence, source = "get_gitlab_file", label = "GitLab File", summary = f"'{file.get('file_path', '')}' @ {file.get('ref', '')}, {line_count} line(s)")
+CALLSITE Q1	integrations/gitlab/tools/gitlab_mrs_tool/__init__.py	33	integrations/gitlab/tools/gitlab_mrs_tool/__init__.py:<module>._map_list_gitlab_mrs	record_evidence_entry(evidence, source = "list_gitlab_mrs", label = "GitLab Merge Requests", summary = f"{label} merge request(s) targeting '{target_branch}'")
+CALLSITE Q1	integrations/gitlab/tools/gitlab_pipelines_tool/__init__.py	33	integrations/gitlab/tools/gitlab_pipelines_tool/__init__.py:<module>._map_list_gitlab_pipelines	record_evidence_entry(evidence, source = "list_gitlab_pipelines", label = "GitLab Pipelines", summary = f"{label} pipeline(s) with status '{status}'")
+CALLSITE Q1	integrations/grafana/tools/grafana_alert_rules_tool/__init__.py	62	integrations/grafana/tools/grafana_alert_rules_tool/__init__.py:<module>._map_grafana_alert_rules	record_evidence_entry(evidence, source = "grafana_alert_rules", label = "Grafana Alert Rules", summary = f"{len(rules)} rules")
+CALLSITE Q1	integrations/grafana/tools/grafana_metrics_tool/__init__.py	71	integrations/grafana/tools/grafana_metrics_tool/__init__.py:<module>._map_grafana_metrics	record_evidence_entry(evidence, source = "grafana_metrics", label = "Grafana Metrics", summary = ", ".join(p for p in [metric_name or None, f"{len(metrics)} series"] if p))
+CALLSITE Q1	integrations/grafana/tools/grafana_service_names_tool/__init__.py	33	integrations/grafana/tools/grafana_service_names_tool/__init__.py:<module>._map_grafana_service_names	record_evidence_entry(evidence, source = "grafana_service_names", label = "Grafana Service Names", summary = f"{len(service_names)} services")
+CALLSITE Q1	integrations/grafana/tools/grafana_traces_tool/__init__.py	52	integrations/grafana/tools/grafana_traces_tool/__init__.py:<module>._map_grafana_traces	record_evidence_entry(evidence, source = "grafana_traces", label = "Grafana Traces", summary = f"{len(traces)} traces")
+CALLSITE Q1	integrations/groundcover/tools/_evidence.py	36	integrations/groundcover/tools/_evidence.py:<module>._map_signal_query	record_evidence_entry(evidence, source = source, label = label, summary = summary)
+CALLSITE Q1	integrations/groundcover/tools/_evidence.py	77	integrations/groundcover/tools/_evidence.py:<module>.map_get_groundcover_query_reference	record_evidence_entry(evidence, source = "get_groundcover_query_reference", label = "groundcover Query Reference", summary = summary)
+CALLSITE Q1	integrations/honeycomb/tools/__init__.py	50	integrations/honeycomb/tools/__init__.py:<module>._map_query_honeycomb_traces	record_evidence_entry(evidence, source = "query_honeycomb_traces", label = "Honeycomb Traces", summary = summary)
+CALLSITE Q1	integrations/incident_io/tools/__init__.py	58	integrations/incident_io/tools/__init__.py:<module>._map_incident_io_incidents	record_evidence_entry(evidence, source = "incident_io_incidents", label = "incident.io Incidents", summary = f"{label} incident(s)")
+CALLSITE Q1	integrations/incident_io/tools/__init__.py	68	integrations/incident_io/tools/__init__.py:<module>._map_incident_io_incidents	record_evidence_entry(evidence, source = "incident_io_incidents", label = "incident.io Incident", summary = _incident_io_incident_summary(incident))
+CALLSITE Q1	integrations/incident_io/tools/__init__.py	80	integrations/incident_io/tools/__init__.py:<module>._map_incident_io_incidents	record_evidence_entry(evidence, source = "incident_io_incidents", label = "incident.io Incident Updates", summary = f"{label} update(s)")
+CALLSITE Q1	integrations/incident_io/tools/__init__.py	99	integrations/incident_io/tools/__init__.py:<module>._map_incident_io_incidents	record_evidence_entry(evidence, source = "incident_io_incidents", label = "incident.io Incident", summary = ", ".join(parts))
+CALLSITE Q1	integrations/jenkins/tools/_evidence.py	61	integrations/jenkins/tools/_evidence.py:<module>.map_list_jenkins_builds	record_evidence_entry(evidence, source = "list_jenkins_builds", label = "Jenkins Builds", summary = summary)
+CALLSITE Q1	integrations/jenkins/tools/_evidence.py	85	integrations/jenkins/tools/_evidence.py:<module>.map_get_jenkins_build_log	record_evidence_entry(evidence, source = "get_jenkins_build_log", label = "Jenkins Build Log", summary = ", ".join(parts))
+CALLSITE Q1	integrations/jenkins/tools/_evidence.py	115	integrations/jenkins/tools/_evidence.py:<module>.map_get_jenkins_pipeline_stages	record_evidence_entry(evidence, source = "get_jenkins_pipeline_stages", label = "Jenkins Pipeline Stages", summary = summary)
+CALLSITE Q1	integrations/jenkins/tools/_evidence.py	145	integrations/jenkins/tools/_evidence.py:<module>.map_list_jenkins_jobs	record_evidence_entry(evidence, source = "list_jenkins_jobs", label = "Jenkins Jobs", summary = f"{total_label} job(s), {failing_label} failing")
+CALLSITE Q1	integrations/jenkins/tools/_evidence.py	173	integrations/jenkins/tools/_evidence.py:<module>.map_list_jenkins_running_builds	record_evidence_entry(evidence, source = "list_jenkins_running_builds", label = "Jenkins Running Builds", summary = f"{total_label} build(s) currently running")
+CALLSITE Q1	integrations/jira/tools/__init__.py	20	integrations/jira/tools/__init__.py:<module>._map_jira_issue_detail	record_evidence_entry(evidence, source = "jira_issue_detail", label = "Jira Issue Detail", summary = str(issue.get("summary") or issue.get("issue_key") or "Issue details"))
+CALLSITE Q1	integrations/jira/tools/__init__.py	33	integrations/jira/tools/__init__.py:<module>._map_jira_search_issues	record_evidence_entry(evidence, source = "jira_search_issues", label = "Jira Search Results", summary = f"{len(issues)} issues")
+CALLSITE Q1	integrations/kafka/tools/kafka_consumer_group_tool/__init__.py	32	integrations/kafka/tools/kafka_consumer_group_tool/__init__.py:<module>._map_get_kafka_consumer_group_lag	record_evidence_entry(evidence, source = "get_kafka_consumer_group_lag", label = "Kafka Consumer Group Lag", summary = summary)
+CALLSITE Q1	integrations/kafka/tools/kafka_topic_health_tool/__init__.py	35	integrations/kafka/tools/kafka_topic_health_tool/__init__.py:<module>._map_get_kafka_topic_health	record_evidence_entry(evidence, source = "get_kafka_topic_health", label = "Kafka Topic Health", summary = summary)
+CALLSITE Q1	integrations/mariadb/tools/mariadb_innodb_status_tool/__init__.py	29	integrations/mariadb/tools/mariadb_innodb_status_tool/__init__.py:<module>._map_get_mariadb_innodb_status	record_evidence_entry(evidence, source = "get_mariadb_innodb_status", label = "MariaDB InnoDB Status", summary = summary)
+CALLSITE Q1	integrations/mariadb/tools/mariadb_process_list_tool/__init__.py	34	integrations/mariadb/tools/mariadb_process_list_tool/__init__.py:<module>._map_get_mariadb_process_list	record_evidence_entry(evidence, source = "get_mariadb_process_list", label = "MariaDB Process List", summary = f"{output.get('total_processes', len(processes))} active process(es) shown, " f"longest running {longest}s")
+CALLSITE Q1	integrations/mariadb/tools/mariadb_replication_tool/__init__.py	27	integrations/mariadb/tools/mariadb_replication_tool/__init__.py:<module>._map_get_mariadb_replication_status	record_evidence_entry(evidence, source = "get_mariadb_replication_status", label = "MariaDB Replication Status", summary = note)
+CALLSITE Q1	integrations/mariadb/tools/mariadb_replication_tool/__init__.py	47	integrations/mariadb/tools/mariadb_replication_tool/__init__.py:<module>._map_get_mariadb_replication_status	record_evidence_entry(evidence, source = "get_mariadb_replication_status", label = "MariaDB Replication Status", summary = ", ".join(parts))
+CALLSITE Q1	integrations/mariadb/tools/mariadb_slow_queries_tool/__init__.py	27	integrations/mariadb/tools/mariadb_slow_queries_tool/__init__.py:<module>._map_get_mariadb_slow_queries	record_evidence_entry(evidence, source = "get_mariadb_slow_queries", label = "MariaDB Slow Queries", summary = note)
+CALLSITE Q1	integrations/mariadb/tools/mariadb_slow_queries_tool/__init__.py	36	integrations/mariadb/tools/mariadb_slow_queries_tool/__init__.py:<module>._map_get_mariadb_slow_queries	record_evidence_entry(evidence, source = "get_mariadb_slow_queries", label = "MariaDB Slow Queries", summary = f"{output.get('total_queries', len(queries))} quer{'y' if len(queries) == 1 else 'ies'} " f"surveyed, slowest avg {slowest.get('avg_time_ms', 0)}ms")
+CALLSITE Q1	integrations/mariadb/tools/mariadb_status_tool/__init__.py	36	integrations/mariadb/tools/mariadb_status_tool/__init__.py:<module>._map_get_mariadb_global_status	record_evidence_entry(evidence, source = "get_mariadb_global_status", label = "MariaDB Global Status", summary = ", ".join(parts))
+CALLSITE Q1	integrations/mongodb/tools/mongodb_collection_stats_tool/__init__.py	23	integrations/mongodb/tools/mongodb_collection_stats_tool/__init__.py:<module>._map_get_mongodb_collection_stats	record_evidence_entry(evidence, source = "get_mongodb_collection_stats", label = "MongoDB Collection Stats", summary = f"'{output.get('ns', '')}': {output.get('count', 0)} document(s), {size_mb}MB, " f"{output.get('index_count', 0)} index(es)")
+CALLSITE Q1	integrations/mongodb/tools/mongodb_current_ops_tool/__init__.py	26	integrations/mongodb/tools/mongodb_current_ops_tool/__init__.py:<module>._map_get_mongodb_current_ops	record_evidence_entry(evidence, source = "get_mongodb_current_ops", label = "MongoDB Current Ops", summary = f"{output.get('total_ops', len(operations))} op(s) over " f"{output.get('threshold_ms', 0)}ms, longest running {longest}s")
+CALLSITE Q1	integrations/mongodb/tools/mongodb_profiler_tool/__init__.py	33	integrations/mongodb/tools/mongodb_profiler_tool/__init__.py:<module>._map_get_mongodb_profiler_data	record_evidence_entry(evidence, source = "get_mongodb_profiler_data", label = "MongoDB Profiler", summary = note)
+CALLSITE Q1	integrations/mongodb/tools/mongodb_profiler_tool/__init__.py	42	integrations/mongodb/tools/mongodb_profiler_tool/__init__.py:<module>._map_get_mongodb_profiler_data	record_evidence_entry(evidence, source = "get_mongodb_profiler_data", label = "MongoDB Profiler", summary = f"{output.get('total_entries', len(entries))} slow quer{'y' if len(entries) == 1 else 'ies'} shown " f"above {output.get('threshold_ms', 0)}ms, slowest {slowest.get('millis', 0)}ms")
+CALLSITE Q1	integrations/mongodb/tools/mongodb_replica_status_tool/__init__.py	26	integrations/mongodb/tools/mongodb_replica_status_tool/__init__.py:<module>._map_get_mongodb_replica_status	record_evidence_entry(evidence, source = "get_mongodb_replica_status", label = "MongoDB Replica Set Status", summary = note)
+CALLSITE Q1	integrations/mongodb/tools/mongodb_replica_status_tool/__init__.py	37	integrations/mongodb/tools/mongodb_replica_status_tool/__init__.py:<module>._map_get_mongodb_replica_status	record_evidence_entry(evidence, source = "get_mongodb_replica_status", label = "MongoDB Replica Set Status", summary = summary)
+CALLSITE Q1	integrations/mongodb/tools/mongodb_server_status_tool/__init__.py	23	integrations/mongodb/tools/mongodb_server_status_tool/__init__.py:<module>._map_get_mongodb_server_status	record_evidence_entry(evidence, source = "get_mongodb_server_status", label = "MongoDB Server Status", summary = f"MongoDB {output.get('version', 'unknown')}, " f"{connections.get('current', 0)} connection(s) in use, " f"{connections.get('available', 0)} available")
+CALLSITE Q1	integrations/mongodb_atlas/tools/_evidence.py	25	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_clusters	record_evidence_entry(evidence, source = "get_mongodb_atlas_clusters", label = "MongoDB Atlas Clusters", summary = f"{total} cluster(s)")
+CALLSITE Q1	integrations/mongodb_atlas/tools/_evidence.py	42	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_alerts	record_evidence_entry(evidence, source = "get_mongodb_atlas_alerts", label = "MongoDB Atlas Alerts", summary = f"{total} open alert(s)")
+CALLSITE Q1	integrations/mongodb_atlas/tools/_evidence.py	63	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_cluster_events	record_evidence_entry(evidence, source = "get_mongodb_atlas_cluster_events", label = "MongoDB Atlas Cluster Events", summary = summary)
+CALLSITE Q1	integrations/mongodb_atlas/tools/_evidence.py	84	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_cluster_metrics	record_evidence_entry(evidence, source = "get_mongodb_atlas_cluster_metrics", label = "MongoDB Atlas Cluster Metrics", summary = summary)
+CALLSITE Q1	integrations/mongodb_atlas/tools/_evidence.py	121	integrations/mongodb_atlas/tools/_evidence.py:<module>.map_get_mongodb_atlas_performance_advisor	record_evidence_entry(evidence, source = "get_mongodb_atlas_performance_advisor", label = "MongoDB Atlas Performance Advisor", summary = summary)
+CALLSITE Q1	integrations/mysql/tools/mysql_current_processes_tool/__init__.py	27	integrations/mysql/tools/mysql_current_processes_tool/__init__.py:<module>._map_get_mysql_current_processes	record_evidence_entry(evidence, source = "get_mysql_current_processes", label = "MySQL Current Processes", summary = f"{output.get('total_processes', len(processes))} process(es) over " f"{output.get('threshold_seconds', 0)}s, longest running {longest}s")
+CALLSITE Q1	integrations/mysql/tools/mysql_replication_status_tool/__init__.py	32	integrations/mysql/tools/mysql_replication_status_tool/__init__.py:<module>._map_get_mysql_replication_status	record_evidence_entry(evidence, source = "get_mysql_replication_status", label = "MySQL Replication Status", summary = note)
+CALLSITE Q1	integrations/mysql/tools/mysql_replication_status_tool/__init__.py	56	integrations/mysql/tools/mysql_replication_status_tool/__init__.py:<module>._map_get_mysql_replication_status	record_evidence_entry(evidence, source = "get_mysql_replication_status", label = "MySQL Replication Status", summary = ", ".join(parts))
+CALLSITE Q1	integrations/mysql/tools/mysql_server_status_tool/__init__.py	32	integrations/mysql/tools/mysql_server_status_tool/__init__.py:<module>._map_get_mysql_server_status	record_evidence_entry(evidence, source = "get_mysql_server_status", label = "MySQL Server Status", summary = ", ".join(parts))
+CALLSITE Q1	integrations/mysql/tools/mysql_slow_queries_tool/__init__.py	24	integrations/mysql/tools/mysql_slow_queries_tool/__init__.py:<module>._map_get_mysql_slow_queries	record_evidence_entry(evidence, source = "get_mysql_slow_queries", label = "MySQL Slow Queries", summary = output.get("note", "performance_schema is disabled."))
+CALLSITE Q1	integrations/mysql/tools/mysql_slow_queries_tool/__init__.py	36	integrations/mysql/tools/mysql_slow_queries_tool/__init__.py:<module>._map_get_mysql_slow_queries	record_evidence_entry(evidence, source = "get_mysql_slow_queries", label = "MySQL Slow Queries", summary = f"{output.get('total_queries', len(queries))} quer{'y' if len(queries) == 1 else 'ies'} " f"above {output.get('threshold_ms', 0)}ms, slowest avg {slowest.get('avg_time_ms', 0)}ms")
+CALLSITE Q1	integrations/mysql/tools/mysql_table_stats_tool/__init__.py	29	integrations/mysql/tools/mysql_table_stats_tool/__init__.py:<module>._map_get_mysql_table_stats	record_evidence_entry(evidence, source = "get_mysql_table_stats", label = "MySQL Table Stats", summary = f"{output.get('total_tables', len(tables))} table(s) in '{output.get('database', '')}', " f"largest '{largest.get('table_name', '')}' at {largest_mb}MB")
+CALLSITE Q1	integrations/new_relic/tools/new_relic_alerts_tool/tool.py	76	integrations/new_relic/tools/new_relic_alerts_tool/tool.py:<module>._map_query_new_relic_alerts	record_evidence_entry(evidence, source = "query_new_relic_alerts", label = "New Relic Alert Incidents", summary = summary)
+CALLSITE Q1	integrations/new_relic/tools/new_relic_metrics_tool/tool.py	67	integrations/new_relic/tools/new_relic_metrics_tool/tool.py:<module>._map_query_new_relic_metrics	record_evidence_entry(evidence, source = "query_new_relic_metrics", label = "New Relic Metrics", summary = summary)
+CALLSITE Q1	integrations/openobserve/tools/openobserve_logs_tool/__init__.py	58	integrations/openobserve/tools/openobserve_logs_tool/__init__.py:<module>._map_query_openobserve_logs	record_evidence_entry(evidence, source = "query_openobserve_logs", label = "OpenObserve Logs", summary = ", ".join(parts))
+CALLSITE Q1	integrations/opensearch/tools/opensearch_analytics_tool/__init__.py	45	integrations/opensearch/tools/opensearch_analytics_tool/__init__.py:<module>._map_query_opensearch_analytics	record_evidence_entry(evidence, source = "query_opensearch_analytics", label = "OpenSearch Analytics", summary = f"{output.get('total_returned', len(logs))} log(s) for query " f"'{query}' on '{index_pattern}'")
+CALLSITE Q1	integrations/opsgenie/tools/__init__.py	62	integrations/opsgenie/tools/__init__.py:<module>._map_opsgenie_alert_detail	record_evidence_entry(evidence, source = "opsgenie_alert_detail", label = "OpsGenie Alert Detail", summary = ", ".join(parts))
+CALLSITE Q1	integrations/opsgenie/tools/__init__.py	219	integrations/opsgenie/tools/__init__.py:<module>._map_opsgenie_alerts	record_evidence_entry(evidence, source = "opsgenie_alerts", label = "OpsGenie Alerts", summary = summary)
+CALLSITE Q1	integrations/pagerduty/tools/__init__.py	61	integrations/pagerduty/tools/__init__.py:<module>._map_pagerduty_incident_detail	record_evidence_entry(evidence, source = "pagerduty_incident_detail", label = "PagerDuty Incident Detail", summary = ", ".join(parts))
+CALLSITE Q1	integrations/pagerduty/tools/__init__.py	220	integrations/pagerduty/tools/__init__.py:<module>._map_pagerduty_incidents	record_evidence_entry(evidence, source = "pagerduty_incidents", label = "PagerDuty Incidents", summary = summary)
+CALLSITE Q1	integrations/pagerduty/tools/__init__.py	386	integrations/pagerduty/tools/__init__.py:<module>._map_pagerduty_oncall	record_evidence_entry(evidence, source = "pagerduty_oncall", label = "PagerDuty On-Call", summary = f"{label} on-call responder(s)")
+CALLSITE Q1	integrations/pagerduty/tools/__init__.py	506	integrations/pagerduty/tools/__init__.py:<module>._map_pagerduty_services	record_evidence_entry(evidence, source = "pagerduty_services", label = "PagerDuty Services", summary = f"'{name}': {service.get('status', 'unknown')}")
+CALLSITE Q1	integrations/pagerduty/tools/__init__.py	517	integrations/pagerduty/tools/__init__.py:<module>._map_pagerduty_services	record_evidence_entry(evidence, source = "pagerduty_services", label = "PagerDuty Services", summary = f"{label} service(s)")
+CALLSITE Q1	integrations/prefect/tools/__init__.py	55	integrations/prefect/tools/__init__.py:<module>._map_prefect_flow_runs	record_evidence_entry(evidence, source = "prefect_flow_runs", label = "Prefect Flow Runs", summary = ", ".join(parts))
+CALLSITE Q1	integrations/prefect/tools/__init__.py	284	integrations/prefect/tools/__init__.py:<module>._map_prefect_worker_health	record_evidence_entry(evidence, source = "prefect_worker_health", label = "Prefect Worker Health", summary = ", ".join(parts))
+CALLSITE Q1	integrations/rabbitmq/tools/rabbitmq_broker_overview_tool/__init__.py	30	integrations/rabbitmq/tools/rabbitmq_broker_overview_tool/__init__.py:<module>._map_get_rabbitmq_broker_overview	record_evidence_entry(evidence, source = "get_rabbitmq_broker_overview", label = "RabbitMQ Broker Overview", summary = ", ".join(parts))
+CALLSITE Q1	integrations/rabbitmq/tools/rabbitmq_connection_stats_tool/__init__.py	29	integrations/rabbitmq/tools/rabbitmq_connection_stats_tool/__init__.py:<module>._map_get_rabbitmq_connection_stats	record_evidence_entry(evidence, source = "get_rabbitmq_connection_stats", label = "RabbitMQ Connection Stats", summary = summary)
+CALLSITE Q1	integrations/rabbitmq/tools/rabbitmq_consumer_health_tool/__init__.py	40	integrations/rabbitmq/tools/rabbitmq_consumer_health_tool/__init__.py:<module>._map_get_rabbitmq_consumer_health	record_evidence_entry(evidence, source = "get_rabbitmq_consumer_health", label = "RabbitMQ Consumer Health", summary = summary)
+CALLSITE Q1	integrations/rabbitmq/tools/rabbitmq_node_health_tool/__init__.py	31	integrations/rabbitmq/tools/rabbitmq_node_health_tool/__init__.py:<module>._map_get_rabbitmq_node_health	record_evidence_entry(evidence, source = "get_rabbitmq_node_health", label = "RabbitMQ Node Health", summary = summary)
+CALLSITE Q1	integrations/rabbitmq/tools/rabbitmq_queue_backlog_tool/__init__.py	42	integrations/rabbitmq/tools/rabbitmq_queue_backlog_tool/__init__.py:<module>._map_get_rabbitmq_queue_backlog	record_evidence_entry(evidence, source = "get_rabbitmq_queue_backlog", label = "RabbitMQ Queue Backlog", summary = summary)
+CALLSITE Q1	integrations/railway/tools/railway_deployment_tool/inspect_tool.py	44	integrations/railway/tools/railway_deployment_tool/inspect_tool.py:<module>._map_inspect_railway_deployment	record_evidence_entry(evidence, source = "inspect_railway_deployment", label = "Railway Deployment", summary = ", ".join(parts))
+CALLSITE Q1	integrations/rds/tools/rds_describe_instance_tool/__init__.py	43	integrations/rds/tools/rds_describe_instance_tool/__init__.py:<module>._map_describe_rds_instance	record_evidence_entry(evidence, source = "describe_rds_instance", label = "RDS Instance", summary = ", ".join(parts))
+CALLSITE Q1	integrations/rds/tools/rds_events_tool/__init__.py	39	integrations/rds/tools/rds_events_tool/__init__.py:<module>._map_describe_rds_events	record_evidence_entry(evidence, source = "describe_rds_events", label = "RDS Events", summary = f"{len(events)} event(s) reported{window}")
+CALLSITE Q1	integrations/sentry/tools/sentry_issue_details_tool/__init__.py	47	integrations/sentry/tools/sentry_issue_details_tool/__init__.py:<module>._map_get_sentry_issue_details	record_evidence_entry(evidence, source = "get_sentry_issue_details", label = "Sentry Issue Details", summary = ", ".join(parts))
+CALLSITE Q1	integrations/sentry/tools/sentry_issue_events_tool/__init__.py	34	integrations/sentry/tools/sentry_issue_events_tool/__init__.py:<module>._map_list_sentry_issue_events	record_evidence_entry(evidence, source = "list_sentry_issue_events", label = "Sentry Issue Events", summary = f"{len(events)} recent event(s) retrieved")
+CALLSITE Q1	integrations/sentry/tools/sentry_list_uptime_alerts_tool/__init__.py	32	integrations/sentry/tools/sentry_list_uptime_alerts_tool/__init__.py:<module>._map_list_sentry_uptime_alerts	record_evidence_entry(evidence, source = "list_sentry_uptime_alerts", label = "Sentry Uptime Alerts", summary = summary)
+CALLSITE Q1	integrations/sentry/tools/sentry_search_issues_tool/__init__.py	101	integrations/sentry/tools/sentry_search_issues_tool/__init__.py:<module>._map_search_sentry_issues	record_evidence_entry(evidence, source = "search_sentry_issues", label = "Sentry Issue Search", summary = f"{count_label} issue(s) for query '{query}'")
+CALLSITE Q1	integrations/signoz/tools/query_signoz_logs_tool/tool.py	37	integrations/signoz/tools/query_signoz_logs_tool/tool.py:<module>._map_query_signoz_logs	record_evidence_entry(evidence, source = "query_signoz_logs", label = "SigNoz Logs", summary = summary)
+CALLSITE Q1	integrations/signoz/tools/query_signoz_metrics_tool/tool.py	34	integrations/signoz/tools/query_signoz_metrics_tool/tool.py:<module>._map_query_signoz_metrics	record_evidence_entry(evidence, source = "query_signoz_metrics", label = "SigNoz Metrics", summary = f"{metric_name} ({aggregation}): {label} data point(s)")
+CALLSITE Q1	integrations/signoz/tools/query_signoz_traces_tool/tool.py	36	integrations/signoz/tools/query_signoz_traces_tool/tool.py:<module>._map_query_signoz_traces	record_evidence_entry(evidence, source = "query_signoz_traces", label = "SigNoz Traces", summary = f"{total_spans} span(s), {summary.get('error_spans', 0)} error(s), " f"p99 {summary.get('p99_ms', 0)}ms")
+CALLSITE Q1	integrations/signoz/tools/query_signoz_traces_tool/tool.py	52	integrations/signoz/tools/query_signoz_traces_tool/tool.py:<module>._map_query_signoz_traces	record_evidence_entry(evidence, source = "query_signoz_traces", label = "SigNoz Traces", summary = f"{label} trace(s)")
+CALLSITE Q1	integrations/slack/tools/slack_list_members_tool/tool.py	28	integrations/slack/tools/slack_list_members_tool/tool.py:<module>._map_slack_list_team_members	record_evidence_entry(evidence, source = "slack_list_team_members", label = "Slack Workspace Roster", summary = f"{len(members)} members{truncated}")
+CALLSITE Q1	integrations/slack/tools/slack_read_list_tool/tool.py	98	integrations/slack/tools/slack_read_list_tool/tool.py:<module>._map_slack_read_list	record_evidence_entry(evidence, source = "slack_read_list", label = "Slack List", summary = f"{len(items)} rows{scope}{truncated}")
+CALLSITE Q1	integrations/slack/tools/slack_read_messages_tool/tool.py	38	integrations/slack/tools/slack_read_messages_tool/tool.py:<module>._map_slack_read_messages	record_evidence_entry(evidence, source = "slack_read_messages", label = "Slack Channel Messages", summary = f"{len(messages)} messages{scope}{truncated}")
+CALLSITE Q1	integrations/slack/tools/slack_search_messages_tool/tool.py	31	integrations/slack/tools/slack_search_messages_tool/tool.py:<module>._map_slack_search_messages	record_evidence_entry(evidence, source = "slack_search_messages", label = "Slack Message Search", summary = f"{len(matches)} matches{scope}{truncated}", url = str(top.get("permalink") or "") or None)
+CALLSITE Q1	integrations/slack/tools/slack_thread_replay_tool/tool.py	27	integrations/slack/tools/slack_thread_replay_tool/tool.py:<module>._map_replay_slack_thread_locally	record_evidence_entry(evidence, source = "replay_slack_thread_locally", label = "Slack Thread Replay", summary = f"{len(messages)} thread messages{ref}{truncated}")
+CALLSITE Q1	integrations/snowflake/tools/snowflake_query_history_tool/__init__.py	102	integrations/snowflake/tools/snowflake_query_history_tool/__init__.py:<module>._map_query_snowflake_history	record_evidence_entry(evidence, source = "query_snowflake_history", label = "Snowflake Query History", summary = f"{len(rows)} queries")
+CALLSITE Q1	integrations/splunk/tools/__init__.py	33	integrations/splunk/tools/__init__.py:<module>._map_query_splunk_logs	record_evidence_entry(evidence, source = "query_splunk_logs", label = "Splunk Logs", summary = f"{len(logs)} logs")
+CALLSITE Q1	integrations/sqs/tools/sqs_queue_attributes_tool/__init__.py	125	integrations/sqs/tools/sqs_queue_attributes_tool/__init__.py:<module>._map_get_sqs_queue_attributes	record_evidence_entry(evidence, source = "get_sqs_queue_attributes", label = "SQS Queues", summary = summary)
+CALLSITE Q1	integrations/supabase/tools/supabase_health_tool/__init__.py	29	integrations/supabase/tools/supabase_health_tool/__init__.py:<module>._map_get_supabase_service_health	record_evidence_entry(evidence, source = "get_supabase_service_health", label = "Supabase Service Health", summary = summary)
+CALLSITE Q1	integrations/supabase/tools/supabase_storage_tool/__init__.py	30	integrations/supabase/tools/supabase_storage_tool/__init__.py:<module>._map_get_supabase_storage_buckets	record_evidence_entry(evidence, source = "get_supabase_storage_buckets", label = "Supabase Storage Buckets", summary = summary)
+CALLSITE Q1	integrations/tempo/tools/__init__.py	42	integrations/tempo/tools/__init__.py:<module>._map_query_tempo	record_evidence_entry(evidence, source = "query_tempo", label = "Tempo Query", summary = f"{len(items)} {result_key.replace('_', ' ')}")
+CALLSITE Q1	integrations/temporal/tools/__init__.py	39	integrations/temporal/tools/__init__.py:<module>._map_temporal_namespace_info	record_evidence_entry(evidence, source = "temporal_namespace_info", label = "Temporal Namespace Info", summary = ", ".join(parts))
+CALLSITE Q1	integrations/temporal/tools/__init__.py	171	integrations/temporal/tools/__init__.py:<module>._map_temporal_task_queue	record_evidence_entry(evidence, source = "temporal_task_queue", label = "Temporal Task Queue", summary = ", ".join(parts))
+CALLSITE Q1	integrations/temporal/tools/__init__.py	328	integrations/temporal/tools/__init__.py:<module>._map_temporal_workflow_history	record_evidence_entry(evidence, source = "temporal_workflow_history", label = "Temporal Workflow History", summary = ", ".join(parts))
+CALLSITE Q1	integrations/temporal/tools/__init__.py	498	integrations/temporal/tools/__init__.py:<module>._map_temporal_workflows	record_evidence_entry(evidence, source = "temporal_workflows", label = "Temporal Workflows", summary = ", ".join(parts))
+CALLSITE Q1	integrations/tracer/tools/tracer_airflow_dag_tool/_evidence.py	39	integrations/tracer/tools/tracer_airflow_dag_tool/_evidence.py:<module>.map_get_recent_airflow_failures	record_evidence_entry(evidence, source = "get_recent_airflow_failures", label = "Airflow Recent Failures", summary = summary)
+CALLSITE Q1	integrations/tracer/tools/tracer_airflow_dag_tool/_evidence.py	78	integrations/tracer/tools/tracer_airflow_dag_tool/_evidence.py:<module>.map_get_airflow_dag_runs	record_evidence_entry(evidence, source = "get_airflow_dag_runs", label = "Airflow DAG Runs", summary = summary)
+CALLSITE Q1	integrations/tracer/tools/tracer_airflow_dag_tool/_evidence.py	102	integrations/tracer/tools/tracer_airflow_dag_tool/_evidence.py:<module>.map_get_airflow_task_instances	record_evidence_entry(evidence, source = "get_airflow_task_instances", label = "Airflow Task Instances", summary = summary)
+CALLSITE Q1	integrations/tracer/tools/tracer_failed_jobs_tool/__init__.py	31	integrations/tracer/tools/tracer_failed_jobs_tool/__init__.py:<module>._map_failed_jobs	record_evidence_entry(evidence, source = "get_failed_jobs", label = "Failed AWS Batch Jobs", summary = f"{count} failed {'job' if count == 1 else 'jobs'}")
+CALLSITE Q1	integrations/vercel/tools/_evidence.py	48	integrations/vercel/tools/_evidence.py:<module>.map_vercel_deployment_status	record_evidence_entry(evidence, source = "vercel_deployment_status", label = "Vercel Deployment Status", summary = f"{total_label} deployment(s), {failed_label} failed")
+CALLSITE Q1	integrations/vercel/tools/_evidence.py	81	integrations/vercel/tools/_evidence.py:<module>.map_vercel_deployment_logs	record_evidence_entry(evidence, source = "vercel_deployment_logs", label = "Vercel Deployment Logs", summary = ", ".join(parts))
+CALLSITE Q1	integrations/victoria_logs/tools/_evidence.py	21	integrations/victoria_logs/tools/_evidence.py:<module>.map_victoria_logs_query	record_evidence_entry(evidence, source = "victoria_logs_query", label = "VictoriaLogs Logs", summary = f"{len(rows)} {row_label}", snippet = query_text[:200] or None)
+CALLSITE Q1	tools/system/agent_memory/_evidence.py	36	tools/system/agent_memory/_evidence.py:<module>.map_memory_recall	record_evidence_entry(evidence, source = unique_evidence_source(evidence, "memory_recall"), label = "Memory Recall", summary = summary)
+CALLSITE Q1	tools/system/python_execution_tool/_evidence.py	36	tools/system/python_execution_tool/_evidence.py:<module>.map_execute_python_code	record_evidence_entry(evidence, source = unique_evidence_source(evidence, "execute_python_code"), label = "Python Execution", summary = summary)
+CALLSITE Q1	tools/system/runbook_guidance_tool/_evidence.py	30	tools/system/runbook_guidance_tool/_evidence.py:<module>.map_runbook_guidance	record_evidence_entry(evidence, source = unique_evidence_source(evidence, "load_runbook_guidance"), label = "Runbook Guidance", summary = summary, url = str(runbook.get("url") or "") or None)
+CALLSITE Q1	tools/system/sre_guidance_tool/_evidence.py	23	tools/system/sre_guidance_tool/_evidence.py:<module>.map_get_sre_guidance	record_evidence_entry(evidence, source = unique_evidence_source(evidence, "get_sre_guidance"), label = "SRE Guidance", summary = f"{len(topics)} topic(s): {joined}")
+CALLSITE Q1	tools/system/work_items/_evidence.py	35	tools/system/work_items/_evidence.py:<module>.map_work_task_list	record_evidence_entry(evidence, source = unique_evidence_source(evidence, "work_task_list"), label = "Work Tasks", summary = summary)
+CALLSITE Q1	tools/system/work_items/_evidence.py	56	tools/system/work_items/_evidence.py:<module>.map_work_task_prioritize	record_evidence_entry(evidence, source = unique_evidence_source(evidence, "work_task_prioritize"), label = "Work Task Priorities", summary = summary)
+TIME C1 callers 0.5 ms
+RESULT C1 14
+CALLER C1	core/agent_harness/session/lifecycle.py:<module>.SessionManager.close<metaClassAdapter>
+CALLER C1	core/agent_harness/session/lifecycle.py:<module>.SessionManager.rotate
+CALLER C1	gateway/core/prompt_intake/worker.py:<module>.PromptWorker._open_session
+CALLER C1	gateway/core/prompt_intake/worker.py:<module>.PromptWorker._run_bound_job
+CALLER C1	gateway/transports/discord/background.py:<module>.DiscordGatewayBackground.stop
+CALLER C1	gateway/transports/slack/transport/socket_mode/worker.py:<module>.SlackGatewayBackground.stop
+CALLER C1	infrastructure/skills_registry/client.py:<module>._post
+CALLER C1	infrastructure/skills_registry/client.py:<module>.fetch_release
+CALLER C1	infrastructure/skills_registry/client.py:<module>.list_releases
+CALLER C1	integrations/github/mcp.py:<module>._run_async
+CALLER C1	integrations/groundcover/client.py:<module>._run_async
+CALLER C1	integrations/llm_cli/agent_exec.py:<module>._drain
+CALLER C1	integrations/mcp_client.py:<module>.run_async
+CALLER C1	tools/interactive_shell/shell/execution.py:<module>._drain_pipe
+CALLSITE C1	core/agent_harness/session/lifecycle.py	205	core/agent_harness/session/lifecycle.py:<module>.SessionManager.rotate	self.close(outgoing, wait_for_memory_extraction = False, extract_memory = extract_memory)
+CALLSITE C1	core/agent_harness/session/lifecycle.py	380	core/agent_harness/session/lifecycle.py:<module>.SessionManager.close<metaClassAdapter>	close(self, session, wait_for_memory_extraction = wait_for_memory_extraction, extract_memory = extract_memory)
+CALLSITE C1	gateway/core/prompt_intake/worker.py	225	gateway/core/prompt_intake/worker.py:<module>.PromptWorker._run_bound_job	self._sessions.close(session)
+CALLSITE C1	gateway/core/prompt_intake/worker.py	258	gateway/core/prompt_intake/worker.py:<module>.PromptWorker._run_bound_job	self._sessions.close(session)
+CALLSITE C1	gateway/core/prompt_intake/worker.py	318	gateway/core/prompt_intake/worker.py:<module>.PromptWorker._open_session	self._sessions.close(named)
+CALLSITE C1	gateway/core/prompt_intake/worker.py	333	gateway/core/prompt_intake/worker.py:<module>.PromptWorker._open_session	self._sessions.close(session)
+CALLSITE C1	gateway/transports/discord/background.py	39	gateway/transports/discord/background.py:<module>.DiscordGatewayBackground.stop	self._bindings.close()
+CALLSITE C1	gateway/transports/slack/transport/socket_mode/worker.py	52	gateway/transports/slack/transport/socket_mode/worker.py:<module>.SlackGatewayBackground.stop	self._socket_client.close()
+CALLSITE C1	gateway/transports/slack/transport/socket_mode/worker.py	65	gateway/transports/slack/transport/socket_mode/worker.py:<module>.SlackGatewayBackground.stop	self._bindings.close()
+CALLSITE C1	infrastructure/skills_registry/client.py	126	infrastructure/skills_registry/client.py:<module>.fetch_release	http.close()
+CALLSITE C1	infrastructure/skills_registry/client.py	151	infrastructure/skills_registry/client.py:<module>._post	http.close()
+CALLSITE C1	infrastructure/skills_registry/client.py	202	infrastructure/skills_registry/client.py:<module>.list_releases	http.close()
+CALLSITE C1	integrations/github/mcp.py	578	integrations/github/mcp.py:<module>._run_async	close()
+CALLSITE C1	integrations/groundcover/client.py	106	integrations/groundcover/client.py:<module>._run_async	close()
+CALLSITE C1	integrations/llm_cli/agent_exec.py	211	integrations/llm_cli/agent_exec.py:<module>._drain	pipe.close()
+CALLSITE C1	integrations/mcp_client.py	158	integrations/mcp_client.py:<module>.run_async	close()
+CALLSITE C1	tools/interactive_shell/shell/execution.py	107	tools/interactive_shell/shell/execution.py:<module>._drain_pipe	pipe.close()
+closing/saving project `full.bin`
+	Command being timed: "timeout 1800 /opt/joern/current/joern-cli/joern --script /var/lib/joern/measure/step4-callers.sc"
+	User time (seconds): 65.79
+	System time (seconds): 3.88
+	Percent of CPU this job got: 577%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1572284
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 548419
+	Voluntary context switches: 78965
+	Involuntary context switches: 1253
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 291648
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

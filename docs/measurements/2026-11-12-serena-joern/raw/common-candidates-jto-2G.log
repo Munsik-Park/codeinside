@@ -1,0 +1,67 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+executing /var/lib/joern/measure/step4-common-candidates.sc
+Creating working copy of CPG to be safe
+Loading base CPG from: /var/lib/joern/workspace/full.bin/cpg.bin.tmp
+CANDIDATES name	defs	callsites_by_name	callIn_first_def
+CAND __init__	339	54	5
+CAND __init__<metaClassAdapter>	339	0	0
+CAND run	90	153	17
+CAND run<metaClassAdapter>	87	0	0
+CAND is_available	67	2	1
+CAND is_available<metaClassAdapter>	67	0	0
+CAND is_configured	55	0	1
+CAND is_configured<metaClassAdapter>	55	0	0
+CAND extract_params	52	1	1
+CAND extract_params<metaClassAdapter>	52	0	0
+CAND __call__	32	0	1
+CAND __call__<metaClassAdapter>	32	0	0
+CAND _run	26	38	0
+CAND close	26	179	17
+CAND close<metaClassAdapter>	25	0	0
+CAND __enter__	23	2	1
+CAND __enter__<metaClassAdapter>	23	0	0
+CAND __exit__	23	2	1
+CAND __exit__<metaClassAdapter>	23	0	0
+CAND stop	23	48	14
+CAND stop<metaClassAdapter>	23	0	0
+CAND print	19	1237	36
+CAND print<metaClassAdapter>	19	0	0
+CAND probe_access	19	2	1
+CAND probe_access<metaClassAdapter>	19	0	0
+CAND start	19	137	7
+CAND handler	18	30	27
+CAND invoke	18	32	4
+CAND invoke<metaClassAdapter>	18	0	0
+CAND start<metaClassAdapter>	17	0	0
+CAND release	15	34	9
+CAND release<metaClassAdapter>	15	0	0
+CAND _get_client	14	84	4
+CAND _get_client<metaClassAdapter>	14	0	0
+CAND headers	14	3	1
+CAND headers<metaClassAdapter>	14	0	0
+CAND resolve	14	112	17
+CAND rotate	14	15	2
+CAND rotate<metaClassAdapter>	14	0	0
+CAND to_dict	14	32	1
+CAND to_dict<metaClassAdapter>	14	0	0
+CAND record	13	53	11
+CAND resolve<metaClassAdapter>	13	0	0
+CAND _normalize_base_url	12	0	0
+CAND build	12	15	7
+CAND finalize	12	76	1
+CAND finalize<metaClassAdapter>	12	0	0
+CAND get	12	8157	590
+CAND _run<metaClassAdapter>	11	0	0
+CAND build<metaClassAdapter>	11	0	0
+CAND clear	11	104	20
+CAND clear<metaClassAdapter>	11	0	0
+CAND detect	11	8	1
+CAND detect<metaClassAdapter>	11	0	0
+CAND explain_failure	11	2	2
+CAND explain_failure<metaClassAdapter>	11	0	0
+CAND flush	11	74	24
+CAND parse	11	28	1
+CAND parse<metaClassAdapter>	11	0	0
+CAND render_error	11	17	1
+closing/saving project `full.bin`

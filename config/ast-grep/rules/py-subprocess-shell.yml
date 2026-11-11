@@ -1,0 +1,14 @@
+# shell=True로 subprocess를 부르는 곳. 셸 해석을 거치는 외부 명령 실행 지점을 거른다.
+id: py-subprocess-shell
+language: python
+severity: info
+message: subprocess 호출에 shell=True
+rule:
+  pattern: subprocess.$FN($$$ARGS)
+  has:
+    kind: argument_list
+    has:
+      kind: keyword_argument
+      all:
+        - has: { field: name, regex: '^shell$' }
+        - has: { field: value, kind: 'true' }

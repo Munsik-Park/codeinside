@@ -1,0 +1,25 @@
+# Serena 프로젝트 설정. 분석 대상 체크아웃의 .serena/project.yml로 복사해 쓴다
+# (scripts/mcp/register.sh가 복사한다).
+# 형식: Serena v2.1.0 src/serena/resources/project.template.yml
+project_name: "opensre"
+language_servers: ["python"]
+encoding: "utf-8"
+# 도구 인터페이스로 고정한다. REPL 인터페이스는 도구 제한이 적용되지 않는다
+# (Serena docs/02-usage/050_configuration.md "Agent Interfaces", 070_security.md "The REPL Interface").
+agent_interface: tools
+ignore_all_files_in_gitignore: true
+ignored_paths: []
+# 편집 도구를 모두 끈다(템플릿 설명: "all editing tools will be disabled").
+read_only: true
+# 프로젝트 설정은 mode 다음에 적용되므로(agent.py _update_active_tools), 여기 fixed_tools가 최종 목록을 정한다.
+excluded_tools: []
+included_optional_tools: []
+fixed_tools:
+  - get_symbols_overview
+  - find_symbol
+  - find_referencing_symbols
+  - find_declaration
+  - find_implementations
+default_modes: ["planning", "no-memories"]
+added_modes: []
+initial_prompt: ""

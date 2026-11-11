@@ -1,0 +1,16 @@
+# 환경 변수를 읽는 곳. 실행 환경에 따라 동작이 갈리는 지점을 거른다.
+id: py-env-read
+language: python
+severity: info
+message: 환경 변수 읽기
+rule:
+  any:
+    - pattern: os.environ.get($$$)
+    - pattern: os.getenv($$$)
+    - pattern: os.environ[$KEY]
+  # os.environ[K] = v 같은 쓰기와 del os.environ[K]는 뺀다.
+  not:
+    any:
+      - inside: { kind: assignment, field: left }
+      - inside: { kind: augmented_assignment, field: left }
+      - inside: { kind: delete_statement }

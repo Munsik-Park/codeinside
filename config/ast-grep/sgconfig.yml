@@ -1,0 +1,4 @@
+# ast-grep 프로젝트 설정. Screening 규칙은 rules/ 아래에 둔다.
+# 형식: https://ast-grep.github.io/guide/project/project-config.html
+ruleDirs:
+  - rules

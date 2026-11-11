@@ -1,0 +1,23 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+executing /var/lib/joern/measure/step4-joern-only-sites.sc
+Creating working copy of CPG to be safe
+Loading base CPG from: /var/lib/joern/workspace/full.bin/cpg.bin.tmp
+SITE core/agent_harness/session/lifecycle.py:205	methodFullName=core/agent_harness/session/lifecycle.py:<module>.SessionManager.close	callees=1
+SITE core/agent_harness/session/lifecycle.py:380	methodFullName=core/agent_harness/session/lifecycle.py:<module>.SessionManager.close	callees=1
+SITE gateway/core/prompt_intake/worker.py:225	methodFullName=<unknownFullName>	callees=76
+SITE gateway/core/prompt_intake/worker.py:258	methodFullName=<unknownFullName>	callees=76
+SITE gateway/core/prompt_intake/worker.py:318	methodFullName=<unknownFullName>	callees=76
+SITE gateway/core/prompt_intake/worker.py:333	methodFullName=<unknownFullName>	callees=76
+SITE gateway/transports/discord/background.py:39	methodFullName=<unknownFullName>	callees=76
+SITE gateway/transports/slack/transport/socket_mode/worker.py:52	methodFullName=<unknownFullName>	callees=76
+SITE gateway/transports/slack/transport/socket_mode/worker.py:65	methodFullName=<unknownFullName>	callees=76
+SITE infrastructure/skills_registry/client.py:126	methodFullName=<unknownFullName>	callees=76
+SITE infrastructure/skills_registry/client.py:151	methodFullName=<unknownFullName>	callees=76
+SITE infrastructure/skills_registry/client.py:202	methodFullName=<unknownFullName>	callees=76
+SITE integrations/github/mcp.py:578	methodFullName=<unknownFullName>	callees=76
+SITE integrations/groundcover/client.py:106	methodFullName=<unknownFullName>	callees=76
+SITE integrations/llm_cli/agent_exec.py:211	methodFullName=<unknownFullName>	callees=76
+SITE integrations/mcp_client.py:158	methodFullName=<unknownFullName>	callees=76
+SITE tools/interactive_shell/shell/execution.py:107	methodFullName=<unknownFullName>	callees=76
+closing/saving project `full.bin`
