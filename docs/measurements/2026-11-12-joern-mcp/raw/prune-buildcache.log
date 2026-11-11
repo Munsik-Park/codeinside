@@ -1,0 +1,84 @@
+== first run: one prune per record, single pass
+== before
+tmpfs            64G   43G   22G  66% /var/lib/containerd
+Total:		24.14GB
+== prune
+kozq2kf1czjwtgnyf2vmw5mch	32B	mount / from exec /bin/sh -c joern --help && rustc --version && cargo --version
+mr2cylflhpxgpk6jzsrfjzocg	32B	mount / from exec /bin/sh -c joern --help && rustc --version && cargo --version
+u4wl46ps7v43jypie9jblbu2p	93B	[3/9] WORKDIR /app
+jz69c83628iqfaoqabr3f3z8i	98B	mount / from exec /bin/sh -c mkdir -p /playground
+vvnkkcb0jw59pobyixldnoe7f	100B	mount / from exec /bin/sh -c mkdir -p /playground
+w6dn5fmpktvf9a22ma9iltp5x	135B	mount / from exec /bin/sh -c mkdir -p /app/logs /app/playground
+29m96w13udrd4oc5qu2j0360p	158B	pulled from docker.io/library/eclipse-temurin:21-jdk-noble@sha256:114cabb73033ca
+padq57u7qeclhiwour2jy7irz	248B	pulled from docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f3
+k7x6g9kqjy4ygj92oxm5ci38k	4.096kB	local source for dockerfile
+onh2vvfu6vbwl147kzkc2o5h2	4.096kB	local source for dockerfile
+x8z2d8kxglsnlqyvxpjb9glfw	4.096kB	local source for context
+r14uj1442sngr98oqvewgmla7	4.239kB	mount / from exec /bin/sh -c echo '#!/bin/bash\nset -e\ntail -f /dev/null\n' > /
+xb3wcndhxrxwgjuhfj3vf0l86	4.239kB	mount / from exec /bin/sh -c echo '#!/bin/bash\nset -e\ntail -f /dev/null\n' > /
+jemy80jtusod9gqr0n29mh46n	4.733kB	[4/9] COPY requirements.txt ./
+zrkjf1ic9zfkgbnsqloh7i8vr	10.66kB	pulled from docker.io/library/eclipse-temurin:21-jdk-noble@sha256:114cabb73033ca
+5hpdtaf4so8bqein87xe970i7	30.73kB	mount / from exec /bin/sh -c cp config.example.yaml config.yaml
+oc45ifu870ah5bte0k87qnesz	82.79kB	[6/9] COPY main.py config.example.yaml ./
+m7gdlht86pcd9eexbiuuvikbw	1.024MB	local source for context
+cxmer12ij713u6p72k2zfzpm3	1.158MB	[8/9] COPY src/ ./src/
+ccxjhnewb98n873h2vz5r5tit	1.983MB	mount / from exec /bin/sh -c apt-get update && apt-get install -y     curl     w
+r1b9g5yr4nutgw3ebzacmlfid	5.599MB	pulled from docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f3
+kpjn0a60u9egqrghe125znc8z	51.27MB	pulled from docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f3
+wdez3dnaszvqpk1z87awh0r4t	90.45MB	pulled from docker.io/library/eclipse-temurin:21-jdk-noble@sha256:114cabb73033ca
+xja76797yhu7bhr0qxxbjchyv	114.7MB	pulled from docker.io/library/eclipse-temurin:21-jdk-noble@sha256:114cabb73033ca
+ox3bq7wpckuvmj3v19475lzbo	115.8MB	pulled from docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f3
+w7bz72h0e1wlts652dhicki29	200.6MB	mount / from exec /bin/sh -c apt-get update && apt-get install -y --no-install-r
+rllezkbpbjoip5sb0b3cj8iz5	354.5MB	mount / from exec /bin/sh -c pip install --no-cache-dir -r requirements.txt
+ujiiqhzm3f8wkkbekoeex57u6	467.1MB	pulled from docker.io/library/eclipse-temurin:21-jdk-noble@sha256:114cabb73033ca
+vgwd0r3rf4bziccjzto8wy5uj	864.7MB	mount / from exec /bin/sh -c curl -sSf https://sh.rustup.rs | sh -s -- -y --prof
+d18df9fe0dvg5fgoi8ic1tdxn	864.7MB	mount / from exec /bin/sh -c curl -sSf https://sh.rustup.rs | sh -s -- -y --prof
+rr69z8d6emvwi7w60cpvv56ha	3.77GB	mount / from exec /bin/sh -c set -eux;     case "$(uname -m)" in       x86_64)  
+5rmfnrhyx9tdqgzk89gwmlq1p	4.06GB	mount / from exec /bin/sh -c set -eux;     case "$(uname -m)" in       x86_64)  
+selected 32 records
+remaining build cache: Total:		24.14GB
+== after
+tmpfs            64G   43G   22G  66% /var/lib/containerd
+records created 2026-11-11 left: 26
+codebadger-joern-server:latest 5.6GB
+codebadger-mcp:latest 728MB
+redis:7 168MB
+postgres:16 636MB
+5
+
+== second run: repeated passes
+== before (second run)
+tmpfs            64G   43G   22G  66% /var/lib/containerd
+Total:		24.14GB
+== prune
+selected 26 records
+pass 1: 18 records left
+pass 2: 17 records left
+pass 3: 16 records left
+pass 4: 14 records left
+pass 5: 12 records left
+pass 6: 12 records left
+remaining build cache: Total:		13.91GB
+== after
+tmpfs            64G   36G   29G  55% /var/lib/containerd
+records created 2026-11-11 left: 12
+codebadger-joern-server:latest 5.6GB
+codebadger-mcp:latest 728MB
+redis:7 168MB
+postgres:16 636MB
+codebadger containers up: 5
+runner containers up: 5
+
+== records created 2026-11-11 still present
+      93B shared=true reclaimable=true inuse=- [3/9] WORKDIR /app
+     135B shared=true reclaimable=true inuse=- mount / from exec /bin/sh -c mkdir -p /app/logs /app/playground
+     248B shared=true reclaimable=true inuse=- pulled from docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cb
+  4.733kB shared=true reclaimable=true inuse=- [4/9] COPY requirements.txt ./
+  30.73kB shared=true reclaimable=true inuse=- mount / from exec /bin/sh -c cp config.example.yaml config.yaml
+  82.79kB shared=true reclaimable=true inuse=- [6/9] COPY main.py config.example.yaml ./
+  1.158MB shared=true reclaimable=true inuse=- [8/9] COPY src/ ./src/
+  5.599MB shared=true reclaimable=true inuse=- pulled from docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cb
+  51.27MB shared=true reclaimable=true inuse=- pulled from docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cb
+  115.8MB shared=true reclaimable=true inuse=- pulled from docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cb
+  200.6MB shared=true reclaimable=true inuse=- mount / from exec /bin/sh -c apt-get update && apt-get install -y --no
+  354.5MB shared=true reclaimable=true inuse=- mount / from exec /bin/sh -c pip install --no-cache-dir -r requirement

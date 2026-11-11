@@ -79,7 +79,7 @@ NUMA 노드 3의 CPU는 `numactl -H` 기준 30-39, 70-79다. 4.0.594 이미지�
 
 ### 그래프 생성 컨테이너
 
-compose 사양에는 `cpuset`(CPU)만 있고 메모리 노드 항목이 없다([compose-spec schema](https://github.com/compose-spec/compose-spec/blob/main/schema/compose-spec.json)). 그래서 override에서 CPU를 고정하고, 배포 스크립트가 `docker update --cpuset-cpus ... --cpuset-mems 3`을 한다. 결과 cgroup은 `cpuset.cpus.effective=30-39,70-79`, `cpuset.mems.effective=3`, `memory.max` 16GiB(`JOERN_MEM_LIMIT=16g`)다. 프런트엔드 heap은 codebadger가 `CPG_BUILD_HEAP_GB=4`로 `-Xmx4G`를 준다.
+compose 사양에는 `cpuset`(CPU)만 있고 메모리 노드 항목이 없다([compose-spec schema](https://github.com/compose-spec/compose-spec/blob/main/schema/compose-spec.json)). 그래서 override에서 CPU를 고정하고, 배포 스크립트가 `docker update --cpuset-cpus ... --cpuset-mems 3`을 한다. 결과 cgroup은 `cpuset.cpus.effective=30-39,70-79`, `cpuset.mems.effective=3`, `memory.max` 16GiB(`JOERN_MEM_LIMIT=16g`, 7절에서 8G로 바꿨다)다. 프런트엔드 heap은 codebadger가 `CPG_BUILD_HEAP_GB=4`로 `-Xmx4G`를 준다.
 
 ### `JAVA_TOOL_OPTIONS`가 `joern --server` JVM에 닿는가
 
@@ -172,9 +172,75 @@ plan.md는 결과나 메모리 통제가 맞지 않으면 `/query-sync` 래퍼�
 | 항목 | 상태 |
 | --- | --- |
 | codebadger 스택 | 컨테이너 5개(`restart: unless-stopped`). opensre `a5c1acbd` 그래프 하나가 적재돼 있다 |
-| 저장 공간 | containerd 저장소(`/var/lib/containerd`)가 64G tmpfs다. 4.0.680 재빌드 뒤 43G를 썼다. 빌드 전 사용량은 재지 않아 codebadger 몫은 정확히 모른다. 재부팅하면 이미지가 사라져 다시 빌드해야 한다 |
-| 메모리 예산 | codebadger는 메모리 예산을 호스트 전체 RAM으로 계산한다(질의 풀 444GB, 동시 서버 상한 88). 노드 3(약 126GB)이나 CI 러너를 고려하지 않는다 |
+| 저장 공간 | containerd 저장소(`/var/lib/containerd`)가 64G tmpfs다. codebadger 빌드 캐시를 지운 뒤 36G를 쓴다(7절) |
+| 메모리 예산 | 질의 워커 예산 80G, 그래프 생성 컨테이너 상한 8G로 바꿨다(7절) |
 | 인증 파일 | 서버 모드 시험에 쓴 joern 계정의 인증 파일(권한 600)이 남아 있다 |
+
+## 7. 운영 설정 조정 (PR 리뷰 뒤 추가)
+
+### CI 러너와 노드 3
+
+`docker inspect`로 본 CI 러너 컨테이너 설정이다. 러너 5개 모두 CPU 16개(`NanoCpus` 16), 메모리 32GiB이고, `--cpuset-cpus`는 걸려 있지만 `--cpuset-mems`는 비어 있다.
+
+| 러너 | cpuset-cpus | 노드 3(30-39, 70-79)과 겹치는 CPU |
+| --- | --- | --- |
+| runner-1 | 0-7, 40-47 | 없음 |
+| runner-2 | 8-15, 48-55 | 없음 |
+| runner-3 | 16-23, 56-63 | 없음 |
+| runner-4 | 24-31, 64-71 | 30, 31, 70, 71 (4개) |
+| runner-5 | 32-39, 72-79 | 16개 전부 |
+
+- 러너 5개가 CPU 80개를 모두 나눠 가지므로, 러너가 없는 NUMA 노드는 없다.
+- codebadger 워커는 `cpuset.mems=3`이라 노드 3 메모리만 쓸 수 있다. 러너는 메모리 노드 제한이 없다.
+- runner-4, runner-5가 노드 3 메모리를 실제로 얼마나 쓰는지는 재지 않았다.
+
+### 메모리 예산 변경
+
+| 설정 | 전 | 후 |
+| --- | --- | --- |
+| `JOERN_MEMORY_BUDGET_MB`(질의 워커 예산) | 0(시작할 때 호스트 RAM으로 계산해 454,656MB) | 81,920MB |
+| `JOERN_MEM_LIMIT`(그래프 생성 컨테이너 상한) | 16g | 8g |
+
+- 생성 컨테이너의 실측 최대치는 3,280,982,016 B(4.0.680)와 3,404,304,384 B(4.0.594)로, 8G 안에 든다([raw/probe-worker-joern-4.0.680.log](raw/probe-worker-joern-4.0.680.log)).
+- 계산: 질의 80G + 생성 8G + runner-5 32G = 120G로 노드 3(126G) 안이다. runner-4의 노드 3 사용량은 빠져 있다.
+- opensre 크기 워커(예약 5G)는 80G 안에 동시에 16개 들어간다.
+- `.env`를 고친 뒤 `docker compose up -d`로 MCP와 생성 컨테이너를 다시 만들고, `docker update`로 생성 컨테이너의 메모리 노드 고정을 다시 걸었다.
+- 적용 뒤 확인: `/health`의 `budget_mb=81920`, 생성 컨테이너 cgroup `memory.max=8589934592`(`cpus 30-39,70-79`, `mems 3`).
+- MCP를 다시 만들자 질의 워커가 내려갔다. 다음 질의 때 디스크의 그래프로 다시 적재됐고(1분 남짓), 그래프 규모는 그대로였다(파일 2,353, 메서드 49,754, 호출 469,749).
+
+노드 3 여유 메모리([raw/numastat-before-budget.txt](raw/numastat-before-budget.txt), [raw/numastat-after-budget.log](raw/numastat-after-budget.log)):
+
+| 시점 | 노드 3 MemFree | 노드 3 MemUsed | 비고 |
+| --- | --- | --- | --- |
+| 변경 전 | 85,487 MB | | `numactl -H` |
+| 변경 뒤, 워커 재적재 직후 | 85,534 MB | 43,477 MB | `numastat -m`. 워커 cgroup `memory.current` 3,505,790,976 B |
+
+### codebadger 빌드 캐시 정리
+
+CI 러너와 같은 데몬이라 `docker buildx prune` 전체 실행은 하지 않았다. [scripts/xeon/prune-codebadger-buildcache.sh](../../../scripts/xeon/prune-codebadger-buildcache.sh)가 레코드를 하나씩 골라 지운다.
+- 고르는 기준: 생성일이 2026-11-11이고, 설명이 codebadger Dockerfile 단계나 그 베이스 이미지(`eclipse-temurin:21-jdk-noble`, `python:3.13-slim`), 빌드 컨텍스트와 맞는 레코드.
+- 이날 만들어진 레코드 32건은 모두 이 기준에 들었다. 생성 시각도 codebadger 빌드 시각(16:27~16:45 UTC)과 같다.
+
+| 항목 | 전 | 후 |
+| --- | --- | --- |
+| 빌드 캐시 합계(`docker buildx du`) | 24.14GB | 13.91GB |
+| containerd tmpfs 사용량 | 43G | 36G |
+| 2026-11-11 생성 레코드 | 32건 | 12건 |
+
+- `--filter id=<ID>`로 레코드를 하나씩 지우면, 자식 레코드가 남은 부모는 지워지지 않는다(0B). 그래서 남은 레코드 수가 줄지 않을 때까지 6번 반복했다.
+- 남은 12건(약 0.73GB)은 모두 `Shared: true`로 `codebadger-mcp`, 베이스 이미지 레이어와 공유된다. 이미지를 지우지 않는 한 공간은 줄지 않는다.
+- 캐시를 지운 뒤에도 codebadger 컨테이너 5개와 러너 컨테이너 5개는 그대로 떠 있었다([raw/prune-buildcache.log](raw/prune-buildcache.log)).
+- 다음 재빌드는 Joern 내려받기와 Rust 툴체인 설치를 처음부터 다시 한다.
+
+### 이미지 디스크 저장과 부팅 복원 (적용 안 됨)
+
+러너 이미지 복원 유닛과 같은 방식으로 아래 파일을 만들었다. 적용은 하지 못했다.
+- [config/codebadger/systemd/codebadger-image-restore.service](../../../config/codebadger/systemd/codebadger-image-restore.service): 이미지가 없으면 디스크의 `docker save` 묶음을 `docker load` 한다.
+- [config/codebadger/systemd/codebadger-stack.service](../../../config/codebadger/systemd/codebadger-stack.service): Docker data-root도 tmpfs라 재부팅하면 컨테이너와 네트워크가 사라진다. 그래서 이미지 복원 뒤 `docker compose up -d --no-build`와 메모리 노드 고정을 다시 한다.
+- [config/codebadger/systemd/codebadger.conf.example](../../../config/codebadger/systemd/codebadger.conf.example)
+- [scripts/xeon/save-codebadger-images.sh](../../../scripts/xeon/save-codebadger-images.sh): 이미지 4개를 `/var/lib/codebadger/images/`에 저장하고 유닛을 설치·활성화한다.
+
+이 스크립트는 sudo로 `/etc/systemd/system`에 유닛을 설치하고 부팅 서비스로 켠다. 작업자 세션의 권한 검사에서 이 단계가 막혀 Xeon에는 아무것도 설치되지 않았다. 재부팅 확인 안 됨.
 
 ## 확인 안 됨
 
@@ -184,6 +250,8 @@ plan.md는 결과나 메모리 통제가 맞지 않으면 `/query-sync` 래퍼�
 - 그래프 생성 컨테이너 안 pysrc2cpg JVM의 heap을 jcmd로 재지 않았다(로그의 `-Xmx4G`만 확인)
 - codebadger의 `run_cpgql_query` 검사(denylist)가 3단계 질의 말고 다른 질의를 막는지. codebadger security.md는 이 검사를 경계가 아닌 보조 장치로 본다
 - `/health`가 버전을 `0.6.2-beta`로 보고하는 이유
+- runner-4, runner-5가 노드 3 메모리를 실제로 얼마나 쓰는지
+- 이미지 부팅 복원(설치하지 못했다). 재부팅 확인 안 됨
 
 ## 원본 파일
 
@@ -197,4 +265,6 @@ plan.md는 결과나 메모리 통제가 맞지 않으면 `/query-sync` 래퍼�
 | `raw/probe-worker-joern-{4.0.594,4.0.680}.log` | 워커와 생성 컨테이너의 cpuset, cgroup, JVM heap, 바인드 |
 | `raw/server-jto-probe-joern-4.0.680.log` | 호스트 `joern --server`의 `JAVA_TOOL_OPTIONS`, NUMA 정책, basic auth |
 | `raw/claude-session-mcp.jsonl` | Claude Code 세션의 MCP 호출과 결과(작업 환경 정보는 뺐다) |
+| `raw/numastat-before-budget.txt`, `raw/numastat-after-budget.log` | 예산 변경 전후 노드별 메모리, 변경 뒤 cgroup과 `/health` 예산 |
+| `raw/prune-buildcache.log` | 빌드 캐시 선택 삭제 전후와 남은 레코드 |
 | `scripts/` | 위 기록을 만든 스크립트. `queries.py`는 3단계 질의를 MCP 호출로 바꾼다 |
