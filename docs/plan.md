@@ -1,6 +1,6 @@
 # AI 코드 분석 도구 구축 계획
 
-2026-11-11 · 원본: [claude.ai 문서](https://claude.ai/artifact/DAPVDmG6FzjpyqirLbrQ2e). 이 파일은 작업자가 읽을 수 있도록 레포에 넣은 사본이다. 원본이 바뀌면 이 파일도 같이 고친다.
+2026-11-12 · 원본: [claude.ai 문서](https://claude.ai/artifact/DAPVDmG6FzjpyqirLbrQ2e). 이 파일은 작업자가 읽을 수 있도록 레포에 넣은 사본이다. 원본이 바뀌면 이 파일도 같이 고친다.
 
 ## 목표와 범위
 
@@ -23,7 +23,7 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 | 분석 서버 | Xeon E7-4820 v4 머신 | 4소켓 40코어(80스레드), 메모리 512GB(바로 쓸 수 있는 양 약 467GB), NUMA 4노드. 이미 러너로 쓰고 있다 |
 | Ryzen 9 5900 머신 | 지금처럼 러너로만 씀 | 메모리 64GB. 3단계 측정으로 Xeon만으로 충분하다는 것이 확인됐다 |
 | 넓게 찾기(Screening) | ast-grep + 공식 MCP | DB 없이 그때그때 검색한다. MIT |
-| 정확한 참조(정의·호출처) | Serena + Python 언어 서버(pyright 계열) | Joern은 Python 호출을 이름으로 잇는다(3단계). 타입으로 실제 대상만 찾는다. 앱 GPL-3.0 |
+| 정확한 참조(정의·호출처) | Serena + Pyright(Serena 기본 언어 서버) | Joern은 Python 호출을 이름으로 잇는다(3단계). 타입으로 실제 대상만 찾는다. 흔한 이름에서 Joern 결과 14개 중 실제 호출자는 1개였다(4단계). 앱 GPL-3.0 |
 | 깊게 따라가기(In-depth) | Joern | 미리 만든 그래프에서 데이터 흐름과 제어 흐름을 따라간다. Apache 2.0. MCP는 codebadger 시험 뒤 정한다 |
 | 앞단 | 도구별 MCP를 나란히 붙임 | 통합 앞단은 AI가 도구 선택을 헷갈리는 게 보일 때 만든다 |
 | Java | OpenJDK 21 | Joern README의 요구 버전. Xeon에 설치했다(2단계) |
@@ -54,13 +54,16 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 - 작업자 쪽에 설치하고 공식 MCP를 로컬 프로세스로 붙인다.
 - 공식 MCP 도구는 구문 트리 보기, 규칙 시험, 패턴 검색, 규칙 검색 4가지다. 스스로 실험 단계라고 밝힌다.
 - 저장할 것이 없으므로 SHA별 보관도 필요 없다.
+- ast-grep 0.51.2를 쓴다. 공식 MCP는 태그가 없어 커밋으로 고정했다(4단계).
+- 사전 스크립트는 CLI 결과를 정렬해 후보 목록을 만든다. 원본 출력은 실행마다 순서가 달라서다. 같은 커밋에서 macOS와 리눅스 모두 같은 해시가 나왔다(4단계).
 
 ### Serena
 
-- 작업자 체크아웃에서 Python 언어 서버(pyright 계열)를 띄워 정의, 참조, 구현을 찾는다. 이름이 같아도 타입으로 실제 대상을 가린다.
+- 작업자 체크아웃에서 Pyright(Serena 2.1.0 기본값 1.1.403)를 띄워 정의, 참조, 구현을 찾는다. 이름이 같아도 타입으로 실제 대상을 가린다.
 - Joern의 Python 프런트엔드는 호출을 이름으로 잇는다. 흔한 이름은 메서드마다 호출 지점이 약 590개씩 붙는다(3단계). 정확한 참조는 Serena가 맡는다.
+- 4단계 비교: `record_evidence_entry`는 두 도구가 131쌍 모두 같았다. 흔한 이름인 `SessionManager.close`는 Joern 14개 중 실제 호출자가 1개였고, 실제 호출자 5개 중 Joern이 찾은 것도 1개였다. Joern은 패키지에서 다시 내보낸 이름과 반환 타입 표기를 풀지 못했다.
 - 값의 흐름이나 실행 조건은 다루지 않는다. 그건 Joern이 맡는다.
-- 코드 편집과 셸 실행 도구도 들어 있으므로 읽기 도구만 켠다.
+- 코드 편집과 셸 실행 도구도 들어 있으므로 읽기 도구 5개만 켠다. 도구 인터페이스로 고정하고 fixed_tools와 read_only를 함께 건다. REPL 인터페이스에서는 도구 제한이 먹지 않는다(Serena 문서, 4단계 확인).
 - 라이선스: 앱은 GPL-3.0, 언어 서버 연결부(SolidLSP)는 MIT. 사내 사용은 문제없고, 고친 버전을 배포하면 소스 공개 의무가 생긴다.
 
 ### Joern 서버 (Xeon)
@@ -95,9 +98,8 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
     - OpenJDK 21과 Joern v4.0.680을 joern 전용 계정 기준으로 설치했다. 설치 절차는 `scripts/xeon/install-joern.sh`.
 3. **기준값 측정 (완료, PR #3)**
     - opensre `a5c1acbd`의 core와 전체로 그래프 생성, 적재, 질의 시간을 재고 부분 갱신 여부를 확인했다. 결과는 측정·검증 표 1~3행과 위험 표에 있다.
-4. **ast-grep과 Serena 연결**
-    - 작업자 쪽에 ast-grep과 공식 MCP, Serena를 설치한다. Serena는 읽기 도구만 켠다. Screening용 ast-grep 규칙을 몇 개 쓴다.
-    - 끝: 같은 SHA에서 ast-grep을 두 번 돌려 같은 후보 목록이 나온다. 3단계와 같은 커밋에서 Q1(`record_evidence_entry` 호출처)과 흔한 이름의 함수 하나를 Serena와 Joern으로 각각 물어 비교한 기록이 있다.
+4. **ast-grep과 Serena 연결 (완료, PR #5)**
+    - ast-grep 0.51.2와 공식 MCP, Serena 2.1.0(Pyright 1.1.403)을 작업자 쪽에 붙였다. Serena는 읽기 도구 5개만 켰다. Screening 규칙 5개와 후보 목록 스크립트를 넣었다. 결과는 위험 표와 [4단계 기록](measurements/2026-11-12-serena-joern/README.md)에 있다.
 5. **Joern 서버와 MCP 연결**
     - codebadger를 Xeon에 올려 3단계 Q1~Q5를 다시 돌린다. 결과와 메모리 통제가 맞으면 쓰고, 아니면 얇은 래퍼를 직접 만든다.
     - 끝: 작업 세션에서 MCP로 데이터 흐름을 물어 답을 받는다.
@@ -130,19 +132,21 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 | 항목 | 상태 | 대응 |
 | --- | --- | --- |
 | Joern 부분 갱신 | 없음(3단계 확인) | 커밋마다 새로 만든다. 만드는 동안에는 조상 그래프로 답한다 |
-| Joern의 Python 호출 연결 | 이름으로 잇는다(3단계 확인) | 정확한 참조는 Serena가 맡는다. 4단계에서 두 도구 결과를 비교한다 |
+| Joern의 Python 호출 연결 | 이름으로 잇는다(3단계). 흔한 이름은 실제 호출자 5개 중 1개만 맞음(4단계) | 정확한 참조는 Serena가 맡는다. 흔한 이름이나 다시 내보낸 심볼은 Joern 호출 관계를 쓰지 않는다 |
 | Python 3.12 `type` 문 파싱 실패 | opensre에서 9개 파일(3단계) | 파일 전체가 빠지지는 않는다. 데모에서 한계로 설명한다 |
 | `-J-Xmx`가 스크립트 JVM에 안 닿음 | 3단계 실측 | `JAVA_TOOL_OPTIONS`로 준다. 서버 모드와 codebadger는 5단계에서 확인한다 |
 | ast-grep 공식 MCP | 스스로 실험 단계라고 밝힘 | 사전 스크립트는 MCP 없이 CLI를 직접 부른다 |
 | Joern 서버 격리 없음 | 문서에 명시 | 내부망 전용, basic auth, 외부 노출 금지 |
 | Serena·codebadger 라이선스 | 둘 다 GPL-3.0(Serena는 앱만) | 사내 사용은 문제없다. 고친 버전을 배포할 때만 소스 공개 의무가 생긴다 |
-| Serena 편집·셸 도구 | 기본으로 들어 있음 | 읽기 도구만 켠다. 설정 방법은 4단계에서 문서로 확인한다 |
+| Serena 편집·셸 도구 | 읽기 도구 5개만 켬(4단계 확인) | 도구 인터페이스, fixed_tools, read_only. 편집·셸 도구를 부르면 Unknown tool로 거부된다 |
+| Pyright 가상환경 | opensre 의존성 없이 돌림(4단계) | 서드파티 타입이 풀리지 않는다. 가상환경을 주면 결과가 달라지는지는 확인 안 됨 |
+| 작업 세션의 MCP 질의 | 등록과 연결만 확인(4단계) | 5단계에서 Joern MCP와 함께 작업 세션에서 직접 물어 확인한다 |
 | opensre 정답지 | 없음 | 지난 autoflow PR에서 사례를 골라 사람이 결정 코드를 확인해 둔다 |
 | SHA별 그래프 누적 | 커밋당 30MB(파일) 또는 142MB(프로젝트) | 저장 형태와 보관 개수를 정한다 |
 
 ## 남은 결정
 
-4단계를 막는 결정은 없다. 나머지는 진행하면서 정한다.
+5단계 전에 정할 것은 Joern 메모리 상한과 노드 고정이다. 나머지는 진행하면서 정한다.
 
 - [x] codeinside 레포: Munsik-Park/codeinside, 공개로 정함
 - [x] 뒤에 붙일 도구: ast-grep, Serena, Joern
@@ -161,5 +165,7 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 - [Serena — 앱 GPL-3.0, SolidLSP MIT](https://github.com/oraios/serena)
 - [codebadger(Joern MCP) — GPL-3.0, Docker·Postgres·Redis](https://github.com/Lekssays/codebadger)
 - [3단계 측정 기록](measurements/2026-11-11-baseline/README.md)
+- [4단계 비교 기록 — ast-grep 재현성, Serena·Joern 비교](measurements/2026-11-12-serena-joern/README.md)
+- [Serena 설정 — 도구 인터페이스와 REPL](https://github.com/oraios/serena/blob/v2.1.0/docs/02-usage/050_configuration.md)
 - [Intel Xeon E7-4820 v4 사양](https://www.intel.com/content/www/us/en/products/sku/93814/intel-xeon-processor-e74820-v4-25m-cache-2-00-ghz/specifications.html)
 - [포크 해제 — 이슈·PR 소실](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/detaching-a-fork)
