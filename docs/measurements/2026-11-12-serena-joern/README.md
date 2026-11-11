@@ -98,7 +98,7 @@
 
 ### C1이 갈린 이유
 
-Joern이 각 호출 지점을 어디로 이었는지 따로 뽑았다([scripts/callsite-targets.sc](scripts/callsite-targets.sc), [raw/callsite-targets-jto-2G.log](raw/callsite-targets-jto-2G.log)).
+Joern이 각 호출 지점을 어디로 이었는지 따로 뽑았다([scripts/callsite-targets.sc](scripts/callsite-targets.sc), [raw/callsite-targets-jto-2G.log](raw/callsite-targets-jto-2G.log)). `SessionManager.close`에 이어진 호출 지점 17곳 전부의 `methodFullName`과 후보 수는 [raw/joern-only-sites-jto-2G.log](raw/joern-only-sites-jto-2G.log)에 있다. 정의 파일 안의 2곳(205행, 380행)만 `methodFullName`이 `SessionManager.close`이고 후보가 1개다. 나머지 15곳은 모두 `<unknownFullName>`, 후보 76개다.
 
 양쪽에 나온 것은 `SessionManager.rotate` 안의 `self.close(...)` 하나다.
 
@@ -161,6 +161,7 @@ tests 제외: Serena 결과에서 뺀 최상위 `tests/` 참조는 Q1 4건, C1 5
 | `raw/common-candidates-jto-2G.log`, `raw/common-perdef-jto-2G.log` | 흔한 이름 후보와 정의별 연결 수 |
 | `raw/callers-jto-2G.log` | Joern Q1, C1 호출 함수와 호출 지점 |
 | `raw/callsite-targets-jto-2G.log` | 갈린 호출 지점에서 Joern이 이은 대상 |
+| `raw/joern-only-sites-jto-2G.log` | `SessionManager.close`에 이어진 호출 지점 17곳의 `methodFullName`과 후보 수 |
 | `raw/compare-{Q1,C1}.json` | `scripts/compare.py` 출력 |
 | `scripts/*.sc` | Joern 스크립트. Xeon에는 `step4-` 접두어를 붙여 joern 계정의 measure 폴더에 두었다 |
 | `scripts/serena-refs.sh`, `scripts/serena-readonly-probe.sh`, `scripts/compare.py`, `scripts/sanitize.sh` | Serena 질의, 읽기 전용 확인, 비교, 경로 치환 |
