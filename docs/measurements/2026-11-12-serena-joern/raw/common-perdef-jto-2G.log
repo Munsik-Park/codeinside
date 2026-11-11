@@ -1,0 +1,105 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+executing /var/lib/joern/measure/step4-common-perdef.sc
+Creating working copy of CPG to be safe
+Loading base CPG from: /var/lib/joern/workspace/full.bin/cpg.bin.tmp
+NAME _get_client defs=20 callsites_by_name=84
+  DEF integrations/alertmanager/client.py:<module>.AlertmanagerClient._get_client	callIn=4	callers=4
+  DEF integrations/argocd/client.py:<module>.ArgoCDClient._get_client	callIn=3	callers=3
+  DEF integrations/bitbucket/client.py:<module>._get_client	callIn=4	callers=4
+  DEF integrations/clickhouse/__init__.py:<module>._get_client	callIn=4	callers=4
+  DEF integrations/datadog/client.py:<module>.DatadogClient._get_client	callIn=5	callers=5
+  DEF integrations/elasticsearch/client.py:<module>.ElasticsearchClient._get_client	callIn=5	callers=5
+  DEF integrations/honeycomb/client.py:<module>.HoneycombClient._get_client	callIn=5	callers=5
+  DEF integrations/incident_io/client.py:<module>.IncidentIoClient._get_client	callIn=2	callers=2
+  DEF integrations/jenkins/client.py:<module>.JenkinsClient._get_client	callIn=6	callers=6
+  DEF integrations/jira/client.py:<module>.JiraClient._get_client	callIn=6	callers=6
+  DEF integrations/mongodb/__init__.py:<module>._get_client	callIn=6	callers=6
+  DEF integrations/mongodb_atlas/__init__.py:<module>._get_client	callIn=6	callers=6
+  DEF integrations/new_relic/client.py:<module>.NewRelicClient._get_client	callIn=2	callers=2
+  DEF integrations/opsgenie/client.py:<module>.OpsGenieClient._get_client	callIn=5	callers=5
+  DEF integrations/pagerduty/client.py:<module>.PagerDutyClient._get_client	callIn=8	callers=8
+  DEF integrations/prefect/client.py:<module>.PrefectClient._get_client	callIn=5	callers=5
+  DEF integrations/rabbitmq/__init__.py:<module>._get_client	callIn=6	callers=6
+  DEF integrations/redis/__init__.py:<module>._get_client	callIn=8	callers=8
+  DEF integrations/vercel/client.py:<module>.VercelClient._get_client	callIn=6	callers=6
+  DEF integrations/victoria_logs/client.py:<module>.VictoriaLogsClient._get_client	callIn=2	callers=2
+NAME record defs=13 callsites_by_name=53
+  DEF core/agent_harness/accounting/token_usage.py:<module>.TokenUsage.record	callIn=11	callers=7
+  DEF core/agent_harness/ports.py:<module>.SessionState.record	callIn=11	callers=7
+  DEF core/agent_harness/session/session_core.py:<module>.SessionCore.record	callIn=11	callers=7
+  DEF core/agent_harness/turns/headless_adapters.py:<module>.InMemorySessionState.record	callIn=11	callers=7
+  DEF core/agent_harness/turns/wal_recorder.py:<module>.wal_event_recorder.record	callIn=10	callers=6
+  DEF gateway/tests/runtime/test_credential_refresh.py:<module>.hydrated.record	callIn=10	callers=6
+  DEF infrastructure/scheduling/scheduler/tool_actions.py:<module>.bound_action_hook.record	callIn=10	callers=6
+  DEF integrations/github/ci_epochs.py:<module>.Epoch.record	callIn=12	callers=8
+  DEF integrations/github/tools/ci_fix/ledger.py:<module>.CiFixCounter.record	callIn=12	callers=8
+  DEF integrations/github/tools/ci_health_scan/graphql.py:<module>.RateLimitTally.record	callIn=12	callers=8
+  DEF integrations/webapp_requests/ledger.py:<module>.RequestLedger.record	callIn=11	callers=7
+  DEF surfaces/interactive_shell/ui/streaming/console.py:<module>.StreamingConsole.record	callIn=11	callers=7
+  DEF surfaces/interactive_shell/ui/streaming/console.py:<module>.StreamingConsole.record<redefined>0	callIn=10	callers=6
+NAME close defs=26 callsites_by_name=179
+  DEF core/agent_harness/session/lifecycle.py:<module>.SessionManager.close	callIn=17	callers=14
+  DEF gateway/core/middleware/approvals.py:<module>.ApprovalBroker.close	callIn=17	callers=14
+  DEF gateway/core/storage/session/binding_store.py:<module>.BindingStore.close	callIn=16	callers=13
+  DEF gateway/core/storage/session/file_bindings.py:<module>.FileBindingStore.close	callIn=21	callers=18
+  DEF gateway/transports/slack/turn_stack.py:<module>.SlackTurnStack.close	callIn=17	callers=14
+  DEF infrastructure/process/windows_job.py:<module>._Descriptor.close	callIn=19	callers=15
+  DEF infrastructure/process/windows_job.py:<module>._Handle.close	callIn=19	callers=15
+  DEF infrastructure/text/report_layout.py:<module>.parse_report.close	callIn=17	callers=13
+  DEF infrastructure/turn_host/unattended_session.py:<module>.UnattendedSessions.close	callIn=17	callers=14
+  DEF integrations/alertmanager/client.py:<module>.AlertmanagerClient.close	callIn=18	callers=15
+  DEF integrations/argocd/client.py:<module>.ArgoCDClient.close	callIn=18	callers=15
+  DEF integrations/credentials_api/client.py:<module>.CredentialsApiClient.close	callIn=18	callers=15
+  DEF integrations/dagster/client.py:<module>.DagsterClient.close	callIn=18	callers=15
+  DEF integrations/hosted_gateway/client.py:<module>.HostedGatewayClient.close	callIn=18	callers=15
+  DEF integrations/incident_io/client.py:<module>.IncidentIoClient.close	callIn=18	callers=15
+  DEF integrations/jenkins/client.py:<module>.JenkinsClient.close	callIn=18	callers=15
+  DEF integrations/kubernetes/client.py:<module>.KubernetesClient.close	callIn=18	callers=15
+  DEF integrations/opsgenie/client.py:<module>.OpsGenieClient.close	callIn=18	callers=15
+  DEF integrations/pagerduty/client.py:<module>.PagerDutyClient.close	callIn=18	callers=15
+  DEF integrations/prefect/client.py:<module>.PrefectClient.close	callIn=18	callers=15
+  DEF integrations/temporal/client.py:<module>.TemporalClient.close	callIn=18	callers=15
+  DEF integrations/vercel/client.py:<module>.VercelClient.close	callIn=18	callers=15
+  DEF integrations/victoria_logs/client.py:<module>.VictoriaLogsClient.close	callIn=18	callers=15
+  DEF surfaces/cli/commands/remote_sync_progress.py:<module>.CliProgress.close	callIn=17	callers=14
+  DEF surfaces/interactive_shell/runtime/core/prompt_builder.py:<module>.PromptBuilder.close	callIn=16	callers=13
+  DEF surfaces/interactive_shell/runtime/startup/deferred_work.py:<module>.DeferredStartupWork.close	callIn=18	callers=15
+NAME resolve defs=17 callsites_by_name=112
+  DEF core/agent_harness/prompts/skills/catalog/script_tools.py:<module>.SkillScriptTool.resolve	callIn=17	callers=13
+  DEF core/agent_harness/session/lifecycle.py:<module>.SessionManager.resolve	callIn=11	callers=11
+  DEF gateway/core/middleware/approvals.py:<module>.ApprovalBroker.resolve	callIn=17	callers=16
+  DEF gateway/core/storage/session/resolver.py:<module>.SessionResolver.resolve	callIn=12	callers=12
+  DEF gateway/tests/buzz/test_credit_metering.py:<module>._FakeSessionResolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/buzz/test_turn_timeout.py:<module>._FakeSessionResolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/buzz/test_unbound_storage_borders.py:<module>.test_buzz_resolve_passes_principal_and_actor._Resolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/discord/test_credit_metering.py:<module>._SessionResolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/ingress/test_polled_turn_sequence.py:<module>._RecordingResolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/main/test_agent_life_cycle.py:<module>.test_polled_telegram_message_reaches_start_gateway_agent_callback.FakeSessionResolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/runtime/test_inbound_decision.py:<module>._Resolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/slack/test_dispatcher.py:<module>._FakeSessionResolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/slack/test_dispatcher_scope_borders.py:<module>._RecordingResolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/telegram/test_credit_metering.py:<module>._FakeSessionResolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/telegram/test_turn_timeout.py:<module>._FakeSessionResolver.resolve	callIn=11	callers=11
+  DEF gateway/tests/telegram/test_unbound_storage_borders.py:<module>.test_telegram_resolve_passes_principal_and_actor._Resolver.resolve	callIn=11	callers=11
+  DEF integrations/github/tools/ci_fix/runner.py:<module>.resolve_merge_conflicts.resolve	callIn=10	callers=10
+NAME rotate defs=18 callsites_by_name=15
+  DEF core/agent_harness/session/lifecycle.py:<module>.SessionManager.rotate	callIn=2	callers=2
+  DEF gateway/core/storage/session/binding_store.py:<module>.BindingStore.rotate	callIn=2	callers=2
+  DEF gateway/core/storage/session/file_bindings.py:<module>.FileBindingStore.rotate	callIn=5	callers=4
+  DEF gateway/core/storage/session/resolver.py:<module>.SessionResolver.rotate	callIn=4	callers=3
+  DEF gateway/tests/buzz/test_credit_metering.py:<module>._FakeSessionResolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/buzz/test_turn_timeout.py:<module>._FakeSessionResolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/buzz/test_unbound_storage_borders.py:<module>.test_buzz_resolve_passes_principal_and_actor._Resolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/buzz/test_unbound_storage_borders.py:<module>.test_buzz_rotate_passes_principal_and_actor._Resolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/discord/test_credit_metering.py:<module>._SessionResolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/ingress/test_polled_turn_sequence.py:<module>._RecordingResolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/main/test_agent_life_cycle.py:<module>.test_polled_telegram_message_reaches_start_gateway_agent_callback.FakeSessionResolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/runtime/test_credential_refresh.py:<module>._VersionedSecrets.rotate	callIn=8	callers=8
+  DEF gateway/tests/runtime/test_inbound_decision.py:<module>._Resolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/slack/test_dispatcher.py:<module>._FakeSessionResolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/slack/test_dispatcher_scope_borders.py:<module>._RecordingResolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/telegram/test_credit_metering.py:<module>._FakeSessionResolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/telegram/test_turn_timeout.py:<module>._FakeSessionResolver.rotate	callIn=2	callers=2
+  DEF gateway/tests/telegram/test_unbound_storage_borders.py:<module>.test_telegram_resolve_passes_principal_and_actor._Resolver.rotate	callIn=2	callers=2
+closing/saving project `full.bin`

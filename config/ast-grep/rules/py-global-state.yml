@@ -1,0 +1,7 @@
+# 함수 안의 global 문. 모듈 전역 상태를 바꿔 다른 호출의 동작을 바꾸는 지점을 거른다.
+id: py-global-state
+language: python
+severity: info
+message: 함수 안에서 모듈 전역 변수를 다시 묶는다(global)
+rule:
+  kind: global_statement

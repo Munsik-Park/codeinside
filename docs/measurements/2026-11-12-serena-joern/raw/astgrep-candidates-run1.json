@@ -1,0 +1,11162 @@
+{
+ "candidates": [
+  {
+   "end": [
+    32,
+    41
+   ],
+   "file": "bootstrap/frozen_ca_bundle.py",
+   "rule": "py-env-read",
+   "start": [
+    32,
+    8
+   ],
+   "text": "os.environ.get(SSL_CERT_FILE_ENV)"
+  },
+  {
+   "end": [
+    32,
+    77
+   ],
+   "file": "bootstrap/frozen_ca_bundle.py",
+   "rule": "py-env-read",
+   "start": [
+    32,
+    45
+   ],
+   "text": "os.environ.get(SSL_CERT_DIR_ENV)"
+  },
+  {
+   "end": [
+    75,
+    51
+   ],
+   "file": "config/account.py",
+   "rule": "py-env-read",
+   "start": [
+    75,
+    21
+   ],
+   "text": "os.getenv(OPENSRE_APP_URL_ENV)"
+  },
+  {
+   "end": [
+    107,
+    64
+   ],
+   "file": "config/account.py",
+   "rule": "py-env-read",
+   "start": [
+    107,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_ACCOUNT_METADATA_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    229,
+    67
+   ],
+   "file": "config/account.py",
+   "rule": "py-env-read",
+   "start": [
+    229,
+    40
+   ],
+   "text": "os.getenv(USAGE_SECRET_ENV)"
+  },
+  {
+   "end": [
+    263,
+    48
+   ],
+   "file": "config/account.py",
+   "rule": "py-env-read",
+   "start": [
+    263,
+    19
+   ],
+   "text": "os.getenv(WEBAPP_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    267,
+    57
+   ],
+   "file": "config/account.py",
+   "rule": "py-env-read",
+   "start": [
+    267,
+    13
+   ],
+   "text": "os.getenv(OPENSRE_ACCOUNT_LLM_MODEL_ENV, \"\")"
+  },
+  {
+   "end": [
+    53,
+    45
+   ],
+   "file": "config/clerk.py",
+   "rule": "py-env-read",
+   "start": [
+    53,
+    14
+   ],
+   "text": "os.getenv(CLERK_ISSUER_ENV, \"\")"
+  },
+  {
+   "end": [
+    56,
+    49
+   ],
+   "file": "config/clerk.py",
+   "rule": "py-env-read",
+   "start": [
+    56,
+    16
+   ],
+   "text": "os.getenv(CLERK_JWKS_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    51,
+    65
+   ],
+   "file": "config/constants/llm.py",
+   "rule": "py-env-read",
+   "start": [
+    51,
+    12
+   ],
+   "text": "os.environ.get(OPENSRE_REACT_GOAL_LLM_REVIEW_ENV, \"\")"
+  },
+  {
+   "end": [
+    23,
+    43
+   ],
+   "file": "config/constants/organization.py",
+   "rule": "py-env-read",
+   "start": [
+    23,
+    13
+   ],
+   "text": "os.getenv(ORGANIZATION_ID_ENV)"
+  },
+  {
+   "end": [
+    41,
+    47
+   ],
+   "file": "config/constants/paths.py",
+   "rule": "py-env-read",
+   "start": [
+    41,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_HOME_ENV, \"\")"
+  },
+  {
+   "end": [
+    112,
+    51
+   ],
+   "file": "config/constants/paths.py",
+   "rule": "py-env-read",
+   "start": [
+    112,
+    20
+   ],
+   "text": "os.getenv(CONTEXT_ROOT_ENV, \"\")"
+  },
+  {
+   "end": [
+    190,
+    53
+   ],
+   "file": "config/constants/paths.py",
+   "rule": "py-env-read",
+   "start": [
+    190,
+    16
+   ],
+   "text": "os.getenv(CI_FIX_LEDGER_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    202,
+    58
+   ],
+   "file": "config/constants/paths.py",
+   "rule": "py-env-read",
+   "start": [
+    202,
+    16
+   ],
+   "text": "os.getenv(INTEGRATIONS_STORE_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    222,
+    52
+   ],
+   "file": "config/constants/paths.py",
+   "rule": "py-env-read",
+   "start": [
+    222,
+    16
+   ],
+   "text": "os.getenv(WIZARD_STORE_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    234,
+    53
+   ],
+   "file": "config/constants/paths.py",
+   "rule": "py-env-read",
+   "start": [
+    234,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_MEMORY_DIR_ENV, \"\")"
+  },
+  {
+   "end": [
+    257,
+    56
+   ],
+   "file": "config/constants/paths.py",
+   "rule": "py-env-read",
+   "start": [
+    257,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_KNOWLEDGE_DIR_ENV, \"\")"
+  },
+  {
+   "end": [
+    264,
+    57
+   ],
+   "file": "config/constants/paths.py",
+   "rule": "py-env-read",
+   "start": [
+    264,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_WORK_ITEMS_DIR_ENV, \"\")"
+  },
+  {
+   "end": [
+    33,
+    61
+   ],
+   "file": "config/environment.py",
+   "rule": "py-env-read",
+   "start": [
+    33,
+    17
+   ],
+   "text": "os.getenv(DEPLOYMENT_ENV_ENV, \"development\")"
+  },
+  {
+   "end": [
+    22,
+    35
+   ],
+   "file": "config/grafana_cloud.py",
+   "rule": "py-env-read",
+   "start": [
+    22,
+    12
+   ],
+   "text": "os.getenv(key, default)"
+  },
+  {
+   "end": [
+    31,
+    49
+   ],
+   "file": "config/grafana_cloud.py",
+   "rule": "py-env-read",
+   "start": [
+    31,
+    8
+   ],
+   "text": "os.getenv(\"GRAFANA_CONFIG_SKIP_ENV_FILE\")"
+  },
+  {
+   "end": [
+    47,
+    51
+   ],
+   "file": "config/interactive_override.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    12
+   ],
+   "text": "os.environ.get(OPENSRE_INTERACTIVE_ENV)"
+  },
+  {
+   "end": [
+    40,
+    26
+   ],
+   "file": "config/llm_auth/cli_auth.py",
+   "rule": "py-global-state",
+   "start": [
+    40,
+    9
+   ],
+   "text": "global _installed"
+  },
+  {
+   "end": [
+    110,
+    34
+   ],
+   "file": "config/llm_auth/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    110,
+    12
+   ],
+   "text": "os.getenv(env_var, \"\")"
+  },
+  {
+   "end": [
+    159,
+    41
+   ],
+   "file": "config/llm_auth/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    159,
+    14
+   ],
+   "text": "os.getenv(\"AWS_REGION\", \"\")"
+  },
+  {
+   "end": [
+    159,
+    88
+   ],
+   "file": "config/llm_auth/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    159,
+    53
+   ],
+   "text": "os.getenv(\"AWS_DEFAULT_REGION\", \"\")"
+  },
+  {
+   "end": [
+    319,
+    44
+   ],
+   "file": "config/llm_auth/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    319,
+    16
+   ],
+   "text": "os.getenv(\"OLLAMA_HOST\", \"\")"
+  },
+  {
+   "end": [
+    517,
+    30
+   ],
+   "file": "config/llm_auth/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    517,
+    8
+   ],
+   "text": "os.getenv(env_var, \"\")"
+  },
+  {
+   "end": [
+    531,
+    30
+   ],
+   "file": "config/llm_auth/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    531,
+    8
+   ],
+   "text": "os.getenv(env_var, \"\")"
+  },
+  {
+   "end": [
+    27,
+    63
+   ],
+   "file": "config/llm_auth/records.py",
+   "rule": "py-env-read",
+   "start": [
+    27,
+    16
+   ],
+   "text": "os.getenv(\"OPENSRE_LLM_AUTH_METADATA_PATH\", \"\")"
+  },
+  {
+   "end": [
+    107,
+    44
+   ],
+   "file": "config/llm_reasoning_effort.py",
+   "rule": "py-env-read",
+   "start": [
+    107,
+    13
+   ],
+   "text": "os.getenv(_RUNTIME_ENV_KEY, \"\")"
+  },
+  {
+   "end": [
+    151,
+    52
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    151,
+    12
+   ],
+   "text": "os.getenv(LLM_PROVIDER_ENV, \"anthropic\")"
+  },
+  {
+   "end": [
+    176,
+    33
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    176,
+    11
+   ],
+   "text": "os.getenv(primary, \"\")"
+  },
+  {
+   "end": [
+    178,
+    36
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    178,
+    15
+   ],
+   "text": "os.getenv(legacy, \"\")"
+  },
+  {
+   "end": [
+    211,
+    74
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    211,
+    34
+   ],
+   "text": "os.getenv(AZURE_OPENAI_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    214,
+    10
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    212,
+    37
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    216,
+    76
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    216,
+    35
+   ],
+   "text": "os.getenv(CUSTOM_OPENAI_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    217,
+    82
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    217,
+    38
+   ],
+   "text": "os.getenv(CUSTOM_ANTHROPIC_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    218,
+    64
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    218,
+    30
+   ],
+   "text": "os.getenv(\"VERTEX_AI_PROJECT\", \"\")"
+  },
+  {
+   "end": [
+    219,
+    90
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    219,
+    31
+   ],
+   "text": "os.getenv(\"VERTEX_AI_LOCATION\", DEFAULT_VERTEX_AI_LOCATION)"
+  },
+  {
+   "end": [
+    221,
+    72
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    221,
+    25
+   ],
+   "text": "os.getenv(\"OLLAMA_MODEL\", DEFAULT_OLLAMA_MODEL)"
+  },
+  {
+   "end": [
+    223,
+    69
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    223,
+    24
+   ],
+   "text": "os.getenv(\"OLLAMA_HOST\", DEFAULT_OLLAMA_HOST)"
+  },
+  {
+   "end": [
+    224,
+    75
+   ],
+   "file": "config/llm_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    224,
+    23
+   ],
+   "text": "os.getenv(\"LLM_MAX_TOKENS\", str(DEFAULT_MAX_TOKENS))"
+  },
+  {
+   "end": [
+    33,
+    53
+   ],
+   "file": "config/local_env.py",
+   "rule": "py-env-read",
+   "start": [
+    33,
+    12
+   ],
+   "text": "os.getenv(\"GRAFANA_CONFIG_SKIP_ENV_FILE\")"
+  },
+  {
+   "end": [
+    43,
+    59
+   ],
+   "file": "config/local_env.py",
+   "rule": "py-env-read",
+   "start": [
+    43,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_PROJECT_ENV_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    85,
+    73
+   ],
+   "file": "config/local_env.py",
+   "rule": "py-env-read",
+   "start": [
+    85,
+    30
+   ],
+   "text": "os.getenv(OPENSRE_PROJECT_ENV_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    102,
+    63
+   ],
+   "file": "config/local_env.py",
+   "rule": "py-env-read",
+   "start": [
+    102,
+    27
+   ],
+   "text": "os.environ.get(LLM_PROVIDER_ENV, \"\")"
+  },
+  {
+   "end": [
+    55,
+    54
+   ],
+   "file": "config/prompt_log.py",
+   "rule": "py-env-read",
+   "start": [
+    55,
+    20
+   ],
+   "text": "os.getenv(PROMPT_LOG_DISABLED_ENV)"
+  },
+  {
+   "end": [
+    56,
+    66
+   ],
+   "file": "config/prompt_log.py",
+   "rule": "py-env-read",
+   "start": [
+    56,
+    26
+   ],
+   "text": "os.getenv(PROMPT_LOG_LOCAL_DISABLED_ENV)"
+  },
+  {
+   "end": [
+    57,
+    54
+   ],
+   "file": "config/prompt_log.py",
+   "rule": "py-env-read",
+   "start": [
+    57,
+    22
+   ],
+   "text": "os.getenv(PROMPT_LOG_REDACT_ENV)"
+  },
+  {
+   "end": [
+    58,
+    50
+   ],
+   "file": "config/prompt_log.py",
+   "rule": "py-env-read",
+   "start": [
+    58,
+    20
+   ],
+   "text": "os.getenv(PROMPT_LOG_PATH_ENV)"
+  },
+  {
+   "end": [
+    165,
+    53
+   ],
+   "file": "config/repl_config.py",
+   "rule": "py-env-read",
+   "start": [
+    165,
+    26
+   ],
+   "text": "os.getenv(\"OPENSRE_LAYOUT\")"
+  },
+  {
+   "end": [
+    173,
+    52
+   ],
+   "file": "config/repl_config.py",
+   "rule": "py-env-read",
+   "start": [
+    173,
+    26
+   ],
+   "text": "os.getenv(\"OPENSRE_THEME\")"
+  },
+  {
+   "end": [
+    182,
+    67
+   ],
+   "file": "config/repl_config.py",
+   "rule": "py-env-read",
+   "start": [
+    182,
+    24
+   ],
+   "text": "os.getenv(\"OPENSRE_ALERT_LISTENER_ENABLED\")"
+  },
+  {
+   "end": [
+    190,
+    64
+   ],
+   "file": "config/repl_config.py",
+   "rule": "py-env-read",
+   "start": [
+    190,
+    24
+   ],
+   "text": "os.getenv(\"OPENSRE_ALERT_LISTENER_HOST\")"
+  },
+  {
+   "end": [
+    196,
+    64
+   ],
+   "file": "config/repl_config.py",
+   "rule": "py-env-read",
+   "start": [
+    196,
+    24
+   ],
+   "text": "os.getenv(\"OPENSRE_ALERT_LISTENER_PORT\")"
+  },
+  {
+   "end": [
+    223,
+    65
+   ],
+   "file": "config/repl_config.py",
+   "rule": "py-env-read",
+   "start": [
+    223,
+    24
+   ],
+   "text": "os.getenv(\"OPENSRE_ALERT_LISTENER_TOKEN\")"
+  },
+  {
+   "end": [
+    65,
+    50
+   ],
+   "file": "config/runtime_metadata/assembly.py",
+   "rule": "py-env-read",
+   "start": [
+    65,
+    21
+   ],
+   "text": "os.environ.get(\"OPENSRE_ENV\")"
+  },
+  {
+   "end": [
+    80,
+    13
+   ],
+   "file": "config/runtime_metadata/probes.py",
+   "rule": "py-except-swallow",
+   "start": [
+    78,
+    5
+   ],
+   "text": "except OSError:"
+  },
+  {
+   "end": [
+    114,
+    13
+   ],
+   "file": "config/runtime_metadata/probes.py",
+   "rule": "py-except-swallow",
+   "start": [
+    112,
+    5
+   ],
+   "text": "except OSError:"
+  },
+  {
+   "end": [
+    176,
+    49
+   ],
+   "file": "config/runtime_metadata/probes.py",
+   "rule": "py-env-read",
+   "start": [
+    176,
+    17
+   ],
+   "text": "os.environ.get(\"CLOUD_PROVIDER\")"
+  },
+  {
+   "end": [
+    177,
+    45
+   ],
+   "file": "config/runtime_metadata/probes.py",
+   "rule": "py-env-read",
+   "start": [
+    177,
+    15
+   ],
+   "text": "os.environ.get(\"CLOUD_REGION\")"
+  },
+  {
+   "end": [
+    180,
+    41
+   ],
+   "file": "config/runtime_metadata/probes.py",
+   "rule": "py-env-read",
+   "start": [
+    180,
+    13
+   ],
+   "text": "os.environ.get(\"AWS_REGION\")"
+  },
+  {
+   "end": [
+    180,
+    81
+   ],
+   "file": "config/runtime_metadata/probes.py",
+   "rule": "py-env-read",
+   "start": [
+    180,
+    45
+   ],
+   "text": "os.environ.get(\"AWS_DEFAULT_REGION\")"
+  },
+  {
+   "end": [
+    191,
+    45
+   ],
+   "file": "config/runtime_metadata/probes.py",
+   "rule": "py-env-read",
+   "start": [
+    191,
+    17
+   ],
+   "text": "os.environ.get(\"KUBECONFIG\")"
+  },
+  {
+   "end": [
+    279,
+    65
+   ],
+   "file": "config/runtime_metadata/probes.py",
+   "rule": "py-env-read",
+   "start": [
+    279,
+    42
+   ],
+   "text": "os.environ.get(key, \"\")"
+  },
+  {
+   "end": [
+    302,
+    63
+   ],
+   "file": "config/runtime_metadata/probes.py",
+   "rule": "py-env-read",
+   "start": [
+    302,
+    22
+   ],
+   "text": "os.environ.get(OPENSRE_ALLOW_NETWORK_ENV)"
+  },
+  {
+   "end": [
+    42,
+    56
+   ],
+   "file": "config/scope_handoff.py",
+   "rule": "py-env-read",
+   "start": [
+    42,
+    21
+   ],
+   "text": "os.getenv(TURN_ORGANIZATION_ID_ENV)"
+  },
+  {
+   "end": [
+    43,
+    42
+   ],
+   "file": "config/scope_handoff.py",
+   "rule": "py-env-read",
+   "start": [
+    43,
+    14
+   ],
+   "text": "os.getenv(TURN_ACTOR_ID_ENV)"
+  },
+  {
+   "end": [
+    58,
+    54
+   ],
+   "file": "config/secrets/store.py",
+   "rule": "py-env-read",
+   "start": [
+    58,
+    12
+   ],
+   "text": "os.getenv(OPENSRE_DISABLE_KEYRING_ENV, \"\")"
+  },
+  {
+   "end": [
+    63,
+    44
+   ],
+   "file": "config/secrets/store.py",
+   "rule": "py-env-read",
+   "start": [
+    63,
+    17
+   ],
+   "text": "os.getenv(env_var, default)"
+  },
+  {
+   "end": [
+    20,
+    48
+   ],
+   "file": "config/skills_auto_update.py",
+   "rule": "py-env-read",
+   "start": [
+    20,
+    11
+   ],
+   "text": "os.getenv(SKILLS_AUTO_UPDATE_ENV, \"\")"
+  },
+  {
+   "end": [
+    156,
+    55
+   ],
+   "file": "core/agent_harness/prompts/skills/snapshot/release.py",
+   "rule": "py-env-read",
+   "start": [
+    156,
+    12
+   ],
+   "text": "os.getenv(SKILLS_TRUSTED_KEYS_FILE_ENV, \"\")"
+  },
+  {
+   "end": [
+    163,
+    25
+   ],
+   "file": "core/agent_harness/prompts/skills/snapshot/release_store.py",
+   "rule": "py-global-state",
+   "start": [
+    163,
+    5
+   ],
+   "text": "global _process_root"
+  },
+  {
+   "end": [
+    60,
+    40
+   ],
+   "file": "core/agent_harness/prompts/skills/snapshot/sources.py",
+   "rule": "py-env-read",
+   "start": [
+    60,
+    11
+   ],
+   "text": "os.getenv(SKILLS_DIR_ENV, \"\")"
+  },
+  {
+   "end": [
+    191,
+    17
+   ],
+   "file": "core/agent_harness/session/integration_resolution.py",
+   "rule": "py-except-swallow",
+   "start": [
+    189,
+    9
+   ],
+   "text": "except Exception:"
+  },
+  {
+   "end": [
+    283,
+    19
+   ],
+   "file": "core/agent_harness/session/memory_extraction.py",
+   "rule": "py-global-state",
+   "start": [
+    283,
+    5
+   ],
+   "text": "global _worker"
+  },
+  {
+   "end": [
+    305,
+    19
+   ],
+   "file": "core/agent_harness/session/memory_extraction.py",
+   "rule": "py-global-state",
+   "start": [
+    305,
+    5
+   ],
+   "text": "global _worker"
+  },
+  {
+   "end": [
+    36,
+    56
+   ],
+   "file": "core/agent_harness/session/persistence/jsonl_store.py",
+   "rule": "py-env-read",
+   "start": [
+    36,
+    12
+   ],
+   "text": "os.getenv(OPENSRE_SESSION_FILE_LOCK_ENV, \"\")"
+  },
+  {
+   "end": [
+    64,
+    13
+   ],
+   "file": "core/agent_harness/turns/gather_observation.py",
+   "rule": "py-except-swallow",
+   "start": [
+    63,
+    5
+   ],
+   "text": "except json.JSONDecodeError:"
+  },
+  {
+   "end": [
+    441,
+    60
+   ],
+   "file": "core/agent_harness/turns/transcript_compaction.py",
+   "rule": "py-env-read",
+   "start": [
+    441,
+    11
+   ],
+   "text": "os.getenv(\"OPENSRE_SESSION_COMPACTION_CHARS\", \"\")"
+  },
+  {
+   "end": [
+    89,
+    26
+   ],
+   "file": "core/domain/alerts/inbox.py",
+   "rule": "py-global-state",
+   "start": [
+    89,
+    5
+   ],
+   "text": "global _current_inbox"
+  },
+  {
+   "end": [
+    22,
+    58
+   ],
+   "file": "core/domain/knowledge/settings.py",
+   "rule": "py-env-read",
+   "start": [
+    22,
+    13
+   ],
+   "text": "os.getenv(OPENSRE_KNOWLEDGE_DISABLED_ENV, \"\")"
+  },
+  {
+   "end": [
+    38,
+    62
+   ],
+   "file": "core/domain/knowledge/settings.py",
+   "rule": "py-env-read",
+   "start": [
+    38,
+    12
+   ],
+   "text": "os.getenv(OPENSRE_KNOWLEDGE_SCAN_MESSAGES_ENV, \"\")"
+  },
+  {
+   "end": [
+    66,
+    50
+   ],
+   "file": "core/domain/memory/members.py",
+   "rule": "py-env-read",
+   "start": [
+    66,
+    13
+   ],
+   "text": "os.getenv(OPENSRE_MEMORY_DIR_ENV, \"\")"
+  },
+  {
+   "end": [
+    19,
+    31
+   ],
+   "file": "core/domain/memory/settings.py",
+   "rule": "py-env-read",
+   "start": [
+    19,
+    12
+   ],
+   "text": "os.getenv(name, \"\")"
+  },
+  {
+   "end": [
+    454,
+    58
+   ],
+   "file": "core/domain/work_items/store.py",
+   "rule": "py-env-read",
+   "start": [
+    454,
+    17
+   ],
+   "text": "os.getenv(OPENSRE_WORK_ITEMS_DIR_ENV, \"\")"
+  },
+  {
+   "end": [
+    62,
+    59
+   ],
+   "file": "core/llm/client_builders.py",
+   "rule": "py-env-read",
+   "start": [
+    62,
+    18
+   ],
+   "text": "os.getenv(registration.model_env_key, \"\")"
+  },
+  {
+   "end": [
+    183,
+    59
+   ],
+   "file": "core/llm/client_builders.py",
+   "rule": "py-env-read",
+   "start": [
+    183,
+    18
+   ],
+   "text": "os.getenv(registration.model_env_key, \"\")"
+  },
+  {
+   "end": [
+    22,
+    54
+   ],
+   "file": "core/llm/provider_models.py",
+   "rule": "py-env-read",
+   "start": [
+    22,
+    21
+   ],
+   "text": "os.getenv(spec.cli_model_env, \"\")"
+  },
+  {
+   "end": [
+    53,
+    68
+   ],
+   "file": "core/llm/providers/azure_openai.py",
+   "rule": "py-env-read",
+   "start": [
+    53,
+    25
+   ],
+   "text": "os.getenv(AZURE_OPENAI_API_VERSION_ENV, \"\")"
+  },
+  {
+   "end": [
+    145,
+    56
+   ],
+   "file": "core/llm/providers/azure_openai.py",
+   "rule": "py-env-read",
+   "start": [
+    145,
+    16
+   ],
+   "text": "os.getenv(AZURE_OPENAI_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    156,
+    52
+   ],
+   "file": "core/llm/providers/azure_openai.py",
+   "rule": "py-env-read",
+   "start": [
+    156,
+    12
+   ],
+   "text": "os.getenv(AZURE_OPENAI_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    77,
+    85
+   ],
+   "file": "core/llm/providers/custom_endpoints.py",
+   "rule": "py-env-read",
+   "start": [
+    77,
+    41
+   ],
+   "text": "os.getenv(CUSTOM_ANTHROPIC_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    32,
+    63
+   ],
+   "file": "core/llm/providers/vertex_ai.py",
+   "rule": "py-env-read",
+   "start": [
+    32,
+    26
+   ],
+   "text": "os.getenv(VERTEX_AI_LOCATION_ENV, \"\")"
+  },
+  {
+   "end": [
+    141,
+    25
+   ],
+   "file": "core/llm/shared/llm_retry.py",
+   "rule": "py-except-swallow",
+   "start": [
+    139,
+    17
+   ],
+   "text": "except (ValueError, TypeError):"
+  },
+  {
+   "end": [
+    30,
+    72
+   ],
+   "file": "core/llm/shared/structured_output.py",
+   "rule": "py-env-read",
+   "start": [
+    30,
+    12
+   ],
+   "text": "os.environ.get(OPENSRE_LLM_NATIVE_STRUCTURED_OUTPUT_ENV, \"\")"
+  },
+  {
+   "end": [
+    129,
+    21
+   ],
+   "file": "core/llm/shared/structured_output.py",
+   "rule": "py-except-swallow",
+   "start": [
+    128,
+    13
+   ],
+   "text": "except json.JSONDecodeError:"
+  },
+  {
+   "end": [
+    19,
+    23
+   ],
+   "file": "core/llm/shared/usage.py",
+   "rule": "py-global-state",
+   "start": [
+    19,
+    5
+   ],
+   "text": "global _usage_hook"
+  },
+  {
+   "end": [
+    17,
+    44
+   ],
+   "file": "core/llm/transport_mode.py",
+   "rule": "py-env-read",
+   "start": [
+    17,
+    12
+   ],
+   "text": "os.getenv(LLM_TRANSPORT_ENV, \"\")"
+  },
+  {
+   "end": [
+    34,
+    44
+   ],
+   "file": "core/llm/transport_mode.py",
+   "rule": "py-env-read",
+   "start": [
+    34,
+    12
+   ],
+   "text": "os.getenv(LLM_TRANSPORT_ENV, \"\")"
+  },
+  {
+   "end": [
+    375,
+    42
+   ],
+   "file": "core/llm/transports/sdk/agent_clients.py",
+   "rule": "py-env-read",
+   "start": [
+    375,
+    19
+   ],
+   "text": "os.getenv(\"AWS_REGION\")"
+  },
+  {
+   "end": [
+    375,
+    77
+   ],
+   "file": "core/llm/transports/sdk/agent_clients.py",
+   "rule": "py-env-read",
+   "start": [
+    375,
+    46
+   ],
+   "text": "os.getenv(\"AWS_DEFAULT_REGION\")"
+  },
+  {
+   "end": [
+    23,
+    38
+   ],
+   "file": "core/llm/transports/sdk/bedrock_converse.py",
+   "rule": "py-env-read",
+   "start": [
+    23,
+    15
+   ],
+   "text": "os.getenv(\"AWS_REGION\")"
+  },
+  {
+   "end": [
+    23,
+    73
+   ],
+   "file": "core/llm/transports/sdk/bedrock_converse.py",
+   "rule": "py-env-read",
+   "start": [
+    23,
+    42
+   ],
+   "text": "os.getenv(\"AWS_DEFAULT_REGION\")"
+  },
+  {
+   "end": [
+    442,
+    97
+   ],
+   "file": "core/llm/transports/sdk/llm_clients.py",
+   "rule": "py-env-read",
+   "start": [
+    442,
+    28
+   ],
+   "text": "os.getenv(\"AWS_REGION\", os.getenv(\"AWS_DEFAULT_REGION\", \"us-east-1\"))"
+  },
+  {
+   "end": [
+    442,
+    96
+   ],
+   "file": "core/llm/transports/sdk/llm_clients.py",
+   "rule": "py-env-read",
+   "start": [
+    442,
+    52
+   ],
+   "text": "os.getenv(\"AWS_DEFAULT_REGION\", \"us-east-1\")"
+  },
+  {
+   "end": [
+    461,
+    50
+   ],
+   "file": "core/llm/transports/sdk/llm_clients.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    461,
+    9
+   ],
+   "text": "assert self._anthropic_client is not None"
+  },
+  {
+   "end": [
+    563,
+    46
+   ],
+   "file": "core/llm/transports/sdk/llm_clients.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    563,
+    9
+   ],
+   "text": "assert self._boto3_client is not None"
+  },
+  {
+   "end": [
+    53,
+    13
+   ],
+   "file": "core/llm_invoke_errors.py",
+   "rule": "py-except-swallow",
+   "start": [
+    52,
+    5
+   ],
+   "text": "except ImportError:"
+  },
+  {
+   "end": [
+    61,
+    13
+   ],
+   "file": "core/llm_invoke_errors.py",
+   "rule": "py-except-swallow",
+   "start": [
+    60,
+    5
+   ],
+   "text": "except ImportError:"
+  },
+  {
+   "end": [
+    22,
+    31
+   ],
+   "file": "core/state/history_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    22,
+    12
+   ],
+   "text": "os.getenv(name, \"\")"
+  },
+  {
+   "end": [
+    26,
+    30
+   ],
+   "file": "core/state/history_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    26,
+    11
+   ],
+   "text": "os.getenv(name, \"\")"
+  },
+  {
+   "end": [
+    51,
+    63
+   ],
+   "file": "core/state/history_settings.py",
+   "rule": "py-env-read",
+   "start": [
+    51,
+    11
+   ],
+   "text": "os.getenv(OPENSRE_HISTORY_TOOL_RESULT_CHARS_ENV, \"\")"
+  },
+  {
+   "end": [
+    19,
+    61
+   ],
+   "file": "core/tool/output.py",
+   "rule": "py-env-read",
+   "start": [
+    19,
+    11
+   ],
+   "text": "os.getenv(OPENSRE_TOOL_OUTPUT_TOKEN_LIMIT_ENV, \"\")"
+  },
+  {
+   "end": [
+    84,
+    46
+   ],
+   "file": "gateway/core/billing/clerk_tokens.py",
+   "rule": "py-env-read",
+   "start": [
+    84,
+    13
+   ],
+   "text": "os.getenv(CLERK_API_BASE_URL_ENV)"
+  },
+  {
+   "end": [
+    95,
+    44
+   ],
+   "file": "gateway/core/billing/clerk_tokens.py",
+   "rule": "py-env-read",
+   "start": [
+    95,
+    15
+   ],
+   "text": "os.getenv(MACHINE_SECRET_ENV)"
+  },
+  {
+   "end": [
+    53,
+    28
+   ],
+   "file": "gateway/core/billing/credits_client.py",
+   "rule": "py-env-read",
+   "start": [
+    53,
+    13
+   ],
+   "text": "os.getenv(name)"
+  },
+  {
+   "end": [
+    41,
+    40
+   ],
+   "file": "gateway/core/billing/webapp_auth.py",
+   "rule": "py-env-read",
+   "start": [
+    41,
+    13
+   ],
+   "text": "os.getenv(USAGE_SECRET_ENV)"
+  },
+  {
+   "end": [
+    53,
+    41
+   ],
+   "file": "gateway/core/billing/webapp_auth.py",
+   "rule": "py-env-read",
+   "start": [
+    53,
+    12
+   ],
+   "text": "os.getenv(MACHINE_SECRET_ENV)"
+  },
+  {
+   "end": [
+    80,
+    58
+   ],
+   "file": "gateway/core/lifecycle/controller.py",
+   "rule": "py-env-read",
+   "start": [
+    80,
+    13
+   ],
+   "text": "os.getenv(OPENSRE_GATEWAY_HOST_SCHEDULER_ENV)"
+  },
+  {
+   "end": [
+    89,
+    83
+   ],
+   "file": "gateway/core/lifecycle/credential_hydration.py",
+   "rule": "py-env-read",
+   "start": [
+    89,
+    32
+   ],
+   "text": "os.getenv(CREDENTIALS_BOOTSTRAP_SECRET_ARN_ENV, \"\")"
+  },
+  {
+   "end": [
+    90,
+    69
+   ],
+   "file": "gateway/core/lifecycle/credential_hydration.py",
+   "rule": "py-env-read",
+   "start": [
+    90,
+    31
+   ],
+   "text": "os.getenv(CREDENTIALS_API_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    91,
+    77
+   ],
+   "file": "gateway/core/lifecycle/credential_hydration.py",
+   "rule": "py-env-read",
+   "start": [
+    91,
+    35
+   ],
+   "text": "os.getenv(INTEGRATIONS_SECRET_ARN_ENV, \"\")"
+  },
+  {
+   "end": [
+    107,
+    86
+   ],
+   "file": "gateway/core/lifecycle/credential_hydration.py",
+   "rule": "py-env-read",
+   "start": [
+    107,
+    44
+   ],
+   "text": "os.getenv(INTEGRATIONS_STORE_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    13,
+    18
+   ],
+   "file": "gateway/core/process/readiness.py",
+   "rule": "py-global-state",
+   "start": [
+    13,
+    5
+   ],
+   "text": "global _ready"
+  },
+  {
+   "end": [
+    56,
+    58
+   ],
+   "file": "gateway/core/process/shutdown_budget.py",
+   "rule": "py-env-read",
+   "start": [
+    56,
+    11
+   ],
+   "text": "os.getenv(GATEWAY_STOP_TIMEOUT_SECONDS_ENV, \"\")"
+  },
+  {
+   "end": [
+    77,
+    46
+   ],
+   "file": "gateway/core/storage/postgres.py",
+   "rule": "py-env-read",
+   "start": [
+    77,
+    15
+   ],
+   "text": "os.getenv(DATABASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    43,
+    13
+   ],
+   "file": "gateway/tests/runtime/test_active_turns.py",
+   "rule": "py-except-swallow",
+   "start": [
+    42,
+    5
+   ],
+   "text": "except RuntimeError:"
+  },
+  {
+   "end": [
+    28,
+    48
+   ],
+   "file": "gateway/transports/discord/principal.py",
+   "rule": "py-env-read",
+   "start": [
+    28,
+    11
+   ],
+   "text": "os.getenv(DISCORD_SILO_GUILD_IDS_ENV)"
+  },
+  {
+   "end": [
+    26,
+    45
+   ],
+   "file": "gateway/transports/slack/processing/principal.py",
+   "rule": "py-env-read",
+   "start": [
+    26,
+    11
+   ],
+   "text": "os.getenv(SLACK_SILO_TEAM_IDS_ENV)"
+  },
+  {
+   "end": [
+    47,
+    31
+   ],
+   "file": "gateway/transports/slack/startup.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    12
+   ],
+   "text": "os.getenv(name, \"\")"
+  },
+  {
+   "end": [
+    33,
+    61
+   ],
+   "file": "gateway/web/startup.py",
+   "rule": "py-env-read",
+   "start": [
+    33,
+    16
+   ],
+   "text": "os.environ.get(\"PORT\", str(DEFAULT_WEB_PORT))"
+  },
+  {
+   "end": [
+    24,
+    46
+   ],
+   "file": "gateway/web/web_server.py",
+   "rule": "py-env-read",
+   "start": [
+    24,
+    16
+   ],
+   "text": "os.environ.get(\"PORT\", \"8000\")"
+  },
+  {
+   "end": [
+    55,
+    59
+   ],
+   "file": "infrastructure/alert_intake.py",
+   "rule": "py-env-read",
+   "start": [
+    55,
+    13
+   ],
+   "text": "os.environ.get(\"OPENSRE_ALERT_LISTENER_TOKEN\")"
+  },
+  {
+   "end": [
+    68,
+    28
+   ],
+   "file": "infrastructure/analytics/destination.py",
+   "rule": "py-env-read",
+   "start": [
+    68,
+    13
+   ],
+   "text": "os.getenv(name)"
+  },
+  {
+   "end": [
+    111,
+    85
+   ],
+   "file": "infrastructure/analytics/event_properties.py",
+   "rule": "py-env-read",
+   "start": [
+    111,
+    42
+   ],
+   "text": "os.getenv(ANALYTICS_INSTALL_SOURCE_ENV, \"\")"
+  },
+  {
+   "end": [
+    117,
+    91
+   ],
+   "file": "infrastructure/analytics/event_properties.py",
+   "rule": "py-env-read",
+   "start": [
+    117,
+    47
+   ],
+   "text": "os.getenv(ANALYTICS_INSTALL_CHANNEL_ENV, \"\")"
+  },
+  {
+   "end": [
+    119,
+    57
+   ],
+   "file": "infrastructure/analytics/event_properties.py",
+   "rule": "py-env-read",
+   "start": [
+    119,
+    14
+   ],
+   "text": "os.getenv(ANALYTICS_INSTALL_ORIGIN_ENV, \"\")"
+  },
+  {
+   "end": [
+    122,
+    91
+   ],
+   "file": "infrastructure/analytics/event_properties.py",
+   "rule": "py-env-read",
+   "start": [
+    122,
+    47
+   ],
+   "text": "os.getenv(ANALYTICS_INSTALL_VERSION_ENV, \"\")"
+  },
+  {
+   "end": [
+    29,
+    71
+   ],
+   "file": "infrastructure/analytics/install_state.py",
+   "rule": "py-env-read",
+   "start": [
+    29,
+    21
+   ],
+   "text": "os.environ.get(ANALYTICS_INSTALL_MARKER_STATE_ENV)"
+  },
+  {
+   "end": [
+    42,
+    61
+   ],
+   "file": "infrastructure/analytics/install_state.py",
+   "rule": "py-env-read",
+   "start": [
+    42,
+    11
+   ],
+   "text": "os.environ.get(ANALYTICS_INSTALL_MARKER_STATE_ENV)"
+  },
+  {
+   "end": [
+    174,
+    47
+   ],
+   "file": "infrastructure/analytics/provider.py",
+   "rule": "py-env-read",
+   "start": [
+    174,
+    9
+   ],
+   "text": "os.getenv(\"OPENSRE_NO_TELEMETRY\", \"0\")"
+  },
+  {
+   "end": [
+    175,
+    50
+   ],
+   "file": "infrastructure/analytics/provider.py",
+   "rule": "py-env-read",
+   "start": [
+    175,
+    12
+   ],
+   "text": "os.getenv(ANALYTICS_DISABLED_ENV, \"0\")"
+  },
+  {
+   "end": [
+    176,
+    42
+   ],
+   "file": "infrastructure/analytics/provider.py",
+   "rule": "py-env-read",
+   "start": [
+    176,
+    12
+   ],
+   "text": "os.getenv(\"DO_NOT_TRACK\", \"0\")"
+  },
+  {
+   "end": [
+    386,
+    62
+   ],
+   "file": "infrastructure/analytics/provider.py",
+   "rule": "py-global-state",
+   "start": [
+    386,
+    5
+   ],
+   "text": "global _cached_anonymous_id, _cached_identity_persistence"
+  },
+  {
+   "end": [
+    440,
+    50
+   ],
+   "file": "infrastructure/analytics/provider.py",
+   "rule": "py-global-state",
+   "start": [
+    440,
+    5
+   ],
+   "text": "global _first_run_marker_created_this_process"
+  },
+  {
+   "end": [
+    481,
+    69
+   ],
+   "file": "infrastructure/analytics/provider.py",
+   "rule": "py-env-read",
+   "start": [
+    481,
+    51
+   ],
+   "text": "os.getenv(key, \"\")"
+  },
+  {
+   "end": [
+    514,
+    69
+   ],
+   "file": "infrastructure/analytics/provider.py",
+   "rule": "py-env-read",
+   "start": [
+    514,
+    51
+   ],
+   "text": "os.getenv(key, \"\")"
+  },
+  {
+   "end": [
+    539,
+    52
+   ],
+   "file": "infrastructure/analytics/provider.py",
+   "rule": "py-env-read",
+   "start": [
+    539,
+    12
+   ],
+   "text": "os.getenv(ANALYTICS_LOG_EVENTS_ENV, \"1\")"
+  },
+  {
+   "end": [
+    1268,
+    21
+   ],
+   "file": "infrastructure/analytics/provider.py",
+   "rule": "py-global-state",
+   "start": [
+    1268,
+    5
+   ],
+   "text": "global _instance"
+  },
+  {
+   "end": [
+    27,
+    53
+   ],
+   "file": "infrastructure/analytics/runner_launcher.py",
+   "rule": "py-env-read",
+   "start": [
+    27,
+    11
+   ],
+   "text": "os.environ[\"ACTIONS_ID_TOKEN_REQUEST_URL\"]"
+  },
+  {
+   "end": [
+    31,
+    91
+   ],
+   "file": "infrastructure/analytics/runner_launcher.py",
+   "rule": "py-env-read",
+   "start": [
+    31,
+    47
+   ],
+   "text": "os.environ[\"ACTIONS_ID_TOKEN_REQUEST_TOKEN\"]"
+  },
+  {
+   "end": [
+    96,
+    36
+   ],
+   "file": "infrastructure/analytics/runner_launcher.py",
+   "rule": "py-env-read",
+   "start": [
+    96,
+    16
+   ],
+   "text": "os.environ.get(name)"
+  },
+  {
+   "end": [
+    149,
+    69
+   ],
+   "file": "infrastructure/analytics/runner_launcher.py",
+   "rule": "py-env-read",
+   "start": [
+    149,
+    42
+   ],
+   "text": "os.environ[\"GITHUB_RUN_ID\"]"
+  },
+  {
+   "end": [
+    150,
+    83
+   ],
+   "file": "infrastructure/analytics/runner_launcher.py",
+   "rule": "py-env-read",
+   "start": [
+    150,
+    47
+   ],
+   "text": "os.environ.get(\"GITHUB_RUN_ATTEMPT\")"
+  },
+  {
+   "end": [
+    151,
+    67
+   ],
+   "file": "infrastructure/analytics/runner_launcher.py",
+   "rule": "py-env-read",
+   "start": [
+    151,
+    39
+   ],
+   "text": "os.environ.get(\"GITHUB_JOB\")"
+  },
+  {
+   "end": [
+    152,
+    67
+   ],
+   "file": "infrastructure/analytics/runner_launcher.py",
+   "rule": "py-env-read",
+   "start": [
+    152,
+    39
+   ],
+   "text": "os.environ.get(\"GITHUB_SHA\")"
+  },
+  {
+   "end": [
+    14,
+    41
+   ],
+   "file": "infrastructure/analytics/source.py",
+   "rule": "py-env-read",
+   "start": [
+    14,
+    8
+   ],
+   "text": "os.getenv(ANALYTICS_TEST_ENV, \"\")"
+  },
+  {
+   "end": [
+    17,
+    40
+   ],
+   "file": "infrastructure/analytics/source.py",
+   "rule": "py-env-read",
+   "start": [
+    17,
+    8
+   ],
+   "text": "os.getenv(\"PYTEST_CURRENT_TEST\")"
+  },
+  {
+   "end": [
+    27,
+    41
+   ],
+   "file": "infrastructure/analytics/source.py",
+   "rule": "py-env-read",
+   "start": [
+    27,
+    13
+   ],
+   "text": "os.getenv(ANALYTICS_ENV_ENV)"
+  },
+  {
+   "end": [
+    28,
+    45
+   ],
+   "file": "infrastructure/analytics/source.py",
+   "rule": "py-env-read",
+   "start": [
+    28,
+    16
+   ],
+   "text": "os.getenv(DEPLOYMENT_ENV_ENV)"
+  },
+  {
+   "end": [
+    29,
+    40
+   ],
+   "file": "infrastructure/analytics/source.py",
+   "rule": "py-env-read",
+   "start": [
+    29,
+    16
+   ],
+   "text": "os.getenv(\"ENVIRONMENT\")"
+  },
+  {
+   "end": [
+    72,
+    31
+   ],
+   "file": "infrastructure/analytics/usage_context.py",
+   "rule": "py-global-state",
+   "start": [
+    72,
+    5
+   ],
+   "text": "global _PROCESS_SESSION_ID"
+  },
+  {
+   "end": [
+    123,
+    13
+   ],
+   "file": "infrastructure/delivery/notifications/delivery_transport.py",
+   "rule": "py-except-swallow",
+   "start": [
+    121,
+    5
+   ],
+   "text": "except Exception:"
+  },
+  {
+   "end": [
+    191,
+    13
+   ],
+   "file": "infrastructure/delivery/notifications/delivery_transport.py",
+   "rule": "py-except-swallow",
+   "start": [
+    189,
+    5
+   ],
+   "text": "except Exception:"
+  },
+  {
+   "end": [
+    185,
+    77
+   ],
+   "file": "infrastructure/deployment/ec2/ec2.py",
+   "rule": "py-env-read",
+   "start": [
+    185,
+    12
+   ],
+   "text": "os.getenv(WEB_API_INGRESS_CIDR_ENV, WEB_API_INGRESS_CIDR_DEFAULT)"
+  },
+  {
+   "end": [
+    447,
+    41
+   ],
+   "file": "infrastructure/deployment/ec2/ec2.py",
+   "rule": "py-env-read",
+   "start": [
+    447,
+    16
+   ],
+   "text": "os.getenv(\"EC2_KEY_NAME\")"
+  },
+  {
+   "end": [
+    47,
+    36
+   ],
+   "file": "infrastructure/deployment/ec2/prep_ec2_deployment.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    17
+   ],
+   "text": "os.getenv(name, \"\")"
+  },
+  {
+   "end": [
+    130,
+    61
+   ],
+   "file": "infrastructure/deployment/ec2/prep_ec2_deployment.py",
+   "rule": "py-env-read",
+   "start": [
+    130,
+    36
+   ],
+   "text": "os.getenv(\"NO_COLOR\", \"\")"
+  },
+  {
+   "end": [
+    64,
+    53
+   ],
+   "file": "infrastructure/deployment/ec2/telegram_gateway/build_server_image.py",
+   "rule": "py-env-read",
+   "start": [
+    64,
+    15
+   ],
+   "text": "os.getenv(GATEWAY_AMI_GIT_REF_ENV, \"\")"
+  },
+  {
+   "end": [
+    123,
+    46
+   ],
+   "file": "infrastructure/deployment/ec2/telegram_gateway/install_on_new_server.py",
+   "rule": "py-env-read",
+   "start": [
+    123,
+    14
+   ],
+   "text": "os.getenv(_STACK_SUFFIX_ENV, \"\")"
+  },
+  {
+   "end": [
+    108,
+    45
+   ],
+   "file": "infrastructure/deployment/ec2/telegram_gateway/lifecycle.py",
+   "rule": "py-env-read",
+   "start": [
+    108,
+    11
+   ],
+   "text": "os.getenv(_EXTRA_ENV_KEYS_ENV, \"\")"
+  },
+  {
+   "end": [
+    115,
+    29
+   ],
+   "file": "infrastructure/deployment/ec2/telegram_gateway/lifecycle.py",
+   "rule": "py-env-read",
+   "start": [
+    115,
+    15
+   ],
+   "text": "os.getenv(key)"
+  },
+  {
+   "end": [
+    122,
+    47
+   ],
+   "file": "infrastructure/deployment/ec2/telegram_gateway/lifecycle.py",
+   "rule": "py-env-read",
+   "start": [
+    122,
+    12
+   ],
+   "text": "os.getenv(_ABORT_IF_EXISTS_ENV, \"\")"
+  },
+  {
+   "end": [
+    126,
+    56
+   ],
+   "file": "infrastructure/deployment/ec2/telegram_gateway/lifecycle.py",
+   "rule": "py-env-read",
+   "start": [
+    126,
+    12
+   ],
+   "text": "os.getenv(GATEWAY_AMI_DESTROY_PURGE_ENV, \"\")"
+  },
+  {
+   "end": [
+    139,
+    47
+   ],
+   "file": "infrastructure/deployment/ec2/telegram_gateway/lifecycle.py",
+   "rule": "py-env-read",
+   "start": [
+    139,
+    14
+   ],
+   "text": "os.getenv(GATEWAY_AMI_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    44,
+    46
+   ],
+   "file": "infrastructure/deployment/ec2/telegram_gateway/stack.py",
+   "rule": "py-env-read",
+   "start": [
+    44,
+    14
+   ],
+   "text": "os.getenv(_STACK_SUFFIX_ENV, \"\")"
+  },
+  {
+   "end": [
+    130,
+    34
+   ],
+   "file": "infrastructure/filestorage/config.py",
+   "rule": "py-env-read",
+   "start": [
+    130,
+    11
+   ],
+   "text": "os.getenv(env_name, \"\")"
+  },
+  {
+   "end": [
+    179,
+    58
+   ],
+   "file": "infrastructure/filestorage/config.py",
+   "rule": "py-env-read",
+   "start": [
+    179,
+    16
+   ],
+   "text": "os.getenv(REMOTE_SYNC_EXCLUDE_OFF_ENV, \"\")"
+  },
+  {
+   "end": [
+    181,
+    49
+   ],
+   "file": "infrastructure/filestorage/config.py",
+   "rule": "py-env-read",
+   "start": [
+    181,
+    11
+   ],
+   "text": "os.getenv(REMOTE_SYNC_EXCLUDE_ENV, \"\")"
+  },
+  {
+   "end": [
+    207,
+    37
+   ],
+   "file": "infrastructure/filestorage/config.py",
+   "rule": "py-env-read",
+   "start": [
+    207,
+    11
+   ],
+   "text": "os.getenv(REMOTE_SYNC_ENV)"
+  },
+  {
+   "end": [
+    227,
+    49
+   ],
+   "file": "infrastructure/filestorage/config.py",
+   "rule": "py-env-read",
+   "start": [
+    227,
+    12
+   ],
+   "text": "os.getenv(REMOTE_SYNC_BUCKET_ENV, \"\")"
+  },
+  {
+   "end": [
+    33,
+    73
+   ],
+   "file": "infrastructure/filestorage/providers/azure.py",
+   "rule": "py-env-read",
+   "start": [
+    33,
+    30
+   ],
+   "text": "os.getenv(\"AZURE_STORAGE_ACCOUNT_NAME\", \"\")"
+  },
+  {
+   "end": [
+    183,
+    17
+   ],
+   "file": "infrastructure/filestorage/providers/azure.py",
+   "rule": "py-except-swallow",
+   "start": [
+    180,
+    9
+   ],
+   "text": "except (ValueError, binascii.Error):"
+  },
+  {
+   "end": [
+    194,
+    45
+   ],
+   "file": "infrastructure/filestorage/providers/azure.py",
+   "rule": "py-env-read",
+   "start": [
+    194,
+    17
+   ],
+   "text": "os.getenv(\"AZURE_TENANT_ID\")"
+  },
+  {
+   "end": [
+    195,
+    45
+   ],
+   "file": "infrastructure/filestorage/providers/azure.py",
+   "rule": "py-env-read",
+   "start": [
+    195,
+    17
+   ],
+   "text": "os.getenv(\"AZURE_CLIENT_ID\")"
+  },
+  {
+   "end": [
+    196,
+    53
+   ],
+   "file": "infrastructure/filestorage/providers/azure.py",
+   "rule": "py-env-read",
+   "start": [
+    196,
+    21
+   ],
+   "text": "os.getenv(\"AZURE_CLIENT_SECRET\")"
+  },
+  {
+   "end": [
+    85,
+    52
+   ],
+   "file": "infrastructure/filestorage/providers/s3compat.py",
+   "rule": "py-env-read",
+   "start": [
+    85,
+    9
+   ],
+   "text": "os.getenv(REMOTE_SYNC_ENDPOINT_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    86,
+    48
+   ],
+   "file": "infrastructure/filestorage/providers/s3compat.py",
+   "rule": "py-env-read",
+   "start": [
+    86,
+    12
+   ],
+   "text": "os.getenv(\"AWS_ENDPOINT_URL_S3\", \"\")"
+  },
+  {
+   "end": [
+    87,
+    45
+   ],
+   "file": "infrastructure/filestorage/providers/s3compat.py",
+   "rule": "py-env-read",
+   "start": [
+    87,
+    12
+   ],
+   "text": "os.getenv(\"AWS_ENDPOINT_URL\", \"\")"
+  },
+  {
+   "end": [
+    176,
+    52
+   ],
+   "file": "infrastructure/filestorage/providers/vercel.py",
+   "rule": "py-env-read",
+   "start": [
+    176,
+    12
+   ],
+   "text": "os.getenv(BLOB_READ_WRITE_TOKEN_ENV, \"\")"
+  },
+  {
+   "end": [
+    312,
+    52
+   ],
+   "file": "infrastructure/filestorage/providers/vercel.py",
+   "rule": "py-env-read",
+   "start": [
+    312,
+    17
+   ],
+   "text": "os.getenv(VERCEL_API_TOKEN_ENV, \"\")"
+  },
+  {
+   "end": [
+    323,
+    48
+   ],
+   "file": "infrastructure/filestorage/providers/vercel.py",
+   "rule": "py-env-read",
+   "start": [
+    323,
+    15
+   ],
+   "text": "os.getenv(VERCEL_TEAM_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    57,
+    26
+   ],
+   "file": "infrastructure/harness_providers/cli_llm.py",
+   "rule": "py-global-state",
+   "start": [
+    57,
+    9
+   ],
+   "text": "global _installed"
+  },
+  {
+   "end": [
+    87,
+    22
+   ],
+   "file": "infrastructure/harness_providers/cli_llm.py",
+   "rule": "py-global-state",
+   "start": [
+    87,
+    5
+   ],
+   "text": "global _installed"
+  },
+  {
+   "end": [
+    156,
+    35
+   ],
+   "file": "infrastructure/harness_providers/integration_resolution.py",
+   "rule": "py-global-state",
+   "start": [
+    156,
+    9
+   ],
+   "text": "global _installed_adapters"
+  },
+  {
+   "end": [
+    168,
+    33
+   ],
+   "file": "infrastructure/harness_providers/integration_resolution.py",
+   "rule": "py-global-state",
+   "start": [
+    168,
+    9
+   ],
+   "text": "global _installed_remote"
+  },
+  {
+   "end": [
+    180,
+    32
+   ],
+   "file": "infrastructure/harness_providers/integration_resolution.py",
+   "rule": "py-global-state",
+   "start": [
+    180,
+    9
+   ],
+   "text": "global _installed_setup"
+  },
+  {
+   "end": [
+    317,
+    57
+   ],
+   "file": "infrastructure/harness_providers/integration_resolution.py",
+   "rule": "py-env-read",
+   "start": [
+    317,
+    31
+   ],
+   "text": "os.getenv(\"JWT_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    469,
+    68
+   ],
+   "file": "infrastructure/harness_providers/integration_resolution.py",
+   "rule": "py-global-state",
+   "start": [
+    469,
+    5
+   ],
+   "text": "global _installed_adapters, _installed_remote, _installed_setup"
+  },
+  {
+   "end": [
+    32,
+    26
+   ],
+   "file": "infrastructure/harness_providers/subprocess_presenter.py",
+   "rule": "py-global-state",
+   "start": [
+    32,
+    9
+   ],
+   "text": "global _installed"
+  },
+  {
+   "end": [
+    46,
+    22
+   ],
+   "file": "infrastructure/harness_providers/subprocess_presenter.py",
+   "rule": "py-global-state",
+   "start": [
+    46,
+    5
+   ],
+   "text": "global _installed"
+  },
+  {
+   "end": [
+    44,
+    26
+   ],
+   "file": "infrastructure/harness_providers/tool_registry.py",
+   "rule": "py-global-state",
+   "start": [
+    44,
+    9
+   ],
+   "text": "global _installed"
+  },
+  {
+   "end": [
+    70,
+    22
+   ],
+   "file": "infrastructure/harness_providers/tool_registry.py",
+   "rule": "py-global-state",
+   "start": [
+    70,
+    5
+   ],
+   "text": "global _installed"
+  },
+  {
+   "end": [
+    109,
+    47
+   ],
+   "file": "infrastructure/observability/errors/sentry.py",
+   "rule": "py-env-read",
+   "start": [
+    109,
+    9
+   ],
+   "text": "os.getenv(\"OPENSRE_NO_TELEMETRY\", \"0\")"
+  },
+  {
+   "end": [
+    110,
+    53
+   ],
+   "file": "infrastructure/observability/errors/sentry.py",
+   "rule": "py-env-read",
+   "start": [
+    110,
+    12
+   ],
+   "text": "os.getenv(\"OPENSRE_SENTRY_DISABLED\", \"0\")"
+  },
+  {
+   "end": [
+    111,
+    42
+   ],
+   "file": "infrastructure/observability/errors/sentry.py",
+   "rule": "py-env-read",
+   "start": [
+    111,
+    12
+   ],
+   "text": "os.getenv(\"DO_NOT_TRACK\", \"0\")"
+  },
+  {
+   "end": [
+    117,
+    61
+   ],
+   "file": "infrastructure/observability/errors/sentry.py",
+   "rule": "py-env-read",
+   "start": [
+    117,
+    29
+   ],
+   "text": "os.getenv(env_var, str(default))"
+  },
+  {
+   "end": [
+    125,
+    43
+   ],
+   "file": "infrastructure/observability/errors/sentry.py",
+   "rule": "py-env-read",
+   "start": [
+    125,
+    12
+   ],
+   "text": "os.getenv(\"OPENSRE_SENTRY_DSN\")"
+  },
+  {
+   "end": [
+    125,
+    70
+   ],
+   "file": "infrastructure/observability/errors/sentry.py",
+   "rule": "py-env-read",
+   "start": [
+    125,
+    47
+   ],
+   "text": "os.getenv(\"SENTRY_DSN\")"
+  },
+  {
+   "end": [
+    402,
+    57
+   ],
+   "file": "infrastructure/observability/errors/sentry.py",
+   "rule": "py-env-read",
+   "start": [
+    402,
+    8
+   ],
+   "text": "os.getenv(\"OPENSRE_SENTRY_LOGGING_DISABLED\", \"0\")"
+  },
+  {
+   "end": [
+    480,
+    72
+   ],
+   "file": "infrastructure/observability/errors/sentry.py",
+   "rule": "py-env-read",
+   "start": [
+    480,
+    25
+   ],
+   "text": "os.getenv(\"OPENSRE_DEPLOYMENT_METHOD\", \"local\")"
+  },
+  {
+   "end": [
+    39,
+    62
+   ],
+   "file": "infrastructure/observability/operations_log.py",
+   "rule": "py-env-read",
+   "start": [
+    39,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_OPERATIONS_LOG_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    105,
+    66
+   ],
+   "file": "infrastructure/observability/operations_log.py",
+   "rule": "py-env-read",
+   "start": [
+    105,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_OPERATIONS_LOG_DISABLED_ENV, \"\")"
+  },
+  {
+   "end": [
+    111,
+    41
+   ],
+   "file": "infrastructure/observability/operations_log.py",
+   "rule": "py-env-read",
+   "start": [
+    111,
+    9
+   ],
+   "text": "os.getenv(\"PYTEST_CURRENT_TEST\")"
+  },
+  {
+   "end": [
+    113,
+    59
+   ],
+   "file": "infrastructure/observability/operations_log.py",
+   "rule": "py-env-read",
+   "start": [
+    113,
+    17
+   ],
+   "text": "os.getenv(OPENSRE_OPERATIONS_LOG_PATH_ENV)"
+  },
+  {
+   "end": [
+    117,
+    28
+   ],
+   "file": "infrastructure/observability/operations_log.py",
+   "rule": "py-env-read",
+   "start": [
+    117,
+    9
+   ],
+   "text": "os.getenv(\"CI\", \"\")"
+  },
+  {
+   "end": [
+    119,
+    59
+   ],
+   "file": "infrastructure/observability/operations_log.py",
+   "rule": "py-env-read",
+   "start": [
+    119,
+    17
+   ],
+   "text": "os.getenv(OPENSRE_OPERATIONS_LOG_PATH_ENV)"
+  },
+  {
+   "end": [
+    164,
+    62
+   ],
+   "file": "infrastructure/observability/operations_log.py",
+   "rule": "py-env-read",
+   "start": [
+    164,
+    11
+   ],
+   "text": "os.getenv(OPENSRE_OPERATIONS_LOG_MAX_BYTES_ENV, \"\")"
+  },
+  {
+   "end": [
+    30,
+    43
+   ],
+   "file": "infrastructure/observability/render/debug.py",
+   "rule": "py-env-read",
+   "start": [
+    30,
+    12
+   ],
+   "text": "os.getenv(\"TRACER_VERBOSE\", \"\")"
+  },
+  {
+   "end": [
+    53,
+    20
+   ],
+   "file": "infrastructure/observability/render/debug.py",
+   "rule": "py-global-state",
+   "start": [
+    53,
+    5
+   ],
+   "text": "global _printer"
+  },
+  {
+   "end": [
+    41,
+    44
+   ],
+   "file": "infrastructure/observability/render/output_format.py",
+   "rule": "py-env-read",
+   "start": [
+    41,
+    15
+   ],
+   "text": "os.getenv(_ENV_OUTPUT_FORMAT)"
+  },
+  {
+   "end": [
+    43,
+    32
+   ],
+   "file": "infrastructure/observability/render/output_format.py",
+   "rule": "py-env-read",
+   "start": [
+    43,
+    8
+   ],
+   "text": "os.getenv(_ENV_NO_COLOR)"
+  },
+  {
+   "end": [
+    45,
+    40
+   ],
+   "file": "infrastructure/observability/render/output_format.py",
+   "rule": "py-env-read",
+   "start": [
+    45,
+    8
+   ],
+   "text": "os.getenv(SLACK_WEBHOOK_URL_ENV)"
+  },
+  {
+   "end": [
+    138,
+    20
+   ],
+   "file": "infrastructure/observability/render/progress.py",
+   "rule": "py-global-state",
+   "start": [
+    138,
+    5
+   ],
+   "text": "global _tracker"
+  },
+  {
+   "end": [
+    151,
+    28
+   ],
+   "file": "infrastructure/observability/render/progress.py",
+   "rule": "py-global-state",
+   "start": [
+    151,
+    5
+   ],
+   "text": "global _tracker_factory"
+  },
+  {
+   "end": [
+    160,
+    31
+   ],
+   "file": "infrastructure/observability/render/progress.py",
+   "rule": "py-global-state",
+   "start": [
+    160,
+    5
+   ],
+   "text": "global _tracker, _silenced"
+  },
+  {
+   "end": [
+    176,
+    21
+   ],
+   "file": "infrastructure/observability/render/progress.py",
+   "rule": "py-global-state",
+   "start": [
+    176,
+    5
+   ],
+   "text": "global _silenced"
+  },
+  {
+   "end": [
+    161,
+    17
+   ],
+   "file": "infrastructure/observability/trace/observations.py",
+   "rule": "py-global-state",
+   "start": [
+    161,
+    5
+   ],
+   "text": "global _sink"
+  },
+  {
+   "end": [
+    78,
+    18
+   ],
+   "file": "infrastructure/observability/trace/spans.py",
+   "rule": "py-global-state",
+   "start": [
+    78,
+    5
+   ],
+   "text": "global _store"
+  },
+  {
+   "end": [
+    22,
+    68
+   ],
+   "file": "infrastructure/process/release_version.py",
+   "rule": "py-env-read",
+   "start": [
+    22,
+    12
+   ],
+   "text": "os.getenv(RELEASES_API_URL_ENV, _MAIN_BUILD_RELEASE_API)"
+  },
+  {
+   "end": [
+    101,
+    50
+   ],
+   "file": "infrastructure/process/release_version.py",
+   "rule": "py-env-read",
+   "start": [
+    101,
+    8
+   ],
+   "text": "os.environ.get(UV_RUN_RECURSION_DEPTH_ENV)"
+  },
+  {
+   "end": [
+    36,
+    18
+   ],
+   "file": "infrastructure/process/runtime_flags.py",
+   "rule": "py-global-state",
+   "start": [
+    36,
+    5
+   ],
+   "text": "global _flags"
+  },
+  {
+   "end": [
+    55,
+    18
+   ],
+   "file": "infrastructure/process/runtime_flags.py",
+   "rule": "py-global-state",
+   "start": [
+    55,
+    5
+   ],
+   "text": "global _flags"
+  },
+  {
+   "end": [
+    41,
+    64
+   ],
+   "file": "infrastructure/process/turn_capacity/heavy_work.py",
+   "rule": "py-env-read",
+   "start": [
+    41,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_MAX_CONCURRENT_HEAVY_WORK_ENV)"
+  },
+  {
+   "end": [
+    85,
+    25
+   ],
+   "file": "infrastructure/process/turn_capacity/heavy_work.py",
+   "rule": "py-global-state",
+   "start": [
+    85,
+    5
+   ],
+   "text": "global _process_gate"
+  },
+  {
+   "end": [
+    94,
+    25
+   ],
+   "file": "infrastructure/process/turn_capacity/heavy_work.py",
+   "rule": "py-global-state",
+   "start": [
+    94,
+    5
+   ],
+   "text": "global _process_gate"
+  },
+  {
+   "end": [
+    105,
+    39
+   ],
+   "file": "infrastructure/process/windows_job.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    105,
+    5
+   ],
+   "text": "assert duplicate.value is not None"
+  },
+  {
+   "end": [
+    158,
+    39
+   ],
+   "file": "infrastructure/process/windows_job.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    158,
+    13
+   ],
+   "text": "assert timeout is not None"
+  },
+  {
+   "end": [
+    163,
+    34
+   ],
+   "file": "infrastructure/process/windows_job.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    163,
+    9
+   ],
+   "text": "assert result is not None"
+  },
+  {
+   "end": [
+    234,
+    22
+   ],
+   "file": "infrastructure/safety/guardrails/evaluator.py",
+   "rule": "py-global-state",
+   "start": [
+    234,
+    5
+   ],
+   "text": "global _evaluator"
+  },
+  {
+   "end": [
+    243,
+    22
+   ],
+   "file": "infrastructure/safety/guardrails/evaluator.py",
+   "rule": "py-global-state",
+   "start": [
+    243,
+    5
+   ],
+   "text": "global _evaluator"
+  },
+  {
+   "end": [
+    124,
+    55
+   ],
+   "file": "infrastructure/safety/sandbox/runner.py",
+   "rule": "py-env-read",
+   "start": [
+    124,
+    24
+   ],
+   "text": "os.getenv(CONTEXT_ROOT_ENV, \"\")"
+  },
+  {
+   "end": [
+    326,
+    35
+   ],
+   "file": "infrastructure/safety/sandbox/runner.py",
+   "rule": "py-env-read",
+   "start": [
+    326,
+    9
+   ],
+   "text": "os.environ.get(\"PATH\", \"\")"
+  },
+  {
+   "end": [
+    455,
+    36
+   ],
+   "file": "infrastructure/safety/sandbox/runner.py",
+   "rule": "py-env-read",
+   "start": [
+    455,
+    17
+   ],
+   "text": "os.environ.get(key)"
+  },
+  {
+   "end": [
+    377,
+    56
+   ],
+   "file": "infrastructure/scheduling/scheduler/background_service.py",
+   "rule": "py-env-read",
+   "start": [
+    377,
+    17
+   ],
+   "text": "os.environ.get(\"PATH\", \"/usr/bin:/bin\")"
+  },
+  {
+   "end": [
+    71,
+    55
+   ],
+   "file": "infrastructure/scheduling/scheduler/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    71,
+    12
+   ],
+   "text": "os.getenv(TELEGRAM_DEFAULT_CHAT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    103,
+    56
+   ],
+   "file": "infrastructure/scheduling/scheduler/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    103,
+    16
+   ],
+   "text": "os.getenv(SLACK_DEFAULT_CHAT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    121,
+    55
+   ],
+   "file": "infrastructure/scheduling/scheduler/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    121,
+    19
+   ],
+   "text": "os.getenv(SLACK_WEBHOOK_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    177,
+    43
+   ],
+   "file": "infrastructure/scheduling/scheduler/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    177,
+    21
+   ],
+   "text": "os.getenv(env_var, \"\")"
+  },
+  {
+   "end": [
+    195,
+    62
+   ],
+   "file": "infrastructure/scheduling/scheduler/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    195,
+    23
+   ],
+   "text": "os.getenv(\"ROCKETCHAT_WEBHOOK_URL\", \"\")"
+  },
+  {
+   "end": [
+    223,
+    43
+   ],
+   "file": "infrastructure/scheduling/scheduler/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    223,
+    21
+   ],
+   "text": "os.getenv(env_var, \"\")"
+  },
+  {
+   "end": [
+    46,
+    26
+   ],
+   "file": "infrastructure/scheduling/scheduler/delivery_bundle.py",
+   "rule": "py-global-state",
+   "start": [
+    46,
+    9
+   ],
+   "text": "global _installed"
+  },
+  {
+   "end": [
+    41,
+    21
+   ],
+   "file": "infrastructure/scheduling/scheduler/loop_owner.py",
+   "rule": "py-global-state",
+   "start": [
+    41,
+    5
+   ],
+   "text": "global _resolver"
+  },
+  {
+   "end": [
+    24,
+    20
+   ],
+   "file": "infrastructure/scheduling/scheduler/run_now.py",
+   "rule": "py-global-state",
+   "start": [
+    24,
+    5
+   ],
+   "text": "global _starter"
+  },
+  {
+   "end": [
+    142,
+    63
+   ],
+   "file": "infrastructure/scheduling/scheduler/runner.py",
+   "rule": "py-env-read",
+   "start": [
+    142,
+    11
+   ],
+   "text": "os.getenv(OPENSRE_SCHEDULER_MAX_CONCURRENT_RUNS_ENV)"
+  },
+  {
+   "end": [
+    32,
+    21
+   ],
+   "file": "infrastructure/service_families/families.py",
+   "rule": "py-global-state",
+   "start": [
+    32,
+    5
+   ],
+   "text": "global _resolver"
+  },
+  {
+   "end": [
+    157,
+    19
+   ],
+   "file": "infrastructure/skills_registry/puller.py",
+   "rule": "py-global-state",
+   "start": [
+    157,
+    5
+   ],
+   "text": "global _puller"
+  },
+  {
+   "end": [
+    59,
+    55
+   ],
+   "file": "infrastructure/terminal/notify.py",
+   "rule": "py-env-read",
+   "start": [
+    59,
+    12
+   ],
+   "text": "os.environ.get(SOUND_NOTIFICATIONS_ENV, \"\")"
+  },
+  {
+   "end": [
+    95,
+    70
+   ],
+   "file": "infrastructure/terminal/notify.py",
+   "rule": "py-env-read",
+   "start": [
+    95,
+    34
+   ],
+   "text": "os.environ.get(TERM_PROGRAM_ENV, \"\")"
+  },
+  {
+   "end": [
+    494,
+    92
+   ],
+   "file": "infrastructure/terminal/theme.py",
+   "rule": "py-global-state",
+   "start": [
+    494,
+    5
+   ],
+   "text": "global HIGHLIGHT_ANSI, BRAND_ANSI, TEXT_ANSI, SECONDARY_ANSI, DIM_ANSI, BOLD_BRAND_ANSI"
+  },
+  {
+   "end": [
+    495,
+    84
+   ],
+   "file": "infrastructure/terminal/theme.py",
+   "rule": "py-global-state",
+   "start": [
+    495,
+    5
+   ],
+   "text": "global PROMPT_ACCENT_ANSI, PROMPT_FRAME_ANSI, DIM_COUNTER_ANSI, SURFACE_BG_ANSI"
+  },
+  {
+   "end": [
+    496,
+    74
+   ],
+   "file": "infrastructure/terminal/theme.py",
+   "rule": "py-global-state",
+   "start": [
+    496,
+    5
+   ],
+   "text": "global INPUT_SURFACE_BG_ANSI, MENU_SELECTION_ROW_ANSI, MARKDOWN_THEME"
+  },
+  {
+   "end": [
+    497,
+    71
+   ],
+   "file": "infrastructure/terminal/theme.py",
+   "rule": "py-global-state",
+   "start": [
+    497,
+    5
+   ],
+   "text": "global DEVICE_CODE_ANSI, REPLY_MARKER_ANSI, BOLD_REPLY_MARKER_ANSI"
+  },
+  {
+   "end": [
+    555,
+    25
+   ],
+   "file": "infrastructure/terminal/theme.py",
+   "rule": "py-global-state",
+   "start": [
+    555,
+    5
+   ],
+   "text": "global _ACTIVE_THEME"
+  },
+  {
+   "end": [
+    44,
+    91
+   ],
+   "file": "infrastructure/turn_host/concurrency.py",
+   "rule": "py-env-read",
+   "start": [
+    44,
+    47
+   ],
+   "text": "os.getenv(OPENSRE_SIZE_PROFILE_ENV, \"SMALL\")"
+  },
+  {
+   "end": [
+    56,
+    59
+   ],
+   "file": "infrastructure/turn_host/concurrency.py",
+   "rule": "py-env-read",
+   "start": [
+    56,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_MAX_CONCURRENT_TURNS_ENV)"
+  },
+  {
+   "end": [
+    116,
+    25
+   ],
+   "file": "infrastructure/turn_host/concurrency.py",
+   "rule": "py-global-state",
+   "start": [
+    116,
+    5
+   ],
+   "text": "global _process_gate"
+  },
+  {
+   "end": [
+    125,
+    25
+   ],
+   "file": "infrastructure/turn_host/concurrency.py",
+   "rule": "py-global-state",
+   "start": [
+    125,
+    5
+   ],
+   "text": "global _process_gate"
+  },
+  {
+   "end": [
+    132,
+    25
+   ],
+   "file": "infrastructure/turn_host/concurrency.py",
+   "rule": "py-global-state",
+   "start": [
+    132,
+    5
+   ],
+   "text": "global _process_gate"
+  },
+  {
+   "end": [
+    51,
+    64
+   ],
+   "file": "infrastructure/turn_host/session_agents.py",
+   "rule": "py-env-read",
+   "start": [
+    51,
+    16
+   ],
+   "text": "os.getenv(OPENSRE_MAX_CACHED_SESSION_AGENTS_ENV)"
+  },
+  {
+   "end": [
+    579,
+    34
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    579,
+    11
+   ],
+   "text": "os.getenv(env_name, \"\")"
+  },
+  {
+   "end": [
+    644,
+    67
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    644,
+    29
+   ],
+   "text": "os.getenv(RAILWAY_PATH_ENV, \"railway\")"
+  },
+  {
+   "end": [
+    645,
+    58
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    645,
+    24
+   ],
+   "text": "os.getenv(RAILWAY_PROJECT_ENV, \"\")"
+  },
+  {
+   "end": [
+    646,
+    58
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    646,
+    24
+   ],
+   "text": "os.getenv(RAILWAY_SERVICE_ENV, \"\")"
+  },
+  {
+   "end": [
+    647,
+    66
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    647,
+    28
+   ],
+   "text": "os.getenv(RAILWAY_ENVIRONMENT_ENV, \"\")"
+  },
+  {
+   "end": [
+    661,
+    67
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    661,
+    28
+   ],
+   "text": "os.getenv(GRAFANA_INSTANCE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    669,
+    76
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    669,
+    35
+   ],
+   "text": "os.getenv(GRAFANA_VERIFY_SSL_ENV, \"true\")"
+  },
+  {
+   "end": [
+    671,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    671,
+    34
+   ],
+   "text": "os.getenv(GRAFANA_CA_BUNDLE_ENV, \"\")"
+  },
+  {
+   "end": [
+    699,
+    62
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    699,
+    13
+   ],
+   "text": "os.getenv(DATADOG_SITE_ENV, DEFAULT_DATADOG_SITE)"
+  },
+  {
+   "end": [
+    736,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    736,
+    32
+   ],
+   "text": "os.getenv(GROUNDCOVER_MCP_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    737,
+    78
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    737,
+    36
+   ],
+   "text": "os.getenv(GROUNDCOVER_TENANT_UUID_ENV, \"\")"
+  },
+  {
+   "end": [
+    738,
+    76
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    738,
+    35
+   ],
+   "text": "os.getenv(GROUNDCOVER_BACKEND_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    739,
+    72
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    739,
+    33
+   ],
+   "text": "os.getenv(GROUNDCOVER_TIMEZONE_ENV, \"\")"
+  },
+  {
+   "end": [
+    763,
+    68
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    763,
+    32
+   ],
+   "text": "os.getenv(HONEYCOMB_DATASET_ENV, \"\")"
+  },
+  {
+   "end": [
+    764,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    764,
+    33
+   ],
+   "text": "os.getenv(HONEYCOMB_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    785,
+    71
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    785,
+    32
+   ],
+   "text": "os.getenv(NEW_RELIC_ACCOUNT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    786,
+    67
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    786,
+    30
+   ],
+   "text": "os.getenv(NEW_RELIC_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    817,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    817,
+    33
+   ],
+   "text": "os.getenv(CORALOGIX_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    818,
+    86
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    818,
+    41
+   ],
+   "text": "os.getenv(CORALOGIX_APPLICATION_NAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    819,
+    82
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    819,
+    39
+   ],
+   "text": "os.getenv(CORALOGIX_SUBSYSTEM_NAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    842,
+    55
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    842,
+    24
+   ],
+   "text": "os.getenv(AWS_ROLE_ARN_ENV, \"\")"
+  },
+  {
+   "end": [
+    843,
+    61
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    843,
+    27
+   ],
+   "text": "os.getenv(AWS_EXTERNAL_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    844,
+    60
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    844,
+    22
+   ],
+   "text": "os.getenv(AWS_REGION_ENV, \"us-east-1\")"
+  },
+  {
+   "end": [
+    897,
+    68
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    897,
+    19
+   ],
+   "text": "os.getenv(GITHUB_MCP_MODE_ENV, \"streamable-http\")"
+  },
+  {
+   "end": [
+    898,
+    51
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    898,
+    18
+   ],
+   "text": "os.getenv(GITHUB_MCP_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    899,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    899,
+    22
+   ],
+   "text": "os.getenv(GITHUB_MCP_COMMAND_ENV, \"\")"
+  },
+  {
+   "end": [
+    900,
+    53
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    900,
+    19
+   ],
+   "text": "os.getenv(GITHUB_MCP_ARGS_ENV, \"\")"
+  },
+  {
+   "end": [
+    902,
+    61
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    902,
+    23
+   ],
+   "text": "os.getenv(GITHUB_MCP_TOOLSETS_ENV, \"\")"
+  },
+  {
+   "end": [
+    921,
+    66
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    921,
+    23
+   ],
+   "text": "os.getenv(SENTRY_ORGANIZATION_SLUG_ENV, \"\")"
+  },
+  {
+   "end": [
+    926,
+    84
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    926,
+    29
+   ],
+   "text": "os.getenv(SENTRY_BASE_URL_ENV, DEFAULT_SENTRY_BASE_URL)"
+  },
+  {
+   "end": [
+    930,
+    71
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    930,
+    33
+   ],
+   "text": "os.getenv(SENTRY_PROJECT_SLUG_ENV, \"\")"
+  },
+  {
+   "end": [
+    944,
+    84
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    944,
+    29
+   ],
+   "text": "os.getenv(GITLAB_BASE_URL_ENV, DEFAULT_GITLAB_BASE_URL)"
+  },
+  {
+   "end": [
+    956,
+    64
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    956,
+    29
+   ],
+   "text": "os.getenv(MONGODB_DATABASE_ENV, \"\")"
+  },
+  {
+   "end": [
+    957,
+    75
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    957,
+    32
+   ],
+   "text": "os.getenv(MONGODB_AUTH_SOURCE_ENV, \"admin\")"
+  },
+  {
+   "end": [
+    958,
+    58
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    958,
+    24
+   ],
+   "text": "os.getenv(MONGODB_TLS_ENV, \"true\")"
+  },
+  {
+   "end": [
+    977,
+    57
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    977,
+    23
+   ],
+   "text": "os.getenv(POSTGRESQL_HOST_ENV, \"\")"
+  },
+  {
+   "end": [
+    978,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    978,
+    27
+   ],
+   "text": "os.getenv(POSTGRESQL_DATABASE_ENV, \"\")"
+  },
+  {
+   "end": [
+    984,
+    67
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    984,
+    33
+   ],
+   "text": "os.getenv(POSTGRESQL_PORT_ENV, \"\")"
+  },
+  {
+   "end": [
+    987,
+    75
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    987,
+    29
+   ],
+   "text": "os.getenv(POSTGRESQL_USERNAME_ENV, \"postgres\")"
+  },
+  {
+   "end": [
+    989,
+    73
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    989,
+    29
+   ],
+   "text": "os.getenv(POSTGRESQL_SSL_MODE_ENV, \"prefer\")"
+  },
+  {
+   "end": [
+    1007,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1007,
+    27
+   ],
+   "text": "os.getenv(\"ARGOCD_BASE_URL\", \"\")"
+  },
+  {
+   "end": [
+    1011,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1011,
+    27
+   ],
+   "text": "os.getenv(\"ARGOCD_USERNAME\", \"\")"
+  },
+  {
+   "end": [
+    1021,
+    63
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1021,
+    32
+   ],
+   "text": "os.getenv(\"ARGOCD_PROJECT\", \"\")"
+  },
+  {
+   "end": [
+    1022,
+    75
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1022,
+    38
+   ],
+   "text": "os.getenv(\"ARGOCD_APP_NAMESPACE\", \"\")"
+  },
+  {
+   "end": [
+    1023,
+    73
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1023,
+    35
+   ],
+   "text": "os.getenv(\"ARGOCD_VERIFY_SSL\", \"true\")"
+  },
+  {
+   "end": [
+    1038,
+    64
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1038,
+    24
+   ],
+   "text": "os.getenv(OSRE_HELM_INTEGRATION_ENV, \"\")"
+  },
+  {
+   "end": [
+    1047,
+    66
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1047,
+    34
+   ],
+   "text": "os.getenv(HELM_PATH_ENV, \"helm\")"
+  },
+  {
+   "end": [
+    1048,
+    73
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1048,
+    37
+   ],
+   "text": "os.getenv(HELM_KUBE_CONTEXT_ENV, \"\")"
+  },
+  {
+   "end": [
+    1049,
+    69
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1049,
+    35
+   ],
+   "text": "os.getenv(HELM_KUBECONFIG_ENV, \"\")"
+  },
+  {
+   "end": [
+    1050,
+    75
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1050,
+    42
+   ],
+   "text": "os.getenv(HELM_NAMESPACE_ENV, \"\")"
+  },
+  {
+   "end": [
+    1069,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1069,
+    32
+   ],
+   "text": "os.getenv(VERCEL_TEAM_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1088,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1088,
+    31
+   ],
+   "text": "os.getenv(\"OPSGENIE_REGION\", \"us\")"
+  },
+  {
+   "end": [
+    1105,
+    61
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1105,
+    24
+   ],
+   "text": "os.getenv(PAGERDUTY_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1125,
+    72
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1125,
+    33
+   ],
+   "text": "os.getenv(INCIDENT_IO_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1138,
+    51
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1138,
+    21
+   ],
+   "text": "os.getenv(\"JIRA_BASE_URL\", \"\")"
+  },
+  {
+   "end": [
+    1139,
+    45
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1139,
+    18
+   ],
+   "text": "os.getenv(\"JIRA_EMAIL\", \"\")"
+  },
+  {
+   "end": [
+    1141,
+    57
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1141,
+    24
+   ],
+   "text": "os.getenv(\"JIRA_PROJECT_KEY\", \"\")"
+  },
+  {
+   "end": [
+    1162,
+    78
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1162,
+    36
+   ],
+   "text": "os.getenv(GOOGLE_CREDENTIALS_FILE_ENV, \"\")"
+  },
+  {
+   "end": [
+    1163,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1163,
+    29
+   ],
+   "text": "os.getenv(GOOGLE_DRIVE_FOLDER_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1185,
+    73
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1185,
+    31
+   ],
+   "text": "os.getenv(SERVICENOW_INSTANCE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1186,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1186,
+    27
+   ],
+   "text": "os.getenv(SERVICENOW_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    1219,
+    80
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1219,
+    39
+   ],
+   "text": "os.getenv(DISCORD_APPLICATION_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1220,
+    72
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1220,
+    35
+   ],
+   "text": "os.getenv(DISCORD_PUBLIC_KEY_ENV, \"\")"
+  },
+  {
+   "end": [
+    1221,
+    88
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1221,
+    43
+   ],
+   "text": "os.getenv(DISCORD_DEFAULT_CHANNEL_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1240,
+    83
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1240,
+    40
+   ],
+   "text": "os.getenv(TELEGRAM_DEFAULT_CHAT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1250,
+    69
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1250,
+    30
+   ],
+   "text": "os.getenv(\"ROCKETCHAT_WEBHOOK_URL\", \"\")"
+  },
+  {
+   "end": [
+    1255,
+    75
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1255,
+    35
+   ],
+   "text": "os.getenv(ROCKETCHAT_SERVER_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1257,
+    69
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1257,
+    32
+   ],
+   "text": "os.getenv(ROCKETCHAT_USER_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1259,
+    85
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1259,
+    40
+   ],
+   "text": "os.getenv(ROCKETCHAT_DEFAULT_CHANNEL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1275,
+    67
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1275,
+    34
+   ],
+   "text": "os.getenv(BUZZ_RELAY_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1278,
+    79
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1278,
+    40
+   ],
+   "text": "os.getenv(BUZZ_DEFAULT_CHANNEL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1279,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1279,
+    33
+   ],
+   "text": "os.getenv(BUZZ_AUTH_TAG_ENV, \"\")"
+  },
+  {
+   "end": [
+    1280,
+    62
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1280,
+    34
+   ],
+   "text": "os.getenv(BUZZ_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    1291,
+    61
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1291,
+    25
+   ],
+   "text": "os.getenv(SLACK_WEBHOOK_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1297,
+    72
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1297,
+    32
+   ],
+   "text": "os.getenv(SLACK_DEFAULT_CHAT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1303,
+    45
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1303,
+    17
+   ],
+   "text": "os.getenv(SMTP_HOST_ENV, \"\")"
+  },
+  {
+   "end": [
+    1309,
+    57
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1309,
+    29
+   ],
+   "text": "os.getenv(SMTP_PORT_ENV, \"\")"
+  },
+  {
+   "end": [
+    1310,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1310,
+    33
+   ],
+   "text": "os.getenv(SMTP_SECURITY_ENV, \"\")"
+  },
+  {
+   "end": [
+    1311,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1311,
+    33
+   ],
+   "text": "os.getenv(SMTP_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    1313,
+    73
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1313,
+    37
+   ],
+   "text": "os.getenv(SMTP_FROM_ADDRESS_ENV, \"\")"
+  },
+  {
+   "end": [
+    1314,
+    69
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1314,
+    35
+   ],
+   "text": "os.getenv(SMTP_DEFAULT_TO_ENV, \"\")"
+  },
+  {
+   "end": [
+    1327,
+    67
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1327,
+    28
+   ],
+   "text": "os.getenv(TWILIO_WHATSAPP_FROM_ENV, \"\")"
+  },
+  {
+   "end": [
+    1335,
+    73
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1335,
+    35
+   ],
+   "text": "os.getenv(WHATSAPP_DEFAULT_TO_ENV, \"\")"
+  },
+  {
+   "end": [
+    1346,
+    57
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1346,
+    23
+   ],
+   "text": "os.getenv(TWILIO_SMS_FROM_ENV, \"\")"
+  },
+  {
+   "end": [
+    1347,
+    87
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1347,
+    36
+   ],
+   "text": "os.getenv(TWILIO_SMS_MESSAGING_SERVICE_SID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1360,
+    71
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1360,
+    31
+   ],
+   "text": "os.getenv(TWILIO_SMS_DEFAULT_TO_ENV, \"\")"
+  },
+  {
+   "end": [
+    1377,
+    64
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1377,
+    21
+   ],
+   "text": "os.getenv(MONGODB_ATLAS_PROJECT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1387,
+    22
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1385,
+    33
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    1412,
+    72
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1412,
+    24
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_MODE\", \"streamable-http\")"
+  },
+  {
+   "end": [
+    1414,
+    63
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1414,
+    27
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_COMMAND\", \"\")"
+  },
+  {
+   "end": [
+    1416,
+    57
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1416,
+    23
+   ],
+   "text": "os.getenv(POSTHOG_MCP_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1422,
+    63
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1422,
+    25
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_READ_ONLY\", \"\")"
+  },
+  {
+   "end": [
+    1431,
+    75
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1431,
+    42
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_ARGS\", \"\")"
+  },
+  {
+   "end": [
+    1434,
+    84
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1434,
+    40
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_ORGANIZATION_ID\", \"\")"
+  },
+  {
+   "end": [
+    1435,
+    76
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1435,
+    35
+   ],
+   "text": "os.getenv(POSTHOG_MCP_PROJECT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1436,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1436,
+    33
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_FEATURES\", \"\")"
+  },
+  {
+   "end": [
+    1452,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1452,
+    23
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_MODE\", \"streamable-http\")"
+  },
+  {
+   "end": [
+    1454,
+    61
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1454,
+    26
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_COMMAND\", \"\")"
+  },
+  {
+   "end": [
+    1456,
+    55
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1456,
+    22
+   ],
+   "text": "os.getenv(SENTRY_MCP_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1469,
+    74
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1469,
+    42
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_ARGS\", \"\")"
+  },
+  {
+   "end": [
+    1472,
+    63
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1472,
+    29
+   ],
+   "text": "os.getenv(SENTRY_MCP_HOST_ENV, \"\")"
+  },
+  {
+   "end": [
+    1473,
+    87
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1473,
+    42
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_ORGANIZATION_SLUG\", \"\")"
+  },
+  {
+   "end": [
+    1474,
+    77
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1474,
+    37
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_PROJECT_SLUG\", \"\")"
+  },
+  {
+   "end": [
+    1475,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1475,
+    31
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_SKILLS\", \"\")"
+  },
+  {
+   "end": [
+    1490,
+    60
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1490,
+    18
+   ],
+   "text": "os.getenv(\"X_MCP_MODE\", \"streamable-http\")"
+  },
+  {
+   "end": [
+    1492,
+    51
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1492,
+    21
+   ],
+   "text": "os.getenv(\"X_MCP_COMMAND\", \"\")"
+  },
+  {
+   "end": [
+    1495,
+    45
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1495,
+    17
+   ],
+   "text": "os.getenv(X_MCP_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1503,
+    74
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1503,
+    47
+   ],
+   "text": "os.getenv(\"X_MCP_ARGS\", \"\")"
+  },
+  {
+   "end": [
+    1520,
+    51
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1520,
+    20
+   ],
+   "text": "os.getenv(MARIADB_HOST_ENV, \"\")"
+  },
+  {
+   "end": [
+    1521,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1521,
+    24
+   ],
+   "text": "os.getenv(MARIADB_DATABASE_ENV, \"\")"
+  },
+  {
+   "end": [
+    1527,
+    64
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1527,
+    29
+   ],
+   "text": "os.getenv(MARIADB_PORT_ENV, \"3306\")"
+  },
+  {
+   "end": [
+    1529,
+    68
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1529,
+    33
+   ],
+   "text": "os.getenv(MARIADB_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    1531,
+    62
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1531,
+    28
+   ],
+   "text": "os.getenv(MARIADB_SSL_ENV, \"true\")"
+  },
+  {
+   "end": [
+    1544,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1544,
+    24
+   ],
+   "text": "os.getenv(DAGSTER_ENDPOINT_ENV, \"\")"
+  },
+  {
+   "end": [
+    1562,
+    51
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1562,
+    21
+   ],
+   "text": "os.getenv(\"RABBITMQ_HOST\", \"\")"
+  },
+  {
+   "end": [
+    1563,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1563,
+    25
+   ],
+   "text": "os.getenv(\"RABBITMQ_USERNAME\", \"\")"
+  },
+  {
+   "end": [
+    1569,
+    86
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1569,
+    40
+   ],
+   "text": "os.getenv(\"RABBITMQ_MANAGEMENT_PORT\", \"15672\")"
+  },
+  {
+   "end": [
+    1572,
+    62
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1572,
+    30
+   ],
+   "text": "os.getenv(\"RABBITMQ_VHOST\", \"/\")"
+  },
+  {
+   "end": [
+    1573,
+    62
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1573,
+    28
+   ],
+   "text": "os.getenv(\"RABBITMQ_SSL\", \"false\")"
+  },
+  {
+   "end": [
+    1575,
+    75
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1575,
+    35
+   ],
+   "text": "os.getenv(\"RABBITMQ_VERIFY_SSL\", \"true\")"
+  },
+  {
+   "end": [
+    1601,
+    64
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1601,
+    19
+   ],
+   "text": "os.getenv(BETTERSTACK_QUERY_ENDPOINT_ENV, \"\")"
+  },
+  {
+   "end": [
+    1602,
+    58
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1602,
+    19
+   ],
+   "text": "os.getenv(BETTERSTACK_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    1610,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1610,
+    32
+   ],
+   "text": "os.getenv(BETTERSTACK_SOURCES_ENV, \"\")"
+  },
+  {
+   "end": [
+    1622,
+    47
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1622,
+    18
+   ],
+   "text": "os.getenv(MYSQL_HOST_ENV, \"\")"
+  },
+  {
+   "end": [
+    1623,
+    55
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1623,
+    22
+   ],
+   "text": "os.getenv(MYSQL_DATABASE_ENV, \"\")"
+  },
+  {
+   "end": [
+    1629,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1629,
+    36
+   ],
+   "text": "os.getenv(MYSQL_PORT_ENV, \"\")"
+  },
+  {
+   "end": [
+    1632,
+    66
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1632,
+    29
+   ],
+   "text": "os.getenv(MYSQL_USERNAME_ENV, \"root\")"
+  },
+  {
+   "end": [
+    1634,
+    71
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1634,
+    29
+   ],
+   "text": "os.getenv(MYSQL_SSL_MODE_ENV, \"preferred\")"
+  },
+  {
+   "end": [
+    1644,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1644,
+    24
+   ],
+   "text": "os.getenv(AZURE_SQL_SERVER_ENV, \"\")"
+  },
+  {
+   "end": [
+    1645,
+    63
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1645,
+    26
+   ],
+   "text": "os.getenv(AZURE_SQL_DATABASE_ENV, \"\")"
+  },
+  {
+   "end": [
+    1647,
+    53
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1647,
+    20
+   ],
+   "text": "os.getenv(AZURE_SQL_PORT_ENV, \"\")"
+  },
+  {
+   "end": [
+    1653,
+    66
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1653,
+    29
+   ],
+   "text": "os.getenv(AZURE_SQL_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    1655,
+    91
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1655,
+    27
+   ],
+   "text": "os.getenv(AZURE_SQL_DRIVER_ENV, \"ODBC Driver 18 for SQL Server\")"
+  },
+  {
+   "end": [
+    1656,
+    68
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1656,
+    28
+   ],
+   "text": "os.getenv(AZURE_SQL_ENCRYPT_ENV, \"true\")"
+  },
+  {
+   "end": [
+    1667,
+    63
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1667,
+    27
+   ],
+   "text": "os.getenv(\"BITBUCKET_WORKSPACE\", \"\")"
+  },
+  {
+   "end": [
+    1674,
+    68
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1674,
+    33
+   ],
+   "text": "os.getenv(\"BITBUCKET_USERNAME\", \"\")"
+  },
+  {
+   "end": [
+    1678,
+    22
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1676,
+    33
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    1680,
+    85
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1680,
+    45
+   ],
+   "text": "os.getenv(\"BITBUCKET_MAX_RESULTS\", \"25\")"
+  },
+  {
+   "end": [
+    1686,
+    54
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1686,
+    9
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_ACCOUNT_IDENTIFIER\", \"\")"
+  },
+  {
+   "end": [
+    1687,
+    46
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1687,
+    12
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_ACCOUNT\", \"\")"
+  },
+  {
+   "end": [
+    1696,
+    60
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1696,
+    29
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_USER\", \"\")"
+  },
+  {
+   "end": [
+    1699,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1699,
+    34
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_WAREHOUSE\", \"\")"
+  },
+  {
+   "end": [
+    1700,
+    60
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1700,
+    29
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_ROLE\", \"\")"
+  },
+  {
+   "end": [
+    1701,
+    68
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1701,
+    33
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_DATABASE\", \"\")"
+  },
+  {
+   "end": [
+    1702,
+    64
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1702,
+    31
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_SCHEMA\", \"\")"
+  },
+  {
+   "end": [
+    1703,
+    85
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1703,
+    45
+   ],
+   "text": "os.getenv(\"SNOWFLAKE_MAX_RESULTS\", \"50\")"
+  },
+  {
+   "end": [
+    1708,
+    77
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1708,
+    26
+   ],
+   "text": "os.getenv(AZURE_LOG_ANALYTICS_WORKSPACE_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1721,
+    26
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1718,
+    25
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    1724,
+    68
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1724,
+    34
+   ],
+   "text": "os.getenv(AZURE_TENANT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1725,
+    80
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1725,
+    40
+   ],
+   "text": "os.getenv(AZURE_SUBSCRIPTION_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    1727,
+    89
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1727,
+    25
+   ],
+   "text": "os.getenv(AZURE_MAX_RESULTS_ENV, str(AZURE_MAX_RESULTS_DEFAULT))"
+  },
+  {
+   "end": [
+    1734,
+    55
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1734,
+    23
+   ],
+   "text": "os.getenv(\"OPENOBSERVE_URL\", \"\")"
+  },
+  {
+   "end": [
+    1736,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1736,
+    28
+   ],
+   "text": "os.getenv(\"OPENOBSERVE_USERNAME\", \"\")"
+  },
+  {
+   "end": [
+    1744,
+    67
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1744,
+    28
+   ],
+   "text": "os.getenv(\"OPENOBSERVE_ORG\", \"default\")"
+  },
+  {
+   "end": [
+    1748,
+    66
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1748,
+    31
+   ],
+   "text": "os.getenv(\"OPENOBSERVE_STREAM\", \"\")"
+  },
+  {
+   "end": [
+    1749,
+    88
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1749,
+    45
+   ],
+   "text": "os.getenv(\"OPENOBSERVE_MAX_RESULTS\", \"100\")"
+  },
+  {
+   "end": [
+    1754,
+    55
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1754,
+    22
+   ],
+   "text": "os.getenv(OPENSEARCH_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1762,
+    71
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1762,
+    33
+   ],
+   "text": "os.getenv(OPENSEARCH_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    1764,
+    80
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1764,
+    38
+   ],
+   "text": "os.getenv(\"OPENSEARCH_INDEX_PATTERN\", \"*\")"
+  },
+  {
+   "end": [
+    1765,
+    87
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1765,
+    45
+   ],
+   "text": "os.getenv(\"OPENSEARCH_MAX_RESULTS\", \"100\")"
+  },
+  {
+   "end": [
+    1770,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1770,
+    24
+   ],
+   "text": "os.getenv(ALERTMANAGER_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1777,
+    73
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1777,
+    33
+   ],
+   "text": "os.getenv(ALERTMANAGER_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    1790,
+    58
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1790,
+    24
+   ],
+   "text": "os.getenv(KUBECONFIG_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    1798,
+    69
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1798,
+    32
+   ],
+   "text": "os.getenv(KUBECONFIG_CONTEXT_ENV, \"\")"
+  },
+  {
+   "end": [
+    1799,
+    80
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1799,
+    34
+   ],
+   "text": "os.getenv(KUBECONFIG_NAMESPACE_ENV, \"default\")"
+  },
+  {
+   "end": [
+    1812,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1812,
+    25
+   ],
+   "text": "os.getenv(\"VICTORIA_LOGS_URL\", \"\")"
+  },
+  {
+   "end": [
+    1818,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1818,
+    34
+   ],
+   "text": "os.getenv(\"VICTORIA_LOGS_TENANT_ID\")"
+  },
+  {
+   "end": [
+    1834,
+    49
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1834,
+    22
+   ],
+   "text": "os.getenv(\"SPLUNK_URL\", \"\")"
+  },
+  {
+   "end": [
+    1842,
+    67
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1842,
+    34
+   ],
+   "text": "os.getenv(\"SPLUNK_INDEX\", \"main\")"
+  },
+  {
+   "end": [
+    1843,
+    77
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1843,
+    39
+   ],
+   "text": "os.getenv(\"SPLUNK_VERIFY_SSL\", \"true\")"
+  },
+  {
+   "end": [
+    1845,
+    71
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1845,
+    38
+   ],
+   "text": "os.getenv(\"SPLUNK_CA_BUNDLE\", \"\")"
+  },
+  {
+   "end": [
+    1858,
+    49
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1858,
+    20
+   ],
+   "text": "os.getenv(\"SUPABASE_URL\", \"\")"
+  },
+  {
+   "end": [
+    1910,
+    56
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1910,
+    20
+   ],
+   "text": "os.getenv(TEMPORAL_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    1911,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    1911,
+    26
+   ],
+   "text": "os.getenv(TEMPORAL_NAMESPACE_ENV, \"default\")"
+  },
+  {
+   "end": [
+    2162,
+    67
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2162,
+    33
+   ],
+   "text": "os.getenv(TRACER_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    2183,
+    61
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2183,
+    25
+   ],
+   "text": "os.getenv(SLACK_WEBHOOK_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    2186,
+    69
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2186,
+    29
+   ],
+   "text": "os.getenv(SLACK_DEFAULT_CHAT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    2205,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2205,
+    28
+   ],
+   "text": "os.getenv(GOOGLE_CREDENTIALS_FILE_ENV, \"\")"
+  },
+  {
+   "end": [
+    2206,
+    62
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2206,
+    21
+   ],
+   "text": "os.getenv(GOOGLE_DRIVE_FOLDER_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    2232,
+    65
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2232,
+    25
+   ],
+   "text": "os.getenv(\"KAFKA_BOOTSTRAP_SERVERS\", \"\")"
+  },
+  {
+   "end": [
+    2238,
+    91
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2238,
+    42
+   ],
+   "text": "os.getenv(\"KAFKA_SECURITY_PROTOCOL\", \"PLAINTEXT\")"
+  },
+  {
+   "end": [
+    2239,
+    76
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2239,
+    39
+   ],
+   "text": "os.getenv(\"KAFKA_SASL_MECHANISM\", \"\")"
+  },
+  {
+   "end": [
+    2240,
+    74
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2240,
+    38
+   ],
+   "text": "os.getenv(\"KAFKA_SASL_USERNAME\", \"\")"
+  },
+  {
+   "end": [
+    2260,
+    59
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2260,
+    27
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_HOST\", \"\")"
+  },
+  {
+   "end": [
+    2266,
+    69
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2266,
+    33
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_PORT\", \"8123\")"
+  },
+  {
+   "end": [
+    2267,
+    76
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2267,
+    33
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_DATABASE\", \"default\")"
+  },
+  {
+   "end": [
+    2268,
+    72
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2268,
+    33
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_USER\", \"default\")"
+  },
+  {
+   "end": [
+    2270,
+    70
+   ],
+   "file": "integrations/_catalog_impl.py",
+   "rule": "py-env-read",
+   "start": [
+    2270,
+    31
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_SECURE\", \"false\")"
+  },
+  {
+   "end": [
+    23,
+    37
+   ],
+   "file": "integrations/_relational.py",
+   "rule": "py-env-read",
+   "start": [
+    23,
+    12
+   ],
+   "text": "os.getenv(name, fallback)"
+  },
+  {
+   "end": [
+    28,
+    30
+   ],
+   "file": "integrations/_relational.py",
+   "rule": "py-env-read",
+   "start": [
+    28,
+    11
+   ],
+   "text": "os.getenv(name, \"\")"
+  },
+  {
+   "end": [
+    34,
+    42
+   ],
+   "file": "integrations/_relational.py",
+   "rule": "py-env-read",
+   "start": [
+    34,
+    18
+   ],
+   "text": "os.getenv(name, default)"
+  },
+  {
+   "end": [
+    146,
+    18
+   ],
+   "file": "integrations/account_integrations.py",
+   "rule": "py-global-state",
+   "start": [
+    146,
+    5
+   ],
+   "text": "global _state"
+  },
+  {
+   "end": [
+    81,
+    49
+   ],
+   "file": "integrations/airflow/config.py",
+   "rule": "py-env-read",
+   "start": [
+    81,
+    16
+   ],
+   "text": "os.getenv(\"AIRFLOW_USERNAME\", \"\")"
+  },
+  {
+   "end": [
+    89,
+    80
+   ],
+   "file": "integrations/airflow/config.py",
+   "rule": "py-env-read",
+   "start": [
+    89,
+    25
+   ],
+   "text": "os.getenv(\"AIRFLOW_BASE_URL\", DEFAULT_AIRFLOW_BASE_URL)"
+  },
+  {
+   "end": [
+    97,
+    14
+   ],
+   "file": "integrations/airflow/config.py",
+   "rule": "py-env-read",
+   "start": [
+    94,
+    32
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    98,
+    66
+   ],
+   "file": "integrations/airflow/config.py",
+   "rule": "py-env-read",
+   "start": [
+    98,
+    27
+   ],
+   "text": "os.getenv(\"AIRFLOW_VERIFY_SSL\", \"true\")"
+  },
+  {
+   "end": [
+    102,
+    14
+   ],
+   "file": "integrations/airflow/config.py",
+   "rule": "py-env-read",
+   "start": [
+    100,
+    28
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    19,
+    38
+   ],
+   "file": "integrations/aws/env.py",
+   "rule": "py-env-read",
+   "start": [
+    19,
+    17
+   ],
+   "text": "os.environ.get(first)"
+  },
+  {
+   "end": [
+    19,
+    70
+   ],
+   "file": "integrations/aws/env.py",
+   "rule": "py-env-read",
+   "start": [
+    19,
+    48
+   ],
+   "text": "os.environ.get(second)"
+  },
+  {
+   "end": [
+    92,
+    71
+   ],
+   "file": "integrations/aws/env.py",
+   "rule": "py-env-read",
+   "start": [
+    92,
+    35
+   ],
+   "text": "os.getenv(\"AWS_REGION\", \"us-east-1\")"
+  },
+  {
+   "end": [
+    110,
+    42
+   ],
+   "file": "integrations/aws/env.py",
+   "rule": "py-env-read",
+   "start": [
+    110,
+    12
+   ],
+   "text": "os.getenv(\"AWS_ACCESS_KEY_ID\")"
+  },
+  {
+   "end": [
+    112,
+    46
+   ],
+   "file": "integrations/aws/env.py",
+   "rule": "py-env-read",
+   "start": [
+    112,
+    12
+   ],
+   "text": "os.getenv(\"AWS_SECRET_ACCESS_KEY\")"
+  },
+  {
+   "end": [
+    106,
+    49
+   ],
+   "file": "integrations/azure_sql/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    106,
+    14
+   ],
+   "text": "os.getenv(AZURE_SQL_SERVER_ENV, \"\")"
+  },
+  {
+   "end": [
+    107,
+    53
+   ],
+   "file": "integrations/azure_sql/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    107,
+    16
+   ],
+   "text": "os.getenv(AZURE_SQL_DATABASE_ENV, \"\")"
+  },
+  {
+   "end": [
+    110,
+    46
+   ],
+   "file": "integrations/azure_sql/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    110,
+    13
+   ],
+   "text": "os.getenv(AZURE_SQL_PORT_ENV, \"\")"
+  },
+  {
+   "end": [
+    116,
+    62
+   ],
+   "file": "integrations/azure_sql/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    116,
+    25
+   ],
+   "text": "os.getenv(AZURE_SQL_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    118,
+    80
+   ],
+   "file": "integrations/azure_sql/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    118,
+    23
+   ],
+   "text": "os.getenv(AZURE_SQL_DRIVER_ENV, DEFAULT_AZURE_SQL_DRIVER)"
+  },
+  {
+   "end": [
+    119,
+    64
+   ],
+   "file": "integrations/azure_sql/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    119,
+    24
+   ],
+   "text": "os.getenv(AZURE_SQL_ENCRYPT_ENV, \"true\")"
+  },
+  {
+   "end": [
+    113,
+    61
+   ],
+   "file": "integrations/betterstack/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    113,
+    16
+   ],
+   "text": "os.getenv(BETTERSTACK_QUERY_ENDPOINT_ENV, \"\")"
+  },
+  {
+   "end": [
+    114,
+    55
+   ],
+   "file": "integrations/betterstack/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    114,
+    16
+   ],
+   "text": "os.getenv(BETTERSTACK_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    121,
+    64
+   ],
+   "file": "integrations/betterstack/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    121,
+    25
+   ],
+   "text": "os.getenv(BETTERSTACK_PASSWORD_ENV, \"\")"
+  },
+  {
+   "end": [
+    122,
+    62
+   ],
+   "file": "integrations/betterstack/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    122,
+    24
+   ],
+   "text": "os.getenv(BETTERSTACK_SOURCES_ENV, \"\")"
+  },
+  {
+   "end": [
+    240,
+    32
+   ],
+   "file": "integrations/betterstack/__init__.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    240,
+    5
+   ],
+   "text": "assert response is not None"
+  },
+  {
+   "end": [
+    55,
+    53
+   ],
+   "file": "integrations/bitbucket/config.py",
+   "rule": "py-env-read",
+   "start": [
+    55,
+    17
+   ],
+   "text": "os.getenv(\"BITBUCKET_WORKSPACE\", \"\")"
+  },
+  {
+   "end": [
+    61,
+    60
+   ],
+   "file": "integrations/bitbucket/config.py",
+   "rule": "py-env-read",
+   "start": [
+    61,
+    25
+   ],
+   "text": "os.getenv(\"BITBUCKET_USERNAME\", \"\")"
+  },
+  {
+   "end": [
+    62,
+    68
+   ],
+   "file": "integrations/bitbucket/config.py",
+   "rule": "py-env-read",
+   "start": [
+    62,
+    29
+   ],
+   "text": "os.getenv(\"BITBUCKET_APP_PASSWORD\", \"\")"
+  },
+  {
+   "end": [
+    63,
+    84
+   ],
+   "file": "integrations/bitbucket/config.py",
+   "rule": "py-env-read",
+   "start": [
+    63,
+    25
+   ],
+   "text": "os.getenv(\"BITBUCKET_BASE_URL\", DEFAULT_BITBUCKET_BASE_URL)"
+  },
+  {
+   "end": [
+    43,
+    44
+   ],
+   "file": "integrations/buzz/client.py",
+   "rule": "py-env-read",
+   "start": [
+    43,
+    16
+   ],
+   "text": "os.getenv(BUZZ_PATH_ENV, \"\")"
+  },
+  {
+   "end": [
+    78,
+    51
+   ],
+   "file": "integrations/buzz/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    78,
+    12
+   ],
+   "text": "os.getenv(BUZZ_DEFAULT_CHANNEL_ENV, \"\")"
+  },
+  {
+   "end": [
+    82,
+    36
+   ],
+   "file": "integrations/catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    82,
+    17
+   ],
+   "text": "os.getenv(name, \"\")"
+  },
+  {
+   "end": [
+    130,
+    80
+   ],
+   "file": "integrations/catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    130,
+    48
+   ],
+   "text": "os.getenv(\"GITHUB_MCP_MODE\", \"\")"
+  },
+  {
+   "end": [
+    151,
+    57
+   ],
+   "file": "integrations/catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    151,
+    17
+   ],
+   "text": "os.getenv(OSRE_HELM_INTEGRATION_ENV, \"\")"
+  },
+  {
+   "end": [
+    374,
+    73
+   ],
+   "file": "integrations/catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    374,
+    25
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_MODE\", \"streamable-http\")"
+  },
+  {
+   "end": [
+    375,
+    70
+   ],
+   "file": "integrations/catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    375,
+    31
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_AUTH_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    379,
+    72
+   ],
+   "file": "integrations/catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    379,
+    25
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_MODE\", \"streamable-http\")"
+  },
+  {
+   "end": [
+    380,
+    69
+   ],
+   "file": "integrations/catalog.py",
+   "rule": "py-env-read",
+   "start": [
+    380,
+    31
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_AUTH_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    102,
+    44
+   ],
+   "file": "integrations/clickhouse/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    102,
+    12
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_HOST\", \"\")"
+  },
+  {
+   "end": [
+    109,
+    75
+   ],
+   "file": "integrations/clickhouse/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    109,
+    17
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_PORT\", str(DEFAULT_CLICKHOUSE_PORT))"
+  },
+  {
+   "end": [
+    112,
+    86
+   ],
+   "file": "integrations/clickhouse/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    112,
+    25
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_DATABASE\", DEFAULT_CLICKHOUSE_DATABASE)"
+  },
+  {
+   "end": [
+    113,
+    78
+   ],
+   "file": "integrations/clickhouse/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    113,
+    25
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_USER\", DEFAULT_CLICKHOUSE_USER)"
+  },
+  {
+   "end": [
+    114,
+    61
+   ],
+   "file": "integrations/clickhouse/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    114,
+    25
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_PASSWORD\", \"\")"
+  },
+  {
+   "end": [
+    115,
+    62
+   ],
+   "file": "integrations/clickhouse/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    115,
+    23
+   ],
+   "text": "os.getenv(\"CLICKHOUSE_SECURE\", \"false\")"
+  },
+  {
+   "end": [
+    67,
+    52
+   ],
+   "file": "integrations/coding_agent/config.py",
+   "rule": "py-env-read",
+   "start": [
+    67,
+    12
+   ],
+   "text": "os.environ.get(\"CODING_TIMEOUT_SECONDS\")"
+  },
+  {
+   "end": [
+    104,
+    28
+   ],
+   "file": "integrations/daily_update.py",
+   "rule": "py-env-read",
+   "start": [
+    104,
+    13
+   ],
+   "text": "os.getenv(name)"
+  },
+  {
+   "end": [
+    138,
+    59
+   ],
+   "file": "integrations/daily_update.py",
+   "rule": "py-env-read",
+   "start": [
+    138,
+    29
+   ],
+   "text": "os.getenv(\"DAILY_UPDATE_DATE\")"
+  },
+  {
+   "end": [
+    142,
+    57
+   ],
+   "file": "integrations/daily_update.py",
+   "rule": "py-env-read",
+   "start": [
+    142,
+    28
+   ],
+   "text": "os.getenv(\"DAILY_UPDATE_NOW\")"
+  },
+  {
+   "end": [
+    623,
+    67
+   ],
+   "file": "integrations/daily_update.py",
+   "rule": "py-env-read",
+   "start": [
+    623,
+    31
+   ],
+   "text": "os.getenv(\"DAILY_UPDATE_OUTPUT_DIR\")"
+  },
+  {
+   "end": [
+    643,
+    53
+   ],
+   "file": "integrations/daily_update.py",
+   "rule": "py-env-read",
+   "start": [
+    643,
+    27
+   ],
+   "text": "os.getenv(\"GITHUB_OUTPUT\")"
+  },
+  {
+   "end": [
+    652,
+    56
+   ],
+   "file": "integrations/daily_update.py",
+   "rule": "py-env-read",
+   "start": [
+    652,
+    26
+   ],
+   "text": "os.getenv(\"GITHUB_REPOSITORY\")"
+  },
+  {
+   "end": [
+    653,
+    46
+   ],
+   "file": "integrations/daily_update.py",
+   "rule": "py-env-read",
+   "start": [
+    653,
+    21
+   ],
+   "text": "os.getenv(\"GITHUB_TOKEN\")"
+  },
+  {
+   "end": [
+    653,
+    71
+   ],
+   "file": "integrations/daily_update.py",
+   "rule": "py-env-read",
+   "start": [
+    653,
+    50
+   ],
+   "text": "os.getenv(\"GH_TOKEN\")"
+  },
+  {
+   "end": [
+    87,
+    70
+   ],
+   "file": "integrations/git/local.py",
+   "rule": "py-env-read",
+   "start": [
+    87,
+    21
+   ],
+   "text": "os.environ.get(f\"GIT_{role}_{field.upper()}\", \"\")"
+  },
+  {
+   "end": [
+    24,
+    34
+   ],
+   "file": "integrations/github/app_connection.py",
+   "rule": "py-env-read",
+   "start": [
+    24,
+    9
+   ],
+   "text": "os.getenv(WEBAPP_URL_ENV)"
+  },
+  {
+   "end": [
+    24,
+    68
+   ],
+   "file": "integrations/github/app_connection.py",
+   "rule": "py-env-read",
+   "start": [
+    24,
+    38
+   ],
+   "text": "os.getenv(OPENSRE_APP_URL_ENV)"
+  },
+  {
+   "end": [
+    339,
+    37
+   ],
+   "file": "integrations/github/ci_epochs.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    339,
+    5
+   ],
+   "text": "assert observer.path is not None"
+  },
+  {
+   "end": [
+    163,
+    56
+   ],
+   "file": "integrations/github/issue_comments.py",
+   "rule": "py-env-read",
+   "start": [
+    163,
+    26
+   ],
+   "text": "os.getenv(\"GITHUB_EVENT_PATH\")"
+  },
+  {
+   "end": [
+    164,
+    56
+   ],
+   "file": "integrations/github/issue_comments.py",
+   "rule": "py-env-read",
+   "start": [
+    164,
+    26
+   ],
+   "text": "os.getenv(\"GITHUB_REPOSITORY\")"
+  },
+  {
+   "end": [
+    166,
+    55
+   ],
+   "file": "integrations/github/issue_comments.py",
+   "rule": "py-env-read",
+   "start": [
+    166,
+    9
+   ],
+   "text": "os.getenv(SLACK_GITHUB_ISSUES_WEBHOOK_URL_ENV)"
+  },
+  {
+   "end": [
+    166,
+    91
+   ],
+   "file": "integrations/github/issue_comments.py",
+   "rule": "py-env-read",
+   "start": [
+    166,
+    59
+   ],
+   "text": "os.getenv(SLACK_WEBHOOK_URL_ENV)"
+  },
+  {
+   "end": [
+    436,
+    65
+   ],
+   "file": "integrations/github/mcp.py",
+   "rule": "py-env-read",
+   "start": [
+    436,
+    12
+   ],
+   "text": "os.getenv(\"GITHUB_MCP_MODE\", DEFAULT_GITHUB_MCP_MODE)"
+  },
+  {
+   "end": [
+    437,
+    42
+   ],
+   "file": "integrations/github/mcp.py",
+   "rule": "py-env-read",
+   "start": [
+    437,
+    11
+   ],
+   "text": "os.getenv(\"GITHUB_MCP_URL\", \"\")"
+  },
+  {
+   "end": [
+    438,
+    50
+   ],
+   "file": "integrations/github/mcp.py",
+   "rule": "py-env-read",
+   "start": [
+    438,
+    15
+   ],
+   "text": "os.getenv(\"GITHUB_MCP_COMMAND\", \"\")"
+  },
+  {
+   "end": [
+    439,
+    56
+   ],
+   "file": "integrations/github/mcp.py",
+   "rule": "py-env-read",
+   "start": [
+    439,
+    18
+   ],
+   "text": "os.getenv(\"GITHUB_MCP_AUTH_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    440,
+    56
+   ],
+   "file": "integrations/github/mcp.py",
+   "rule": "py-env-read",
+   "start": [
+    440,
+    20
+   ],
+   "text": "os.getenv(\"GITHUB_MCP_TOOLSETS\", \"\")"
+  },
+  {
+   "end": [
+    441,
+    48
+   ],
+   "file": "integrations/github/mcp.py",
+   "rule": "py-env-read",
+   "start": [
+    441,
+    16
+   ],
+   "text": "os.getenv(\"GITHUB_MCP_ARGS\", \"\")"
+  },
+  {
+   "end": [
+    780,
+    63
+   ],
+   "file": "integrations/github/mcp.py",
+   "rule": "py-env-read",
+   "start": [
+    780,
+    11
+   ],
+   "text": "os.getenv(\"OPENSRE_GITHUB_MCP_REPO_PROBE_LIMIT\", \"\")"
+  },
+  {
+   "end": [
+    890,
+    58
+   ],
+   "file": "integrations/github/mcp.py",
+   "rule": "py-env-read",
+   "start": [
+    890,
+    11
+   ],
+   "text": "os.getenv(\"OPENSRE_GITHUB_MCP_VERIFY_ORGS\", \"\")"
+  },
+  {
+   "end": [
+    85,
+    80
+   ],
+   "file": "integrations/gitlab/client.py",
+   "rule": "py-env-read",
+   "start": [
+    85,
+    25
+   ],
+   "text": "os.getenv(GITLAB_BASE_URL_ENV, DEFAULT_GITLAB_BASE_URL)"
+  },
+  {
+   "end": [
+    469,
+    66
+   ],
+   "file": "integrations/google_docs/client.py",
+   "rule": "py-env-read",
+   "start": [
+    469,
+    24
+   ],
+   "text": "os.getenv(GOOGLE_CREDENTIALS_FILE_ENV, \"\")"
+  },
+  {
+   "end": [
+    470,
+    58
+   ],
+   "file": "integrations/google_docs/client.py",
+   "rule": "py-env-read",
+   "start": [
+    470,
+    17
+   ],
+   "text": "os.getenv(GOOGLE_DRIVE_FOLDER_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    134,
+    75
+   ],
+   "file": "integrations/grafana/client.py",
+   "rule": "py-env-read",
+   "start": [
+    134,
+    18
+   ],
+   "text": "os.getenv(GRAFANA_INSTANCE_URL_ENV, DEFAULT_INSTANCE_URL)"
+  },
+  {
+   "end": [
+    137,
+    61
+   ],
+   "file": "integrations/grafana/client.py",
+   "rule": "py-env-read",
+   "start": [
+    137,
+    20
+   ],
+   "text": "os.getenv(GRAFANA_VERIFY_SSL_ENV, \"true\")"
+  },
+  {
+   "end": [
+    138,
+    55
+   ],
+   "file": "integrations/grafana/client.py",
+   "rule": "py-env-read",
+   "start": [
+    138,
+    19
+   ],
+   "text": "os.getenv(GRAFANA_CA_BUNDLE_ENV, \"\")"
+  },
+  {
+   "end": [
+    173,
+    42
+   ],
+   "file": "integrations/grafana/client.py",
+   "rule": "py-global-state",
+   "start": [
+    173,
+    13
+   ],
+   "text": "global _grafana_next_sequence"
+  },
+  {
+   "end": [
+    179,
+    28
+   ],
+   "file": "integrations/grafana/client.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    179,
+    5
+   ],
+   "text": "assert gate is not None"
+  },
+  {
+   "end": [
+    197,
+    36
+   ],
+   "file": "integrations/groundcover/client.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    197,
+    9
+   ],
+   "text": "assert last_exc is not None"
+  },
+  {
+   "end": [
+    38,
+    48
+   ],
+   "file": "integrations/helm/client.py",
+   "rule": "py-env-read",
+   "start": [
+    38,
+    12
+   ],
+   "text": "os.getenv(\"HELM_MANIFEST_MAX_CHARS\")"
+  },
+  {
+   "end": [
+    169,
+    37
+   ],
+   "file": "integrations/hosted_setup.py",
+   "rule": "py-env-read",
+   "start": [
+    169,
+    12
+   ],
+   "text": "os.getenv(WEBAPP_URL_ENV)"
+  },
+  {
+   "end": [
+    70,
+    51
+   ],
+   "file": "integrations/jenkins/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    70,
+    16
+   ],
+   "text": "os.getenv(JENKINS_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    77,
+    60
+   ],
+   "file": "integrations/jenkins/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    77,
+    25
+   ],
+   "text": "os.getenv(JENKINS_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    101,
+    67
+   ],
+   "file": "integrations/kafka/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    101,
+    25
+   ],
+   "text": "os.getenv(KAFKA_BOOTSTRAP_SERVERS_ENV, \"\")"
+  },
+  {
+   "end": [
+    109,
+    14
+   ],
+   "file": "integrations/kafka/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    107,
+    34
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    110,
+    70
+   ],
+   "file": "integrations/kafka/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    110,
+    31
+   ],
+   "text": "os.getenv(KAFKA_SASL_MECHANISM_ENV, \"\")"
+  },
+  {
+   "end": [
+    111,
+    68
+   ],
+   "file": "integrations/kafka/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    111,
+    30
+   ],
+   "text": "os.getenv(KAFKA_SASL_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    112,
+    68
+   ],
+   "file": "integrations/kafka/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    112,
+    30
+   ],
+   "text": "os.getenv(KAFKA_SASL_PASSWORD_ENV, \"\")"
+  },
+  {
+   "end": [
+    242,
+    22
+   ],
+   "file": "integrations/knowledge_scans/service.py",
+   "rule": "py-global-state",
+   "start": [
+    242,
+    5
+   ],
+   "text": "global _installed"
+  },
+  {
+   "end": [
+    856,
+    48
+   ],
+   "file": "integrations/kubernetes/client.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    856,
+    13
+   ],
+   "text": "assert self._api_client is not None"
+  },
+  {
+   "end": [
+    208,
+    13
+   ],
+   "file": "integrations/llm_cli/agent_exec.py",
+   "rule": "py-except-swallow",
+   "start": [
+    204,
+    5
+   ],
+   "text": "except (OSError, ValueError):"
+  },
+  {
+   "end": [
+    90,
+    38
+   ],
+   "file": "integrations/llm_cli/antigravity_cli.py",
+   "rule": "py-env-read",
+   "start": [
+    90,
+    15
+   ],
+   "text": "os.environ.get(key, \"\")"
+  },
+  {
+   "end": [
+    95,
+    52
+   ],
+   "file": "integrations/llm_cli/binary_resolver.py",
+   "rule": "py-env-read",
+   "start": [
+    95,
+    18
+   ],
+   "text": "os.getenv(\"NPM_CONFIG_PREFIX\", \"\")"
+  },
+  {
+   "end": [
+    137,
+    74
+   ],
+   "file": "integrations/llm_cli/binary_resolver.py",
+   "rule": "py-env-read",
+   "start": [
+    137,
+    50
+   ],
+   "text": "os.getenv(\"APPDATA\", \"\")"
+  },
+  {
+   "end": [
+    140,
+    47
+   ],
+   "file": "integrations/llm_cli/binary_resolver.py",
+   "rule": "py-env-read",
+   "start": [
+    140,
+    18
+   ],
+   "text": "os.getenv(\"LOCALAPPDATA\", \"\")"
+  },
+  {
+   "end": [
+    144,
+    53
+   ],
+   "file": "integrations/llm_cli/binary_resolver.py",
+   "rule": "py-env-read",
+   "start": [
+    144,
+    24
+   ],
+   "text": "os.getenv(\"LOCALAPPDATA\", \"\")"
+  },
+  {
+   "end": [
+    145,
+    49
+   ],
+   "file": "integrations/llm_cli/binary_resolver.py",
+   "rule": "py-env-read",
+   "start": [
+    145,
+    22
+   ],
+   "text": "os.getenv(\"VOLTA_HOME\", \"\")"
+  },
+  {
+   "end": [
+    150,
+    71
+   ],
+   "file": "integrations/llm_cli/binary_resolver.py",
+   "rule": "py-env-read",
+   "start": [
+    150,
+    45
+   ],
+   "text": "os.getenv(\"PNPM_HOME\", \"\")"
+  },
+  {
+   "end": [
+    160,
+    71
+   ],
+   "file": "integrations/llm_cli/binary_resolver.py",
+   "rule": "py-env-read",
+   "start": [
+    160,
+    45
+   ],
+   "text": "os.getenv(\"PNPM_HOME\", \"\")"
+  },
+  {
+   "end": [
+    161,
+    55
+   ],
+   "file": "integrations/llm_cli/binary_resolver.py",
+   "rule": "py-env-read",
+   "start": [
+    161,
+    25
+   ],
+   "text": "os.getenv(\"XDG_DATA_HOME\", \"\")"
+  },
+  {
+   "end": [
+    232,
+    47
+   ],
+   "file": "integrations/llm_cli/binary_resolver.py",
+   "rule": "py-env-read",
+   "start": [
+    232,
+    16
+   ],
+   "text": "os.getenv(explicit_env_key, \"\")"
+  },
+  {
+   "end": [
+    81,
+    13
+   ],
+   "file": "integrations/llm_cli/codex.py",
+   "rule": "py-except-swallow",
+   "start": [
+    79,
+    5
+   ],
+   "text": "except (OSError, subprocess.TimeoutExpired):"
+  },
+  {
+   "end": [
+    90,
+    53
+   ],
+   "file": "integrations/llm_cli/codex.py",
+   "rule": "py-env-read",
+   "start": [
+    90,
+    17
+   ],
+   "text": "os.environ.get(\"OPENAI_API_KEY\", \"\")"
+  },
+  {
+   "end": [
+    137,
+    54
+   ],
+   "file": "integrations/llm_cli/codex.py",
+   "rule": "py-env-read",
+   "start": [
+    137,
+    12
+   ],
+   "text": "os.environ.get(_AUTH_STATUS_PROBE_ENV, \"\")"
+  },
+  {
+   "end": [
+    104,
+    35
+   ],
+   "file": "integrations/llm_cli/copilot.py",
+   "rule": "py-env-read",
+   "start": [
+    104,
+    12
+   ],
+   "text": "os.environ.get(key, \"\")"
+  },
+  {
+   "end": [
+    117,
+    49
+   ],
+   "file": "integrations/llm_cli/copilot.py",
+   "rule": "py-env-read",
+   "start": [
+    117,
+    12
+   ],
+   "text": "os.environ.get(\"COPILOT_GH_HOST\", \"\")"
+  },
+  {
+   "end": [
+    117,
+    90
+   ],
+   "file": "integrations/llm_cli/copilot.py",
+   "rule": "py-env-read",
+   "start": [
+    117,
+    61
+   ],
+   "text": "os.environ.get(\"GH_HOST\", \"\")"
+  },
+  {
+   "end": [
+    34,
+    53
+   ],
+   "file": "integrations/llm_cli/cursor.py",
+   "rule": "py-env-read",
+   "start": [
+    34,
+    17
+   ],
+   "text": "os.environ.get(\"CURSOR_API_KEY\", \"\")"
+  },
+  {
+   "end": [
+    125,
+    38
+   ],
+   "file": "integrations/llm_cli/env_overrides.py",
+   "rule": "py-env-read",
+   "start": [
+    125,
+    15
+   ],
+   "text": "os.environ.get(key, \"\")"
+  },
+  {
+   "end": [
+    77,
+    38
+   ],
+   "file": "integrations/llm_cli/gemini_cli.py",
+   "rule": "py-env-read",
+   "start": [
+    77,
+    15
+   ],
+   "text": "os.environ.get(key, \"\")"
+  },
+  {
+   "end": [
+    92,
+    41
+   ],
+   "file": "integrations/llm_cli/grok_cli.py",
+   "rule": "py-env-read",
+   "start": [
+    92,
+    8
+   ],
+   "text": "os.environ.get(\"XAI_API_KEY\", \"\")"
+  },
+  {
+   "end": [
+    65,
+    42
+   ],
+   "file": "integrations/llm_cli/kimi.py",
+   "rule": "py-env-read",
+   "start": [
+    65,
+    8
+   ],
+   "text": "os.environ.get(\"KIMI_API_KEY\", \"\")"
+  },
+  {
+   "end": [
+    69,
+    60
+   ],
+   "file": "integrations/llm_cli/kimi.py",
+   "rule": "py-env-read",
+   "start": [
+    69,
+    17
+   ],
+   "text": "os.environ.get(\"KIMI_SHARE_DIR\", \"~/.kimi\")"
+  },
+  {
+   "end": [
+    210,
+    42
+   ],
+   "file": "integrations/llm_cli/opencode.py",
+   "rule": "py-env-read",
+   "start": [
+    210,
+    19
+   ],
+   "text": "os.environ.get(key, \"\")"
+  },
+  {
+   "end": [
+    79,
+    43
+   ],
+   "file": "integrations/llm_cli/pi_cli.py",
+   "rule": "py-env-read",
+   "start": [
+    79,
+    9
+   ],
+   "text": "os.environ.get(\"PI_AGENT_DIR\", \"\")"
+  },
+  {
+   "end": [
+    79,
+    90
+   ],
+   "file": "integrations/llm_cli/pi_cli.py",
+   "rule": "py-env-read",
+   "start": [
+    79,
+    55
+   ],
+   "text": "os.environ.get(\"PI_CONFIG_DIR\", \"\")"
+  },
+  {
+   "end": [
+    89,
+    35
+   ],
+   "file": "integrations/llm_cli/pi_cli.py",
+   "rule": "py-env-read",
+   "start": [
+    89,
+    12
+   ],
+   "text": "os.environ.get(key, \"\")"
+  },
+  {
+   "end": [
+    140,
+    38
+   ],
+   "file": "integrations/llm_cli/pi_cli.py",
+   "rule": "py-env-read",
+   "start": [
+    140,
+    15
+   ],
+   "text": "os.environ.get(key, \"\")"
+  },
+  {
+   "end": [
+    19,
+    38
+   ],
+   "file": "integrations/llm_cli/timeout_utils.py",
+   "rule": "py-env-read",
+   "start": [
+    19,
+    11
+   ],
+   "text": "os.environ.get(env_key, \"\")"
+  },
+  {
+   "end": [
+    147,
+    42
+   ],
+   "file": "integrations/member_integrations.py",
+   "rule": "py-env-read",
+   "start": [
+    147,
+    17
+   ],
+   "text": "os.getenv(WEBAPP_URL_ENV)"
+  },
+  {
+   "end": [
+    155,
+    62
+   ],
+   "file": "integrations/messaging_security.py",
+   "rule": "py-env-read",
+   "start": [
+    155,
+    18
+   ],
+   "text": "os.environ.get(\"OPENSRE_PAIRING_SECRET\", \"\")"
+  },
+  {
+   "end": [
+    88,
+    60
+   ],
+   "file": "integrations/mongodb/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    88,
+    25
+   ],
+   "text": "os.getenv(MONGODB_DATABASE_ENV, \"\")"
+  },
+  {
+   "end": [
+    89,
+    91
+   ],
+   "file": "integrations/mongodb/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    89,
+    28
+   ],
+   "text": "os.getenv(MONGODB_AUTH_SOURCE_ENV, DEFAULT_MONGODB_AUTH_SOURCE)"
+  },
+  {
+   "end": [
+    90,
+    54
+   ],
+   "file": "integrations/mongodb/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    90,
+    20
+   ],
+   "text": "os.getenv(MONGODB_TLS_ENV, \"true\")"
+  },
+  {
+   "end": [
+    90,
+    61
+   ],
+   "file": "integrations/mongodb_atlas/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    90,
+    18
+   ],
+   "text": "os.getenv(MONGODB_ATLAS_PUBLIC_KEY_ENV, \"\")"
+  },
+  {
+   "end": [
+    91,
+    63
+   ],
+   "file": "integrations/mongodb_atlas/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    91,
+    19
+   ],
+   "text": "os.getenv(MONGODB_ATLAS_PRIVATE_KEY_ENV, \"\")"
+  },
+  {
+   "end": [
+    92,
+    61
+   ],
+   "file": "integrations/mongodb_atlas/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    92,
+    18
+   ],
+   "text": "os.getenv(MONGODB_ATLAS_PROJECT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    100,
+    86
+   ],
+   "file": "integrations/mongodb_atlas/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    100,
+    25
+   ],
+   "text": "os.getenv(MONGODB_ATLAS_BASE_URL_ENV, DEFAULT_ATLAS_BASE_URL)"
+  },
+  {
+   "end": [
+    101,
+    58
+   ],
+   "file": "integrations/mysql/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    101,
+    25
+   ],
+   "text": "os.getenv(MYSQL_PASSWORD_ENV, \"\")"
+  },
+  {
+   "end": [
+    72,
+    38
+   ],
+   "file": "integrations/pi/client.py",
+   "rule": "py-env-read",
+   "start": [
+    72,
+    15
+   ],
+   "text": "os.environ.get(key, \"\")"
+  },
+  {
+   "end": [
+    35,
+    46
+   ],
+   "file": "integrations/pipedream/proxy.py",
+   "rule": "py-env-read",
+   "start": [
+    35,
+    21
+   ],
+   "text": "os.getenv(WEBAPP_URL_ENV)"
+  },
+  {
+   "end": [
+    98,
+    63
+   ],
+   "file": "integrations/postgresql/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    98,
+    25
+   ],
+   "text": "os.getenv(POSTGRESQL_PASSWORD_ENV, \"\")"
+  },
+  {
+   "end": [
+    64,
+    55
+   ],
+   "file": "integrations/posthog/config.py",
+   "rule": "py-env-read",
+   "start": [
+    64,
+    18
+   ],
+   "text": "os.getenv(POSTHOG_PROJECT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    72,
+    77
+   ],
+   "file": "integrations/posthog/config.py",
+   "rule": "py-env-read",
+   "start": [
+    72,
+    25
+   ],
+   "text": "os.getenv(POSTHOG_BASE_URL_ENV, DEFAULT_POSTHOG_URL)"
+  },
+  {
+   "end": [
+    77,
+    14
+   ],
+   "file": "integrations/posthog/config.py",
+   "rule": "py-env-read",
+   "start": [
+    75,
+    32
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    234,
+    67
+   ],
+   "file": "integrations/posthog_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    234,
+    12
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_MODE\", DEFAULT_POSTHOG_MCP_MODE)"
+  },
+  {
+   "end": [
+    235,
+    45
+   ],
+   "file": "integrations/posthog_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    235,
+    11
+   ],
+   "text": "os.getenv(POSTHOG_MCP_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    236,
+    51
+   ],
+   "file": "integrations/posthog_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    236,
+    15
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_COMMAND\", \"\")"
+  },
+  {
+   "end": [
+    237,
+    59
+   ],
+   "file": "integrations/posthog_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    237,
+    18
+   ],
+   "text": "os.getenv(POSTHOG_MCP_AUTH_TOKEN_ENV, \"\")"
+  },
+  {
+   "end": [
+    238,
+    49
+   ],
+   "file": "integrations/posthog_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    238,
+    16
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_ARGS\", \"\")"
+  },
+  {
+   "end": [
+    239,
+    59
+   ],
+   "file": "integrations/posthog_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    239,
+    21
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_READ_ONLY\", \"\")"
+  },
+  {
+   "end": [
+    261,
+    76
+   ],
+   "file": "integrations/posthog_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    261,
+    32
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_ORGANIZATION_ID\", \"\")"
+  },
+  {
+   "end": [
+    262,
+    68
+   ],
+   "file": "integrations/posthog_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    262,
+    27
+   ],
+   "text": "os.getenv(POSTHOG_MCP_PROJECT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    263,
+    62
+   ],
+   "file": "integrations/posthog_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    263,
+    25
+   ],
+   "text": "os.getenv(\"POSTHOG_MCP_FEATURES\", \"\")"
+  },
+  {
+   "end": [
+    94,
+    13
+   ],
+   "file": "integrations/posthog_mcp/metric_drafts.py",
+   "rule": "py-except-swallow",
+   "start": [
+    93,
+    5
+   ],
+   "text": "except json.JSONDecodeError:"
+  },
+  {
+   "end": [
+    118,
+    44
+   ],
+   "file": "integrations/rabbitmq/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    118,
+    12
+   ],
+   "text": "os.getenv(RABBITMQ_HOST_ENV, \"\")"
+  },
+  {
+   "end": [
+    119,
+    52
+   ],
+   "file": "integrations/rabbitmq/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    119,
+    16
+   ],
+   "text": "os.getenv(RABBITMQ_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    128,
+    14
+   ],
+   "file": "integrations/rabbitmq/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    125,
+    32
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    130,
+    61
+   ],
+   "file": "integrations/rabbitmq/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    130,
+    25
+   ],
+   "text": "os.getenv(RABBITMQ_PASSWORD_ENV, \"\")"
+  },
+  {
+   "end": [
+    131,
+    75
+   ],
+   "file": "integrations/rabbitmq/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    131,
+    22
+   ],
+   "text": "os.getenv(RABBITMQ_VHOST_ENV, DEFAULT_RABBITMQ_VHOST)"
+  },
+  {
+   "end": [
+    132,
+    56
+   ],
+   "file": "integrations/rabbitmq/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    132,
+    20
+   ],
+   "text": "os.getenv(RABBITMQ_SSL_ENV, \"false\")"
+  },
+  {
+   "end": [
+    133,
+    69
+   ],
+   "file": "integrations/rabbitmq/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    133,
+    27
+   ],
+   "text": "os.getenv(RABBITMQ_VERIFY_SSL_ENV, \"true\")"
+  },
+  {
+   "end": [
+    65,
+    75
+   ],
+   "file": "integrations/railway/client.py",
+   "rule": "py-env-read",
+   "start": [
+    65,
+    43
+   ],
+   "text": "os.getenv(RAILWAY_TOKEN_ENV, \"\")"
+  },
+  {
+   "end": [
+    95,
+    41
+   ],
+   "file": "integrations/redis/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    95,
+    12
+   ],
+   "text": "os.getenv(REDIS_HOST_ENV, \"\")"
+  },
+  {
+   "end": [
+    103,
+    67
+   ],
+   "file": "integrations/redis/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    103,
+    17
+   ],
+   "text": "os.getenv(REDIS_PORT_ENV, str(DEFAULT_REDIS_PORT))"
+  },
+  {
+   "end": [
+    105,
+    58
+   ],
+   "file": "integrations/redis/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    105,
+    25
+   ],
+   "text": "os.getenv(REDIS_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    107,
+    62
+   ],
+   "file": "integrations/redis/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    107,
+    28
+   ],
+   "text": "os.getenv(REDIS_DATABASE_ENV, \"0\")"
+  },
+  {
+   "end": [
+    108,
+    53
+   ],
+   "file": "integrations/redis/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    108,
+    20
+   ],
+   "text": "os.getenv(REDIS_SSL_ENV, \"false\")"
+  },
+  {
+   "end": [
+    82,
+    57
+   ],
+   "file": "integrations/rocketchat/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    82,
+    12
+   ],
+   "text": "os.getenv(ROCKETCHAT_DEFAULT_CHANNEL_ENV, \"\")"
+  },
+  {
+   "end": [
+    45,
+    65
+   ],
+   "file": "integrations/sentry/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    45,
+    27
+   ],
+   "text": "os.getenv(SENTRY_STATS_PERIOD_ENV, \"\")"
+  },
+  {
+   "end": [
+    102,
+    68
+   ],
+   "file": "integrations/sentry/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    102,
+    25
+   ],
+   "text": "os.getenv(SENTRY_ORGANIZATION_SLUG_ENV, \"\")"
+  },
+  {
+   "end": [
+    108,
+    75
+   ],
+   "file": "integrations/sentry/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    108,
+    25
+   ],
+   "text": "os.getenv(SENTRY_BASE_URL_ENV, DEFAULT_SENTRY_URL)"
+  },
+  {
+   "end": [
+    112,
+    67
+   ],
+   "file": "integrations/sentry/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    112,
+    29
+   ],
+   "text": "os.getenv(SENTRY_PROJECT_SLUG_ENV, \"\")"
+  },
+  {
+   "end": [
+    207,
+    65
+   ],
+   "file": "integrations/sentry_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    207,
+    12
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_MODE\", DEFAULT_SENTRY_MCP_MODE)"
+  },
+  {
+   "end": [
+    208,
+    44
+   ],
+   "file": "integrations/sentry_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    208,
+    11
+   ],
+   "text": "os.getenv(SENTRY_MCP_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    209,
+    50
+   ],
+   "file": "integrations/sentry_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    209,
+    15
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_COMMAND\", \"\")"
+  },
+  {
+   "end": [
+    210,
+    58
+   ],
+   "file": "integrations/sentry_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    210,
+    18
+   ],
+   "text": "os.getenv(SENTRY_MCP_AUTH_TOKEN_ENV, \"\")"
+  },
+  {
+   "end": [
+    211,
+    48
+   ],
+   "file": "integrations/sentry_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    211,
+    16
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_ARGS\", \"\")"
+  },
+  {
+   "end": [
+    232,
+    55
+   ],
+   "file": "integrations/sentry_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    232,
+    21
+   ],
+   "text": "os.getenv(SENTRY_MCP_HOST_ENV, \"\")"
+  },
+  {
+   "end": [
+    233,
+    79
+   ],
+   "file": "integrations/sentry_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    233,
+    34
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_ORGANIZATION_SLUG\", \"\")"
+  },
+  {
+   "end": [
+    234,
+    69
+   ],
+   "file": "integrations/sentry_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    234,
+    29
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_PROJECT_SLUG\", \"\")"
+  },
+  {
+   "end": [
+    235,
+    57
+   ],
+   "file": "integrations/sentry_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    235,
+    23
+   ],
+   "text": "os.getenv(\"SENTRY_MCP_SKILLS\", \"\")"
+  },
+  {
+   "end": [
+    12,
+    34
+   ],
+   "file": "integrations/setup/runner.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    12,
+    5
+   ],
+   "text": "assert spec.guide is not None"
+  },
+  {
+   "end": [
+    56,
+    40
+   ],
+   "file": "integrations/signoz/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    56,
+    11
+   ],
+   "text": "os.getenv(SIGNOZ_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    57,
+    48
+   ],
+   "file": "integrations/signoz/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    57,
+    15
+   ],
+   "text": "os.getenv(SIGNOZ_API_KEY_ENV, \"\")"
+  },
+  {
+   "end": [
+    22,
+    59
+   ],
+   "file": "integrations/slack/delivery.py",
+   "rule": "py-env-read",
+   "start": [
+    22,
+    23
+   ],
+   "text": "os.getenv(SLACK_WEBHOOK_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    235,
+    81
+   ],
+   "file": "integrations/slack/tools/slack_read_list_tool/tool.py",
+   "rule": "py-env-read",
+   "start": [
+    235,
+    39
+   ],
+   "text": "os.environ.get(\"SLACK_TEAM_TASKS_LIST_ID\")"
+  },
+  {
+   "end": [
+    18,
+    51
+   ],
+   "file": "integrations/slack/tools/slack_send_message_tool/delivery.py",
+   "rule": "py-env-read",
+   "start": [
+    18,
+    15
+   ],
+   "text": "os.getenv(SLACK_WEBHOOK_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    91,
+    59
+   ],
+   "file": "integrations/slack/tools/slack_send_message_tool/tool.py",
+   "rule": "py-env-read",
+   "start": [
+    91,
+    23
+   ],
+   "text": "os.getenv(SLACK_WEBHOOK_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    207,
+    19
+   ],
+   "file": "integrations/slack/web_client.py",
+   "rule": "py-global-state",
+   "start": [
+    207,
+    5
+   ],
+   "text": "global _client"
+  },
+  {
+   "end": [
+    77,
+    40
+   ],
+   "file": "integrations/supabase/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    77,
+    11
+   ],
+   "text": "os.getenv(\"SUPABASE_URL\", \"\")"
+  },
+  {
+   "end": [
+    78,
+    56
+   ],
+   "file": "integrations/supabase/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    78,
+    19
+   ],
+   "text": "os.getenv(\"SUPABASE_SERVICE_KEY\", \"\")"
+  },
+  {
+   "end": [
+    82,
+    55
+   ],
+   "file": "integrations/telegram/credentials.py",
+   "rule": "py-env-read",
+   "start": [
+    82,
+    12
+   ],
+   "text": "os.getenv(TELEGRAM_DEFAULT_CHAT_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    86,
+    39
+   ],
+   "file": "integrations/tempo/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    86,
+    11
+   ],
+   "text": "os.getenv(TEMPO_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    94,
+    58
+   ],
+   "file": "integrations/tempo/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    94,
+    25
+   ],
+   "text": "os.getenv(TEMPO_USERNAME_ENV, \"\")"
+  },
+  {
+   "end": [
+    96,
+    54
+   ],
+   "file": "integrations/tempo/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    96,
+    23
+   ],
+   "text": "os.getenv(TEMPO_ORG_ID_ENV, \"\")"
+  },
+  {
+   "end": [
+    46,
+    26
+   ],
+   "file": "integrations/tracer/__init__.py",
+   "rule": "py-global-state",
+   "start": [
+    46,
+    5
+   ],
+   "text": "global _tracer_client"
+  },
+  {
+   "end": [
+    48,
+    58
+   ],
+   "file": "integrations/tracer/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    48,
+    32
+   ],
+   "text": "os.getenv(\"JWT_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    47,
+    95
+   ],
+   "file": "integrations/tracer/tools/tracer_airflow_dag_tool/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    64
+   ],
+   "text": "os.getenv(\"AIRFLOW_DAG_ID\", \"\")"
+  },
+  {
+   "end": [
+    83,
+    55
+   ],
+   "file": "integrations/tracer/tools/tracer_airflow_dag_tool/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    83,
+    24
+   ],
+   "text": "os.getenv(\"AIRFLOW_DAG_ID\", \"\")"
+  },
+  {
+   "end": [
+    132,
+    55
+   ],
+   "file": "integrations/tracer/tools/tracer_airflow_dag_tool/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    132,
+    24
+   ],
+   "text": "os.getenv(\"AIRFLOW_DAG_ID\", \"\")"
+  },
+  {
+   "end": [
+    48,
+    78
+   ],
+   "file": "integrations/trello/config.py",
+   "rule": "py-env-read",
+   "start": [
+    48,
+    25
+   ],
+   "text": "os.getenv(\"TRELLO_BASE_URL\", DEFAULT_TRELLO_BASE_URL)"
+  },
+  {
+   "end": [
+    52,
+    57
+   ],
+   "file": "integrations/trello/config.py",
+   "rule": "py-env-read",
+   "start": [
+    52,
+    25
+   ],
+   "text": "os.getenv(\"TRELLO_BOARD_ID\", \"\")"
+  },
+  {
+   "end": [
+    53,
+    55
+   ],
+   "file": "integrations/trello/config.py",
+   "rule": "py-env-read",
+   "start": [
+    53,
+    24
+   ],
+   "text": "os.getenv(\"TRELLO_LIST_ID\", \"\")"
+  },
+  {
+   "end": [
+    51,
+    62
+   ],
+   "file": "integrations/vercel/client.py",
+   "rule": "py-env-read",
+   "start": [
+    51,
+    11
+   ],
+   "text": "os.getenv(VERCEL_RUNTIME_LOGS_READ_TIMEOUT_ENV, \"\")"
+  },
+  {
+   "end": [
+    45,
+    42
+   ],
+   "file": "integrations/webapp_requests/client.py",
+   "rule": "py-env-read",
+   "start": [
+    45,
+    17
+   ],
+   "text": "os.getenv(WEBAPP_URL_ENV)"
+  },
+  {
+   "end": [
+    70,
+    28
+   ],
+   "file": "integrations/webapp_vault.py",
+   "rule": "py-env-read",
+   "start": [
+    70,
+    13
+   ],
+   "text": "os.getenv(name)"
+  },
+  {
+   "end": [
+    435,
+    21
+   ],
+   "file": "integrations/webapp_vault.py",
+   "rule": "py-global-state",
+   "start": [
+    435,
+    5
+   ],
+   "text": "global _snapshot"
+  },
+  {
+   "end": [
+    201,
+    55
+   ],
+   "file": "integrations/x_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    201,
+    12
+   ],
+   "text": "os.getenv(\"X_MCP_MODE\", DEFAULT_X_MCP_MODE)"
+  },
+  {
+   "end": [
+    202,
+    39
+   ],
+   "file": "integrations/x_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    202,
+    11
+   ],
+   "text": "os.getenv(X_MCP_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    203,
+    45
+   ],
+   "file": "integrations/x_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    203,
+    15
+   ],
+   "text": "os.getenv(\"X_MCP_COMMAND\", \"\")"
+  },
+  {
+   "end": [
+    204,
+    53
+   ],
+   "file": "integrations/x_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    204,
+    18
+   ],
+   "text": "os.getenv(X_MCP_AUTH_TOKEN_ENV, \"\")"
+  },
+  {
+   "end": [
+    205,
+    51
+   ],
+   "file": "integrations/x_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    205,
+    20
+   ],
+   "text": "os.getenv(\"X_BEARER_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    206,
+    43
+   ],
+   "file": "integrations/x_mcp/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    206,
+    16
+   ],
+   "text": "os.getenv(\"X_MCP_ARGS\", \"\")"
+  },
+  {
+   "end": [
+    422,
+    57
+   ],
+   "file": "surfaces/cli/account_auth.py",
+   "rule": "py-env-read",
+   "start": [
+    422,
+    17
+   ],
+   "text": "os.getenv(OPENSRE_ACCOUNT_TOKEN_ENV, \"\")"
+  },
+  {
+   "end": [
+    460,
+    48
+   ],
+   "file": "surfaces/cli/account_auth.py",
+   "rule": "py-env-read",
+   "start": [
+    460,
+    8
+   ],
+   "text": "os.getenv(OPENSRE_ACCOUNT_TOKEN_ENV, \"\")"
+  },
+  {
+   "end": [
+    62,
+    39
+   ],
+   "file": "surfaces/cli/commands/config.py",
+   "rule": "py-env-read",
+   "start": [
+    62,
+    17
+   ],
+   "text": "os.getenv(key_env, \"\")"
+  },
+  {
+   "end": [
+    64,
+    43
+   ],
+   "file": "surfaces/cli/commands/config.py",
+   "rule": "py-env-read",
+   "start": [
+    64,
+    19
+   ],
+   "text": "os.getenv(model_env, \"\")"
+  },
+  {
+   "end": [
+    123,
+    13
+   ],
+   "file": "surfaces/cli/commands/gateway.py",
+   "rule": "py-except-swallow",
+   "start": [
+    122,
+    5
+   ],
+   "text": "except (KeyboardInterrupt, OSError):"
+  },
+  {
+   "end": [
+    63,
+    50
+   ],
+   "file": "surfaces/cli/commands/onboard.py",
+   "rule": "py-env-read",
+   "start": [
+    63,
+    12
+   ],
+   "text": "os.getenv(OPENSRE_AUTO_LAUNCH_ENV, \"\")"
+  },
+  {
+   "end": [
+    67,
+    68
+   ],
+   "file": "surfaces/cli/commands/onboard.py",
+   "rule": "py-env-read",
+   "start": [
+    67,
+    17
+   ],
+   "text": "os.getenv(OPENSRE_PARENT_INTERACTIVE_SHELL_ENV, \"\")"
+  },
+  {
+   "end": [
+    81,
+    40
+   ],
+   "file": "surfaces/cli/commands/package_smoke.py",
+   "rule": "py-env-read",
+   "start": [
+    81,
+    8
+   ],
+   "text": "os.environ.get(SSL_CERT_DIR_ENV)"
+  },
+  {
+   "end": [
+    67,
+    42
+   ],
+   "file": "surfaces/cli/commands/remote_sync.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    67,
+    5
+   ],
+   "text": "assert isinstance(status, SyncStatus)"
+  },
+  {
+   "end": [
+    74,
+    48
+   ],
+   "file": "surfaces/cli/commands/skills.py",
+   "rule": "py-env-read",
+   "start": [
+    74,
+    17
+   ],
+   "text": "os.getenv(runner_token_env, \"\")"
+  },
+  {
+   "end": [
+    55,
+    52
+   ],
+   "file": "surfaces/cli/group.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    55,
+    9
+   ],
+   "text": "assert isinstance(ctx.command, click.Group)"
+  },
+  {
+   "end": [
+    170,
+    52
+   ],
+   "file": "surfaces/cli/layout.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    170,
+    9
+   ],
+   "text": "assert isinstance(ctx.command, click.Group)"
+  },
+  {
+   "end": [
+    55,
+    59
+   ],
+   "file": "surfaces/cli/lifecycle/update.py",
+   "rule": "py-env-read",
+   "start": [
+    55,
+    11
+   ],
+   "text": "os.environ.get(CONTAINER_SUPERVISOR_PID_ENV, \"\")"
+  },
+  {
+   "end": [
+    33,
+    68
+   ],
+   "file": "surfaces/cli/wizard/azure_openai.py",
+   "rule": "py-env-read",
+   "start": [
+    33,
+    32
+   ],
+   "text": "os.getenv(provider.endpoint_env, \"\")"
+  },
+  {
+   "end": [
+    47,
+    82
+   ],
+   "file": "surfaces/cli/wizard/azure_openai.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    21
+   ],
+   "text": "os.getenv(provider.endpoint_env, provider.credential_default)"
+  },
+  {
+   "end": [
+    137,
+    60
+   ],
+   "file": "surfaces/cli/wizard/components.py",
+   "rule": "py-env-read",
+   "start": [
+    137,
+    34
+   ],
+   "text": "os.getenv(api_key_env, \"\")"
+  },
+  {
+   "end": [
+    58,
+    44
+   ],
+   "file": "surfaces/cli/wizard/configurators/spec_configurator.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    58,
+    9
+   ],
+   "text": "assert outcome.env_path is not None"
+  },
+  {
+   "end": [
+    118,
+    100
+   ],
+   "file": "surfaces/cli/wizard/configurators/spec_configurator.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    118,
+    13
+   ],
+   "text": "assert outcome.env_path is not None, \"apply_setup returned ok=True without an env_path\""
+  },
+  {
+   "end": [
+    96,
+    64
+   ],
+   "file": "surfaces/cli/wizard/custom_endpoints.py",
+   "rule": "py-env-read",
+   "start": [
+    96,
+    28
+   ],
+   "text": "os.getenv(provider.endpoint_env, \"\")"
+  },
+  {
+   "end": [
+    111,
+    82
+   ],
+   "file": "surfaces/cli/wizard/custom_endpoints.py",
+   "rule": "py-env-read",
+   "start": [
+    111,
+    21
+   ],
+   "text": "os.getenv(provider.endpoint_env, provider.credential_default)"
+  },
+  {
+   "end": [
+    332,
+    46
+   ],
+   "file": "surfaces/cli/wizard/flow.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    332,
+    13
+   ],
+   "text": "assert saved_provider is not None"
+  },
+  {
+   "end": [
+    51,
+    62
+   ],
+   "file": "surfaces/cli/wizard/local_llm/ollama.py",
+   "rule": "py-subprocess-shell",
+   "start": [
+    51,
+    18
+   ],
+   "text": "subprocess.run(cmd, shell=True, check=False)"
+  },
+  {
+   "end": [
+    50,
+    65
+   ],
+   "file": "surfaces/interactive_shell/command_registry/model/command.py",
+   "rule": "py-env-read",
+   "start": [
+    50,
+    25
+   ],
+   "text": "os.getenv(LLM_PROVIDER_ENV, \"anthropic\")"
+  },
+  {
+   "end": [
+    61,
+    65
+   ],
+   "file": "surfaces/interactive_shell/command_registry/model/command.py",
+   "rule": "py-env-read",
+   "start": [
+    61,
+    25
+   ],
+   "text": "os.getenv(LLM_PROVIDER_ENV, \"anthropic\")"
+  },
+  {
+   "end": [
+    247,
+    55
+   ],
+   "file": "surfaces/interactive_shell/command_registry/model/command.py",
+   "rule": "py-env-read",
+   "start": [
+    247,
+    22
+   ],
+   "text": "os.getenv(provider.model_env, \"\")"
+  },
+  {
+   "end": [
+    396,
+    96
+   ],
+   "file": "surfaces/interactive_shell/command_registry/model/command.py",
+   "rule": "py-env-read",
+   "start": [
+    396,
+    56
+   ],
+   "text": "os.getenv(LLM_PROVIDER_ENV, \"anthropic\")"
+  },
+  {
+   "end": [
+    89,
+    40
+   ],
+   "file": "surfaces/interactive_shell/command_registry/model/switching.py",
+   "rule": "py-env-read",
+   "start": [
+    89,
+    16
+   ],
+   "text": "os.getenv(model_env, \"\")"
+  },
+  {
+   "end": [
+    90,
+    44
+   ],
+   "file": "surfaces/interactive_shell/command_registry/model/switching.py",
+   "rule": "py-env-read",
+   "start": [
+    90,
+    13
+   ],
+   "text": "os.getenv(legacy_model_env, \"\")"
+  },
+  {
+   "end": [
+    145,
+    53
+   ],
+   "file": "surfaces/interactive_shell/command_registry/model/switching.py",
+   "rule": "py-env-read",
+   "start": [
+    145,
+    17
+   ],
+   "text": "os.getenv(provider.endpoint_env, \"\")"
+  },
+  {
+   "end": [
+    283,
+    92
+   ],
+   "file": "surfaces/interactive_shell/command_registry/model/switching.py",
+   "rule": "py-env-read",
+   "start": [
+    283,
+    52
+   ],
+   "text": "os.getenv(LLM_PROVIDER_ENV, \"anthropic\")"
+  },
+  {
+   "end": [
+    332,
+    92
+   ],
+   "file": "surfaces/interactive_shell/command_registry/model/switching.py",
+   "rule": "py-env-read",
+   "start": [
+    332,
+    52
+   ],
+   "text": "os.getenv(LLM_PROVIDER_ENV, \"anthropic\")"
+  },
+  {
+   "end": [
+    104,
+    35
+   ],
+   "file": "surfaces/interactive_shell/command_registry/remote_sync_cmds.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    104,
+    9
+   ],
+   "text": "assert task_id is not None"
+  },
+  {
+   "end": [
+    123,
+    90
+   ],
+   "file": "surfaces/interactive_shell/command_registry/settings_cmds.py",
+   "rule": "py-env-read",
+   "start": [
+    123,
+    50
+   ],
+   "text": "os.getenv(LLM_PROVIDER_ENV, \"anthropic\")"
+  },
+  {
+   "end": [
+    88,
+    35
+   ],
+   "file": "surfaces/interactive_shell/controller.py",
+   "rule": "py-env-read",
+   "start": [
+    88,
+    16
+   ],
+   "text": "os.environ.get(key)"
+  },
+  {
+   "end": [
+    46,
+    60
+   ],
+   "file": "surfaces/interactive_shell/prompt_history/policy.py",
+   "rule": "py-env-read",
+   "start": [
+    46,
+    33
+   ],
+   "text": "os.getenv(cls._ENV_ENABLED)"
+  },
+  {
+   "end": [
+    47,
+    58
+   ],
+   "file": "surfaces/interactive_shell/prompt_history/policy.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    32
+   ],
+   "text": "os.getenv(cls._ENV_REDACT)"
+  },
+  {
+   "end": [
+    49,
+    48
+   ],
+   "file": "surfaces/interactive_shell/prompt_history/policy.py",
+   "rule": "py-env-read",
+   "start": [
+    49,
+    17
+   ],
+   "text": "os.getenv(cls._ENV_MAX_ENTRIES)"
+  },
+  {
+   "end": [
+    43,
+    25
+   ],
+   "file": "surfaces/interactive_shell/runtime/loop_scheduler.py",
+   "rule": "py-global-state",
+   "start": [
+    43,
+    5
+   ],
+   "text": "global _host_session"
+  },
+  {
+   "end": [
+    88,
+    35
+   ],
+   "file": "surfaces/interactive_shell/runtime/loop_scheduler.py",
+   "rule": "py-global-state",
+   "start": [
+    88,
+    5
+   ],
+   "text": "global _scheduler, _task_count"
+  },
+  {
+   "end": [
+    116,
+    35
+   ],
+   "file": "surfaces/interactive_shell/runtime/loop_scheduler.py",
+   "rule": "py-global-state",
+   "start": [
+    116,
+    5
+   ],
+   "text": "global _scheduler, _task_count"
+  },
+  {
+   "end": [
+    267,
+    32
+   ],
+   "file": "surfaces/interactive_shell/runtime/startup/ci_agent_demo.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    267,
+    5
+   ],
+   "text": "assert selected is not None"
+  },
+  {
+   "end": [
+    48,
+    39
+   ],
+   "file": "surfaces/interactive_shell/ui/cron_input/arguments.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    48,
+    9
+   ],
+   "text": "assert option.name is not None"
+  },
+  {
+   "end": [
+    59,
+    35
+   ],
+   "file": "surfaces/interactive_shell/ui/hooks/output_expand.py",
+   "rule": "py-env-read",
+   "start": [
+    59,
+    12
+   ],
+   "text": "os.environ.get(\"PAGER\")"
+  },
+  {
+   "end": [
+    165,
+    44
+   ],
+   "file": "surfaces/interactive_shell/ui/input_prompt/stdout.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    165,
+    9
+   ],
+   "text": "assert self._transcript is not None"
+  },
+  {
+   "end": [
+    42,
+    39
+   ],
+   "file": "surfaces/interactive_shell/ui/messaging_input.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    42,
+    9
+   ],
+   "text": "assert option.name is not None"
+  },
+  {
+   "end": [
+    123,
+    23
+   ],
+   "file": "surfaces/interactive_shell/ui/streaming/renderer.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    123,
+    5
+   ],
+   "text": "assert __package__"
+  },
+  {
+   "end": [
+    31,
+    61
+   ],
+   "file": "surfaces/shared/doctor_checks.py",
+   "rule": "py-env-read",
+   "start": [
+    31,
+    16
+   ],
+   "text": "os.getenv(\"OPENSRE_PROJECT_ENV_PATH\", \".env\")"
+  },
+  {
+   "end": [
+    172,
+    49
+   ],
+   "file": "surfaces/shared/llm_setup/env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    172,
+    16
+   ],
+   "text": "os.getenv(provider.model_env, \"\")"
+  },
+  {
+   "end": [
+    174,
+    86
+   ],
+   "file": "surfaces/shared/llm_setup/env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    174,
+    61
+   ],
+   "text": "os.getenv(legacy_env, \"\")"
+  },
+  {
+   "end": [
+    199,
+    52
+   ],
+   "file": "surfaces/shared/llm_setup/env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    199,
+    16
+   ],
+   "text": "os.getenv(provider.endpoint_env, \"\")"
+  },
+  {
+   "end": [
+    16,
+    35
+   ],
+   "file": "surfaces/shared/llm_setup/openai_client.py",
+   "rule": "py-global-state",
+   "start": [
+    16,
+    5
+   ],
+   "text": "global OpenAI, OpenAIAuthError"
+  },
+  {
+   "end": [
+    17,
+    41
+   ],
+   "file": "surfaces/shared/llm_setup/validation.py",
+   "rule": "py-global-state",
+   "start": [
+    17,
+    5
+   ],
+   "text": "global Anthropic, AnthropicAuthError"
+  },
+  {
+   "end": [
+    39,
+    83
+   ],
+   "file": "surfaces/shared/llm_setup/validation.py",
+   "rule": "py-env-read",
+   "start": [
+    39,
+    42
+   ],
+   "text": "os.getenv(CUSTOM_OPENAI_BASE_URL_ENV, \"\")"
+  },
+  {
+   "end": [
+    121,
+    58
+   ],
+   "file": "surfaces/shared/llm_setup/validation.py",
+   "rule": "py-env-read",
+   "start": [
+    121,
+    22
+   ],
+   "text": "os.getenv(provider.endpoint_env, \"\")"
+  },
+  {
+   "end": [
+    122,
+    64
+   ],
+   "file": "surfaces/shared/llm_setup/validation.py",
+   "rule": "py-env-read",
+   "start": [
+    122,
+    25
+   ],
+   "text": "os.getenv(provider.api_version_env, \"\")"
+  },
+  {
+   "end": [
+    68,
+    45
+   ],
+   "file": "surfaces/shared/terminal/banner/banner_state.py",
+   "rule": "py-env-read",
+   "start": [
+    68,
+    16
+   ],
+   "text": "os.getenv(SKILLS_DIR_ENV, \"\")"
+  },
+  {
+   "end": [
+    50,
+    51
+   ],
+   "file": "surfaces/shared/terminal/components/banner_art.py",
+   "rule": "py-env-read",
+   "start": [
+    50,
+    19
+   ],
+   "text": "os.getenv(\"OPENSRE_FIGLET_FONT\")"
+  },
+  {
+   "end": [
+    44,
+    13
+   ],
+   "file": "surfaces/shared/terminal/components/cpr_stdin.py",
+   "rule": "py-except-swallow",
+   "start": [
+    42,
+    5
+   ],
+   "text": "except OSError:"
+  },
+  {
+   "end": [
+    26,
+    77
+   ],
+   "file": "surfaces/shared/terminal/tables/provider.py",
+   "rule": "py-env-read",
+   "start": [
+    26,
+    37
+   ],
+   "text": "os.getenv(LLM_PROVIDER_ENV, \"anthropic\")"
+  },
+  {
+   "end": [
+    24,
+    50
+   ],
+   "file": "tests/analytics/_commit_connection_process.py",
+   "rule": "py-env-read",
+   "start": [
+    24,
+    21
+   ],
+   "text": "os.environ[\"OPENSRE_APP_URL\"]"
+  },
+  {
+   "end": [
+    47,
+    54
+   ],
+   "file": "tests/analytics/_integrity_process.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    25
+   ],
+   "text": "os.environ[\"ORGANIZATION_ID\"]"
+  },
+  {
+   "end": [
+    77,
+    65
+   ],
+   "file": "tests/analytics/_integrity_process.py",
+   "rule": "py-env-read",
+   "start": [
+    77,
+    36
+   ],
+   "text": "os.environ[\"OPENSRE_APP_URL\"]"
+  },
+  {
+   "end": [
+    126,
+    43
+   ],
+   "file": "tests/analytics/_integrity_process.py",
+   "rule": "py-env-read",
+   "start": [
+    126,
+    17
+   ],
+   "text": "os.environ[\"OPENSRE_HOME\"]"
+  },
+  {
+   "end": [
+    45,
+    52
+   ],
+   "file": "tests/analytics/test_commit_connection.py",
+   "rule": "py-env-read",
+   "start": [
+    45,
+    16
+   ],
+   "text": "os.getenv(\"OPENSRE_WEBAPP_CHECKOUT\")"
+  },
+  {
+   "end": [
+    54,
+    6
+   ],
+   "file": "tests/analytics/test_commit_connection.py",
+   "rule": "py-env-read",
+   "start": [
+    52,
+    39
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    193,
+    56
+   ],
+   "file": "tests/analytics/test_commit_connection.py",
+   "rule": "py-env-read",
+   "start": [
+    193,
+    17
+   ],
+   "text": "os.getenv(\"OPENSRE_ANALYTICS_CHECKOUT\")"
+  },
+  {
+   "end": [
+    212,
+    94
+   ],
+   "file": "tests/analytics/test_commit_connection.py",
+   "rule": "py-env-read",
+   "start": [
+    212,
+    31
+   ],
+   "text": "os.getenv(\"INTEGRITY_CLICKHOUSE_URL\", \"http://127.0.0.1:18123\")"
+  },
+  {
+   "end": [
+    141,
+    54
+   ],
+   "file": "tests/analytics/test_integrity_environments.py",
+   "rule": "py-env-read",
+   "start": [
+    141,
+    19
+   ],
+   "text": "os.getenv(\"INTEGRITY_EVIDENCE_DIR\")"
+  },
+  {
+   "end": [
+    236,
+    65
+   ],
+   "file": "tests/analytics/test_integrity_environments.py",
+   "rule": "py-env-read",
+   "start": [
+    236,
+    26
+   ],
+   "text": "os.getenv(\"INTEGRITY_EXPECT_CONTAINER\")"
+  },
+  {
+   "end": [
+    55,
+    41
+   ],
+   "file": "tests/bootstrap/test_frozen_ca_bundle.py",
+   "rule": "py-env-read",
+   "start": [
+    55,
+    12
+   ],
+   "text": "os.environ[SSL_CERT_FILE_ENV]"
+  },
+  {
+   "end": [
+    74,
+    41
+   ],
+   "file": "tests/bootstrap/test_frozen_ca_bundle.py",
+   "rule": "py-env-read",
+   "start": [
+    74,
+    12
+   ],
+   "text": "os.environ[SSL_CERT_FILE_ENV]"
+  },
+  {
+   "end": [
+    89,
+    41
+   ],
+   "file": "tests/bootstrap/test_frozen_ca_bundle.py",
+   "rule": "py-env-read",
+   "start": [
+    89,
+    12
+   ],
+   "text": "os.environ[SSL_CERT_FILE_ENV]"
+  },
+  {
+   "end": [
+    153,
+    38
+   ],
+   "file": "tests/cli/test_account_command.py",
+   "rule": "py-env-read",
+   "start": [
+    153,
+    12
+   ],
+   "text": "os.environ[\"LLM_PROVIDER\"]"
+  },
+  {
+   "end": [
+    154,
+    51
+   ],
+   "file": "tests/cli/test_account_command.py",
+   "rule": "py-env-read",
+   "start": [
+    154,
+    12
+   ],
+   "text": "os.environ[\"ANTHROPIC_REASONING_MODEL\"]"
+  },
+  {
+   "end": [
+    604,
+    60
+   ],
+   "file": "tests/cli/test_install_matrix.py",
+   "rule": "py-env-read",
+   "start": [
+    604,
+    42
+   ],
+   "text": "os.environ['PATH']"
+  },
+  {
+   "end": [
+    600,
+    53
+   ],
+   "file": "tests/cli/wizard/test_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    600,
+    26
+   ],
+   "text": "os.environ.get(\"CODEX_BIN\")"
+  },
+  {
+   "end": [
+    608,
+    43
+   ],
+   "file": "tests/cli/wizard/test_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    608,
+    16
+   ],
+   "text": "os.environ.get(\"CODEX_BIN\")"
+  },
+  {
+   "end": [
+    811,
+    37
+   ],
+   "file": "tests/cli/wizard/test_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    811,
+    12
+   ],
+   "text": "os.environ[\"OLLAMA_HOST\"]"
+  },
+  {
+   "end": [
+    1270,
+    82
+   ],
+   "file": "tests/cli/wizard/test_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    1270,
+    43
+   ],
+   "text": "os.environ.get(\"AZURE_OPENAI_BASE_URL\")"
+  },
+  {
+   "end": [
+    1453,
+    37
+   ],
+   "file": "tests/cli/wizard/test_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    1453,
+    12
+   ],
+   "text": "os.environ[\"OLLAMA_HOST\"]"
+  },
+  {
+   "end": [
+    1527,
+    37
+   ],
+   "file": "tests/cli/wizard/test_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    1527,
+    12
+   ],
+   "text": "os.environ[\"OLLAMA_HOST\"]"
+  },
+  {
+   "end": [
+    2493,
+    43
+   ],
+   "file": "tests/cli/wizard/test_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    2493,
+    12
+   ],
+   "text": "os.environ[\"ANTHROPIC_API_KEY\"]"
+  },
+  {
+   "end": [
+    3047,
+    82
+   ],
+   "file": "tests/cli/wizard/test_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    3047,
+    43
+   ],
+   "text": "os.environ.get(\"AZURE_OPENAI_BASE_URL\")"
+  },
+  {
+   "end": [
+    3149,
+    82
+   ],
+   "file": "tests/cli/wizard/test_flow.py",
+   "rule": "py-env-read",
+   "start": [
+    3149,
+    43
+   ],
+   "text": "os.environ.get(\"AZURE_OPENAI_BASE_URL\")"
+  },
+  {
+   "end": [
+    11,
+    43
+   ],
+   "file": "tests/core/agent/_ci_gates.py",
+   "rule": "py-env-read",
+   "start": [
+    11,
+    12
+   ],
+   "text": "os.getenv(\"GITHUB_ACTIONS\", \"\")"
+  },
+  {
+   "end": [
+    155,
+    44
+   ],
+   "file": "tests/core/agent/conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    155,
+    12
+   ],
+   "text": "os.getenv(\"PYTEST_XDIST_WORKER\")"
+  },
+  {
+   "end": [
+    62,
+    36
+   ],
+   "file": "tests/core/runtime/llm/test_reasoning_effort.py",
+   "rule": "py-env-read",
+   "start": [
+    62,
+    12
+   ],
+   "text": "os.environ.get(_ENV_KEY)"
+  },
+  {
+   "end": [
+    32,
+    52
+   ],
+   "file": "tests/e2e/deploy/conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    32,
+    12
+   ],
+   "text": "os.getenv(\"RUN_DEPLOY_DOCKER_TESTS\", \"\")"
+  },
+  {
+   "end": [
+    10,
+    46
+   ],
+   "file": "tests/e2e/incident_io/test_incident_io_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    10,
+    9
+   ],
+   "text": "os.environ.get(\"INCIDENT_IO_API_KEY\")"
+  },
+  {
+   "end": [
+    17,
+    46
+   ],
+   "file": "tests/e2e/incident_io/test_incident_io_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    17,
+    9
+   ],
+   "text": "os.environ.get(\"INCIDENT_IO_API_KEY\")"
+  },
+  {
+   "end": [
+    18,
+    60
+   ],
+   "file": "tests/e2e/incident_io/test_incident_io_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    18,
+    18
+   ],
+   "text": "os.environ.get(\"INCIDENT_IO_BASE_URL\", \"\")"
+  },
+  {
+   "end": [
+    27,
+    73
+   ],
+   "file": "tests/e2e/incident_io/test_incident_io_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    27,
+    23
+   ],
+   "text": "os.environ.get(\"INCIDENT_IO_TEST_INCIDENT_ID\", \"\")"
+  },
+  {
+   "end": [
+    36,
+    48
+   ],
+   "file": "tests/e2e/incident_io/test_incident_io_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    36,
+    5
+   ],
+   "text": "os.environ.get(\"INCIDENT_IO_E2E_WRITEBACK\")"
+  },
+  {
+   "end": [
+    37,
+    68
+   ],
+   "file": "tests/e2e/incident_io/test_incident_io_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    37,
+    12
+   ],
+   "text": "os.environ.get(\"INCIDENT_IO_WRITEBACK_TEST_INCIDENT_ID\")"
+  },
+  {
+   "end": [
+    42,
+    46
+   ],
+   "file": "tests/e2e/incident_io/test_incident_io_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    42,
+    9
+   ],
+   "text": "os.environ.get(\"INCIDENT_IO_API_KEY\")"
+  },
+  {
+   "end": [
+    43,
+    60
+   ],
+   "file": "tests/e2e/incident_io/test_incident_io_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    43,
+    18
+   ],
+   "text": "os.environ.get(\"INCIDENT_IO_BASE_URL\", \"\")"
+  },
+  {
+   "end": [
+    49,
+    65
+   ],
+   "file": "tests/e2e/incident_io/test_incident_io_e2e.py",
+   "rule": "py-env-read",
+   "start": [
+    49,
+    13
+   ],
+   "text": "os.environ[\"INCIDENT_IO_WRITEBACK_TEST_INCIDENT_ID\"]"
+  },
+  {
+   "end": [
+    35,
+    47
+   ],
+   "file": "tests/e2e/install/test_live_installers.py",
+   "rule": "py-env-read",
+   "start": [
+    35,
+    9
+   ],
+   "text": "os.environ.get(\"OPENSRE_LIVE_INSTALL\")"
+  },
+  {
+   "end": [
+    150,
+    67
+   ],
+   "file": "tests/e2e/install/test_live_installers.py",
+   "rule": "py-env-read",
+   "start": [
+    150,
+    21
+   ],
+   "text": "os.environ.get(\"OPENSRE_LIVE_INSTALL_TAG\", \"\")"
+  },
+  {
+   "end": [
+    28,
+    47
+   ],
+   "file": "tests/e2e/install/test_live_installers_windows.py",
+   "rule": "py-env-read",
+   "start": [
+    28,
+    9
+   ],
+   "text": "os.environ.get(\"OPENSRE_LIVE_INSTALL\")"
+  },
+  {
+   "end": [
+    64,
+    67
+   ],
+   "file": "tests/e2e/install/test_live_installers_windows.py",
+   "rule": "py-env-read",
+   "start": [
+    64,
+    21
+   ],
+   "text": "os.environ.get(\"OPENSRE_LIVE_INSTALL_TAG\", \"\")"
+  },
+  {
+   "end": [
+    10,
+    46
+   ],
+   "file": "tests/e2e/posthog/test_orchestrator.py",
+   "rule": "py-env-read",
+   "start": [
+    10,
+    9
+   ],
+   "text": "os.getenv(\"POSTHOG_PERSONAL_API_KEY\")"
+  },
+  {
+   "end": [
+    10,
+    85
+   ],
+   "file": "tests/e2e/posthog/test_orchestrator.py",
+   "rule": "py-env-read",
+   "start": [
+    10,
+    54
+   ],
+   "text": "os.getenv(\"POSTHOG_PROJECT_ID\")"
+  },
+  {
+   "end": [
+    23,
+    40
+   ],
+   "file": "tests/integrations/aws/test_base_session.py",
+   "rule": "py-env-read",
+   "start": [
+    23,
+    12
+   ],
+   "text": "os.environ.get(key, default)"
+  },
+  {
+   "end": [
+    35,
+    39
+   ],
+   "file": "tests/integrations/llm_cli/test_codex_hosted_request_shape.py",
+   "rule": "py-env-read",
+   "start": [
+    35,
+    12
+   ],
+   "text": "os.environ.get(\"CODEX_BIN\")"
+  },
+  {
+   "end": [
+    106,
+    43
+   ],
+   "file": "tests/integrations/llm_cli/test_codex_hosted_request_shape.py",
+   "rule": "py-env-read",
+   "start": [
+    106,
+    17
+   ],
+   "text": "os.environ.get(\"PATH\", \"\")"
+  },
+  {
+   "end": [
+    671,
+    51
+   ],
+   "file": "tests/integrations/llm_cli/test_copilot_adapter.py",
+   "rule": "py-env-read",
+   "start": [
+    671,
+    29
+   ],
+   "text": "os.environ.get(\"PATH\")"
+  },
+  {
+   "end": [
+    238,
+    64
+   ],
+   "file": "tests/integrations/llm_cli/test_pi_adapter.py",
+   "rule": "py-env-read",
+   "start": [
+    238,
+    36
+   ],
+   "text": "os.environ.get(\"PI_BIN\", \"\")"
+  },
+  {
+   "end": [
+    241,
+    48
+   ],
+   "file": "tests/integrations/llm_cli/test_pi_adapter.py",
+   "rule": "py-env-read",
+   "start": [
+    241,
+    12
+   ],
+   "text": "os.environ.get(\"GEMINI_API_KEY\", \"\")"
+  },
+  {
+   "end": [
+    243,
+    42
+   ],
+   "file": "tests/integrations/llm_cli/test_pi_adapter.py",
+   "rule": "py-env-read",
+   "start": [
+    243,
+    12
+   ],
+   "text": "os.environ.get(\"PI_MODEL\", \"\")"
+  },
+  {
+   "end": [
+    143,
+    56
+   ],
+   "file": "tests/integrations/test_azure_sql.py",
+   "rule": "py-env-read",
+   "start": [
+    143,
+    22
+   ],
+   "text": "os.environ.get(\"AZURE_SQL_SERVER\")"
+  },
+  {
+   "end": [
+    144,
+    60
+   ],
+   "file": "tests/integrations/test_azure_sql.py",
+   "rule": "py-env-read",
+   "start": [
+    144,
+    24
+   ],
+   "text": "os.environ.get(\"AZURE_SQL_DATABASE\")"
+  },
+  {
+   "end": [
+    160,
+    33
+   ],
+   "file": "tests/integrations/test_azure_sql.py",
+   "rule": "py-env-read",
+   "start": [
+    160,
+    16
+   ],
+   "text": "os.environ.get(k)"
+  },
+  {
+   "end": [
+    72,
+    52
+   ],
+   "file": "tests/integrations/test_bitbucket.py",
+   "rule": "py-env-read",
+   "start": [
+    72,
+    15
+   ],
+   "text": "os.environ.get(\"BITBUCKET_WORKSPACE\")"
+  },
+  {
+   "end": [
+    99,
+    48
+   ],
+   "file": "tests/integrations/test_clickhouse.py",
+   "rule": "py-env-read",
+   "start": [
+    99,
+    15
+   ],
+   "text": "os.environ.get(\"CLICKHOUSE_HOST\")"
+  },
+  {
+   "end": [
+    413,
+    50
+   ],
+   "file": "tests/integrations/test_coding_agent.py",
+   "rule": "py-env-read",
+   "start": [
+    413,
+    32
+   ],
+   "text": "os.environ[\"HOME\"]"
+  },
+  {
+   "end": [
+    82,
+    56
+   ],
+   "file": "tests/integrations/test_kafka.py",
+   "rule": "py-env-read",
+   "start": [
+    82,
+    15
+   ],
+   "text": "os.environ.get(\"KAFKA_BOOTSTRAP_SERVERS\")"
+  },
+  {
+   "end": [
+    228,
+    64
+   ],
+   "file": "tests/integrations/test_pi.py",
+   "rule": "py-env-read",
+   "start": [
+    228,
+    36
+   ],
+   "text": "os.environ.get(\"PI_BIN\", \"\")"
+  },
+  {
+   "end": [
+    123,
+    53
+   ],
+   "file": "tests/integrations/test_postgresql.py",
+   "rule": "py-env-read",
+   "start": [
+    123,
+    20
+   ],
+   "text": "os.environ.get(\"POSTGRESQL_HOST\")"
+  },
+  {
+   "end": [
+    124,
+    61
+   ],
+   "file": "tests/integrations/test_postgresql.py",
+   "rule": "py-env-read",
+   "start": [
+    124,
+    24
+   ],
+   "text": "os.environ.get(\"POSTGRESQL_DATABASE\")"
+  },
+  {
+   "end": [
+    139,
+    53
+   ],
+   "file": "tests/integrations/test_postgresql.py",
+   "rule": "py-env-read",
+   "start": [
+    139,
+    20
+   ],
+   "text": "os.environ.get(\"POSTGRESQL_HOST\")"
+  },
+  {
+   "end": [
+    140,
+    61
+   ],
+   "file": "tests/integrations/test_postgresql.py",
+   "rule": "py-env-read",
+   "start": [
+    140,
+    24
+   ],
+   "text": "os.environ.get(\"POSTGRESQL_DATABASE\")"
+  },
+  {
+   "end": [
+    75,
+    47
+   ],
+   "file": "tests/interactive_shell/command_registry/test_dispatch_interactive_override.py",
+   "rule": "py-env-read",
+   "start": [
+    75,
+    12
+   ],
+   "text": "os.environ[OPENSRE_INTERACTIVE_ENV]"
+  },
+  {
+   "end": [
+    106,
+    47
+   ],
+   "file": "tests/interactive_shell/command_registry/test_dispatch_interactive_override.py",
+   "rule": "py-env-read",
+   "start": [
+    106,
+    12
+   ],
+   "text": "os.environ[OPENSRE_INTERACTIVE_ENV]"
+  },
+  {
+   "end": [
+    149,
+    46
+   ],
+   "file": "tests/interactive_shell/command_registry/test_integration_verification.py",
+   "rule": "py-env-read",
+   "start": [
+    149,
+    12
+   ],
+   "text": "os.environ[ANALYTICS_DISABLED_ENV]"
+  },
+  {
+   "end": [
+    150,
+    48
+   ],
+   "file": "tests/interactive_shell/command_registry/test_integration_verification.py",
+   "rule": "py-env-read",
+   "start": [
+    150,
+    12
+   ],
+   "text": "os.environ[TURN_ORGANIZATION_ID_ENV]"
+  },
+  {
+   "end": [
+    151,
+    41
+   ],
+   "file": "tests/interactive_shell/command_registry/test_integration_verification.py",
+   "rule": "py-env-read",
+   "start": [
+    151,
+    12
+   ],
+   "text": "os.environ[TURN_ACTOR_ID_ENV]"
+  },
+  {
+   "end": [
+    19,
+    34
+   ],
+   "file": "tests/interactive_shell/conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    19,
+    8
+   ],
+   "text": "os.environ.get(\"TERM\", \"\")"
+  },
+  {
+   "end": [
+    145,
+    54
+   ],
+   "file": "tests/interactive_shell/sessions/test_resume_scenarios.py",
+   "rule": "py-env-read",
+   "start": [
+    145,
+    20
+   ],
+   "text": "os.environ.get(\"LLM_PROVIDER\", \"\")"
+  },
+  {
+   "end": [
+    175,
+    59
+   ],
+   "file": "tests/interactive_shell/sessions/test_resume_scenarios.py",
+   "rule": "py-env-read",
+   "start": [
+    175,
+    36
+   ],
+   "text": "os.environ.get(env_var)"
+  },
+  {
+   "end": [
+    318,
+    17
+   ],
+   "file": "tests/interactive_shell/shell/test_execution_windows.py",
+   "rule": "py-except-swallow",
+   "start": [
+    316,
+    9
+   ],
+   "text": "except psutil.NoSuchProcess:"
+  },
+  {
+   "end": [
+    19,
+    71
+   ],
+   "file": "tests/interactive_shell/test_alert_listener.py",
+   "rule": "py-env-read",
+   "start": [
+    19,
+    25
+   ],
+   "text": "os.environ.get(\"OPENSRE_ALERT_LISTENER_TOKEN\")"
+  },
+  {
+   "end": [
+    34,
+    58
+   ],
+   "file": "tests/interactive_shell/test_alert_listener.py",
+   "rule": "py-env-read",
+   "start": [
+    34,
+    12
+   ],
+   "text": "os.environ.get(\"OPENSRE_ALERT_LISTENER_TOKEN\")"
+  },
+  {
+   "end": [
+    42,
+    71
+   ],
+   "file": "tests/interactive_shell/test_alert_listener.py",
+   "rule": "py-env-read",
+   "start": [
+    42,
+    25
+   ],
+   "text": "os.environ.get(\"OPENSRE_ALERT_LISTENER_TOKEN\")"
+  },
+  {
+   "end": [
+    57,
+    58
+   ],
+   "file": "tests/interactive_shell/test_alert_listener.py",
+   "rule": "py-env-read",
+   "start": [
+    57,
+    12
+   ],
+   "text": "os.environ.get(\"OPENSRE_ALERT_LISTENER_TOKEN\")"
+  },
+  {
+   "end": [
+    1137,
+    46
+   ],
+   "file": "tests/interactive_shell/test_commands.py",
+   "rule": "py-env-read",
+   "start": [
+    1137,
+    16
+   ],
+   "text": "os.environ.get(\"LLM_PROVIDER\")"
+  },
+  {
+   "end": [
+    2127,
+    48
+   ],
+   "file": "tests/interactive_shell/test_commands.py",
+   "rule": "py-env-read",
+   "start": [
+    2127,
+    16
+   ],
+   "text": "os.environ.get(\"TRACER_VERBOSE\")"
+  },
+  {
+   "end": [
+    2145,
+    48
+   ],
+   "file": "tests/interactive_shell/test_commands.py",
+   "rule": "py-env-read",
+   "start": [
+    2145,
+    16
+   ],
+   "text": "os.environ.get(\"TRACER_VERBOSE\")"
+  },
+  {
+   "end": [
+    1291,
+    21
+   ],
+   "file": "tests/interactive_shell/test_terminal_runtime.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1289,
+    13
+   ],
+   "text": "except asyncio.CancelledError:"
+  },
+  {
+   "end": [
+    1335,
+    21
+   ],
+   "file": "tests/interactive_shell/test_terminal_runtime.py",
+   "rule": "py-except-swallow",
+   "start": [
+    1329,
+    13
+   ],
+   "text": "except asyncio.CancelledError:"
+  },
+  {
+   "end": [
+    23,
+    78
+   ],
+   "file": "tests/shared/external_vendor_api/handler.py",
+   "rule": "py-env-read",
+   "start": [
+    23,
+    36
+   ],
+   "text": "os.getenv(\"INJECT_SCHEMA_CHANGE\", \"false\")"
+  },
+  {
+   "end": [
+    8,
+    32
+   ],
+   "file": "tests/shared/infra.py",
+   "rule": "py-env-read",
+   "start": [
+    8,
+    17
+   ],
+   "text": "os.getenv(\"CI\")"
+  },
+  {
+   "end": [
+    8,
+    65
+   ],
+   "file": "tests/shared/infra.py",
+   "rule": "py-env-read",
+   "start": [
+    8,
+    36
+   ],
+   "text": "os.getenv(\"SKIP_INFRA_TESTS\")"
+  },
+  {
+   "end": [
+    131,
+    37
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    131,
+    12
+   ],
+   "text": "os.environ[\"OLLAMA_HOST\"]"
+  },
+  {
+   "end": [
+    327,
+    38
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    327,
+    12
+   ],
+   "text": "os.environ[\"LLM_PROVIDER\"]"
+  },
+  {
+   "end": [
+    328,
+    48
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    328,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_REASONING_MODEL\"]"
+  },
+  {
+   "end": [
+    329,
+    47
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    329,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_TOOLCALL_MODEL\"]"
+  },
+  {
+   "end": [
+    330,
+    53
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    330,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_CLASSIFICATION_MODEL\"]"
+  },
+  {
+   "end": [
+    354,
+    51
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    354,
+    12
+   ],
+   "text": "os.environ.get(\"OPENAI_TOOLCALL_MODEL\")"
+  },
+  {
+   "end": [
+    373,
+    38
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    373,
+    12
+   ],
+   "text": "os.environ[\"LLM_PROVIDER\"]"
+  },
+  {
+   "end": [
+    374,
+    37
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    374,
+    12
+   ],
+   "text": "os.environ[\"CODEX_MODEL\"]"
+  },
+  {
+   "end": [
+    400,
+    48
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    400,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_REASONING_MODEL\"]"
+  },
+  {
+   "end": [
+    425,
+    47
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    425,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_TOOLCALL_MODEL\"]"
+  },
+  {
+   "end": [
+    451,
+    48
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    451,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_REASONING_MODEL\"]"
+  },
+  {
+   "end": [
+    452,
+    47
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    452,
+    12
+   ],
+   "text": "os.environ[\"OPENAI_TOOLCALL_MODEL\"]"
+  },
+  {
+   "end": [
+    489,
+    47
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    489,
+    12
+   ],
+   "text": "os.environ[\"OPENSRE_LLM_TRANSPORT\"]"
+  },
+  {
+   "end": [
+    514,
+    47
+   ],
+   "file": "tests/shared/llm_setup/test_env_sync.py",
+   "rule": "py-env-read",
+   "start": [
+    514,
+    12
+   ],
+   "text": "os.environ[\"AZURE_OPENAI_BASE_URL\"]"
+  },
+  {
+   "end": [
+    18,
+    68
+   ],
+   "file": "tests/shared/slack_polling.py",
+   "rule": "py-env-read",
+   "start": [
+    18,
+    18
+   ],
+   "text": "os.environ.get(\"SLACK_DEVS_ALERTS_CHANNEL_ID\", \"\")"
+  },
+  {
+   "end": [
+    22,
+    50
+   ],
+   "file": "tests/shared/slack_polling.py",
+   "rule": "py-env-read",
+   "start": [
+    22,
+    13
+   ],
+   "text": "os.environ.get(\"SLACK_BOT_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    39,
+    50
+   ],
+   "file": "tests/shared/slack_polling.py",
+   "rule": "py-env-read",
+   "start": [
+    39,
+    13
+   ],
+   "text": "os.environ.get(\"SLACK_BOT_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    90,
+    50
+   ],
+   "file": "tests/shared/slack_polling.py",
+   "rule": "py-env-read",
+   "start": [
+    90,
+    13
+   ],
+   "text": "os.environ.get(\"SLACK_BOT_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    19,
+    46
+   ],
+   "file": "tests/shared/tracer_ingest/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    19,
+    10
+   ],
+   "text": "os.getenv(\"TRACER_INGEST_DEBUG\", \"\")"
+  },
+  {
+   "end": [
+    49,
+    48
+   ],
+   "file": "tests/shared/tracer_ingest/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    49,
+    22
+   ],
+   "text": "os.getenv(\"TRACER_RUN_ID\")"
+  },
+  {
+   "end": [
+    50,
+    52
+   ],
+   "file": "tests/shared/tracer_ingest/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    50,
+    24
+   ],
+   "text": "os.getenv(\"TRACER_TRACE_ID\")"
+  },
+  {
+   "end": [
+    51,
+    57
+   ],
+   "file": "tests/shared/tracer_ingest/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    51,
+    24
+   ],
+   "text": "os.getenv(\"TRACER_PIPELINE_NAME\")"
+  },
+  {
+   "end": [
+    52,
+    47
+   ],
+   "file": "tests/shared/tracer_ingest/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    52,
+    19
+   ],
+   "text": "os.getenv(\"TRACER_ORG_SLUG\")"
+  },
+  {
+   "end": [
+    72,
+    26
+   ],
+   "file": "tests/shared/tracer_ingest/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    72,
+    14
+   ],
+   "text": "os.getenv(k)"
+  },
+  {
+   "end": [
+    101,
+    47
+   ],
+   "file": "tests/shared/tracer_ingest/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    101,
+    16
+   ],
+   "text": "os.getenv(\"TRACER_API_URL\", \"\")"
+  },
+  {
+   "end": [
+    102,
+    49
+   ],
+   "file": "tests/shared/tracer_ingest/__init__.py",
+   "rule": "py-env-read",
+   "start": [
+    102,
+    13
+   ],
+   "text": "os.getenv(\"TRACER_INGEST_TOKEN\", \"\")"
+  },
+  {
+   "end": [
+    129,
+    40
+   ],
+   "file": "tests/tools/test_sentry_search_issues_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    129,
+    12
+   ],
+   "text": "os.getenv(\"SENTRY_ORG_SLUG\")"
+  },
+  {
+   "end": [
+    129,
+    78
+   ],
+   "file": "tests/tools/test_sentry_search_issues_tool.py",
+   "rule": "py-env-read",
+   "start": [
+    129,
+    48
+   ],
+   "text": "os.getenv(\"SENTRY_AUTH_TOKEN\")"
+  },
+  {
+   "end": [
+    95,
+    51
+   ],
+   "file": "tests/utils/alert_factory/factory_test.py",
+   "rule": "py-env-read",
+   "start": [
+    95,
+    16
+   ],
+   "text": "os.getenv(\"OPENSRE_REMOTE_RUN_URL\")"
+  },
+  {
+   "end": [
+    22,
+    83
+   ],
+   "file": "tests/utils/cloudwatch_logger.py",
+   "rule": "py-env-read",
+   "start": [
+    22,
+    13
+   ],
+   "text": "os.getenv(\"CLOUDWATCH_LOG_GROUP_PREFIX\", \"/opensre/ai-investigations\")"
+  },
+  {
+   "end": [
+    27,
+    63
+   ],
+   "file": "tests/utils/cloudwatch_logger.py",
+   "rule": "py-env-read",
+   "start": [
+    27,
+    19
+   ],
+   "text": "os.getenv(\"CLOUDWATCH_TIMEOUT_SECONDS\", \"5\")"
+  },
+  {
+   "end": [
+    28,
+    61
+   ],
+   "file": "tests/utils/cloudwatch_logger.py",
+   "rule": "py-env-read",
+   "start": [
+    28,
+    20
+   ],
+   "text": "os.getenv(\"CLOUDWATCH_MAX_ATTEMPTS\", \"2\")"
+  },
+  {
+   "end": [
+    47,
+    53
+   ],
+   "file": "tests/utils/cloudwatch_logger.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    13
+   ],
+   "text": "os.getenv(\"CLOUDWATCH_VERIFY_LOGS\", \"1\")"
+  },
+  {
+   "end": [
+    30,
+    59
+   ],
+   "file": "tests/utils/conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    30,
+    23
+   ],
+   "text": "os.getenv(\"AWS_REGION\", \"us-east-1\")"
+  },
+  {
+   "end": [
+    34,
+    10
+   ],
+   "file": "tests/utils/conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    31,
+    34
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    42,
+    2
+   ],
+   "file": "tests/utils/conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    39,
+    31
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    46,
+    2
+   ],
+   "file": "tests/utils/conftest.py",
+   "rule": "py-env-read",
+   "start": [
+    43,
+    19
+   ],
+   "text": "os.getenv("
+  },
+  {
+   "end": [
+    46,
+    56
+   ],
+   "file": "tests/utils/test_config.py",
+   "rule": "py-env-read",
+   "start": [
+    46,
+    16
+   ],
+   "text": "os.getenv(\"OTEL_EXPORTER_OTLP_ENDPOINT\")"
+  },
+  {
+   "end": [
+    47,
+    56
+   ],
+   "file": "tests/utils/test_config.py",
+   "rule": "py-env-read",
+   "start": [
+    47,
+    16
+   ],
+   "text": "os.getenv(\"OTEL_EXPORTER_OTLP_PROTOCOL\")"
+  },
+  {
+   "end": [
+    48,
+    55
+   ],
+   "file": "tests/utils/test_config.py",
+   "rule": "py-env-read",
+   "start": [
+    48,
+    16
+   ],
+   "text": "os.getenv(\"OTEL_EXPORTER_OTLP_HEADERS\")"
+  },
+  {
+   "end": [
+    62,
+    56
+   ],
+   "file": "tests/utils/test_config.py",
+   "rule": "py-env-read",
+   "start": [
+    62,
+    16
+   ],
+   "text": "os.getenv(\"OTEL_EXPORTER_OTLP_ENDPOINT\")"
+  },
+  {
+   "end": [
+    63,
+    56
+   ],
+   "file": "tests/utils/test_config.py",
+   "rule": "py-env-read",
+   "start": [
+    63,
+    16
+   ],
+   "text": "os.getenv(\"OTEL_EXPORTER_OTLP_PROTOCOL\")"
+  },
+  {
+   "end": [
+    64,
+    55
+   ],
+   "file": "tests/utils/test_config.py",
+   "rule": "py-env-read",
+   "start": [
+    64,
+    16
+   ],
+   "text": "os.getenv(\"OTEL_EXPORTER_OTLP_HEADERS\")"
+  },
+  {
+   "end": [
+    59,
+    29
+   ],
+   "file": "tools/cross_vendor/resolve_merge_conflicts/tool.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    59,
+    5
+   ],
+   "text": "assert scope is not None"
+  },
+  {
+   "end": [
+    186,
+    13
+   ],
+   "file": "tools/interactive_shell/actions/slash.py",
+   "rule": "py-except-swallow",
+   "start": [
+    183,
+    5
+   ],
+   "text": "except ValueError:"
+  },
+  {
+   "end": [
+    134,
+    6
+   ],
+   "file": "tools/interactive_shell/implementation/claude_code_executor.py",
+   "rule": "py-env-read",
+   "start": [
+    131,
+    23
+   ],
+   "text": "os.environ.get("
+  },
+  {
+   "end": [
+    269,
+    54
+   ],
+   "file": "tools/interactive_shell/implementation/claude_code_executor.py",
+   "rule": "py-env-read",
+   "start": [
+    269,
+    19
+   ],
+   "text": "os.environ.get(\"CLAUDE_CODE_MODEL\")"
+  },
+  {
+   "end": [
+    104,
+    13
+   ],
+   "file": "tools/interactive_shell/shell/execution.py",
+   "rule": "py-except-swallow",
+   "start": [
+    102,
+    5
+   ],
+   "text": "except (OSError, ValueError):"
+  },
+  {
+   "end": [
+    191,
+    46
+   ],
+   "file": "tools/interactive_shell/shell/execution.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    191,
+    13
+   ],
+   "text": "assert isinstance(exec_argv, str)"
+  },
+  {
+   "end": [
+    145,
+    28
+   ],
+   "file": "tools/system/agent_memory/tool.py",
+   "rule": "py-runtime-assert",
+   "start": [
+    145,
+    5
+   ],
+   "text": "assert slug is not None"
+  }
+ ],
+ "counts": {
+  "py-env-read": 750,
+  "py-except-swallow": 22,
+  "py-global-state": 58,
+  "py-runtime-assert": 26,
+  "py-subprocess-shell": 1
+ },
+ "repo_dirty": false,
+ "repo_sha": "a5c1acbd4b7e61e3cb57de6b84fac7031555a0a4",
+ "rules": [
+  "py-env-read",
+  "py-except-swallow",
+  "py-global-state",
+  "py-runtime-assert",
+  "py-subprocess-shell"
+ ],
+ "tool": "ast-grep 0.51.2"
+}

@@ -1,0 +1,4 @@
+{"tools": ["find_declaration", "find_implementations", "find_referencing_symbols", "find_symbol", "get_symbols_overview"]}
+{"call": "execute_shell_command", "args": {"command": "touch readonly-probe-shell.txt"}, "seconds": 0.002, "is_error": true, "text": "Unknown tool: execute_shell_command"}
+{"call": "create_text_file", "args": {"relative_path": "readonly-probe-create.txt", "content": "x"}, "seconds": 0.001, "is_error": true, "text": "Unknown tool: create_text_file"}
+{"call": "replace_content", "args": {"relative_path": "core/domain/types/evidence.py", "needle": "record_evidence_entry", "repl": "x", "mode": "literal"}, "seconds": 0.001, "is_error": true, "text": "Unknown tool: replace_content"}

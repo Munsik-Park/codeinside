@@ -1,0 +1,15 @@
+# 예외를 잡고 본문이 pass 하나뿐인 except 절. 실패가 조용히 사라지는 지점을 거른다.
+id: py-except-swallow
+language: python
+severity: info
+message: except 절이 예외를 삼킨다(본문이 pass뿐)
+rule:
+  kind: except_clause
+  has:
+    kind: block
+    all:
+      - has:
+          kind: pass_statement
+      - not:
+          has:
+            nthChild: 2

@@ -1,0 +1,8 @@
+repo_sha=a5c1acbd4b7e61e3cb57de6b84fac7031555a0a4
+ast_grep=ast-grep 0.51.2
+real 0.41 user 3.20 sys 0.33 
+real 0.39 user 3.39 sys 0.28 
+a3d97f61acbaa0ab97e57f273ce2620fff4eb3a90e8bee1521d49fa330e25173  astgrep-candidates-run1.json
+a3d97f61acbaa0ab97e57f273ce2620fff4eb3a90e8bee1521d49fa330e25173  astgrep-candidates-run2.json
+cmp: identical
+bytes=176787
