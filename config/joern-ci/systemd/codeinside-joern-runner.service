@@ -1,0 +1,20 @@
+# opensre 분석 러너 supervisor (docs/plan.md 단계 6). 작업마다 ephemeral 러너 컨테이너를 하나씩 띄운다.
+[Unit]
+Description=codeinside Joern CI ephemeral runner supervisor (Munsik-Park/opensre, label joern)
+After=network-online.target docker.service codeinside-joern-ci-net.service librechat-ci-image-restore.service
+Requires=docker.service codeinside-joern-ci-net.service
+Wants=network-online.target librechat-ci-image-restore.service
+
+[Service]
+Type=simple
+User=codeinside-ci
+Group=codeinside-ci
+EnvironmentFile=/etc/codeinside-joern-ci/runner.env
+EnvironmentFile=/etc/codeinside-joern-ci/runner.conf
+ExecStart=/opt/codeinside-joern-ci/runner-supervisor.sh
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

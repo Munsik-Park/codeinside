@@ -1,0 +1,17 @@
+# opensre 분석 러너 네트워크와 MCP 프록시 (docs/plan.md 단계 6).
+# Docker data-root가 tmpfs라 재부팅하면 네트워크와 컨테이너가 사라진다. codebadger 스택이 뜬 뒤 다시 만든다.
+[Unit]
+Description=codeinside Joern CI network and codebadger MCP proxy
+After=codebadger-stack.service
+Requires=codebadger-stack.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=codeinside-ci
+Group=codeinside-ci
+EnvironmentFile=/etc/codeinside-joern-ci/runner.conf
+ExecStart=/opt/codeinside-joern-ci/setup-network.sh
+
+[Install]
+WantedBy=multi-user.target
