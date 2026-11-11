@@ -232,15 +232,28 @@ CI 러너와 같은 데몬이라 `docker buildx prune` 전체 실행은 하지 �
 - 캐시를 지운 뒤에도 codebadger 컨테이너 5개와 러너 컨테이너 5개는 그대로 떠 있었다([raw/prune-buildcache.log](raw/prune-buildcache.log)).
 - 다음 재빌드는 Joern 내려받기와 Rust 툴체인 설치를 처음부터 다시 한다.
 
-### 이미지 디스크 저장과 부팅 복원 (적용 안 됨)
+### 이미지 디스크 저장과 부팅 복원
 
-러너 이미지 복원 유닛과 같은 방식으로 아래 파일을 만들었다. 적용은 하지 못했다.
+러너 이미지 복원 유닛과 같은 방식으로 아래 파일을 만들었다.
 - [config/codebadger/systemd/codebadger-image-restore.service](../../../config/codebadger/systemd/codebadger-image-restore.service): 이미지가 없으면 디스크의 `docker save` 묶음을 `docker load` 한다.
 - [config/codebadger/systemd/codebadger-stack.service](../../../config/codebadger/systemd/codebadger-stack.service): Docker data-root도 tmpfs라 재부팅하면 컨테이너와 네트워크가 사라진다. 그래서 이미지 복원 뒤 `docker compose up -d --no-build`와 메모리 노드 고정을 다시 한다.
 - [config/codebadger/systemd/codebadger.conf.example](../../../config/codebadger/systemd/codebadger.conf.example)
-- [scripts/xeon/save-codebadger-images.sh](../../../scripts/xeon/save-codebadger-images.sh): 이미지 4개를 `/var/lib/codebadger/images/`에 저장하고 유닛을 설치·활성화한다.
+- [scripts/xeon/save-codebadger-images.sh](../../../scripts/xeon/save-codebadger-images.sh): 이미지 4개를 디스크에 저장하고 유닛을 설치·활성화한다.
 
-이 스크립트는 sudo로 `/etc/systemd/system`에 유닛을 설치하고 부팅 서비스로 켠다. 작업자 세션의 권한 검사에서 이 단계가 막혀 Xeon에는 아무것도 설치되지 않았다. 재부팅 확인 안 됨.
+이 스크립트는 sudo로 systemd 유닛을 설치한다. 작업자 세션의 권한 검사에서 막혀서 사용자가 Xeon에서 직접 실행했다. 실행 뒤 작업자 쪽에서 읽기만 해서 확인한 값이다([raw/image-restore-check.log](raw/image-restore-check.log)).
+
+| 항목 | 값 |
+| --- | --- |
+| 묶음 | `/var/lib/codebadger/images/codebadger-images.tar`, 2,636,829,184 B, root 소유, 권한 600. 디스크(루트 LV)에 있다 |
+| 묶음 안 이미지 | 4개: `codebadger-joern-server:latest`, `codebadger-mcp:latest`, `postgres:16`, `redis:7` |
+| 묶음과 현재 이미지 | 네 이미지의 digest(`index.json`)가 데몬의 이미지 ID와 같다(`4565fbf26a2c`, `387c16173378`, `f9a7b9ebf6f5`, `2e3eb11462c4`) |
+| 설정 파일 | `/etc/codebadger/codebadger.conf`(예시 파일과 같은 값) |
+| 유닛 | 두 유닛 모두 `enabled`, 지금은 `inactive`(부팅 때 실행된다). `systemd-analyze verify` 출력 없음. 설치된 유닛이 레포 파일과 같다(`cmp`) |
+| 순서 | `codebadger-stack`은 `codebadger-image-restore`를 `Requires`, `After`로 묶고 `multi-user.target`에 걸려 있다 |
+
+- 이미지 크기 합(약 7.1GB)보다 묶음이 작은 이유는 확인하지 않았다.
+- 이미지를 다시 빌드하면 스크립트를 다시 실행해 묶음을 갱신해야 한다.
+- 재부팅해서 실제로 복원되는지는 확인 안 됨. 유닛을 수동으로 시작해 보지도 않았다.
 
 ## 확인 안 됨
 
@@ -251,7 +264,7 @@ CI 러너와 같은 데몬이라 `docker buildx prune` 전체 실행은 하지 �
 - codebadger의 `run_cpgql_query` 검사(denylist)가 3단계 질의 말고 다른 질의를 막는지. codebadger security.md는 이 검사를 경계가 아닌 보조 장치로 본다
 - `/health`가 버전을 `0.6.2-beta`로 보고하는 이유
 - runner-4, runner-5가 노드 3 메모리를 실제로 얼마나 쓰는지
-- 이미지 부팅 복원(설치하지 못했다). 재부팅 확인 안 됨
+- 이미지 부팅 복원이 재부팅 뒤 실제로 동작하는지(재부팅 확인 안 됨)
 
 ## 원본 파일
 
@@ -267,4 +280,5 @@ CI 러너와 같은 데몬이라 `docker buildx prune` 전체 실행은 하지 �
 | `raw/claude-session-mcp.jsonl` | Claude Code 세션의 MCP 호출과 결과(작업 환경 정보는 뺐다) |
 | `raw/numastat-before-budget.txt`, `raw/numastat-after-budget.log` | 예산 변경 전후 노드별 메모리, 변경 뒤 cgroup과 `/health` 예산 |
 | `raw/prune-buildcache.log` | 빌드 캐시 선택 삭제 전후와 남은 레코드 |
+| `raw/image-restore-check.log` | 이미지 묶음과 부팅 복원 유닛 확인 |
 | `scripts/` | 위 기록을 만든 스크립트. `queries.py`는 3단계 질의를 MCP 호출로 바꾼다 |
