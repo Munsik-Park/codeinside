@@ -155,7 +155,7 @@ tests 제외: Serena 결과에서 뺀 최상위 `tests/` 참조는 Q1 4건, C1 5
 | 파일 | 내용 |
 | --- | --- |
 | `raw/astgrep-candidates-run{1,2}.json`, `raw/astgrep-hash.log` | 후보 목록 두 번과 해시 |
-| `raw/mcp-register.log` | `scripts/mcp/register.sh` 출력과 `claude mcp list` |
+| `raw/mcp-register.log` | `scripts/mcp/register.sh` 출력과 `claude mcp list`. ast-grep, serena 외의 MCP 서버 줄은 지웠다 |
 | `raw/serena-run{1,2}.jsonl`, `raw/serena-run{1,2}.err` | Serena `tools/list`와 Q1, C1 응답, Serena 로그 |
 | `raw/serena-readonly-probe.{jsonl,err,result}` | 편집·셸 도구 호출 거부 확인 |
 | `raw/common-candidates-jto-2G.log`, `raw/common-perdef-jto-2G.log` | 흔한 이름 후보와 정의별 연결 수 |

@@ -1,5 +1,5 @@
 # Serena 프로젝트 설정. 분석 대상 체크아웃의 .serena/project.yml로 복사해 쓴다
-# (scripts/local/setup-serena-project.sh).
+# (scripts/mcp/register.sh가 복사한다).
 # 형식: Serena v2.1.0 src/serena/resources/project.template.yml
 project_name: "opensre"
 language_servers: ["python"]
