@@ -1,0 +1,36 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+Picked up JAVA_TOOL_OPTIONS: -Xmx2G
+executing /var/lib/joern/measure/load.sc
+Creating project `full.bin` for CPG at `/var/lib/joern/cpg/full.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /var/lib/joern/workspace/full.bin/cpg.bin.tmp
+Adding default overlays to base CPG
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+TIME importCpg 45978.1 ms
+OVERLAYS List(base, controlflow, typerel, callgraph, dataflowOss, pysrc2cpg-postprocessing)
+FILES 2353 METHODS 49754 CALLS 469749
+closing/saving project `full.bin`
+	Command being timed: "timeout 1800 /opt/joern/current/joern-cli/joern --script /var/lib/joern/measure/load.sc"
+	User time (seconds): 650.93
+	System time (seconds): 8.77
+	Percent of CPU this job got: 1126%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:58.55
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3740920
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1105229
+	Voluntary context switches: 163337
+	Involuntary context switches: 60179
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 413368
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

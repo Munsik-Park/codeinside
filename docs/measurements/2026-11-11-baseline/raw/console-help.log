@@ -1,0 +1,25 @@
+executing /var/lib/joern/measure/help.sc
+Welcome to the interactive help system. Below you find
+a table of all available top-level commands. To get
+more detailed help on a specific command, just type
+
+`help.<command>`.
+
+Try `help.importCode` to begin with.
+┌────────────────┬────────────────────────────────────────────────┬─────────────────────────┐
+│command         │description                                     │example                  │
+├────────────────┼────────────────────────────────────────────────┼─────────────────────────┤
+│close           │Close project by name                           │close(projectName)       │
+│cpg             │CPG of the active project                       │cpg.method.l             │
+│delete          │Close and remove project from disk              │delete(projectName)      │
+│exit            │Exit the REPL                                   │                         │
+│importCode      │Create new project from code                    │importCode("example.jar")│
+│importCpg       │Create new project from existing CPG            │importCpg("cpg.bin.zip") │
+│open            │Open project by name                            │open("projectName")      │
+│openForInputPath│Open project for input path                     │                         │
+│project         │Currently active project                        │project                  │
+│run             │Run analyzer on active CPG                      │run.securityprofile      │
+│save            │Write all changes to disk                       │save                     │
+│switchWorkspace │Close current workspace and open a different one│                         │
+│workspace       │Access to the workspace directory               │workspace                │
+└────────────────┴────────────────────────────────────────────────┴─────────────────────────┘
