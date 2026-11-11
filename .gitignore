@@ -1,0 +1,60 @@
+# 공개 레포다. 접속 정보(서버 주소, 계정, 키, 토큰)는 어떤 형태로도 커밋하지 않는다.
+
+# 환경 변수 파일
+.env
+.env.*
+!.env.example
+*.env
+
+# 키와 인증서
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+id_ecdsa*
+*.ppk
+
+# 접속 설정과 인증 정보
+ssh_config
+.ssh/
+known_hosts
+.netrc
+.pgpass
+*credentials*
+*secret*
+*secrets*
+hosts
+inventory
+inventory.*
+*.inventory
+*.local.yaml
+*.local.yml
+*.local.json
+*.local.toml
+local/
+private/
+
+# Joern 서버 basic auth 등 로컬 설정
+joern-auth*
+*.htpasswd
+
+# Claude Code 로컬 설정
+.claude/settings.local.json
+CLAUDE.local.md
+
+# 분석 산출물(그래프 파일은 서버에 둔다)
+*.cpg
+cpg.bin*
+workspace/
+out/
+
+# OS, 에디터
+.DS_Store
+.idea/
+.vscode/
+*.swp
