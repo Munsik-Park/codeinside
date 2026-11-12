@@ -1,7 +1,7 @@
 # /etc/codeinside-joern-ci/runner.conf 로 복사한다 (docs/plan.md 단계 6).
 # codeinside-joern-ci-net.service와 codeinside-joern-runner.service가 읽는다. 비밀 값은 넣지 않는다.
 # PAT는 /etc/codeinside-joern-ci/runner.env(RUNNER_REG_PAT=..., 권한 600)에 따로 둔다.
-JOERN_CI_REPO=Munsik-Park/opensre
+JOERN_CI_REPO=Munsik-Park/crewAI
 JOERN_CI_LABELS=joern
 # librechat 러너 이미지(부팅 때 librechat-ci-image-restore.service가 복원) 위에 전용 uid 사용자를 더해 쓴다.
 # 이미지는 codeinside-joern-ci-net.service가 build-runner-image.sh로 만든다.
