@@ -53,7 +53,7 @@ python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); d.pop("//",None); j
 - 두 파일은 crewAI 쪽에 커밋하지 않는다.
 - `scripts/mcp/register.sh`는 opensre용 `project_name`을 복사하고 Pyright 설정을 두지 않는다. crewAI에는 위 명령을 쓴다.
 
-근거: [crewAI 기준값](measurements/2026-11-12-crewai-baseline/README.md) 5절, `scripts/serena-refs.sh`.
+근거: [crewAI 기준값](measurements/2026-11-12-crewai-baseline/README.md) 5절, [measurements/2026-11-12-crewai-baseline/scripts/serena-refs.sh](measurements/2026-11-12-crewai-baseline/scripts/serena-refs.sh).
 
 ## 1. 후보 목록 (ast-grep)
 
