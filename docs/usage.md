@@ -100,7 +100,7 @@ uv run --no-project -q --with mcp==2.2.0 python "$CODEINSIDE_DIR/scripts/mcp/mcp
 포크 업스트림의 옛 커밋에는 그래프가 없다. 그 커밋을 가리키는 브랜치를 `Munsik-Park/crewAI`에 올리고 PR을 열면 워크플로가 그래프를 만든다. crewAI 규모에서 요청부터 ready까지 약 91~94초였다.
 
 - 다른 레포에서 온 PR은 워크플로가 돌지 않는다. 브랜치는 포크 안에 있어야 한다.
-- 그래프는 main first-parent 최근 20개와 열린 PR head만 남는다. PR을 닫으면 다음 정리 때 지워진다.
+- 그래프는 main first-parent 최근 100개와 열린 PR head만 남는다. PR을 닫으면 다음 정리 때 지워진다.
 
 근거: [6단계 기록](measurements/2026-11-12-pr-analysis/README.md) 6~8절.
 
