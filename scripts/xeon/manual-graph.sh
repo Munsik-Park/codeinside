@@ -47,16 +47,20 @@ GITHUB_TOKEN=$(sed -n 's|^GITHUB_TOKEN=||p' "$TOKEN_FILE")
 [ -n "$GITHUB_TOKEN" ] || { echo "$TOKEN_FILE에 GITHUB_TOKEN이 없다" >&2; exit 1; }
 export GITHUB_TOKEN
 
-# Actions run 확인(토큰), 전체 SHA 얻기(토큰 없이). 토큰은 환경 변수로만 넘긴다.
-FULL_SHA=$(python3 - "$REPO" "$SHA_ARG" <<'PY'
+# 레포 정식 표기와 전체 SHA 얻기(토큰 없이), Actions run 확인(토큰). 토큰은 환경 변수로만 넘긴다.
+# -I: root로 도므로 현재 폴더의 모듈을 불러오지 않는다.
+OUT=$(python3 -I - "$REPO" "$SHA_ARG" <<'PY'
 import json, os, sys, urllib.request
-repo, sha = sys.argv[1:]
+arg, sha = sys.argv[1:]
 def get(path, auth):
     h = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
     if auth:
         h["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
     with urllib.request.urlopen(urllib.request.Request(f"https://api.github.com{path}", headers=h), timeout=30) as r:
         return json.loads(r.read())
+repo = get(f"/repos/{arg}", False)["full_name"]
+if repo != arg:
+    print(f"레포 이름을 GitHub 표기로 바꾼다: {arg} -> {repo}", file=sys.stderr)
 busy = []
 for status in ("queued", "in_progress"):
     runs = get(f"/repos/{repo}/actions/runs?status={status}&per_page=100", True)["workflow_runs"]
@@ -64,9 +68,11 @@ for status in ("queued", "in_progress"):
 if busy:
     sys.exit("Actions run이 있어 멈춘다. 끝난 뒤 다시 실행한다.\n  " + "\n  ".join(busy))
 print("Actions run: queued 0, in_progress 0", file=sys.stderr)
-print(get(f"/repos/{repo}/commits/{sha}", False)["sha"])
+print(repo, get(f"/repos/{repo}/commits/{sha}", False)["sha"])
 PY
 )
+# 색인 비교(prune_cpgs.py)와 소스 폴더 정리가 대소문자를 구분하므로 이후에는 정식 표기를 쓴다.
+read -r REPO FULL_SHA <<<"$OUT"
 echo "target: $REPO $FULL_SHA"
 
 WORK=$(mktemp -d /tmp/codeinside-manual-graph.XXXXXX)
