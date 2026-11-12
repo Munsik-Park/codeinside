@@ -18,6 +18,7 @@
 | 러너 대상 레포 변경 | [scripts/xeon/joern-ci/retarget.sh](../scripts/xeon/joern-ci/retarget.sh) |
 | 그래프 제외 규칙(`exclusion_patterns`) | [config/codebadger/codebadger-v0.7.0-beta.patch](../config/codebadger/codebadger-v0.7.0-beta.patch) |
 | 확인 질의 파일 | [config/queries/crewai.json](../config/queries/crewai.json) |
+| CI 없이 기준 그래프 만들기(새 레포 등록) | [scripts/xeon/manual-graph.sh](../scripts/xeon/manual-graph.sh) |
 
 ## 3. AI가 도는 머신
 

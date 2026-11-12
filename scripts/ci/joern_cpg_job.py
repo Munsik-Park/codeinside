@@ -21,6 +21,7 @@ github 소스는 레포·브랜치 이름이 키라서 브랜치가 움직이면
   CODEBADGER_SRC_MCP_DIR   같은 폴더를 MCP 컨테이너 안에서 본 경로
 환경 변수(워크플로가 넘긴다):
   GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_SERVER_URL, GITHUB_RUN_ID, GITHUB_STEP_SUMMARY(선택)
+  GITHUB_RUN_ID가 없으면 커밋 상태에 target_url을 넣지 않는다(CI 없이 돌릴 때: scripts/xeon/manual-graph.sh).
 
 사용: python3 joern_cpg_job.py --checkout <대상 레포 체크아웃> --sha <커밋 SHA> [--queries <JSON 파일>]
 소스 폴더 이름은 `<레포 이름>-<SHA>`다(GITHUB_REPOSITORY에서 가져온다).
@@ -54,9 +55,11 @@ def log(msg):
 
 def set_status(sha, state, description):
     repo = os.environ["GITHUB_REPOSITORY"]
-    run_url = f"{os.environ.get('GITHUB_SERVER_URL', 'https://github.com')}/{repo}/actions/runs/{os.environ.get('GITHUB_RUN_ID', '')}"
-    body = json.dumps({"state": state, "context": STATUS_CONTEXT, "description": description[:140],
-                       "target_url": run_url}).encode()
+    payload = {"state": state, "context": STATUS_CONTEXT, "description": description[:140]}
+    if os.environ.get("GITHUB_RUN_ID"):  # 수동 실행(scripts/xeon/manual-graph.sh)에는 run이 없다
+        payload["target_url"] = (f"{os.environ.get('GITHUB_SERVER_URL', 'https://github.com')}/{repo}"
+                                 f"/actions/runs/{os.environ['GITHUB_RUN_ID']}")
+    body = json.dumps(payload).encode()
     req = urllib.request.Request(
         f"https://api.github.com/repos/{repo}/statuses/{sha}", data=body, method="POST",
         headers={"Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}",
