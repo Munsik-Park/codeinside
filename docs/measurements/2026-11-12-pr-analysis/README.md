@@ -12,7 +12,8 @@
 | 러너에서 codebadger 연결 | 프록시 컨테이너로 MCP 4242에만 닿는다. 질의 워커, Postgres, Redis, 호스트 루프백 포트에는 닿지 않는다 | 5절, [raw/probe-network.log](raw/probe-network.log) |
 | SHA와 그래프 대응 | 커밋 상태 `codeinside/joern-cpg`의 설명에 `codebase_hash`를 남긴다 | 7절 |
 | 조상 그래프 대체 | 시험 PR #2(head `5014f84`, 부모 `848d15d`)의 그래프가 만들어지는 동안 resolver가 부모 그래프를 고르고 바뀐 파일을 돌려줬다. success 뒤에는 자기 그래프를 골랐다 | 7절, [raw/ancestor-fallback.log](raw/ancestor-fallback.log) |
-| 보관 개수 | 제안만 했다. 정리는 구현하지 않았다 | 7절 |
+| 보관 개수 | main first-parent 최근 20개와 열린 PR head의 그래프만 남기고, ready 뒤 소스 폴더를 지운다. crewAI PR #3에서 닫힌 PR #2 그래프와 남은 소스 폴더 3개(각 623MB)가 지워진 것을 확인했다 | 7절, 8절 |
+| main 푸시 | PR #1 병합 커밋 `898f7e6`에서 그래프와 커밋 상태가 남고 Q1~Q5가 질의됐다 | 8절 |
 
 ## 1. opensre에서 막힌 경위
 
@@ -208,15 +209,65 @@ librechat 러너와 같은 ephemeral 방식이다. supervisor가 작업마다 �
 | 동시에 올라와 있을 수 있는 그래프 | 16개(예산 80G / 예약 5G). 넘으면 codebadger가 LRU로 잠재운다(디스크에는 남음) | 5단계 기록, `joern_server_manager.py` |
 | 루트 LV 여유 | 313G | `df` |
 
-제안:
-- main 최근 푸시 20개와 열린 PR의 head SHA를 남기고 나머지는 `remove_cpg`(`delete_files: true`)로 지운다. 지우기 전에 같은 `codebase_hash`를 쓰는 남길 SHA가 없는지 확인한다.
-- CI 소스 폴더는 그래프가 ready가 되면 지운다. codebadger는 적재 뒤 자기 쪽 소스 사본을 지웠고, 잠든 그래프는 `cpg.bin`에서 다시 올린다. 그러면 SHA 하나에 디스크 약 18MB만 남는다. 지금 작업 스크립트는 지우지 않는다.
+처음 제안은 아래 두 가지였고, 사용자 결정에 따라 그대로 구현했다(후속 PR, 8절).
+- main 최근 20개와 열린 PR의 head SHA를 남기고 나머지는 `remove_cpg`(`delete_files: true`)로 지운다. 지우기 전에 같은 `codebase_hash`를 쓰는 남길 SHA가 없는지 확인한다.
+- CI 소스 폴더는 그래프가 ready가 되면 지운다. codebadger는 적재 뒤 자기 쪽 소스 사본을 지웠고, 잠든 그래프는 `cpg.bin`에서 다시 올린다. 그러면 SHA 하나에 디스크 약 18MB만 남는다.
+
+## 8. 후속: main 푸시와 보관 정리
+
+codeinside PR #9와 crewAI PR #1을 병합한 뒤 진행했다.
+
+### main 푸시
+
+PR #1 병합으로 생긴 main 머지 커밋 `898f7e6`(부모 `b4654c1`, `848d15d`)에서 분석 워크플로가 `push` 이벤트로 돌았다(run `43143851170`, [raw/crewai-main-push-run.log](raw/crewai-main-push-run.log)).
+
+| 시각(UTC) | 단계 |
+| --- | --- |
+| 02:48:12 | 커밋 상태 pending |
+| 02:48:21 | `generate_cpg` → `codebase_hash=c8a03dcf21488d21`, 상태 `loading` |
+| 02:49:21 | ready(요청부터 66초) |
+| 02:49:22 | 커밋 상태 success |
+| 02:49:25~31 | Q1~Q5 29, 18, 64, 6, 1,634건 |
+
+- 머지 커밋은 PR #1 head와 파일 내용이 같아 같은 `codebase_hash`를 받았다. codebadger는 그래프를 새로 만들지 않았다. 잠들어 있던 그 그래프를 다시 적재했다(`loading` → ready 60초).
+- 업스트림 워크플로는 이 푸시에서도 돌지 않았다. 등록된 워크플로는 분석 워크플로 하나다.
+
+### 보관 정리 구현
+
+| 파일 | 바뀐 것 |
+| --- | --- |
+| [scripts/ci/joern_cpg_job.py](../../../scripts/ci/joern_cpg_job.py) | 그래프가 ready(또는 실패)가 되면 풀어 둔 소스 폴더를 지운다. 만든 그래프를 CI 소스 폴더의 색인 `.cpg-index.jsonl`에 한 줄(레포, SHA, `codebase_hash`, 상태) 더한다 |
+| [scripts/ci/prune_cpgs.py](../../../scripts/ci/prune_cpgs.py) | 새 파일. 남길 SHA를 정하고, 색인에 있는 나머지 그래프와 남은 소스 폴더를 지운다 |
+| crewAI `.github/workflows/codeinside-joern-cpg.yml`(PR #3) | 고정 커밋을 올리고, 작업 뒤 `prune_cpgs.py --keep-main 20` 단계(`if: success() \|\| failure()`)와 권한 `pull-requests: read`를 더했다 |
+
+- 남기는 SHA: main first-parent 최근 20개 커밋과 열린 PR의 head. main을 머지 커밋으로만 바꾸면 first-parent 커밋 하나가 푸시 하나다. 지금은 main first-parent 20개 가운데 그래프가 있는 것이 `898f7e6` 하나이고, 나머지는 포크 전 업스트림 커밋이다.
+- SHA와 `codebase_hash`의 대응은 커밋 상태에서 읽는다(GraphQL 한 번). 남길 SHA 하나라도 가리키는 `codebase_hash`는 지우지 않는다.
+- 지우는 범위는 색인에 있는 그래프뿐이다. 수동으로 만든 기준값 그래프(crewAI `fafd8959bb1b7ee0`, opensre `a5b31c170fa23d65`)는 색인에 없어 건드리지 않는다.
+- 러너가 하나뿐이라 정리 단계가 도는 동안 다른 작업이 소스를 풀고 있지 않다고 본다. 러너를 늘리면 소스 폴더 정리 조건을 다시 봐야 한다.
+- 이 구현 전에 CI가 만든 그래프 2개(SHA 3개)는 러너 uid로 색인에 직접 채워 넣었다(`recorded_at: backfill`).
+
+### 시험 (crewAI PR #3)
+
+로컬 dry-run으로 남길 것과 지울 것을 먼저 확인한 뒤 PR #3을 열었다(run `43144342647`, [raw/crewai-pr3-retention.log](raw/crewai-pr3-retention.log)).
+
+| 시각(UTC) | 단계 | 결과 |
+| --- | --- | --- |
+| 02:53:01~02:54:16 | 그래프 생성(head `196e530`) | `codebase_hash=846aec8c348118be`, 91초 |
+| 02:54:19 | 작업 스크립트 | 자기 소스 폴더 `crewAI-196e530…` 삭제 |
+| 02:54:30 | 남길 그래프 | `c8a03dcf21488d21`(main `898f7e6`), `846aec8c348118be`(열린 PR #3 head) |
+| 02:54:30 | `remove_cpg` | `a64d93d2b98745b7`(닫힌 PR #2) 삭제, 17.18MB |
+| 02:54:32~36 | 남은 소스 폴더 | `crewAI-5014f84…`, `crewAI-848d15d…`, `crewAI-898f7e6…` 삭제(각 623MB) |
+
+정리 뒤 Xeon 상태:
+- CI 소스 폴더: 색인 파일 하나, 8.0K
+- codebadger 그래프: `846aec8c…`, `c8a03dcf…`, `fafd8959…`(기준값), `a5b31c17…`(opensre 기준값)
+- 색인: `c8a03dcf…`를 가리키는 SHA 2개(`848d15d`, `898f7e6`)와 `846aec8c…` 하나
 
 ## 확인 안 됨
 
 - opensre Actions가 막힌 정확한 원인(GitHub 쪽 조치)
-- main 푸시 트리거. 분석 워크플로가 PR #1에만 있어 main에는 아직 없다. PR #1을 병합해야 시험할 수 있다
-- 보관 정리(제안만 했다). 지금 CI 소스 폴더에 SHA마다 623MB가 남는다
+- 정리 단계에서 실패한 그래프(`state: failure`)를 지우는 경로. 이번 시험에는 실패한 그래프가 없었다
+- main first-parent 20개를 넘는 푸시가 쌓였을 때의 동작(지금은 main 그래프가 하나다)
 - 러너·프록시·이미지 빌드 유닛의 재부팅 복원
 - 러너 컨테이너가 외부 네트워크로 나가는 범위. librechat 러너와 달리 egress 허용 목록을 걸지 않았다
 
@@ -233,4 +284,6 @@ librechat 러너와 같은 ephemeral 방식이다. supervisor가 작업마다 �
 | `raw/crewai-pr1-run2.log` | crewAI PR #1 두 번째 run(끝내는 기준) 작업 로그와 커밋 상태 |
 | `raw/worker-resolve-q1.log` | 작업자 쪽 resolver 결과와 SSH 터널로 물은 Q1 |
 | `raw/crewai-pr2-run.log`, `raw/ancestor-fallback.log` | 시험 PR #2 run과 그동안의 resolver 결과 |
+| `raw/crewai-main-push-run.log` | main 푸시 run 작업 로그와 커밋 상태 |
+| `raw/crewai-pr3-retention.log` | PR #3 run의 작업·정리 단계 출력과 정리 뒤 Xeon 상태 |
 | `scripts/probe-network.sh` | 위 확인에 쓴 스크립트 |

@@ -6,7 +6,10 @@
   2. `git archive <SHA>`로 소스를 codebadger playground의 CI 폴더에 푼다(이미 있으면 그대로 쓴다).
   3. codebadger MCP `generate_cpg`(source_type=local)를 부르고 `get_cpg_status`가 ready가 될 때까지 기다린다.
   4. 커밋 상태를 success로 바꾸고 설명에 `codebase_hash=<hash>`를 적는다. 이 상태가 SHA와 그래프의 대응 기록이다.
-  5. 확인 질의를 MCP로 묻고 결과를 작업 요약에 남긴다. 그래프 규모(파일·메서드·호출 수)는 늘 묻고,
+  5. 그래프가 ready(또는 실패)가 되면 풀어 둔 소스 폴더를 지우고, 색인 파일(CI 소스 폴더의 .cpg-index.jsonl)에
+     레포·SHA·codebase_hash를 한 줄 더한다. 보관 정리(prune_cpgs.py)는 이 색인에 있는 그래프만 지운다.
+     codebadger는 generate_cpg를 받을 때 소스를 자기 쪽으로 복사하고(core_tools.py), 잠든 그래프는 cpg.bin에서 다시 올린다.
+  6. 확인 질의를 MCP로 묻고 결과를 작업 요약에 남긴다. 그래프 규모(파일·메서드·호출 수)는 늘 묻고,
      --queries로 준 JSON 파일({"Q1": "<CPGQL>", ...})의 질의도 결과 수와 Joern 안 실행 시간을 묻는다.
 
 codebadger의 local 소스 캐시 키는 파일 내용 해시다(core_tools.py `_fingerprint_local_source`).
@@ -80,6 +83,23 @@ def extract(checkout, sha, src_dir, name):
     return dest
 
 
+INDEX = ".cpg-index.jsonl"
+
+
+def append_index(src_dir, repo, sha, codebase_hash, state):
+    line = json.dumps({"repo": repo, "sha": sha, "codebase_hash": codebase_hash, "state": state,
+                       "recorded_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+    with open(os.path.join(src_dir, INDEX), "a") as f:
+        f.write(line + "\n")
+
+
+def remove_source(src_dir, name, sha):
+    dest = os.path.join(src_dir, f"{name}-{sha}")
+    if os.path.isdir(dest):
+        shutil.rmtree(dest)
+        log(f"removed source {name}-{sha}")
+
+
 def wait_ready(client, codebase_hash, timeout_s):
     t0 = time.monotonic()
     last = None
@@ -123,6 +143,7 @@ def main():
             queries += [(k, wrap(k, v)) for k, v in json.load(f).items()]
 
     set_status(sha, "pending", "building Joern CPG")
+    codebase_hash = None
     try:
         extract(a.checkout, sha, src_dir, name)
         client = McpHttpClient(os.environ["CODEBADGER_MCP_URL"], timeout=600)
@@ -138,9 +159,14 @@ def main():
         _, waited = wait_ready(client, codebase_hash, a.timeout)
         total = time.monotonic() - t0
         set_status(sha, "success", f"codebase_hash={codebase_hash}")
+        append_index(src_dir, os.environ["GITHUB_REPOSITORY"], sha, codebase_hash, "success")
     except Exception as e:
         set_status(sha, "failure", f"{type(e).__name__}: {e}")
+        if codebase_hash:  # 실패한 그래프도 정리 대상이 되게 색인에 남긴다
+            append_index(src_dir, os.environ["GITHUB_REPOSITORY"], sha, codebase_hash, "failure")
         raise
+    finally:
+        remove_source(src_dir, name, sha)
 
     results, failed = [], False
     for label, query in queries:

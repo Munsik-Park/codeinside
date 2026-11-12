@@ -1,0 +1,32 @@
+# crewAI PR #3 run 43144342647 (head 196e530): 작업 스크립트와 보관 정리 단계 출력
+2026-11-12T02:52:42.4403252Z [02:52:42] commit status pending: building Joern CPG
+2026-11-12T02:52:46.0099234Z [02:52:46] extracted crewAI-196e53012b442851e2e1da48501aa6d9595f4f2c
+2026-11-12T02:53:01.2932773Z [02:53:01] generate_cpg: codebase_hash=846aec8c348118be status=generating
+2026-11-12T02:53:01.3150323Z [02:53:01] cpg status: generating
+2026-11-12T02:54:16.6018542Z [02:54:16] cpg status: ready
+2026-11-12T02:54:17.3401605Z [02:54:17] commit status success: codebase_hash=846aec8c348118be
+2026-11-12T02:54:19.5260738Z [02:54:19] removed source crewAI-196e53012b442851e2e1da48501aa6d9595f4f2c
+2026-11-12T02:54:22.4066945Z [02:54:22] STATS via MCP (2.88s): {"success":true,"data":["STATS files=984 methods=36950 calls=254956 overlays=base,controlflow,typerel,callgraph,dataflowOss,pysrc2cpg-postprocessing"],"row_count":1,"execution_time":2.8680355548858643}
+2026-11-12T02:54:22.6786158Z [02:54:22] Q1 via MCP (0.27s): {"success":true,"data":["RESULT Q1 size=29 joern_ms=20.635861"],"row_count":1,"execution_time":0.25854015350341797}
+2026-11-12T02:54:22.8763545Z [02:54:22] Q2 via MCP (0.20s): {"success":true,"data":["RESULT Q2 size=18 joern_ms=0.200059"],"row_count":1,"execution_time":0.18447232246398926}
+2026-11-12T02:54:23.0093558Z [02:54:23] Q3 via MCP (0.13s): {"success":true,"data":["RESULT Q3 size=64 joern_ms=1.20173"],"row_count":1,"execution_time":0.12004899978637695}
+2026-11-12T02:54:24.3892201Z [02:54:24] Q4 via MCP (1.38s): {"success":true,"data":["RESULT Q4 size=6 joern_ms=1232.226323"],"row_count":1,"execution_time":1.3676669597625732}
+2026-11-12T02:54:28.9471167Z [02:54:28] Q5 via MCP (4.56s): {"success":true,"data":["RESULT Q5 size=1634 joern_ms=4413.030561"],"row_count":1,"execution_time":4.545545816421509}
+2026-11-12T02:54:28.9481105Z RECORD {"repo": "Munsik-Park/crewAI", "sha": "196e53012b442851e2e1da48501aa6d9595f4f2c", "codebase_hash": "846aec8c348118be", "generate_status": "generating", "generate_to_ready_seconds": 90.6, "queries": [{"label": "STATS", "result": "{\"success\":true,\"data\":[\"STATS files=984 methods=36950 calls=254956 overlays=base,controlflow,typerel,callgraph,dataflowOss,pysrc2cpg-postprocessing\"],\"row_count\":1,\"execution_time\":2.8680355548858643}", "mcp_seconds": 2.88, "is_error": false}, {"label": "Q1", "result": "{\"success\":true,\"data\":[\"RESULT Q1 size=29 joern_ms=20.635861\"],\"row_count\":1,\"execution_time\":0.25854015350341797}", "mcp_seconds": 0.272, "is_error": false}, {"label": "Q2", "result": "{\"success\":true,\"data\":[\"RESULT Q2 size=18 joern_ms=0.200059\"],\"row_count\":1,\"execution_time\":0.18447232246398926}", "mcp_seconds": 0.198, "is_error": false}, {"label": "Q3", "result": "{\"success\":true,\"data\":[\"RESULT Q3 size=64 joern_ms=1.20173\"],\"row_count\":1,\"execution_time\":0.12004899978637695}", "mcp_seconds": 0.133, "is_error": false}, {"label": "Q4", "result": "{\"success\":true,\"data\":[\"RESULT Q4 size=6 joern_ms=1232.226323\"],\"row_count\":1,\"execution_time\":1.3676669597625732}", "mcp_seconds": 1.38, "is_error": false}, {"label": "Q5", "result": "{\"success\":true,\"data\":[\"RESULT Q5 size=1634 joern_ms=4413.030561\"],\"row_count\":1,\"execution_time\":4.545545816421509}", "mcp_seconds": 4.558, "is_error": false}]}
+cpg	Prune graphs outside main's last 20 commits and open PR heads	2026-11-12T02:54:30.5136346Z [02:54:30] keep: main first-parent 20 commits, open PR heads 1, graphs ['846aec8c348118be', 'c8a03dcf21488d21']
+cpg	Prune graphs outside main's last 20 commits and open PR heads	2026-11-12T02:54:30.5613151Z [02:54:30] remove_cpg a64d93d2b98745b7: ok {"success": true, "codebase_hash": "a64d93d2b98745b7", "status": "removed", "freed_mb": 17.18, "message": "CPG, source files, and DB record deleted."}
+cpg	Prune graphs outside main's last 20 commits and open PR heads	2026-11-12T02:54:32.6670656Z [02:54:32] removed source crewAI-5014f8468921ffa7ebed1689fdf3c9f8a539d7de
+cpg	Prune graphs outside main's last 20 commits and open PR heads	2026-11-12T02:54:34.7859199Z [02:54:34] removed source crewAI-848d15d1f01bea56ed95ae49986e9e49efc551a0
+cpg	Prune graphs outside main's last 20 commits and open PR heads	2026-11-12T02:54:36.8835911Z [02:54:36] removed source crewAI-898f7e6727bfa34f8aa2e67e6492b6e36c01e955
+cpg	Prune graphs outside main's last 20 commits and open PR heads	2026-11-12T02:54:36.8853118Z PRUNE {"repo": "Munsik-Park/crewAI", "keep_main": ["898f7e6727bfa34f8aa2e67e6492b6e36c01e955", "b4654c1a4253219f1093fedcbd73690b5b2be4d2", "71d68117e38f620dff02ec1dc358f37a1f74a740", "4254a835b1e5433d123e201928612bc692edbc3e", "0b8b216db35eec36610b5e08c31eb31a29f5c9c1", "c358daab14fc5e6b6192365848c6e0d208d7524d", "1357d23aafb5d3a612a19562fe9b8e2b0c899307", "ed558c55475cbf4613b80dbf1ef7f15256774b87", "cd44481e7ec1cc1102e9e770c48374827d23517e", "135eee13990a6e4ffbd9bf0152d249ebdc35a528", "09ec5d98318f31fa026036ffc3799c037f2da41b", "83d7407aa50b94d5b9f110c10ca295d3e0f360ee", "adb4aba6bb72914ba56a1aa414bb768fbae4ebf4", "608b9bc2185aa901a49729a789667577d9a52a4e", "648dedc63177e84b8346e7e68c11b770ebc45c65", "88a8305cc5228028626f49461205ac258247b7e9", "84f358483fa1dbcd2dd4d3023d02d44637c458ea", "e255392a7de39d936491494e0e7a6b6c89106957", "ee707938a46f59736d7bf27ed200ee46de884278", "2fba413623a60d7a2f24a7d21685bbcd8dd45a4f"], "keep_pr_heads": ["196e53012b442851e2e1da48501aa6d9595f4f2c"], "keep_graphs": {"898f7e6727bfa34f8aa2e67e6492b6e36c01e955": "c8a03dcf21488d21", "196e53012b442851e2e1da48501aa6d9595f4f2c": "846aec8c348118be"}, "removed": ["a64d93d2b98745b7"], "errors": [], "removed_sources": ["crewAI-5014f8468921ffa7ebed1689fdf3c9f8a539d7de", "crewAI-848d15d1f01bea56ed95ae49986e9e49efc551a0", "crewAI-898f7e6727bfa34f8aa2e67e6492b6e36c01e955"], "dry_run": false}
+
+# 정리 뒤 Xeon 상태 (CI 소스 폴더, codebadger cpgs 폴더, 색인)
+.cpg-index.jsonl
+8.0K	/opt/codebadger/playground/codebases/ci
+846aec8c348118be
+a5b31c170fa23d65
+c8a03dcf21488d21
+fafd8959bb1b7ee0
+{"repo": "Munsik-Park/crewAI", "sha": "848d15d1f01bea56ed95ae49986e9e49efc551a0", "codebase_hash": "c8a03dcf21488d21", "state": "success", "recorded_at": "backfill"}
+{"repo": "Munsik-Park/crewAI", "sha": "898f7e6727bfa34f8aa2e67e6492b6e36c01e955", "codebase_hash": "c8a03dcf21488d21", "state": "success", "recorded_at": "backfill"}
+{"repo": "Munsik-Park/crewAI", "sha": "196e53012b442851e2e1da48501aa6d9595f4f2c", "codebase_hash": "846aec8c348118be", "state": "success", "recorded_at": "2026-11-12T02:54:17Z"}
