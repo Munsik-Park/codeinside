@@ -1,20 +1,20 @@
 # AI 코드 분석 도구 아키텍처
 
-2026-11-11 · 원본: [claude.ai 문서](https://claude.ai/artifact/2PktctuX9b6wScTJREtxjf). 이 파일은 작업자가 읽을 수 있도록 레포에 넣은 사본이다. 원본이 바뀌면 이 파일도 같이 고친다.
+2026-11-12 · 원본: [claude.ai 문서](https://claude.ai/artifact/2PktctuX9b6wScTJREtxjf). 이 파일은 작업자가 읽을 수 있도록 레포에 넣은 사본이다. 원본이 바뀌면 이 파일도 같이 고친다.
 
 단계별 일정과 남은 결정은 [plan.md](plan.md)에 있다.
 
 ## 한눈에 보기
 
-![전체 블록도 · GitHub, Xeon, Ryzen, 작업자 쪽](images/arch-overview.png)
+![전체 블록도 · GitHub, Xeon, Ryzen, AI가 도는 머신](images/arch-overview.png)
 
 Xeon만 새 역할을 맡고, Ryzen은 지금처럼 러너로만 쓴다.
 
 ## Xeon 내부
 
-![Xeon 내부 · NUMA 노드와 JVM 배치](images/arch-xeon-numa.png)
+![Xeon 내부 · NUMA 노드 3과 메모리 배치](images/arch-xeon-numa.png)
 
-노드 번호와 `-Xmx` 값은 기준값을 잰 뒤에 정한다.
+값을 정한 근거는 [5단계 기록](measurements/2026-11-12-joern-mcp/README.md)에 있다.
 
 ## 분석 흐름
 
@@ -22,11 +22,11 @@ Xeon만 새 역할을 맡고, Ryzen은 지금처럼 러너로만 쓴다.
 
 브랜치 이름이 아니라 커밋 SHA로 찾으므로, 같은 커밋은 언제 물어도 같은 그래프가 답한다.
 
-## criterion review와 도구
+## AI 세션과 도구
 
-![criterion review 단계와 도구 대응](images/arch-criterion-review.png)
+![질문별 도구 고르기](images/arch-ai-session.png)
 
-도구는 찾기와 따라가기만 맡고, 항목을 뽑고 판정하는 일은 AI가 그대로 한다.
+도구는 찾기와 따라가기만 맡고, 판정은 AI가 한다. 세션을 띄우는 쪽이 이슈의 SHA를 그래프 ID로 바꿔 넘긴다.
 
 ## codeinside 레포 구성
 
