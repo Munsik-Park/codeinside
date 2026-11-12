@@ -4,7 +4,7 @@
 
 ## 목표와 범위
 
-criterion review에서 코드 탐색을 AI가 매번 하지 않고 결정적인 도구에 맡기는 환경을 만든다. 시험은 opensre 포크에서 하고, 구성은 비공개 코드에도 그대로 쓸 수 있게 사내 서버 안에서만 돌린다.
+criterion review에서 코드 탐색을 AI가 매번 하지 않고 결정적인 도구에 맡기는 환경을 만든다. 시험은 opensre 포크(3~5단계)와 crewAI 포크(6단계부터)에서 하고, 구성은 비공개 코드에도 그대로 쓸 수 있게 사내 서버 안에서만 돌린다.
 
 - 이번 계획: 도구 설치, 기준값 측정, MCP 연결, PR 자동 분석, criterion review 연결까지
 - 마지막 단계: llmroute에 적용해 기존 측정과 비교
@@ -20,6 +20,8 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 | --- | --- | --- |
 | 테스트 레포 | [Munsik-Park/opensre](https://github.com/Munsik-Park/opensre) 포크 | 공개, Apache 2.0. 거의 Python이고 테스트를 빼면 약 33만 줄. autoflow 이슈 브랜치가 20여 개 있다 |
 | 업스트림 연결 | 끊지 않음 | 작업은 내 레포에서만 한다. 포크를 해제하면 이슈와 PR이 사라진다 |
+| 6단계부터 테스트 레포 | Munsik-Park/crewAI 포크(기준 커밋 71d68117) | opensre 포크는 GitHub 쪽에서 Actions가 막혀 풀 수 없다. 규모와 성격이 비슷한 공개 Python 레포로 골랐다. MIT |
+| 포크 동기화 | 하지 않음 | 업스트림의 새 워크플로가 다시 들어오는 것을 막는다. 정답 사례는 업스트림 커밋을 SHA로 가져온다 |
 | 분석 서버 | Xeon E7-4820 v4 머신 | 4소켓 40코어(80스레드), 메모리 512GB(바로 쓸 수 있는 양 약 467GB), NUMA 4노드. 이미 러너로 쓰고 있다 |
 | Ryzen 9 5900 머신 | 지금처럼 러너로만 씀 | 메모리 64GB. 3단계 측정으로 Xeon만으로 충분하다는 것이 확인됐다 |
 | 넓게 찾기(Screening) | ast-grep + 공식 MCP | DB 없이 그때그때 검색한다. MIT |
@@ -47,7 +49,7 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 
 - GitHub 레포는 Munsik-Park/codeinside(공개)이고 연결된 폴더와 이어져 있다(1단계).
 - 여기에 둔다: ast-grep 규칙, Serena 설정, Joern MCP 설정 또는 래퍼, 후보 목록을 만드는 사전 스크립트, Xeon 설치·측정 스크립트, 측정 기록.
-- opensre 쪽에는 워크플로 파일만 넣고, 실제 작업은 codeinside의 스크립트를 불러서 한다.
+- 시험 레포(crewAI 포크) 쪽에는 워크플로 파일만 넣고, 실제 작업은 codeinside의 스크립트를 불러서 한다.
 
 ### ast-grep
 
@@ -85,11 +87,14 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 
 ### 트리거와 저장
 
-- Xeon 러너에 라벨 하나(예: `joern`)를 붙여 분석 작업만 이 머신으로 보낸다.
-- Joern에는 바뀐 파일만 반영하는 기능이 없다(3단계 확인). PR이 열리거나 main이 바뀌면 그래프를 처음부터 다시 만든다. opensre 전체 기준 약 1분(생성 12초, 적재 46초)이다.
-- 커밋 SHA 이름으로 저장하고 브랜치는 SHA를 가리키기만 한다. 저장 형태는 생성 결과 파일(30MB, 올리는 데 46초)과 적재된 프로젝트(142MB, 여는 데 약 1초) 중에서 고른다.
-- 새 그래프가 만들어지는 동안에는 가장 가까운 조상 커밋의 그래프로 답한다. ast-grep과 Serena는 작업자 체크아웃에서 돌므로 SHA별 보관이 필요 없다.
-- 포크에 딸려 온 업스트림 워크플로 14개는 먼저 끈다.
+- Xeon에 시험 레포 전용 러너를 따로 등록했다(라벨 `joern`, ephemeral, 노드 3, 메모리 2g, 전용 uid). 기존 Xeon 러너는 다른 레포 전용이고, 개인 계정이라 러너는 레포 단위로만 등록된다(6단계).
+- 러너는 프록시 컨테이너를 거쳐 MCP 4242에만 닿는다. 질의 워커, Postgres, Redis, 호스트 루프백에는 닿지 않는다.
+- Joern에는 바뀐 파일만 반영하는 기능이 없다(3단계). PR이 열리거나 main이 바뀌면 그 SHA의 소스를 풀어 그래프를 처음부터 만든다. crewAI 기준 요청부터 ready까지 약 90초다.
+- 그래프 저장은 codebadger 캐시(내용 해시)를 쓴다. 커밋 상태 `codeinside/joern-cpg`의 설명에 codebase_hash를 남겨 SHA와 그래프를 잇는다.
+- 새 그래프가 만들어지는 동안에는 가장 가까운 조상 커밋의 그래프로 답하고 바뀐 파일 목록을 함께 준다(6단계 시험 통과). ast-grep과 Serena는 작업자 체크아웃에서 돌므로 SHA별 보관이 필요 없다.
+- 보관: main first-parent 최근 20개와 열린 PR head의 그래프만 남기고, 그래프가 ready가 되면 풀어 둔 소스를 지운다. 정리 단계는 joern 러너가 하나라는 전제로 짰다.
+- 포크에 딸려 온 업스트림 워크플로 19개는 Actions를 켜기 전에 `.github/workflows-upstream/`으로 옮겼다. 업스트림 워크플로 run은 0이다.
+- 공개 레포라 워크플로는 포크에서 온 PR을 돌리지 않고, fork PR 승인 정책은 all_external_contributors다.
 
 ## 단계별 실행 계획
 
@@ -105,11 +110,10 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
     - ast-grep 0.51.2와 공식 MCP, Serena 2.1.0(Pyright 1.1.403)을 작업자 쪽에 붙였다. Serena는 읽기 도구 5개만 켰다. Screening 규칙 5개와 후보 목록 스크립트를 넣었다. 결과는 위험 표와 [4단계 기록](measurements/2026-11-12-serena-joern/README.md)에 있다.
 5. **Joern 서버와 MCP 연결 (완료, PR #7)**
     - codebadger를 Xeon에 올렸다. 패치 2개와 Joern 4.0.680 이미지로 Q1~Q5 결과와 그래프 규모가 3단계와 같았다. 질의 워커는 노드 3, heap 4G로 고정됐다. 작업 세션에서 Joern, ast-grep, Serena MCP를 모두 불러 답을 받았다. 결과는 위험 표와 [5단계 기록](measurements/2026-11-12-joern-mcp/README.md)에 있다.
-6. **PR 자동 분석**
-    - opensre의 업스트림 워크플로를 끄고, Xeon 러너 라벨과 분석 워크플로를 넣는다. 커밋마다 그래프를 새로 만들어 SHA별로 저장하고, 만드는 동안에는 조상 그래프로 답한다.
-    - 끝: 시험 PR을 하나 열면 그 SHA의 그래프가 저장되고 MCP로 질의된다.
+6. **PR 자동 분석 (완료, PR #9, #10)**
+    - 시험 대상을 crewAI 포크로 옮겼다(opensre 포크는 Actions가 GitHub 쪽에서 막힘). crewAI 기준값을 다시 재고, PR과 main 푸시마다 그래프를 만들어 커밋 상태에 codebase_hash를 남긴다. 조상 그래프 대체와 보관 정리까지 시험을 통과했다. 결과는 [6단계 기록](measurements/2026-11-12-pr-analysis/README.md)과 [crewAI 기준값](measurements/2026-11-12-crewai-baseline/README.md)에 있다.
 7. **criterion review 연결과 비교**
-    - 작업 에이전트를 띄우기 전에 사전 스크립트가 후보 목록을 넣는다. opensre 정답 사례로 AI 단독 방식과 비교하고, 이어서 llmroute에서 기존 측정과 비교한다.
+    - 작업 에이전트를 띄우기 전에 사전 스크립트가 후보 목록을 넣는다. crewAI 정답 사례로 AI 단독 방식과 비교하고, 이어서 llmroute에서 기존 측정과 비교한다.
     - 끝: 측정·검증 표의 4~6행이 채워져 있다.
 
 ## 측정·검증 항목
@@ -127,6 +131,8 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 
 3행까지의 측정 조건, 명령, 원본 수치는 [measurements/2026-11-11-baseline](measurements/2026-11-11-baseline/README.md)에 있다. 측정 커밋은 opensre `a5c1acbd`, 실행 위치는 NUMA 노드 3이다.
 
+crewAI 기준값(6단계, 커밋 `71d68117`): 파일 984, 메서드 36,950, 호출 254,956. 요청부터 ready까지 94초, Q1~Q5는 29/18/64/6/1,634건이다. 기록은 [crewAI 기준값](measurements/2026-11-12-crewai-baseline/README.md)에 있다. 7단계 비교는 이 값을 기준으로 한다.
+
 ## 확인되지 않은 것과 위험
 
 가장 큰 미확인이던 Joern 부분 갱신은 불가로 확인됐다. 커밋마다 새로 만들어도 약 1분이라 운영에는 문제없다. opensre 규모의 메모리·시간과 Xeon 속도에 대한 걱정은 3단계 측정으로 해소됐다.
@@ -143,23 +149,25 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 | Serena 편집·셸 도구 | 읽기 도구 5개만 켬(4단계 확인) | 도구 인터페이스, fixed_tools, read_only. 편집·셸 도구를 부르면 Unknown tool로 거부된다 |
 | Pyright 가상환경 | opensre 의존성 없이 돌림(4단계) | 서드파티 타입이 풀리지 않는다. 가상환경을 주면 결과가 달라지는지는 확인 안 됨 |
 | 작업 세션의 MCP 질의 | 세 MCP 모두 작업 세션에서 호출 확인(5단계) | 해결됨. 헤드리스 세션에서 Q4 데이터 흐름과 ast-grep·Serena 참조를 받았다 |
-| opensre 정답지 | 없음 | 지난 autoflow PR에서 사례를 골라 사람이 결정 코드를 확인해 둔다 |
-| SHA별 그래프 누적 | 커밋당 30MB(파일) 또는 142MB(프로젝트) | 저장 형태와 보관 개수를 정한다 |
+| crewAI 정답지 | 없음 | 업스트림 fix PR에서 사례를 골라 사람이 결정 코드를 확인해 둔다 |
+| SHA별 그래프 누적 | crewAI 그래프 하나 약 18MB, 풀어 둔 소스 623MB(ready 뒤 삭제) | main 최근 20개와 열린 PR head만 남긴다(6단계 구현). 실패 그래프 정리와 20개 초과 동작은 확인 안 됨 |
 | Docker 저장소가 RAM tmpfs | 재부팅하면 이미지와 컨테이너가 사라짐 | 이미지를 디스크에 저장하고 부팅 복원 유닛 2개를 켰다(5단계). 재부팅 확인 안 됨 |
 | codebadger MCP 인증 | 기능 없음 | Xeon 루프백에만 열고 작업자 쪽은 SSH 터널로 붙는다 |
 | 노드 3 메모리 | 질의 80G + 생성 8G + runner-5 32G = 120G / 126G | runner-4가 노드 3을 얼마나 쓰는지는 재지 않음 |
 | codebadger 패치 | v0.7.0-beta에 패치 2개 | codebadger를 올릴 때 패치가 맞는지 다시 확인한다. 이미지를 다시 빌드하면 디스크 저장도 다시 한다 |
+| opensre 포크 Actions | GitHub 쪽에서 막힘. 지원팀이 풀 수 없다고 답함 | 6단계부터 crewAI 포크를 쓴다. opensre 기록은 그대로 둔다 |
+| 디스크 이미지 묶음 | 제외 규칙을 넣어 MCP 이미지를 다시 빌드했지만 묶음은 이전 이미지 | 재부팅 전에 저장 스크립트를 다시 실행해야 한다(sudo). 러너·프록시 유닛의 재부팅 복원도 확인 안 됨 |
 
 ## 남은 결정
 
-6단계 전에 정할 것은 그래프 저장 형태다. 나머지는 진행하면서 정한다.
+7단계 전에 정할 것은 crewAI 정답 사례다. 나머지는 진행하면서 정한다.
 
 - [x] codeinside 레포: Munsik-Park/codeinside, 공개로 정함
 - [x] 뒤에 붙일 도구: ast-grep, Serena, Joern
 - [x] Joern MCP: codebadger(패치 2개, Joern 4.0.680)로 정함 (단계 5)
 - [x] Joern 메모리와 노드: 워커 heap 4G, 질의 예산 80G, 생성 컨테이너 8G, 노드 3 고정으로 정함 (단계 5)
-- [ ] 그래프 저장 형태와 보관 개수: 여는 데 1초인 적재된 프로젝트 저장을 제안 (단계 6 전)
-- [ ] opensre 정답 사례로 쓸 이슈·PR (단계 7 전)
+- [x] 그래프 저장과 보관: codebadger 캐시와 커밋 상태, main 최근 20개와 열린 PR head로 정함 (단계 6)
+- [ ] crewAI 정답 사례로 쓸 업스트림 PR (단계 7 전)
 - [ ] 통합 MCP 앞단: AI가 도구 선택을 헷갈릴 때 (보류)
 
 ## 출처
@@ -175,5 +183,8 @@ codeinside 폴더를 GitHub 레포로 만들어 연결하는 일도 범위에 �
 - [Serena 설정 — 도구 인터페이스와 REPL](https://github.com/oraios/serena/blob/v2.1.0/docs/02-usage/050_configuration.md)
 - [5단계 기록 — codebadger 설치, Q1~Q5 비교, 메모리·NUMA 고정](measurements/2026-11-12-joern-mcp/README.md)
 - [codebadger 보안 문서 — Docker 소켓, 전용 호스트 권장](https://github.com/Lekssays/codebadger/blob/v0.7.0-beta/docs/security.md)
+- [6단계 기록 — opensre에서 막힌 경위, crewAI 포크, 러너·프록시·워크플로, 보관 정리](measurements/2026-11-12-pr-analysis/README.md)
+- [crewAI 기준값 — 제외 규칙, Q1~Q5, Serena·Joern 비교](measurements/2026-11-12-crewai-baseline/README.md)
+- [Munsik-Park/crewAI 포크](https://github.com/Munsik-Park/crewAI)
 - [Intel Xeon E7-4820 v4 사양](https://www.intel.com/content/www/us/en/products/sku/93814/intel-xeon-processor-e74820-v4-25m-cache-2-00-ghz/specifications.html)
 - [포크 해제 — 이슈·PR 소실](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/detaching-a-fork)
