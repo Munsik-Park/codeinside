@@ -1,0 +1,11 @@
+Actions run: queued 0, in_progress 0
+target: Munsik-Park/crewAI b4654c1a4253219f1093fedcbd73690b5b2be4d2
+[09:44:00] commit status pending: building Joern CPG
+[09:44:03] extracted crewAI-b4654c1a4253219f1093fedcbd73690b5b2be4d2
+[09:44:18] generate_cpg: codebase_hash=b932f2dc0d92b90e status=generating
+[09:44:18] cpg status: generating
+[09:45:36] cpg status: ready
+[09:45:36] commit status success: codebase_hash=b932f2dc0d92b90e
+[09:45:38] removed source crewAI-b4654c1a4253219f1093fedcbd73690b5b2be4d2
+[09:45:42] STATS via MCP (3.45s): {"success":true,"data":["STATS files=984 methods=36950 calls=254956 overlays=base,controlflow,typerel,callgraph,dataflowOss,pysrc2cpg-postprocessing"],"row_count":1,"execution_time":3.439218282699585}
+RECORD {"repo": "Munsik-Park/crewAI", "sha": "b4654c1a4253219f1093fedcbd73690b5b2be4d2", "codebase_hash": "b932f2dc0d92b90e", "generate_status": "generating", "generate_to_ready_seconds": 92.4, "queries": [{"label": "STATS", "result": "{\"success\":true,\"data\":[\"STATS files=984 methods=36950 calls=254956 overlays=base,controlflow,typerel,callgraph,dataflowOss,pysrc2cpg-postprocessing\"],\"row_count\":1,\"execution_time\":3.439218282699585}", "mcp_seconds": 3.453, "is_error": false}]}
