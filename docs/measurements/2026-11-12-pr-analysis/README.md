@@ -14,6 +14,7 @@
 | 조상 그래프 대체 | 시험 PR #2(head `5014f84`, 부모 `848d15d`)의 그래프가 만들어지는 동안 resolver가 부모 그래프를 고르고 바뀐 파일을 돌려줬다. success 뒤에는 자기 그래프를 골랐다 | 7절, [raw/ancestor-fallback.log](raw/ancestor-fallback.log) |
 | 보관 개수 | main first-parent 최근 20개와 열린 PR head의 그래프만 남기고, ready 뒤 소스 폴더를 지운다. crewAI PR #3에서 닫힌 PR #2 그래프와 남은 소스 폴더 3개(각 623MB)가 지워진 것을 확인했다. joern 러너가 하나라는 전제 위에서만 맞다 | 7절, 8절 |
 | main 푸시 | PR #1 병합 커밋 `898f7e6`에서 그래프와 커밋 상태가 남고 Q1~Q5가 질의됐다 | 8절 |
+| 재부팅 복원 | librechat 러너 5개, joern 러너, 프록시, codebadger 스택이 다시 떴다. 기준 그래프 `fafd8959bb1b7ee0`이 남아 있어 Q1이 29건으로 나왔다 | 9절, [raw/reboot-restore.log](raw/reboot-restore.log) |
 
 ## 1. opensre에서 막힌 경위
 
@@ -288,12 +289,47 @@ PR #3 머지 커밋 `3457928`에서 run `43144979879`가 돌았다([raw/crewai-m
 
 2번 측정에 쓴 crewAI 기준 커밋 소스 `/opt/codebadger/playground/codebases/crewAI-71d68117`(623MB)은 사용자 결정으로 지웠다. CI 폴더 밖이라 정리 단계의 대상이 아니었다. 기준 그래프 `fafd8959bb1b7ee0`(`cpg.bin` 18,009,135 B)은 남겼다. 잠든 그래프는 `cpg.bin`에서 다시 올리므로 질의에는 소스가 필요 없다. 같은 그래프를 다시 만들려면 기준 커밋을 다시 풀어야 한다.
 
+## 9. 재부팅 복원 확인
+
+사용자가 Xeon을 재부팅했다(부팅 04:54:30 UTC). 이미지 묶음 `codebadger-images.tar`의 mtime은 04:42:46 UTC로, 재부팅 전에 다시 저장됐다. 05:00~05:04 UTC에 확인했다([raw/reboot-restore.log](raw/reboot-restore.log)).
+
+### 유닛과 컨테이너
+
+| 대상 | 결과 |
+| --- | --- |
+| librechat 러너 5개 | `librechat-ci-runner@1~5` active(running), 컨테이너 `librechat-ci-runner-1~5`가 04:57:20에 떴다. 다섯 컨테이너 ID가 모두 `connev-llm/librechat`에 `online`(라벨 `librechat-ci-wide`)으로 등록돼 있다 |
+| codebadger 이미지 복원 | `codebadger-image-restore` 04:56:34~04:58:24. 이미지 4개를 묶음에서 올렸다 |
+| codebadger 스택 | `codebadger-stack` 04:58:58 완료. joern-server, mcp, postgres(healthy), redis(healthy) 컨테이너가 떠 있다 |
+| MCP 이미지 | `codebadger-mcp:latest` = `766f3227db26`([crewAI 기준값](../2026-11-12-crewai-baseline/README.md) 1절의 새 이미지). 컨테이너 안 `config.yaml`에 crewAI 제외 규칙 2줄이 있다 |
+| joern 러너 이미지·네트워크·프록시 | `codeinside-joern-ci-net` 04:59:01 완료. 러너 이미지를 다시 만들었고(uid 994, gid 984) 네트워크 `codeinside-joern-ci`와 `codeinside-mcp-proxy`가 떴다 |
+| joern 러너 | `codeinside-joern-runner` active(running), 대상 `Munsik-Park/crewAI`. 컨테이너 `77287098115d`가 `codeinside-joern-77287098115d`로 `online`(라벨 `joern`) |
+
+- 복원 순서는 이미지 복원 → 스택 → joern 러너 네트워크·프록시 → supervisor였다.
+- 재부팅 전 등록이 `offline`으로 남아 있다: crewAI에 `codeinside-joern-b2c5dc9d4cea` 하나, librechat에 `librechat-ci-wide` 5개. 재부팅으로 ephemeral 컨테이너가 작업 없이 사라져 supervisor가 지우지 못한 등록이다. 작업 배정에는 영향이 없고, 지우지 않았다.
+- librechat에 `online`인 `librechat-ci-fast` 등록 3개는 Xeon 컨테이너가 아니다. Xeon supervisor의 추가 라벨은 `librechat-ci-wide`다.
+- 실패 유닛은 `systemd-networkd-wait-online.service` 하나다. 이번 부팅(04:56:32)과 직전 부팅(07-20 02:13:01) 모두 `Timeout occurred while waiting for network connectivity.`로 실패했다. 위 유닛들은 모두 떴다.
+- Xeon에 설치된 `codeinside-joern-runner.service`의 Description에는 아직 `Munsik-Park/opensre`가 남아 있다. 설치된 유닛이 그 전 판이고, 그 뒤로 다시 설치하지 않았다. 레포 파일의 Description은 e5b5388(PR #9)에서 이미 `label joern, repo from runner.conf`로 바뀌었고, 설치된 유닛과 레포 파일의 차이는 이 한 줄뿐이다. 레포 파일에 남아 있던 opensre는 1행 주석뿐이어서, 이 PR에서 대상 레포와 무관한 표현으로 고쳤다. 실제 대상은 `runner.conf`의 `JOERN_CI_REPO=Munsik-Park/crewAI`이고 supervisor 로그도 crewAI를 가리킨다.
+
+### 기준 그래프 Q1
+
+작업자 쪽에서 SSH 터널(로컬 14242 → Xeon 루프백 4242)로 crewAI 기준 그래프 `fafd8959bb1b7ee0`에 물었다. 질의는 [config/queries/crewai.json](../../../config/queries/crewai.json)의 Q1이고, 래퍼는 [raw/worker-resolve-q1.log](raw/worker-resolve-q1.log)와 같다.
+
+| 시각(UTC) | 결과 |
+| --- | --- |
+| 05:01:48 | `get_cpg_status` → `loading`. codebadger 메타데이터와 `cpg.bin`이 재부팅 뒤에도 남아 있어, 이 호출로 잠든 그래프의 적재가 시작됐다 |
+| 05:02:50 | ready(첫 호출부터 약 62초) |
+| 05:02:52 | Q1 29건(Joern 안 19.95ms, 왕복 0.23초). 앞 세 항목도 6절 결과와 같다 |
+| 05:03:08 | 그래프 규모(작업 스크립트의 STATS 질의): 파일 984, 메서드 36,950, 호출 254,956, overlay 6개. 기준값과 같다 |
+
+- Q1 Joern 시간이 6절(0.36ms)보다 긴 것은 적재 직후 첫 질의라서로 보이지만, 나눠 재지 않았다.
+
 ## 확인 안 됨
 
 - opensre Actions가 막힌 정확한 원인(GitHub 쪽 조치)
 - 정리 단계에서 실패한 그래프(`state: failure`)를 지우는 경로. 이번 시험에는 실패한 그래프가 없었다
 - main first-parent 20개를 넘는 푸시가 쌓였을 때의 동작(지금은 main 그래프가 하나다)
-- 러너·프록시·이미지 빌드 유닛의 재부팅 복원
+- 재부팅 뒤 joern 러너가 실제 작업을 받는지. 등록이 `online`인 것까지만 봤고 워크플로 run은 돌리지 않았다. 재부팅 뒤 프록시의 닿는 곳·막힌 곳(5절)도 다시 재지 않았다
+- 재부팅 뒤 CI 그래프(`846aec8c…`, `c8a03dcf…`)의 상태. 상태 조회가 적재를 시작시켜 묻지 않았다
 - 러너 컨테이너가 외부 네트워크로 나가는 범위. librechat 러너와 달리 egress 허용 목록을 걸지 않았다
 
 ## 원본 파일
@@ -312,4 +348,5 @@ PR #3 머지 커밋 `3457928`에서 run `43144979879`가 돌았다([raw/crewai-m
 | `raw/crewai-main-push-run.log` | main 푸시 run 작업 로그와 커밋 상태 |
 | `raw/crewai-pr3-retention.log` | PR #3 run의 작업·정리 단계 출력과 정리 뒤 Xeon 상태 |
 | `raw/crewai-main-push-retention.log` | PR #3 머지 뒤 main 푸시 run의 작업·정리 단계 출력과 정리 뒤 Xeon 상태 |
+| `raw/reboot-restore.log` | 재부팅 뒤 유닛·컨테이너·이미지 상태, 부팅 로그, 러너 등록, 기준 그래프 Q1, 두 부팅의 `systemd-networkd-wait-online` 로그 |
 | `scripts/probe-network.sh` | 위 확인에 쓴 스크립트 |

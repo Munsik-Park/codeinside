@@ -1,4 +1,4 @@
-# opensre 분석 러너 supervisor (docs/plan.md 단계 6). 작업마다 ephemeral 러너 컨테이너를 하나씩 띄운다.
+# codeinside Joern 분석 러너 supervisor (docs/plan.md 단계 6). 대상 레포는 runner.conf의 JOERN_CI_REPO로 정한다. 작업마다 ephemeral 러너 컨테이너를 하나씩 띄운다.
 [Unit]
 Description=codeinside Joern CI ephemeral runner supervisor (label joern, repo from runner.conf)
 After=network-online.target docker.service codeinside-joern-ci-net.service librechat-ci-image-restore.service
