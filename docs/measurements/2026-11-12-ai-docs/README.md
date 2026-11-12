@@ -16,5 +16,7 @@
 | 질문 | 세션이 고른 도구 | 답 | 기준 |
 | --- | --- | --- | --- |
 | `BaseLLM._emit_call_completed_event`를 실제로 참조하는 곳 | `get_cpg_status`(ready 확인), Serena `find_referencing_symbols` | 73 | Serena 73, 같다 |
-| 그 함수를 부르는 함수, 두 단계 위까지 | Joern `get_call_graph`(E040 오류), `run_cpgql_query`, Serena `find_referencing_symbols`(테스트 쪽) | 49 | Joern Q3 64, 다르다 |
+| 그 함수를 부르는 함수를 부르는 함수(정확히 두 단계 위, 중복 제외) | Joern `get_call_graph`(E040 오류), `run_cpgql_query`, Serena `find_referencing_symbols`(테스트 쪽) | 36 | Joern Q3 64, 다르다 |
 | 함수 안에서 `global` 문을 쓰는 곳 | ast-grep `find_code_by_rule` | 17 | `py-global-state` 17, 같다 |
+
+- 세션은 그래프를 조상 그래프로 판단하지 않았다.

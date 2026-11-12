@@ -9,7 +9,7 @@
 
 질문:
 1. lib/crewai/src/crewai/llms/base_llm.py 의 BaseLLM._emit_call_completed_event 를 실제로 참조하는 곳은 몇 개인가?
-2. 그 함수를 부르는 함수를 두 단계 위까지 세면 몇 개인가?
+2. 그 함수를 부르는 함수를 부르는 함수(정확히 두 단계 위, 중복 제외)는 몇 개인가?
 3. 레포에서 함수 안에서 global 문을 쓰는 곳은 몇 개인가?
 
 각 질문마다 숫자 하나와 쓴 MCP 도구 이름을 한 줄로 답하라.
@@ -17,45 +17,31 @@
 ## init model claude-opus-5-5 mcp [('ast-grep', 'connected'), ('serena', 'connected'), ('joern', 'connected')]
 CALL Read {"file_path": "$CODEINSIDE_DIR/README.md"}
   RESULT  1	# codeinside\n2	\n3	분석 대상 레포의 코드를 AI 세션이 MCP 3개로 찾고 따라가게 하는 도구 레포다.\n4	\n5	## MCP\n6	\n7	| MCP | 쓰는 질문 |\n8	| --- | --- |\n9	| ast-grep | 패턴에 맞는 곳을 레포 전체에서 넓게 찾기 |\n10	| Serena | 심볼을 실제로 참조하는 곳, 정의, 구현 |\n11	| Joern | 호출 관계를 몇 단계 따라가기, 값의 흐름 |\n12	\n13	## 세션이 받는 값\n14	\n15	- 분석 대상 체크아웃 경로\n16	- 이슈의 SHA\n17	- 그 SH
-CALL Read {"file_path": "$CODEINSIDE_DIR/docs/usage.md"}
 CALL mcp__joern__get_cpg_status {"codebase_hash": "adfc58f938d764b9"}
-  RESULT ERR  Claude requested permissions to read from $CODEINSIDE_DIR/docs/usage.md, but you haven't granted it yet.
   RESULT  {"codebase_hash":"adfc58f938d764b9","status":"ready","joern_port":14028,"cpg_path":"<redacted:host-path>","source_type":"local","source_path":"<redacted:local-source>","language":"python","container_codebase_path":"<redacted:container-path>","container_cpg_path":"<redacted:container-path>","reposito
 CALL mcp__serena__find_referencing_symbols {"name_path": "BaseLLM/_emit_call_completed_event", "relative_path": "lib/crewai/src/crewai/llms/base_llm.py"}
   RESULT  [{"type": "text", "text": "{\"lib/crewai/src/crewai/llms/base_llm.py\": {\"Method\": [{\"name_path\": \"BaseLLM/_handle_tool_execution\", \"body_location\": {\"start_line\": 973, \"end_line\": 1063}, \"content_around_reference\": \"...1027:\\n  >1028:            self._emit_call_completed_event(\\n..
 CALL mcp__joern__get_call_graph {"codebase_hash": "adfc58f938d764b9", "method_name": "_emit_call_completed_event", "direction": "incoming", "depth": 2, "detail": "full"}
   RESULT  {"success":true,"summary":"-- [E040] Syntax Error: --------------------------------------------------------\n40 |                   List[io.shiftleft.codepropertygraph.generated.nodes.Method],\n   |                                                                              ^\n   |                 
-CALL mcp__joern__run_cpgql_query {"codebase_hash": "adfc58f938d764b9", "query": "cpg.method.nameExact(\"_emit_call_completed_event\").map(m => (m.fullName, m.filename, m.callIn.size)).l"}
-  RESULT  {"success":true,"data":[{"_1":"lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event","_2":"lib/crewai/src/crewai/llms/base_llm.py","_3":69}],"row_count":1,"execution_time":0.18254876136779785}
-CALL mcp__joern__run_cpgql_query {"codebase_hash": "adfc58f938d764b9", "query": "{ val t = cpg.method.nameExact(\"_emit_call_completed_event\").l; val l1 = t.flatMap(_.callIn.method).filterNot(m => t.contains(m)).distinct; val l2 = l1.flatMap(_.callIn.method).distinct.filterNot(m => l1.contains(m) || t.contains(m)); (l1.size, l2.size, (l1 ++ l2).distinct.size, l1.map(_.fullName).sorted, l2.map(_.fullName).sorted) }"}
-  RESULT  {"success":true,"data":"-- [E008] Not Found Error: -----------------------------------------------------\n1 |({ val t = cpg.method.nameExact(\"_emit_call_completed_event\").l; val l1 = t.flatMap(_.callIn.method).filterNot(m => t.contains(m)).distinct; val l2 = l1.flatMap(_.callIn.method).distinct.fi
-CALL mcp__joern__run_cpgql_query {"codebase_hash": "adfc58f938d764b9", "query": "{ val t = cpg.method.nameExact(\"_emit_call_completed_event\").l; val l1 = t.flatMap(_.callIn.method).filterNot(m => t.contains(m)).distinct; val l2 = l1.flatMap(_.callIn.method).distinct.filterNot(m => l1.contains(m) || t.contains(m)); List(\"L1=\" + l1.size, \"L2=\" + l2.size, \"ALL=\" + (l1 ++ l2).distinct.size) ++ l1.map(\"1 \" + _.fullName).sorted ++ l2.map(\"2 \" + _.fullName).sorted }"}
-  RESULT  {"success":true,"data":["L1=29","L2=46","ALL=75","1 lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event<metaClassAdapter>","1 lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._handle_tool_execution","1 lib/crewai/src/crewai/llms/providers/anthropic/completion.py
+CALL mcp__joern__run_cpgql_query {"codebase_hash": "adfc58f938d764b9", "query": "cpg.method.name(\"_emit_call_completed_event\").map(m => (m.fullName, m.filename, m.callIn.size)).l"}
+  RESULT  {"success":true,"data":[{"_1":"lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event","_2":"lib/crewai/src/crewai/llms/base_llm.py","_3":69}],"row_count":1,"execution_time":0.13787126541137695}
+CALL mcp__joern__run_cpgql_query {"codebase_hash": "adfc58f938d764b9", "query": "val t = cpg.method.name(\"_emit_call_completed_event\").head\nval c1 = t.callIn.method.dedup.l\nval c2 = c1.flatMap(_.callIn.method).map(_.fullName).distinct.sorted\n(t.callIn.map(c => c.method.fullName + \":\" + c.lineNumber.getOrElse(-1)).l.sorted, c1.map(_.fullName).sorted, c2)"}
+  RESULT  {"success":true,"data":"-- [E018] Syntax Error: --------------------------------------------------------\n1 |(val t = cpg.method.name(\"_emit_call_completed_event\").head\n  | ^^^\n  | expression expected but val found\n  |-----------------------------------------------------------------------------
+CALL mcp__joern__run_cpgql_query {"codebase_hash": "adfc58f938d764b9", "query": "{ val t = cpg.method.name(\"_emit_call_completed_event\").head; val c1 = t.callIn.method.dedup.l; val c2 = c1.flatMap(_.callIn.method.l).map(_.fullName).distinct.sorted; (t.callIn.map(c => c.method.fullName + \":\" + c.lineNumber.getOrElse(-1)).l.sorted, c1.map(_.fullName).sorted, c2) }"}
+  RESULT  {"success":true,"data":"-- [E008] Not Found Error: -----------------------------------------------------\n1 |({ val t = cpg.method.name(\"_emit_call_completed_event\").head; val c1 = t.callIn.method.dedup.l; val c2 = c1.flatMap(_.callIn.method.l).map(_.fullName).distinct.sorted; (t.callIn.map(c => c
+CALL mcp__joern__run_cpgql_query {"codebase_hash": "adfc58f938d764b9", "query": "{ val t = cpg.method.name(\"_emit_call_completed_event\").head; val c1 = t.callIn.method.dedup.l; val c2 = c1.flatMap(_.callIn.method.l).map(_.fullName).distinct.sorted; List(\"L1:\" + c1.size) ++ c1.map(\"C1 \" + _.fullName).sorted ++ List(\"L2:\" + c2.size) ++ c2.map(\"C2 \" + _) ++ t.callIn.map(c => \"S \" + c.method.fullName + \":\" + c.lineNumber.getOrElse(-1)).l.sorted }"}
+  RESULT  {"success":true,"data":["L1:29","C1 lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event<metaClassAdapter>","C1 lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._handle_tool_execution","C1 lib/crewai/src/crewai/llms/providers/anthropic/completion.py:<module>.Anth
+CALL mcp__joern__run_cpgql_query {"codebase_hash": "adfc58f938d764b9", "query": "{ def real(m: io.shiftleft.codepropertygraph.generated.nodes.Method) = !m.fullName.contains(\"<metaClassAdapter>\"); val t = cpg.method.name(\"_emit_call_completed_event\").head; val c1 = t.callIn.method.filter(real).dedup.l; val c2 = c1.flatMap(_.callIn.method.filter(real).l).dedup.l; val c1n = c1.map(_.fullName).toSet; List(\"L1:\" + c1.size, \"L2:\" + c2.size, \"L2 also in L1:\" + c2.count(m => c1n.contains(m.fullName))) ++ c2.map(m => \"C2 \" + m.fullName + (if (c1n.contains(m.fullName)) \" [L1]\" else \"\")).sorted ++ cpg.method.name(\"_handle_tool_execution\").callIn.map(c => \"HTE \" + c.method.fullName).l }"}
+  RESULT  {"success":true,"data":["L1:28","L2:36","L2 also in L1:18","C2 lib/crewai/src/crewai/llms/providers/anthropic/completion.py:<module>.AnthropicCompletion._execute_first_tool","C2 lib/crewai/src/crewai/llms/providers/anthropic/completion.py:<module>.AnthropicCompletion._execute_tools_and_collect_resul
 CALL mcp__serena__find_referencing_symbols {"name_path": "PublicLLM/call", "relative_path": "lib/crewai/tests/test_flow_turns.py"}
   RESULT  [{"type": "text", "text": "{}"}]
-CALL mcp__ast-grep__find_code_by_rule {"project_folder": "$CREWAI_DIR", "yaml": "id: global-in-func\nlanguage: python\nrule:\n  kind: global_statement\n  inside:\n    kind: function_definition\n    stopBy: end"}
-  RESULT  {"result":"Found 17 matches:\n\n$CREWAI_DIR/lib/crewai-core/src/crewai_core/lock_store.py:53\nglobal _backend\n\n$CREWAI_DIR/lib/crewai/src/crewai/flow/persistence/factory.py:44\nglobal _factory\n\n$CREWAI_DIR/lib/crewai/src/crewai/memory/storage/facto
-## result success turns 11 duration_ms 72378
-1. **73**, Serena `find_referencing_symbols`
-2. **49**, Joern `run_cpgql_query`(src) + Serena `find_referencing_symbols`(tests)
-3. **17**, ast-grep `find_code_by_rule`
+CALL mcp__ast-grep__find_code_by_rule {"project_folder": "$CREWAI_DIR", "yaml": "id: g\nlanguage: python\nrule:\n  kind: global_statement\n  inside:\n    kind: function_definition\n    stopBy: end"}
+  RESULT  {"result":"Found 17 matches:\n\n$CREWAI_DIR/lib/crewai-core/src/crewai_core/lock_store.py:53\nglobal _backend\n\n$CREWAI_DIR/lib/crewai-files/src/crewai_files/cache/upload_cache.py:520\nglobal _default_cache\n\n$CREWAI_DIR/lib/crewai-files/src/crewai_f
+## result success turns 12 duration_ms 82299
+1. **73**, `mcp__serena__find_referencing_symbols`
+2. **36**, `mcp__joern__run_cpgql_query`
+3. **17**, `mcp__ast-grep__find_code_by_rule`
 
-**1번 (73)**
-- src 68곳: base_llm 1, anthropic 18, azure 5, bedrock 10, gemini 5, openai 29.
-- tests 5곳: `test_flow_turns.py` 1, `test_llm_finish_reason_response_id.py` 2, `test_anthropic.py` 2.
-- `test_anthropic.py`의 2곳은 호출이 아니라 `MagicMock()`을 대입하는 참조다.
-
-**2번 (49)**
-- 직접 호출자(1단계)는 src 28개, tests 3개(`PublicLLM.call`과 테스트 메서드 2개)다.
-- 2단계 호출자는 src 18개, tests 0개다. Serena 기준 `PublicLLM.call`을 참조하는 곳이 없다.
-- Joern이 만든 합성 노드 `<metaClassAdapter>`는 셈에서 뺐다.
-- `get_call_graph`는 Joern 쪽 Scala 문법 오류(E040)로 실패해서 같은 집계를 `run_cpgql_query`로 직접 돌렸다.
-
-**3번 (17)**
-- 패턴은 `global_statement` inside `function_definition`이다.
-- 한 줄짜리 `global` 문 하나를 1곳으로 셌다. `llm.py:139-143`은 한 함수 안의 5줄이라 함수 단위로 세면 숫자가 줄어든다.
-
-**그래프 SHA 불일치**
-- 그래프 라벨의 SHA는 `490c2cd…`로, 이슈 SHA `76fd6d3…`와 다르다. 조상 그래프로 보인다.
-- 바뀐 파일 목록은 받지 못해 README 규칙 4를 적용하지 못했다.
-- Joern의 1단계 호출 지점 수(adapter 제외 68)가 Serena의 src 참조 68곳과 맞아서, 해당 파일들에서는 그래프와 체크아웃 사이에 차이가 드러나지 않았다.
+- **1번:** 73개 중 68개는 `src`에, 5개는 테스트에 있습니다. 테스트 5개 중 2개는 `MagicMock`을 대입하는 곳입니다.
+- **2번:** 직접 호출하는 함수는 28개입니다. 그 함수들을 부르는 함수를 중복 없이 세면 36개입니다. Joern이 자동으로 만든 `<metaClassAdapter>` 메서드는 실제 함수가 아니어서 뺐습니다. 36개 중 18개는 직접 호출 함수이기도 합니다. `_handle_tool_execution`을 거쳐 두 단계 위가 되기 때문입니다. 테스트 쪽 호출자 `PublicLLM.call`은 Serena로 확인했고, 그 함수를 부르는 곳은 없었습니다. `get_call_graph`는 Joern 쪽 쿼리 문법 오류로 실패해서 `run_cpgql_query`로 직접 셌습니다.
+- **3번:** `global` 문 한 줄을 한 곳으로 셌습니다. 그래서 `lib/crewai/src/crewai/llm.py:139-143`의 연속된 다섯 줄은 5곳입니다. 17곳 중 테스트 폴더에 있는 것은 없습니다.
