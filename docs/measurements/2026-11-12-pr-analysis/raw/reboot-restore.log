@@ -1,0 +1,99 @@
+# Xeon 재부팅 뒤 복원 확인 (2026-11-12, 부팅 04:54:30 UTC). 호스트 이름은 <host>로 바꿨다.
+## 유닛 상태
+codebadger-image-restore.service   loaded active exited  codebadger boot image restore (RAM-tier tmpfs data-root)
+codebadger-stack.service           loaded active exited  codebadger stack (compose up + NUMA pin)
+codeinside-joern-ci-net.service    loaded active exited  codeinside Joern CI runner image, network and codebadger MCP proxy
+codeinside-joern-runner.service    loaded active running codeinside Joern CI ephemeral runner supervisor (Munsik-Park/opensre, label joern)
+librechat-ci-image-restore.service loaded active exited  LibreChat CI runner boot image restore (RAM-tier tmpfs data-root)
+librechat-ci-runner@1.service      loaded active running LibreChat self-hosted CI runner supervisor instance 1 (ephemeral Docker, ADR-0017)
+librechat-ci-runner@2.service      loaded active running LibreChat self-hosted CI runner supervisor instance 2 (ephemeral Docker, ADR-0017)
+librechat-ci-runner@3.service      loaded active running LibreChat self-hosted CI runner supervisor instance 3 (ephemeral Docker, ADR-0017)
+librechat-ci-runner@4.service      loaded active running LibreChat self-hosted CI runner supervisor instance 4 (ephemeral Docker, ADR-0017)
+librechat-ci-runner@5.service      loaded active running LibreChat self-hosted CI runner supervisor instance 5 (ephemeral Docker, ADR-0017)
+## 실패 유닛
+systemd-networkd-wait-online.service loaded failed failed Wait for Network to be Configured
+## 컨테이너
+2d57622bddd8	codebadger-joern-fafd8959bb1b7ee0	2026-11-12 05:01:48 +0000 UTC	Up 5 minutes	codebadger-joern-server:latest
+77287098115d	codeinside-joern-runner	2026-11-12 04:59:02 +0000 UTC	Up 8 minutes	codeinside-joern-runner:latest
+cf7e0137fff5	codeinside-mcp-proxy	2026-11-12 04:59:00 +0000 UTC	Up 8 minutes	codebadger-mcp:latest
+08b792ee47c4	codebadger-mcp	2026-11-12 04:58:24 +0000 UTC	Up 8 minutes	codebadger-mcp:latest
+7f1bd45812f6	codebadger-postgres	2026-11-12 04:58:24 +0000 UTC	Up 8 minutes (healthy)	postgres:16
+9eb5290725d2	codebadger-redis	2026-11-12 04:58:24 +0000 UTC	Up 8 minutes (healthy)	redis:7
+e4f40a0975b1	codebadger-joern-server	2026-11-12 04:58:24 +0000 UTC	Up 8 minutes	codebadger-joern-server:latest
+47b3b2034487	librechat-ci-runner-2	2026-11-12 04:57:20 +0000 UTC	Up 9 minutes	librechat-ci-runner:latest
+4882ca2abc88	librechat-ci-runner-5	2026-11-12 04:57:20 +0000 UTC	Up 9 minutes	librechat-ci-runner:latest
+c4874f251f92	librechat-ci-runner-4	2026-11-12 04:57:20 +0000 UTC	Up 9 minutes	librechat-ci-runner:latest
+89f8ece5b13e	librechat-ci-runner-3	2026-11-12 04:57:20 +0000 UTC	Up 9 minutes	librechat-ci-runner:latest
+ff8c2f89c6f9	librechat-ci-runner-1	2026-11-12 04:57:20 +0000 UTC	Up 9 minutes	librechat-ci-runner:latest
+f125b5f74c9d	librechat-ci-cache-server	2026-11-12 04:57:17 +0000 UTC	Up 9 minutes	ghcr.io/falcondev-oss/github-actions-cache-server:9.7.0
+## 이미지
+codeinside-joern-runner:latest	9e8c3c4a5e02	2026-11-12 04:58:59 +0000 UTC
+codebadger-mcp:latest	766f3227db26	2026-11-11 23:44:06 +0000 UTC
+codebadger-joern-server:latest	4565fbf26a2c	2026-11-11 16:45:06 +0000 UTC
+## 이미지 묶음
+/var/lib/codebadger/images/codebadger-images.tar 2636828672 B mtime=2026-11-12 04:42:46.384913563 +0000
+## MCP 컨테이너 제외 규칙
+  exclusion_patterns:
+    - "tests(?:/.*)?"
+    # crewAI (step 6): per-package test folders under lib/ and one generated
+    # 7.8MB module. No opensre path matches these (opensre has no lib/).
+    - "lib/[^/]+/tests(?:/.*)?"
+    - "lib/crewai-core/src/crewai_core/platform_catalog\\.py"
+  languages_with_exclusions:
+## 부팅 로그 (codebadger 복원·스택, joern 러너 유닛)
+2026-11-12T04:56:34+00:00 <host> systemd[1]: Starting codebadger-image-restore.service - codebadger boot image restore (RAM-tier tmpfs data-root)...
+2026-11-12T04:58:05+00:00 <host> sh[2407]: Loaded image: codebadger-joern-server:latest
+2026-11-12T04:58:16+00:00 <host> sh[2407]: Loaded image: codebadger-mcp:latest
+2026-11-12T04:58:21+00:00 <host> sh[2407]: Loaded image: postgres:16
+2026-11-12T04:58:23+00:00 <host> sh[2407]: Loaded image: redis:7
+2026-11-12T04:58:24+00:00 <host> systemd[1]: Finished codebadger-image-restore.service - codebadger boot image restore (RAM-tier tmpfs data-root).
+2026-11-12T04:58:24+00:00 <host> systemd[1]: Starting codebadger-stack.service - codebadger stack (compose up + NUMA pin)...
+2026-11-12T04:58:24+00:00 <host> sh[5211]:  Network codebadger Creating
+2026-11-12T04:58:24+00:00 <host> sh[5211]:  Network codebadger Created
+2026-11-12T04:58:25+00:00 <host> sh[5211]:  Container codebadger-postgres Started
+2026-11-12T04:58:25+00:00 <host> sh[5211]:  Container codebadger-redis Started
+2026-11-12T04:58:57+00:00 <host> sh[5211]:  Container codebadger-joern-server Started
+2026-11-12T04:58:57+00:00 <host> sh[5211]:  Container codebadger-redis Healthy
+2026-11-12T04:58:57+00:00 <host> sh[5211]:  Container codebadger-postgres Healthy
+2026-11-12T04:58:58+00:00 <host> sh[5211]:  Container codebadger-mcp Started
+2026-11-12T04:58:58+00:00 <host> sh[14630]: codebadger-joern-server
+2026-11-12T04:58:58+00:00 <host> systemd[1]: Finished codebadger-stack.service - codebadger stack (compose up + NUMA pin).
+2026-11-12T04:58:58+00:00 <host> systemd[1]: Starting codeinside-joern-ci-net.service - codeinside Joern CI runner image, network and codebadger MCP proxy...
+2026-11-12T04:58:59+00:00 <host> build-runner-image.sh[14767]: sha256:9e8c3c4a5e02f35be9bfe1e29d855cf717222dd8acc2b91de8d5f2c0a1786010
+2026-11-12T04:59:00+00:00 <host> build-runner-image.sh[14921]: image user: uid=994(jrunner) gid=984(jrunner) groups=984(jrunner)
+2026-11-12T04:59:00+00:00 <host> build-runner-image.sh[14921]: /actions-runner writable
+2026-11-12T04:59:01+00:00 <host> setup-network.sh[15033]: network=codeinside-joern-ci proxy=codeinside-mcp-proxy networks=codebadger codeinside-joern-ci
+2026-11-12T04:59:01+00:00 <host> systemd[1]: Finished codeinside-joern-ci-net.service - codeinside Joern CI runner image, network and codebadger MCP proxy.
+2026-11-12T04:59:01+00:00 <host> systemd[1]: Started codeinside-joern-runner.service - codeinside Joern CI ephemeral runner supervisor (Munsik-Park/opensre, label joern).
+2026-11-12T04:59:01+00:00 <host> runner-supervisor.sh[15332]: [2026-11-12T04:59:01Z] joern-runner-supervisor: starting for Munsik-Park/crewAI (image codeinside-joern-runner:latest, cpuset 30-39,70-79 mems 3, memory 2g)
+2026-11-12T04:59:02+00:00 <host> runner-supervisor.sh[15332]: [2026-11-12T04:59:02Z] joern-runner-supervisor: launching one ephemeral runner container
+## GitHub 러너 등록
+# Munsik-Park/crewAI
+codeinside-joern-77287098115d	online	false	self-hosted,Linux,X64,joern
+codeinside-joern-b2c5dc9d4cea	offline	false	self-hosted,Linux,X64,joern
+# connev-llm/librechat
+librechat-ci-i1-librechat-ci-fast-0daac9998cab-1	online	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-fast
+librechat-ci-i1-librechat-ci-wide-570f704551e0-1	offline	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+librechat-ci-i1-librechat-ci-wide-ff8c2f89c6f9-1	online	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+librechat-ci-i2-librechat-ci-fast-0ce331c002ce-1	online	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-fast
+librechat-ci-i2-librechat-ci-wide-47b3b2034487-1	online	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+librechat-ci-i2-librechat-ci-wide-f6af8b08ee94-1	offline	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+librechat-ci-i3-librechat-ci-fast-9834af4fa1ad-1	online	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-fast
+librechat-ci-i3-librechat-ci-wide-38e48217509a-1	offline	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+librechat-ci-i3-librechat-ci-wide-89f8ece5b13e-1	online	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+librechat-ci-i4-librechat-ci-wide-09ba52a697d1-1	offline	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+librechat-ci-i4-librechat-ci-wide-c4874f251f92-1	online	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+librechat-ci-i5-librechat-ci-wide-4882ca2abc88-1	online	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+librechat-ci-i5-librechat-ci-wide-f2f5dcc2b30a-1	offline	false	self-hosted,Linux,X64,librechat-ci,librechat-ci-wide
+## 기준 그래프 fafd8959bb1b7ee0 질의 (SSH 터널, 로컬 14242 -> Xeon 루프백 4242)
+{"utc": "05:01:48", "call": "get_cpg_status", "status": "loading", "phase": "ready", "user_method_count": 15976}
+{"utc": "05:02:19", "status": "loading", "phase": "ready"}
+{"utc": "05:02:24", "status": "loading", "phase": "ready"}
+{"utc": "05:02:29", "status": "loading", "phase": "ready"}
+{"utc": "05:02:34", "status": "loading", "phase": "ready"}
+{"utc": "05:02:40", "status": "loading", "phase": "ready"}
+{"utc": "05:02:45", "status": "loading", "phase": "ready"}
+{"utc": "05:02:50", "status": "ready", "phase": "ready"}
+# 위 폴링은 05:02:19에 시작했다. 적재는 05:01:48 첫 get_cpg_status 호출에서 시작됐다.
+{"utc": "05:02:52", "call": "Q1", "seconds": 0.233, "is_error": false, "text": "{\"success\":true,\"data\":[\"RESULT Q1 size=29 joern_ms=19.951464\",\"ITEM lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event<metaClassAdapter>\",\"ITEM lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._handle_tool_execution\",\"ITEM lib/crewai/src/crewai/llms/providers/anthropic/completion.py:<module>.AnthropicCompletion._handle_completion\"],\"row_count\":4,\"execution_time\":0.19287919998168945}"}
+{"utc": "05:03:08", "call": "STATS", "seconds": 0.223, "is_error": false, "text": "{\"success\":true,\"data\":[\"STATS files=984 methods=36950 calls=254956 overlays=base,controlflow,typerel,callgraph,dataflowOss,pysrc2cpg-postprocessing\"],\"row_count\":1,\"execution_time\":0.13892745971679688}"}
