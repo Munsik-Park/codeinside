@@ -1,17 +1,18 @@
-# 2026-11-12 PR 자동 분석 (단계 6, 진행 중)
+# 2026-11-12 PR 자동 분석 (단계 6)
 
-[docs/plan.md](../../plan.md) 단계 6의 원본 기록이다. 이 기록을 쓰는 시점에 끝내는 기준("시험 PR 하나로 그 SHA의 그래프가 저장되고 MCP로 질의된다")은 아직 채우지 못했다. plan.md와 architecture.md는 고치지 않았다.
+[docs/plan.md](../../plan.md) 단계 6의 원본 기록이다. 시험 대상은 opensre에서 crewAI 포크로 바꿨다(1, 2절). plan.md와 architecture.md는 고치지 않았다.
 
-## 지금까지 결과
+## 결과 요약
 
-| 할 일 | 상태 | 근거 |
+| 끝내는 기준 / 할 일 | 결과 | 근거 |
 | --- | --- | --- |
+| 시험 PR 하나로 그 SHA의 그래프가 저장되고 MCP로 질의된다 | crewAI PR #1 head `848d15d`에서 워크플로가 그래프를 만들고(요청부터 ready까지 91초), 커밋 상태에 `codebase_hash=c8a03dcf21488d21`을 남기고, Q1~Q5를 MCP로 물었다(29, 18, 64, 6, 1,634건으로 기준값과 같음). 작업자 쪽에서도 resolver로 그 그래프를 골라 SSH 터널로 Q1을 물었다(29건) | 6절, [raw/crewai-pr1-run2.log](raw/crewai-pr1-run2.log), [raw/worker-resolve-q1.log](raw/worker-resolve-q1.log) |
 | 업스트림 워크플로 끄기 | opensre: 13개 모두 `disabled_manually`. crewAI: Actions를 켜기 전에 19개를 `.github/workflows-upstream/`으로 옮겼다. 업스트림 워크플로 run은 두 포크 모두 0 | 1절, 3절 |
-| 분석 러너 | crewAI에 레포 단위 ephemeral 러너 하나(라벨 `joern`, 노드 3, 메모리 2g)가 등록돼 있다. 전용 uid로 바꾸는 설치는 준비만 했다 | 4절 |
+| 분석 러너 | crewAI에 레포 단위 ephemeral 러너(라벨 `joern`, 노드 3, 메모리 2g, 전용 uid 994)가 등록돼 작업을 받는다 | 4절 |
 | 러너에서 codebadger 연결 | 프록시 컨테이너로 MCP 4242에만 닿는다. 질의 워커, Postgres, Redis, 호스트 루프백 포트에는 닿지 않는다 | 5절, [raw/probe-network.log](raw/probe-network.log) |
-| 분석 워크플로 | crewAI PR #1에서 실제로 돌았다. 그래프 생성은 됐지만 적재가 300초 timeout으로 실패했다. 그래프 제외 규칙을 고친 뒤 기준 커밋 적재는 42초다 | 6절, [crewAI 기준값](../2026-11-12-crewai-baseline/README.md) |
-| SHA와 그래프 대응, 보관, 조상 그래프 대체 | 설계와 스크립트는 있다. 시험 안 됨 | 7절 |
-| 시험 PR로 그래프 저장과 MCP 질의 | 아직 | |
+| SHA와 그래프 대응 | 커밋 상태 `codeinside/joern-cpg`의 설명에 `codebase_hash`를 남긴다 | 7절 |
+| 조상 그래프 대체 | 시험 PR #2(head `5014f84`, 부모 `848d15d`)의 그래프가 만들어지는 동안 resolver가 부모 그래프를 고르고 바뀐 파일을 돌려줬다. success 뒤에는 자기 그래프를 골랐다 | 7절, [raw/ancestor-fallback.log](raw/ancestor-fallback.log) |
+| 보관 개수 | 제안만 했다. 정리는 구현하지 않았다 | 7절 |
 
 ## 1. opensre에서 막힌 경위
 
@@ -95,12 +96,12 @@ librechat 러너와 같은 ephemeral 방식이다. supervisor가 작업마다 �
 - PAT는 Xeon의 `/etc/codeinside-joern-ci/runner.env`(root, 600)에만 있다.
 - 노드 3 메모리 계산: 질의 예산 80G + 생성 8G + runner-5 32G + 분석 러너 2G = 122G / 126G. runner-4의 노드 3 사용량은 5단계와 같이 빠져 있다.
 
-### 전용 uid (준비만 함)
+### 전용 uid
 
-- 지금 러너 컨테이너는 이미지의 `runner`(uid 1000)로 돈다. 호스트에서 uid 1000은 작업자 로그인 계정이다. 그래서 공개 레포 PR 코드가 이 uid로 돌고, 러너가 만든 파일도 호스트에서 이 계정 소유가 된다.
-- 바꾸는 방법: 호스트에 로그인할 수 없는 시스템 계정 `codeinside-runner`를 만들고, 같은 uid/gid의 사용자 `jrunner`를 더한 이미지를 쓴다. `/actions-runner` 전체를 chown하면 674MB 레이어가 생기므로 폴더 자체와 `_diag`, `_work`만 새 uid 소유로 둔다.
-- 임시 uid 990으로 이미지를 만들어 봤다. 컨테이너 안 `id`가 `uid=990(jrunner)`, `/actions-runner`에 쓸 수 있었고, 더해진 레이어는 0B였다. 시험 이미지는 지웠다.
-- 설치는 sudo가 필요해 아직 하지 않았다. `install.sh`를 다시 실행하면 계정, 설정 키, CI 소스 폴더 소유자, 유닛을 갱신하고 이미지를 빌드한다.
+- 처음에는 러너 컨테이너가 이미지의 `runner`(uid 1000)로 돌았다. 호스트에서 uid 1000은 작업자 로그인 계정이다. 공개 레포 PR 코드가 이 uid로 돌고, 러너가 만든 파일도 호스트에서 이 계정 소유가 됐다.
+- 바꾼 방법: 호스트에 로그인할 수 없는 시스템 계정 `codeinside-runner`(uid 994, gid 984)를 만들고, 같은 uid/gid의 사용자 `jrunner`를 더한 이미지 `codeinside-joern-runner:latest`를 쓴다. `/actions-runner` 전체를 chown하면 674MB 레이어가 생기므로 폴더 자체와 `_diag`, `_work`만 새 uid 소유로 둔다. 더해진 레이어는 0B다.
+- 첫 설치에서 net 유닛이 `ERROR: mkdir /home/codeinside-ci: permission denied`로 실패했다. 서비스 계정에 홈 폴더가 없어 `docker build`가 `~/.docker`를 만들지 못했다. 같은 조건을 재현한 뒤, 두 유닛에 `StateDirectory=codeinside-joern-ci`와 `DOCKER_CONFIG=/var/lib/codeinside-joern-ci/docker`를 넣어 고쳤다.
+- 적용 뒤 확인: 러너 컨테이너 `Config.User=994:984`, 컨테이너 안 `run.sh`가 uid 994로 돈다. CI 소스 폴더는 `994:984` 소유다. 이 러너가 PR #1, #2 작업을 받았다.
 
 ## 5. 러너에서 codebadger에 닿는 방법
 
@@ -154,7 +155,23 @@ librechat 러너와 같은 ephemeral 방식이다. supervisor가 작업마다 �
 - 원인은 그래프 크기로 봤다. 그때 규칙은 최상위 `tests/`만 뺐다. `lib/*/tests`와 생성 파일 `platform_catalog.py`(7.8MB)를 빼는 규칙을 더하자, 기준 커밋 그래프는 18MB가 됐고 적재는 42초에 끝났다([crewAI 기준값](../2026-11-12-crewai-baseline/README.md) 1절).
 - 실패한 그래프는 `remove_cpg`(`delete_files: true`)로 지웠다(567MB). `delete_files` 없이 부르면 서버만 내리고 그래프는 디스크에 남는다. 그 상태에서 `get_cpg_status`를 부르면 다시 적재를 시작한다.
 
-## 7. SHA와 그래프 대응, 보관, 조상 그래프 대체 (제안, 시험 안 됨)
+### 끝내는 기준 시험
+
+제외 규칙을 고친 뒤 워크플로의 codeinside 고정 커밋을 올리고 `--queries config/queries/crewai.json`을 더해 PR #1에 푸시했다(`synchronize`).
+
+| 시각(UTC) | run `43140448522`, head `848d15d` |
+| --- | --- |
+| 02:18:34 | 커밋 상태 pending |
+| 02:18:38 | 소스 풀기 |
+| 02:18:53 | `generate_cpg` → `codebase_hash=c8a03dcf21488d21`, generating |
+| 02:20:09 | ready(요청부터 91초) |
+| 02:20:10 | 커밋 상태 success, 설명 `codebase_hash=c8a03dcf21488d21` |
+| 02:20:10~20 | STATS(파일 984, 메서드 36,950, 호출 254,956), Q1 29, Q2 18, Q3 64, Q4 6, Q5 1,634 |
+
+- 그래프 규모와 Q1~Q5 결과 수는 기준 커밋과 같다. PR #1은 워크플로 파일만 더했으므로 Python 그래프는 같고, 파일 내용 해시는 달라 `codebase_hash`는 다르다.
+- 작업자 쪽: SSH 터널(로컬 14242 → Xeon 루프백 4242)로 `resolve_graph.py --mcp-url`을 돌리자 `exact: true`, `codebase_hash=c8a03dcf21488d21`, `codebadger_status: ready`였다. 같은 해시로 Q1을 묻자 29건(Joern 안 0.36ms, 왕복 0.21초)이었다([raw/worker-resolve-q1.log](raw/worker-resolve-q1.log)).
+
+## 7. SHA와 그래프 대응, 보관, 조상 그래프 대체
 
 ### 대응 기록
 
@@ -170,6 +187,17 @@ librechat 러너와 같은 ephemeral 방식이다. supervisor가 작업마다 �
 2. 커밋 상태는 GraphQL 한 번으로 묶어 읽는다. success인 첫 커밋의 `codebase_hash`를 고른다.
 3. `--mcp-url`을 주면 codebadger에 그래프가 아직 있는지(`ready`, `sleeping`, `loading`) 보고, 지워졌으면 다음 조상으로 넘어간다. `get_cpg_status`는 잠든 그래프의 적재를 시작시키므로, 고른 그래프는 질의 전에 올라온다.
 4. 요청한 SHA가 아닌 조상을 골랐으면 그 사이에 바뀐 파일 목록을 같이 돌려준다. 질의하는 쪽은 이 파일에 대한 답이 다를 수 있다는 것을 알고 쓴다.
+
+시험: PR #1 브랜치 위에 `lib/crewai/src/crewai/llms/base_llm.py` 주석 한 줄을 더한 PR #2(head `5014f84`, base `codeinside/joern-cpg`)를 열고, 5초마다 resolver를 돌렸다([raw/ancestor-fallback.log](raw/ancestor-fallback.log), [raw/crewai-pr2-run.log](raw/crewai-pr2-run.log)).
+
+| 시각(UTC) | 요청 SHA의 커밋 상태 | 고른 그래프 | 거리 | `codebase_hash` | 바뀐 파일 |
+| --- | --- | --- | --- | --- | --- |
+| 02:21:37~02:22:00(5회) | 없음 | `848d15d`(부모) | 1 | `c8a03dcf21488d21` | `base_llm.py` |
+| 02:22:06~02:23:34(16회) | pending | `848d15d`(부모) | 1 | `c8a03dcf21488d21` | `base_llm.py` |
+| 02:23:39 | success | `5014f84`(자기) | 0 | `a64d93d2b98745b7` | 없음 |
+
+- PR #2 run은 02:22:20에 `generate_cpg`를 부르고 02:23:36에 ready, 커밋 상태 success를 남겼다. Q1~Q5도 MCP로 물었다.
+- PR #2는 시험용이라 병합하지 않는다.
 
 ### 보관 개수
 
@@ -187,10 +215,9 @@ librechat 러너와 같은 ephemeral 방식이다. supervisor가 작업마다 �
 ## 확인 안 됨
 
 - opensre Actions가 막힌 정확한 원인(GitHub 쪽 조치)
-- 업스트림 워크플로 파일을 옮긴 뒤 Actions를 켠 상태에서 main 푸시가 분석 워크플로만 띄우는지(main 푸시는 아직 시험하지 않았다)
-- 조상 그래프 대체, 보관 정리
-- 전용 uid 이미지로 러너가 실제로 등록되고 작업을 받는지
-- 러너·프록시 유닛의 재부팅 복원
+- main 푸시 트리거. 분석 워크플로가 PR #1에만 있어 main에는 아직 없다. PR #1을 병합해야 시험할 수 있다
+- 보관 정리(제안만 했다). 지금 CI 소스 폴더에 SHA마다 623MB가 남는다
+- 러너·프록시·이미지 빌드 유닛의 재부팅 복원
 - 러너 컨테이너가 외부 네트워크로 나가는 범위. librechat 러너와 달리 egress 허용 목록을 걸지 않았다
 
 ## 원본 파일
@@ -202,5 +229,8 @@ librechat 러너와 같은 ephemeral 방식이다. supervisor가 작업마다 �
 | `raw/crewai-fork-setup.log` | crewAI 포크 직후 상태, 워크플로 목록, 이동 기록 |
 | `raw/probe-network.log` | 러너·프록시 컨테이너 설정과 닿는 곳·막힌 곳 |
 | `raw/pretest-job-dry-run.log` | 작업 스크립트 사전 시험 |
-| `raw/crewai-pr1-run.log`, `raw/crewai-pr1-codebadger.log` | crewAI PR #1 첫 run 작업 로그와 codebadger 로그 |
+| `raw/crewai-pr1-run.log`, `raw/crewai-pr1-codebadger.log` | crewAI PR #1 첫 run(적재 실패) 작업 로그와 codebadger 로그 |
+| `raw/crewai-pr1-run2.log` | crewAI PR #1 두 번째 run(끝내는 기준) 작업 로그와 커밋 상태 |
+| `raw/worker-resolve-q1.log` | 작업자 쪽 resolver 결과와 SSH 터널로 물은 Q1 |
+| `raw/crewai-pr2-run.log`, `raw/ancestor-fallback.log` | 시험 PR #2 run과 그동안의 resolver 결과 |
 | `scripts/probe-network.sh` | 위 확인에 쓴 스크립트 |
