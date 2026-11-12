@@ -246,6 +246,21 @@ PR #1 병합으로 생긴 main 머지 커밋 `898f7e6`(부모 `b4654c1`, `848d15
 - 지우는 범위는 색인에 있는 그래프뿐이다. 수동으로 만든 기준값 그래프(crewAI `fafd8959bb1b7ee0`, opensre `a5b31c170fa23d65`)는 색인에 없어 건드리지 않는다.
 - 정리 단계는 joern 러너가 하나라는 전제를 둔다. 아래에 따로 적었다.
 
+### 보관 개수 20 → 100
+
+사용자 결정으로 `prune_cpgs.py`의 `--keep-main` 기본값을 100으로 올렸다([raw/keep-main-100-dry-run.log](raw/keep-main-100-dry-run.log)).
+
+- 고친 것: `main_first_parent`가 커밋 목록 한 쪽(`per_page=100`)만 받았다. 머지 커밋이 섞이면 그 쪽 안의 first-parent 커밋이 100개보다 적다. 이제 따라가던 커밋이 목록에 없으면 그 커밋부터 목록을 다시 받아 n개를 채운다.
+- 비교 기준은 fetch 직후 crewAI 체크아웃의 `git rev-list --first-parent -n <N> origin/main`이다(main `3457928`).
+
+| N | 고치기 전 | 고친 뒤 | 고친 뒤 API 호출 |
+| --- | --- | --- | --- |
+| 100 | 96개. rev-list 앞 96개와 같고 4개가 모자람 | 100개, rev-list와 같음 | 커밋 목록 2쪽 |
+| 20 | 20개, rev-list와 같음 | 20개, rev-list와 같음(고치기 전과 같음) | 커밋 목록 1쪽 |
+
+- `main()`을 `--dry-run`으로 돌렸다. Xeon 색인 사본을 쓰고 MCP는 부르지 않았다. 두 N 모두 남길 그래프는 `846aec8c…`(main `3457928`), `c8a03dcf…`(main `898f7e6`)이고 지울 그래프와 소스 폴더는 없다. 커밋 상태 GraphQL은 SHA 100개를 한 번에 물어도 응답이 왔다.
+- crewAI 워크플로는 아직 `--keep-main 20`을 명시하고 고정 커밋이 이 변경 전이다. 실제 보관 개수가 바뀌려면 워크플로의 고정 커밋과 인자를 따로 올려야 한다.
+
 ### 전제: joern 러너 하나
 
 정리 단계는 CI 소스 폴더의 `<레포 이름>-*`, `.<레포 이름>-*` 폴더를 모두 지우고, 색인 파일을 읽은 뒤 통째로 다시 쓴다. 이 동작은 정리 단계가 도는 동안 같은 폴더에 소스를 풀거나 색인에 줄을 더하는 작업이 없어야 맞다.
@@ -348,5 +363,6 @@ PR #3 머지 커밋 `3457928`에서 run `43144979879`가 돌았다([raw/crewai-m
 | `raw/crewai-main-push-run.log` | main 푸시 run 작업 로그와 커밋 상태 |
 | `raw/crewai-pr3-retention.log` | PR #3 run의 작업·정리 단계 출력과 정리 뒤 Xeon 상태 |
 | `raw/crewai-main-push-retention.log` | PR #3 머지 뒤 main 푸시 run의 작업·정리 단계 출력과 정리 뒤 Xeon 상태 |
+| `raw/keep-main-100-dry-run.log` | `main_first_parent` 고치기 전·뒤 비교, `--keep-main 100`·`20` dry-run, rev-list 100개 |
 | `raw/reboot-restore.log` | 재부팅 뒤 유닛·컨테이너·이미지 상태, 부팅 로그, 러너 등록, 기준 그래프 Q1, 두 부팅의 `systemd-networkd-wait-online` 로그 |
 | `scripts/probe-network.sh` | 위 확인에 쓴 스크립트 |

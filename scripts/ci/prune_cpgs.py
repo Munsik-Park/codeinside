@@ -2,7 +2,7 @@
 """분석 워크플로가 만든 그래프 중 남길 것만 두고 나머지를 지운다 (docs/plan.md 단계 6, 보관 정리).
 
 남기는 것:
-  - main의 first-parent 최근 N개 커밋(기본 20)의 그래프. main 푸시는 머지 커밋 단위라 푸시마다 하나다.
+  - main의 first-parent 최근 N개 커밋(기본 100)의 그래프. main 푸시는 머지 커밋 단위라 푸시마다 하나다.
   - 열린 PR의 head 커밋 그래프
 SHA와 그래프의 대응은 커밋 상태 `codeinside/joern-cpg`(success, 설명 `codebase_hash=<hash>`)에서 읽는다.
 
@@ -15,7 +15,7 @@ SHA와 그래프의 대응은 커밋 상태 `codeinside/joern-cpg`(success, 설�
     다른 작업이 소스를 풀고 있지 않다.
 
 환경 변수: GITHUB_TOKEN, GITHUB_REPOSITORY, CODEBADGER_MCP_URL, CODEBADGER_SRC_DIR, GITHUB_STEP_SUMMARY(선택)
-사용: python3 prune_cpgs.py [--keep-main 20] [--dry-run]
+사용: python3 prune_cpgs.py [--keep-main 100] [--dry-run]
 출력: 마지막 줄에 `PRUNE {json}`
 """
 import argparse
@@ -51,13 +51,28 @@ def api(path, body=None):
 
 
 def main_first_parent(repo, n):
-    """main의 first-parent 커밋 n개. 커밋 목록 100개 안에서 parents[0]를 따라간다."""
-    commits = api(f"/repos/{repo}/commits?sha=main&per_page=100")
-    parent = {c["sha"]: (c["parents"][0]["sha"] if c["parents"] else None) for c in commits}
-    out, sha = [], commits[0]["sha"]
-    while sha and sha in parent and len(out) < n:
-        out.append(sha)
-        sha = parent[sha]
+    """main의 first-parent 커밋 n개. 커밋 목록(한 쪽 100개)에서 parents[0]를 따라간다.
+
+    머지 커밋이 섞이면 한 쪽 안의 first-parent 커밋이 n개보다 적다. 따라가던 커밋이 받은 목록에 없으면
+    그 커밋부터 목록을 다시 받아 이어 간다. 루트 커밋에 닿으면 n개보다 적게 돌려준다.
+    """
+    parent, out, sha = {}, [], None
+    start = "main"
+    while len(out) < n:
+        commits = api(f"/repos/{repo}/commits?sha={start}&per_page=100")
+        if not commits:
+            break
+        parent.update({c["sha"]: (c["parents"][0]["sha"] if c["parents"] else None) for c in commits})
+        if sha is None:
+            sha = commits[0]["sha"]
+        if sha not in parent:
+            break
+        while sha and sha in parent and len(out) < n:
+            out.append(sha)
+            sha = parent[sha]
+        if not sha:
+            break
+        start = sha
     return out
 
 
@@ -86,7 +101,7 @@ def statuses(repo, shas):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--keep-main", type=int, default=20)
+    ap.add_argument("--keep-main", type=int, default=100)
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     repo = os.environ["GITHUB_REPOSITORY"]
