@@ -1,7 +1,7 @@
 # Serena 프로젝트 설정. 분석 대상 체크아웃의 .serena/project.yml로 복사해 쓴다
-# (scripts/mcp/register.sh가 복사한다).
+# (scripts/mcp/register.sh가 복사하면서 project_name을 PROJECT_NAME으로 채운다).
 # 형식: Serena v2.1.0 src/serena/resources/project.template.yml
-project_name: "opensre"
+project_name: "<PROJECT_NAME>"
 language_servers: ["python"]
 encoding: "utf-8"
 # 도구 인터페이스로 고정한다. REPL 인터페이스는 도구 제한이 적용되지 않는다

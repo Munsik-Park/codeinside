@@ -15,11 +15,15 @@
       "args": [
         "start-mcp-server",
         "--context", "<CODEINSIDE_DIR>/config/serena/context-readonly.yml",
-        "--project", "<OPENSRE_DIR>",
+        "--project", "<TARGET_DIR>",
         "--agent-interface", "tools",
         "--enable-web-dashboard", "False",
         "--open-web-dashboard", "False"
       ]
+    },
+    "joern": {
+      "type": "http",
+      "url": "<JOERN_MCP_URL>"
     }
   }
 }

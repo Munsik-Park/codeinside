@@ -1,0 +1,7 @@
+## diff <crewAI main(76fd6d3) .github/workflows/codeinside-joern-cpg.yml> config/joern-ci/workflow.example.yml
+0a1,5
+> # 견본: Munsik-Park/crewAI main의 .github/workflows/codeinside-joern-cpg.yml 사본(이 머리 주석만 더함).
+> # 다른 레포에 붙일 때 바꿀 곳:
+> #   - CODEINSIDE_REF: 불러올 codeinside 커밋 SHA
+> #   - --queries: 확인 질의 파일(config/queries/<레포>.json). 질의 파일이 없으면 인자를 빼고, 그래프 규모만 묻는다
+> # 대상 레포에 Xeon 러너(라벨 joern)가 등록돼 있어야 한다(runner.conf의 JOERN_CI_REPO).
