@@ -12,6 +12,10 @@ RemainAfterExit=yes
 User=codeinside-ci
 Group=codeinside-ci
 EnvironmentFile=/etc/codeinside-joern-ci/runner.conf
+# codeinside-ci 계정은 홈 폴더가 없다. docker build(buildx)는 ~/.docker를 만들려다 실패하므로
+# systemd가 만드는 상태 폴더를 Docker CLI 설정 폴더로 준다.
+StateDirectory=codeinside-joern-ci
+Environment=DOCKER_CONFIG=/var/lib/codeinside-joern-ci/docker
 ExecStart=/opt/codeinside-joern-ci/build-runner-image.sh
 ExecStart=/opt/codeinside-joern-ci/setup-network.sh
 
