@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# opensre 분석 러너를 Xeon에 설치한다 (docs/plan.md 단계 6). sudo로 실행한다.
+# codeinside Joern 분석 러너를 Xeon에 설치한다 (docs/plan.md 단계 6). 대상 레포는 runner.conf의 JOERN_CI_REPO다. sudo로 실행한다.
 #   sudo bash install.sh <codeinside 사본 루트>
 # 하는 일:
 #   1. 시스템 계정 codeinside-ci(docker 그룹, supervisor 실행)와 codeinside-runner(러너 컨테이너 uid, 로그인 불가)를 만든다.
@@ -27,7 +27,7 @@ install -m 644 "$SRC/scripts/xeon/joern-ci/tcp_proxy.py" "$OPT/"
 install -d -m 755 "$ETC"
 [ -f "$ETC/runner.conf" ] || install -m 644 "$SRC/config/joern-ci/runner.conf.example" "$ETC/runner.conf"
 if [ ! -f "$ETC/runner.env" ] || [ "${ROTATE_PAT:-0}" = 1 ]; then
-  read -rsp "Munsik-Park/opensre Administration 쓰기 권한 PAT: " pat; echo
+  read -rsp "대상 레포(runner.conf의 JOERN_CI_REPO) Administration 쓰기 권한 PAT: " pat; echo
   [ -n "$pat" ] || { echo "PAT가 비었다" >&2; exit 1; }
   umask 077
   printf 'RUNNER_REG_PAT=%s\n' "$pat" > "$ETC/runner.env.tmp"

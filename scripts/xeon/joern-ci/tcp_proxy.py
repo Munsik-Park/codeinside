@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """TCP 포워더: LISTEN 포트로 들어온 연결을 고정된 TARGET 한 곳으로만 넘긴다 (docs/plan.md 단계 6).
 
-opensre 분석 러너가 codebadger 네트워크에 직접 붙지 않고 MCP 4242에만 닿게 하려고 쓴다.
+분석 러너(대상 레포는 runner.conf의 JOERN_CI_REPO)가 codebadger 네트워크에 직접 붙지 않고 MCP 4242에만 닿게 하려고 쓴다.
 대상은 환경 변수로 고정하고, 클라이언트가 바꿀 수 있는 값은 없다.
 
 환경 변수: PROXY_LISTEN_PORT(기본 4242), PROXY_TARGET_HOST(기본 codebadger-mcp), PROXY_TARGET_PORT(기본 4242)

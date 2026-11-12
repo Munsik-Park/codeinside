@@ -1,0 +1,15 @@
+## .serena/project.yml: 사용법 확인 방식(템플릿 project_name을 "crewAI"로 치환)과 설정 값 비교(PyYAML)
+keys in usage-check style: 13 differing: {}
+project_name: crewAI
+## pyrightconfig.json: 사용법 확인 때 만든 파일과 cmp
+identical
+{
+  "extraPaths": [
+    "lib/cli/src",
+    "lib/crewai/src",
+    "lib/crewai-core/src",
+    "lib/crewai-files/src",
+    "lib/crewai-tools/src",
+    "lib/devtools/src"
+  ]
+}

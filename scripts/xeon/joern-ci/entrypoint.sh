@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# opensre 분석 러너 컨테이너의 entrypoint (docs/plan.md 단계 6).
+# codeinside Joern 분석 러너 컨테이너의 entrypoint (docs/plan.md 단계 6).
 # librechat 러너 이미지에 전용 uid만 더한 이미지(build-runner-image.sh)를 쓰고 entrypoint는 이 파일로 바꾼다(supervisor가 읽기 전용으로 마운트).
-# 등록 토큰($1)으로 opensre 레포 단위 ephemeral 러너를 등록하고, 작업 하나를 받은 뒤 끝난다.
+# 등록 토큰($1)으로 대상 레포(runner.conf의 JOERN_CI_REPO) 단위 ephemeral 러너를 등록하고, 작업 하나를 받은 뒤 끝난다.
 #
 # 인자: $1 등록 토큰(supervisor가 작업마다 발급, 약 1시간 유효)
 # 환경 변수: JOERN_CI_REPO_URL, JOERN_CI_LABELS(기본 joern)

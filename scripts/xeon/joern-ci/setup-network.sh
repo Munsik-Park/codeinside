@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# opensre 분석 러너용 네트워크와 MCP 프록시 컨테이너를 만든다 (docs/plan.md 단계 6, 연결 방식 A).
+# codeinside Joern 분석 러너용 네트워크와 MCP 프록시 컨테이너를 만든다 (docs/plan.md 단계 6, 연결 방식 A).
 #
 #   러너 컨테이너 ── JOERN_CI_NETWORK ── 프록시 컨테이너 ── codebadger 네트워크 ── codebadger-mcp:4242
 #

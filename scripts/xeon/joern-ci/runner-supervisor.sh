@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# opensre 분석 러너 supervisor (docs/plan.md 단계 6). codeinside-joern-runner.service가 띄운다.
+# codeinside Joern 분석 러너 supervisor (docs/plan.md 단계 6). 대상 레포는 runner.conf의 JOERN_CI_REPO다. codeinside-joern-runner.service가 띄운다.
 # librechat 러너 supervisor와 같은 ephemeral 방식이다.
-#   1. PAT로 opensre 레포 단위 등록 토큰을 발급한다(작업마다, 저장하지 않음).
+#   1. PAT로 대상 레포 단위 등록 토큰을 발급한다(작업마다, 저장하지 않음).
 #   2. 러너 컨테이너 하나를 띄운다: 노드 3 cpuset·메모리 노드, 메모리 상한, 전용 uid(non-root), 프록시 네트워크.
 #   3. 컨테이너가 작업 하나를 끝내고 지워지면, 남은 등록이 있으면 지우고 1로 돌아간다.
 #
