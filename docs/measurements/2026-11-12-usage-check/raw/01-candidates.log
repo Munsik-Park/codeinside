@@ -1,0 +1,50 @@
+++ cd $CREWAI_DIR
+++ git checkout 345792859393ff26e3d3ec2251ec7967d62079bb
+Note: switching to '345792859393ff26e3d3ec2251ec7967d62079bb'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 34579285 Merge pull request #3 from Munsik-Park/codeinside/cpg-retention
+++ python3 $CODEINSIDE_DIR/scripts/screen/candidates.py $CREWAI_DIR -o candidates.json
+
+real	0m0.696s
+user	0m2.488s
+sys	0m0.885s
+++ echo exit=0
+exit=0
+++ set +x
+## candidates.json 머리(후보 목록은 개수만)
+{
+  "candidates_count": 484,
+  "counts": {
+    "py-env-read": 325,
+    "py-except-swallow": 138,
+    "py-global-state": 17,
+    "py-runtime-assert": 4,
+    "py-subprocess-shell": 0
+  },
+  "repo_dirty": false,
+  "repo_sha": "345792859393ff26e3d3ec2251ec7967d62079bb",
+  "rules": [
+    "py-env-read",
+    "py-except-swallow",
+    "py-global-state",
+    "py-runtime-assert",
+    "py-subprocess-shell"
+  ],
+  "tool": "ast-grep 0.51.2"
+}
+candidates.json sha256 49c6ff1b925b7cb3613215b2bb0bb84df54d75f707a93def1d207896ccb69795

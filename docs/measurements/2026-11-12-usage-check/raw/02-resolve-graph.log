@@ -1,0 +1,9 @@
+++ python3 $CODEINSIDE_DIR/scripts/joern/resolve_graph.py --checkout $CREWAI_DIR --sha 345792859393ff26e3d3ec2251ec7967d62079bb --repo Munsik-Park/crewAI --mcp-url $MCP_URL
+{"requested_sha": "345792859393ff26e3d3ec2251ec7967d62079bb", "requested_status": "success", "graph_sha": "345792859393ff26e3d3ec2251ec7967d62079bb", "codebase_hash": "846aec8c348118be", "exact": true, "first_parent_distance": 0, "codebadger_status": "loading", "skipped": []}
+
+real	0m0.983s
+user	0m0.106s
+sys	0m0.064s
+++ echo exit=0
+exit=0
+++ set +x
