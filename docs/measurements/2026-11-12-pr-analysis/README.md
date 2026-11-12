@@ -307,8 +307,8 @@ PR #3 머지 커밋 `3457928`에서 run `43144979879`가 돌았다([raw/crewai-m
 - 복원 순서는 이미지 복원 → 스택 → joern 러너 네트워크·프록시 → supervisor였다.
 - 재부팅 전 등록이 `offline`으로 남아 있다: crewAI에 `codeinside-joern-b2c5dc9d4cea` 하나, librechat에 `librechat-ci-wide` 5개. 재부팅으로 ephemeral 컨테이너가 작업 없이 사라져 supervisor가 지우지 못한 등록이다. 작업 배정에는 영향이 없고, 지우지 않았다.
 - librechat에 `online`인 `librechat-ci-fast` 등록 3개는 Xeon 컨테이너가 아니다. Xeon supervisor의 추가 라벨은 `librechat-ci-wide`다.
-- 실패 유닛은 `systemd-networkd-wait-online.service` 하나다. 직전 부팅(07-20~11-12)에서도 같은 메시지로 실패했고, 위 유닛들은 모두 떴다.
-- `codeinside-joern-runner.service`의 Description은 아직 `Munsik-Park/opensre`다(레포의 [config/joern-ci/systemd/codeinside-joern-runner.service](../../../config/joern-ci/systemd/codeinside-joern-runner.service) 1행 주석과 Description). 실제 대상은 `runner.conf`의 `JOERN_CI_REPO=Munsik-Park/crewAI`이고 supervisor 로그도 crewAI를 가리킨다.
+- 실패 유닛은 `systemd-networkd-wait-online.service` 하나다. 이번 부팅(04:56:32)과 직전 부팅(07-20 02:13:01) 모두 `Timeout occurred while waiting for network connectivity.`로 실패했다. 위 유닛들은 모두 떴다.
+- Xeon에 설치된 `codeinside-joern-runner.service`의 Description에는 아직 `Munsik-Park/opensre`가 남아 있다. 설치된 유닛이 그 전 판이고, 그 뒤로 다시 설치하지 않았다. 레포 파일의 Description은 e5b5388(PR #9)에서 이미 `label joern, repo from runner.conf`로 바뀌었고, 설치된 유닛과 레포 파일의 차이는 이 한 줄뿐이다. 레포 파일에 남아 있던 opensre는 1행 주석뿐이어서, 이 PR에서 대상 레포와 무관한 표현으로 고쳤다. 실제 대상은 `runner.conf`의 `JOERN_CI_REPO=Munsik-Park/crewAI`이고 supervisor 로그도 crewAI를 가리킨다.
 
 ### 기준 그래프 Q1
 
@@ -348,5 +348,5 @@ PR #3 머지 커밋 `3457928`에서 run `43144979879`가 돌았다([raw/crewai-m
 | `raw/crewai-main-push-run.log` | main 푸시 run 작업 로그와 커밋 상태 |
 | `raw/crewai-pr3-retention.log` | PR #3 run의 작업·정리 단계 출력과 정리 뒤 Xeon 상태 |
 | `raw/crewai-main-push-retention.log` | PR #3 머지 뒤 main 푸시 run의 작업·정리 단계 출력과 정리 뒤 Xeon 상태 |
-| `raw/reboot-restore.log` | 재부팅 뒤 유닛·컨테이너·이미지 상태, 부팅 로그, 러너 등록, 기준 그래프 Q1 |
+| `raw/reboot-restore.log` | 재부팅 뒤 유닛·컨테이너·이미지 상태, 부팅 로그, 러너 등록, 기준 그래프 Q1, 두 부팅의 `systemd-networkd-wait-online` 로그 |
 | `scripts/probe-network.sh` | 위 확인에 쓴 스크립트 |

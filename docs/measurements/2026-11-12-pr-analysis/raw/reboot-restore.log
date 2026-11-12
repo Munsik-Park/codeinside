@@ -97,3 +97,16 @@ librechat-ci-i5-librechat-ci-wide-f2f5dcc2b30a-1	offline	false	self-hosted,Linux
 # 위 폴링은 05:02:19에 시작했다. 적재는 05:01:48 첫 get_cpg_status 호출에서 시작됐다.
 {"utc": "05:02:52", "call": "Q1", "seconds": 0.233, "is_error": false, "text": "{\"success\":true,\"data\":[\"RESULT Q1 size=29 joern_ms=19.951464\",\"ITEM lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event<metaClassAdapter>\",\"ITEM lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._handle_tool_execution\",\"ITEM lib/crewai/src/crewai/llms/providers/anthropic/completion.py:<module>.AnthropicCompletion._handle_completion\"],\"row_count\":4,\"execution_time\":0.19287919998168945}"}
 {"utc": "05:03:08", "call": "STATS", "seconds": 0.223, "is_error": false, "text": "{\"success\":true,\"data\":[\"STATS files=984 methods=36950 calls=254956 overlays=base,controlflow,typerel,callgraph,dataflowOss,pysrc2cpg-postprocessing\"],\"row_count\":1,\"execution_time\":0.13892745971679688}"}
+## 부팅 목록 (최근 2개, 05:18 UTC 추가 확인)
+ -1 822e8eb405114ec592e46e29ee1289a9 Mon 2026-07-20 02:10:59 UTC Thu 2026-11-12 04:46:00 UTC
+  0 e24e45d8873f440491e1274cc3e1763d Thu 2026-11-12 04:54:30 UTC Thu 2026-11-12 05:18:12 UTC
+## systemd-networkd-wait-online, 부팅 -1
+2026-07-20T02:13:01+00:00 <host> systemd-networkd-wait-online[1728]: Timeout occurred while waiting for network connectivity.
+2026-07-20T02:13:01+00:00 <host> systemd[1]: systemd-networkd-wait-online.service: Main process exited, code=exited, status=1/FAILURE
+2026-07-20T02:13:01+00:00 <host> systemd[1]: systemd-networkd-wait-online.service: Failed with result 'exit-code'.
+2026-07-20T02:13:01+00:00 <host> systemd[1]: Failed to start systemd-networkd-wait-online.service - Wait for Network to be Configured.
+## systemd-networkd-wait-online, 부팅 0
+2026-11-12T04:56:32+00:00 <host> systemd-networkd-wait-online[1753]: Timeout occurred while waiting for network connectivity.
+2026-11-12T04:56:32+00:00 <host> systemd[1]: systemd-networkd-wait-online.service: Main process exited, code=exited, status=1/FAILURE
+2026-11-12T04:56:32+00:00 <host> systemd[1]: systemd-networkd-wait-online.service: Failed with result 'exit-code'.
+2026-11-12T04:56:32+00:00 <host> systemd[1]: Failed to start systemd-networkd-wait-online.service - Wait for Network to be Configured.
