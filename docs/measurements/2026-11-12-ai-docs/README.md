@@ -20,3 +20,4 @@
 | 함수 안에서 `global` 문을 쓰는 곳 | ast-grep `find_code_by_rule` | 17 | `py-global-state` 17, 같다 |
 
 - 세션은 그래프를 조상 그래프로 판단하지 않았다.
+- Q3을 `mcp_call.py`로 다시 물으면 그대로 64, 두 단계 모두에서 `<metaClassAdapter>` 메서드를 빼면 36이다. 뺀 숫자는 세션 답 36과 같다([q3-metaclassadapter.log](raw/q3-metaclassadapter.log)).

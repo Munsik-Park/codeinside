@@ -35,5 +35,6 @@ AI 세션용이다. 언제 어느 MCP를 쓰는지는 [README](../README.md), �
 - 메서드 이름: `<레포 기준 파일 경로>:<module>.<클래스>.<메서드>`. 예: `lib/crewai/src/crewai/llms/base_llm.py:<module>.BaseLLM._emit_call_completed_event`
 - `loading` 중 응답: `success: true`이고, `data`는 결과 대신 Joern REPL 시작 출력이며 끝 줄이 `io.joern.console.Error: No projects loaded`다([확인 기록](measurements/2026-11-12-usage-check/README.md) 2절).
 - 같은 질의 문자열의 결과는 300초 동안 캐시된다.
+- 호출 관계 결과에는 pysrc2cpg가 만드는 합성 메서드(`<metaClassAdapter>`)가 섞인다. 셀 때 뺀다([crewAI 기준값](measurements/2026-11-12-crewai-baseline/README.md) 5절).
 - `get_call_graph`는 이 구성에서 E040으로 실패한다([기록](measurements/2026-11-12-ai-docs/README.md) 2절). 호출 관계는 `run_cpgql_query`로 묻는다.
 - 질의 예시: [config/queries/crewai.json](../config/queries/crewai.json)(Q1 호출하는 함수, Q2 호출되는 함수, Q3 두 단계 호출, Q4와 Q5 데이터 흐름)
