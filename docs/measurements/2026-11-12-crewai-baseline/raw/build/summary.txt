@@ -1,0 +1,5 @@
+source_mb=623
+generate_request=23:45:32
+codebase_hash=fafd8959bb1b7ee0
+final_status=ready generate_to_final_seconds=94
+cpg_file 18009135 cpg.bin

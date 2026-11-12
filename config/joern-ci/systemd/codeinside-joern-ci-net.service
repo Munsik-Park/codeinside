@@ -1,0 +1,23 @@
+# 분석 러너 이미지, 네트워크, MCP 프록시 (docs/plan.md 단계 6).
+# Docker data-root가 tmpfs라 재부팅하면 이미지, 네트워크, 컨테이너가 사라진다. codebadger 스택과 librechat 러너 이미지가 복원된 뒤 다시 만든다.
+[Unit]
+Description=codeinside Joern CI runner image, network and codebadger MCP proxy
+After=codebadger-stack.service librechat-ci-image-restore.service
+Requires=codebadger-stack.service
+Wants=librechat-ci-image-restore.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=codeinside-ci
+Group=codeinside-ci
+EnvironmentFile=/etc/codeinside-joern-ci/runner.conf
+# codeinside-ci 계정은 홈 폴더가 없다. docker build(buildx)는 ~/.docker를 만들려다 실패하므로
+# systemd가 만드는 상태 폴더를 Docker CLI 설정 폴더로 준다.
+StateDirectory=codeinside-joern-ci
+Environment=DOCKER_CONFIG=/var/lib/codeinside-joern-ci/docker
+ExecStart=/opt/codeinside-joern-ci/build-runner-image.sh
+ExecStart=/opt/codeinside-joern-ci/setup-network.sh
+
+[Install]
+WantedBy=multi-user.target

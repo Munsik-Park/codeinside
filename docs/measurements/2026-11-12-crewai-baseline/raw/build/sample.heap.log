@@ -1,0 +1,9 @@
+== 23:46:15
+ garbage-first heap   total 2097152K, used 295582K [0x0000000700000000, 0x0000000800000000)
+ Metaspace       used 77421K, committed 78016K, reserved 262144K
+== 23:46:32
+ garbage-first heap   total 2097152K, used 548434K [0x0000000700000000, 0x0000000800000000)
+ Metaspace       used 92588K, committed 93312K, reserved 262144K
+== 23:46:50
+ garbage-first heap   total 2097152K, used 1698012K [0x0000000700000000, 0x0000000800000000)
+ Metaspace       used 98993K, committed 100288K, reserved 262144K

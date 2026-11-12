@@ -1,0 +1,20 @@
+# crewAI PR #1 run 43140448522 (head 848d15d, synchronize) 작업 스크립트 출력
+cpg	Set up job	2026-11-12T02:18:17.7191107Z Runner name: 'codeinside-joern-b2dd5f0e7b54'
+cpg	Set up job	2026-11-12T02:18:17.7194551Z Machine name: 'b2dd5f0e7b54'
+2026-11-12T02:18:34.5334825Z [02:18:34] commit status pending: building Joern CPG
+2026-11-12T02:18:38.2440007Z [02:18:38] extracted crewAI-848d15d1f01bea56ed95ae49986e9e49efc551a0
+2026-11-12T02:18:53.8873565Z [02:18:53] generate_cpg: codebase_hash=c8a03dcf21488d21 status=generating
+2026-11-12T02:18:53.9107088Z [02:18:53] cpg status: generating
+2026-11-12T02:20:09.2280986Z [02:20:09] cpg status: ready
+2026-11-12T02:20:10.0222172Z [02:20:10] commit status success: codebase_hash=c8a03dcf21488d21
+2026-11-12T02:20:10.1792082Z [02:20:10] STATS via MCP (0.16s): {"success":true,"data":["STATS files=984 methods=36950 calls=254956 overlays=base,controlflow,typerel,callgraph,dataflowOss,pysrc2cpg-postprocessing"],"row_count":1,"execution_time":0.12615704536437988}
+2026-11-12T02:20:10.3673193Z [02:20:10] Q1 via MCP (0.19s): {"success":true,"data":["RESULT Q1 size=29 joern_ms=14.69172"],"row_count":1,"execution_time":0.17299246788024902}
+2026-11-12T02:20:14.2776387Z [02:20:14] Q2 via MCP (3.91s): {"success":true,"data":["RESULT Q2 size=18 joern_ms=0.293891"],"row_count":1,"execution_time":3.8955280780792236}
+2026-11-12T02:20:14.4434320Z [02:20:14] Q3 via MCP (0.17s): {"success":true,"data":["RESULT Q3 size=64 joern_ms=4.51082"],"row_count":1,"execution_time":0.153029203414917}
+2026-11-12T02:20:15.7868517Z [02:20:15] Q4 via MCP (1.34s): {"success":true,"data":["RESULT Q4 size=6 joern_ms=1211.460486"],"row_count":1,"execution_time":1.3317015171051025}
+2026-11-12T02:20:20.2157933Z [02:20:20] Q5 via MCP (4.43s): {"success":true,"data":["RESULT Q5 size=1634 joern_ms=4268.059521"],"row_count":1,"execution_time":4.414962291717529}
+2026-11-12T02:20:20.2167232Z RECORD {"repo": "Munsik-Park/crewAI", "sha": "848d15d1f01bea56ed95ae49986e9e49efc551a0", "codebase_hash": "c8a03dcf21488d21", "generate_status": "generating", "generate_to_ready_seconds": 90.9, "queries": [{"label": "STATS", "result": "{\"success\":true,\"data\":[\"STATS files=984 methods=36950 calls=254956 overlays=base,controlflow,typerel,callgraph,dataflowOss,pysrc2cpg-postprocessing\"],\"row_count\":1,\"execution_time\":0.12615704536437988}", "mcp_seconds": 0.157, "is_error": false}, {"label": "Q1", "result": "{\"success\":true,\"data\":[\"RESULT Q1 size=29 joern_ms=14.69172\"],\"row_count\":1,\"execution_time\":0.17299246788024902}", "mcp_seconds": 0.188, "is_error": false}, {"label": "Q2", "result": "{\"success\":true,\"data\":[\"RESULT Q2 size=18 joern_ms=0.293891\"],\"row_count\":1,\"execution_time\":3.8955280780792236}", "mcp_seconds": 3.91, "is_error": false}, {"label": "Q3", "result": "{\"success\":true,\"data\":[\"RESULT Q3 size=64 joern_ms=4.51082\"],\"row_count\":1,\"execution_time\":0.153029203414917}", "mcp_seconds": 0.166, "is_error": false}, {"label": "Q4", "result": "{\"success\":true,\"data\":[\"RESULT Q4 size=6 joern_ms=1211.460486\"],\"row_count\":1,\"execution_time\":1.3317015171051025}", "mcp_seconds": 1.343, "is_error": false}, {"label": "Q5", "result": "{\"success\":true,\"data\":[\"RESULT Q5 size=1634 joern_ms=4268.059521\"],\"row_count\":1,\"execution_time\":4.414962291717529}", "mcp_seconds": 4.429, "is_error": false}]}
+
+# 커밋 상태
+2026-11-12T02:20:09Z	success	codeinside/joern-cpg	codebase_hash=c8a03dcf21488d21	https://github.com/Munsik-Park/crewAI/actions/runs/43140448522
+2026-11-12T02:18:34Z	pending	codeinside/joern-cpg	building Joern CPG	https://github.com/Munsik-Park/crewAI/actions/runs/43140448522

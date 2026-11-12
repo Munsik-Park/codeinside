@@ -1,0 +1,53 @@
+2026-11-11T18:43:16 - src.tools.core_tools - INFO - Processing codebase with hash: 59ff33405a489c79
+2026-11-11T18:43:16 - src.tools.core_tools - INFO - Preparing source code for 59ff33405a489c79
+2026-11-11T18:43:16 - src.tools.core_tools - INFO - Copying source from /app/playground/codebases/ci/crewAI-60ab746e631b76c0bc121e9783568eda9888bc90 to /app/playground/codebases/59ff33405a489c79
+2026-11-11T18:43:24 - src.tools.core_tools - INFO - Source copied successfully to /app/playground/codebases/59ff33405a489c79
+2026-11-11T18:43:24 - src.tools.core_tools - INFO - CPG directory ready: /app/playground/cpgs/59ff33405a489c79
+2026-11-11T18:43:24 - src.services.codebase_tracker - INFO - Saved codebase info for hash 59ff33405a489c79
+2026-11-11T18:43:28 - src.tools.core_tools - INFO - Starting async CPG generation for 59ff33405a489c79
+2026-11-11T18:43:29 - src.tools.core_tools - INFO - Executing CPG generation in container (frontend -Xmx4G): /opt/joern/joern-cli/pysrc2cpg /playground/codebases/59ff33405a489c79 -o /playground/cpgs/59ff33405a489c79/cpg.bin --exclude-regex (tests(?:/.*)?)
+2026-11-11T18:43:52 - src.tools.core_tools - INFO - CPG generated successfully: /app/playground/cpgs/59ff33405a489c79/cpg.bin
+2026-11-11T18:43:52 - src.tools.core_tools - INFO - Spawning Joern server and loading CPG for 59ff33405a489c79
+2026-11-11T18:43:52 - src.services.joern_server_manager - INFO - Sizing 59ff33405a489c79: fixed heap 4G from JOERN_WORKER_HEAP_GB
+2026-11-11T18:43:52 - src.services.joern_server_manager - INFO - Starting pooled Joern server for 59ff33405a489c79 on port 14024 (heap 4G, reserve 5120MB)
+2026-11-11T18:43:52 - src.services.joern_server_manager - INFO - _start_worker_container 59ff33405a489c79: worker_mode='pool' docker_network='codebadger' -> network (by container name)
+2026-11-11T18:43:52 - src.services.joern_server_manager - INFO - Launching worker container codebadger-joern-59ff33405a489c79 (image codebadger-joern-server:latest, mem_limit 5120MB) on network codebadger:8080
+2026-11-11T18:43:52 - src.services.joern_server_manager - INFO - Worker codebadger-joern-59ff33405a489c79: cpuset_cpus='30-39,70-79' cpuset_mems='3'
+2026-11-11T18:44:05 - src.services.joern_server_manager - INFO - Pooled Joern server for 59ff33405a489c79 ready on port 14024
+2026-11-11T18:44:05 - src.services.joern_server_manager - INFO - Loading CPG /playground/cpgs/59ff33405a489c79/cpg.bin (container: /playground/cpgs/59ff33405a489c79/cpg.bin) into Joern server for 59ff33405a489c79 (port 14024, timeout 300s)
+2026-11-11T18:44:05 - src.services.joern_client - INFO - Loading CPG from /playground/cpgs/59ff33405a489c79/cpg.bin as project '59ff33405a489c79' (timeout=300s)
+2026-11-11T18:49:06 - src.services.joern_client - ERROR - Read timeout after 300s for query: workspace.reset; importCpg("/playground/cpgs/59ff33405a489c79/cpg.bin", "59ff33405a489c79"); open("5...
+2026-11-11T18:49:06 - src.services.joern_client - WARNING - importCpg returned unsuccessful for /playground/cpgs/59ff33405a489c79/cpg.bin: Query read timeout after 300s. Large codebase queries (taint analysis, dataflow) may need more time. Try increasing the timeout parameter or filtering by filename. — verifying load state anyway
+2026-11-11T18:49:06 - src.services.joern_client - ERROR - Failed to load CPG from /playground/cpgs/59ff33405a489c79/cpg.bin (verify outcome: error)
+2026-11-11T18:49:06 - src.services.joern_server_manager - ERROR - Failed to load CPG for 59ff33405a489c79 (timeout=300s) — terminating server
+2026-11-11T18:49:06 - src.services.joern_server_manager - INFO - Terminating Joern server for 59ff33405a489c79 on port 14024 (mode=pool)
+2026-11-11T18:49:06 - src.services.joern_server_manager - WARNING - Transient CPG load failure for 59ff33405a489c79 (cause=error, attempt 1/3) — re-spawning and retrying
+2026-11-11T18:49:08 - src.services.joern_server_manager - INFO - Sizing 59ff33405a489c79: fixed heap 4G from JOERN_WORKER_HEAP_GB
+2026-11-11T18:49:08 - src.services.joern_server_manager - INFO - Starting pooled Joern server for 59ff33405a489c79 on port 14026 (heap 4G, reserve 5120MB)
+2026-11-11T18:49:08 - src.services.joern_server_manager - INFO - _start_worker_container 59ff33405a489c79: worker_mode='pool' docker_network='codebadger' -> network (by container name)
+2026-11-11T18:49:08 - src.services.joern_server_manager - INFO - Launching worker container codebadger-joern-59ff33405a489c79 (image codebadger-joern-server:latest, mem_limit 5120MB) on network codebadger:8080
+2026-11-11T18:49:08 - src.services.joern_server_manager - INFO - Worker codebadger-joern-59ff33405a489c79: cpuset_cpus='30-39,70-79' cpuset_mems='3'
+2026-11-11T18:49:22 - src.services.joern_server_manager - INFO - Pooled Joern server for 59ff33405a489c79 ready on port 14026
+2026-11-11T18:49:22 - src.services.joern_server_manager - INFO - Loading CPG /playground/cpgs/59ff33405a489c79/cpg.bin (container: /playground/cpgs/59ff33405a489c79/cpg.bin) into Joern server for 59ff33405a489c79 (port 14026, timeout 300s)
+2026-11-11T18:49:22 - src.services.joern_client - INFO - Loading CPG from /playground/cpgs/59ff33405a489c79/cpg.bin as project '59ff33405a489c79' (timeout=300s)
+2026-11-11T18:54:22 - src.services.joern_client - ERROR - Read timeout after 300s for query: workspace.reset; importCpg("/playground/cpgs/59ff33405a489c79/cpg.bin", "59ff33405a489c79"); open("5...
+2026-11-11T18:54:22 - src.services.joern_client - WARNING - importCpg returned unsuccessful for /playground/cpgs/59ff33405a489c79/cpg.bin: Query read timeout after 300s. Large codebase queries (taint analysis, dataflow) may need more time. Try increasing the timeout parameter or filtering by filename. — verifying load state anyway
+2026-11-11T18:54:22 - src.services.joern_client - ERROR - Failed to load CPG from /playground/cpgs/59ff33405a489c79/cpg.bin (verify outcome: error)
+2026-11-11T18:54:22 - src.services.joern_server_manager - ERROR - Failed to load CPG for 59ff33405a489c79 (timeout=300s) — terminating server
+2026-11-11T18:54:22 - src.services.joern_server_manager - INFO - Terminating Joern server for 59ff33405a489c79 on port 14026 (mode=pool)
+2026-11-11T18:54:22 - src.services.joern_server_manager - WARNING - Transient CPG load failure for 59ff33405a489c79 (cause=error, attempt 2/3) — re-spawning and retrying
+2026-11-11T18:54:26 - src.services.joern_server_manager - INFO - Sizing 59ff33405a489c79: fixed heap 4G from JOERN_WORKER_HEAP_GB
+2026-11-11T18:54:26 - src.services.joern_server_manager - INFO - Starting pooled Joern server for 59ff33405a489c79 on port 14030 (heap 4G, reserve 5120MB)
+2026-11-11T18:54:26 - src.services.joern_server_manager - INFO - _start_worker_container 59ff33405a489c79: worker_mode='pool' docker_network='codebadger' -> network (by container name)
+2026-11-11T18:54:26 - src.services.joern_server_manager - INFO - Launching worker container codebadger-joern-59ff33405a489c79 (image codebadger-joern-server:latest, mem_limit 5120MB) on network codebadger:8080
+2026-11-11T18:54:26 - src.services.joern_server_manager - INFO - Worker codebadger-joern-59ff33405a489c79: cpuset_cpus='30-39,70-79' cpuset_mems='3'
+2026-11-11T18:54:41 - src.services.joern_server_manager - INFO - Pooled Joern server for 59ff33405a489c79 ready on port 14030
+2026-11-11T18:54:41 - src.services.joern_server_manager - INFO - Loading CPG /playground/cpgs/59ff33405a489c79/cpg.bin (container: /playground/cpgs/59ff33405a489c79/cpg.bin) into Joern server for 59ff33405a489c79 (port 14030, timeout 300s)
+2026-11-11T18:54:41 - src.services.joern_client - INFO - Loading CPG from /playground/cpgs/59ff33405a489c79/cpg.bin as project '59ff33405a489c79' (timeout=300s)
+2026-11-11T18:59:41 - src.services.joern_client - ERROR - Read timeout after 300s for query: workspace.reset; importCpg("/playground/cpgs/59ff33405a489c79/cpg.bin", "59ff33405a489c79"); open("5...
+2026-11-11T18:59:41 - src.services.joern_client - WARNING - importCpg returned unsuccessful for /playground/cpgs/59ff33405a489c79/cpg.bin: Query read timeout after 300s. Large codebase queries (taint analysis, dataflow) may need more time. Try increasing the timeout parameter or filtering by filename. — verifying load state anyway
+2026-11-11T18:59:41 - src.services.joern_client - ERROR - Failed to load CPG from /playground/cpgs/59ff33405a489c79/cpg.bin (verify outcome: error)
+2026-11-11T18:59:41 - src.services.joern_server_manager - ERROR - Failed to load CPG for 59ff33405a489c79 (timeout=300s) — terminating server
+2026-11-11T18:59:41 - src.services.joern_server_manager - INFO - Terminating Joern server for 59ff33405a489c79 on port 14030 (mode=pool)
+2026-11-11T18:59:42 - src.services.joern_server_manager - ERROR - CPG reload for 59ff33405a489c79 failed after 3 attempts
+2026-11-11T18:59:42 - src.tools.core_tools - ERROR - CPG generation complete but server load failed for 59ff33405a489c79

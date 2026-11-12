@@ -1,0 +1,28 @@
+{
+ "both": 28,
+ "joern": {
+  "callers": 29,
+  "callsites": 69
+ },
+ "joern_only": [
+  "lib/crewai/src/crewai/llms/base_llm.py::BaseLLM._emit_call_completed_event<metaClassAdapter>"
+ ],
+ "joern_only_callsites": [
+  "lib/crewai/src/crewai/llms/base_llm.py:846::_emit_call_completed_event(self, response, call_type, from_task, from_agent, messages, usage, finish_reason, response_id)"
+ ],
+ "name": "_emit_call_completed_event",
+ "query": "Q1",
+ "serena": {
+  "any_pairs": 28,
+  "call_pairs": 28,
+  "excluded_prefix": "tests/",
+  "references_all": 68,
+  "references_excluding_prefix": 68,
+  "usage_counts": {
+   "call": 68
+  }
+ },
+ "serena_non_call_refs": [],
+ "serena_only": [],
+ "serena_only_refs": []
+}

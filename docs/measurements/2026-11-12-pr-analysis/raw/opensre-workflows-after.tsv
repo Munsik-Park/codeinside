@@ -1,0 +1,13 @@
+333522600	disabled_manually	.github/workflows/celebrate-merged-pr.yml	Celebrate merged pull requests
+333522601	disabled_manually	.github/workflows/ci-labels-windows.yml	CI Labels (Windows)
+333522602	disabled_manually	.github/workflows/ci.yml	CI
+333522604	disabled_manually	.github/workflows/codeql.yml	CodeQL
+333522606	disabled_manually	.github/workflows/good-first-issue-assign.yml	Good first issue — auto-assign
+333522607	disabled_manually	.github/workflows/greptile-pr-reminder.yml	Greptile PR reminder
+333522611	disabled_manually	.github/workflows/release.yml	Release
+357230210	disabled_manually	.github/workflows/installer-canary.yml	Installer Canary
+357230211	disabled_manually	.github/workflows/pr-size-label.yml	PR Size Label
+389637167	disabled_manually	.github/workflows/release-safety-scheduled.yml	Release Safety Monitor
+389637169	disabled_manually	.github/workflows/runner-provenance.yml	Runner provenance
+389637171	disabled_manually	.github/workflows/skills-sync.yml	Skills sync
+389637172	disabled_manually	.github/workflows/telemetry-integrity.yml	Telemetry integrity

@@ -1,0 +1,9 @@
+# joern_cpg_job.py 사전 시험: 러너 네트워크의 일회용 컨테이너(러너 이미지), 커밋 상태 호출만 출력으로 바꿈
+# 대상: opensre main a5c1acbd4b7e61e3cb57de6b84fac7031555a0a4 (git fetch --depth 1 → git archive)
+STATUS(dry) a5c1acbd4b7e pending building Joern CPG
+[18:04:35] extracted opensre-a5c1acbd4b7e61e3cb57de6b84fac7031555a0a4
+[18:04:36] generate_cpg: codebase_hash=a5b31c170fa23d65 status=ready
+[18:04:36] cpg status: ready
+STATUS(dry) a5c1acbd4b7e success codebase_hash=a5b31c170fa23d65
+[18:04:37] Q1 via MCP (0.26s): {"success":true,"data":["RESULT Q1 size=131 joern_ms=20.831433"],"row_count":1,"execution_time":0.24711990356445312}
+RECORD {"sha": "a5c1acbd4b7e61e3cb57de6b84fac7031555a0a4", "codebase_hash": "a5b31c170fa23d65", "generate_status": "ready", "generate_to_ready_seconds": 1.3, "q1": "{\"success\":true,\"data\":[\"RESULT Q1 size=131 joern_ms=20.831433\"],\"row_count\":1,\"execution_time\":0.24711990356445312}", "q1_mcp_seconds": 0.26, "q1_is_error": false}
