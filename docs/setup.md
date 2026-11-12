@@ -43,3 +43,4 @@
 
 - [2026-11-12-usage-check](measurements/2026-11-12-usage-check/README.md): 명령을 crewAI에서 다시 돌린 결과
 - [2026-11-12-ai-docs](measurements/2026-11-12-ai-docs/README.md): 등록 스크립트, 워크플로 견본, AI 세션 확인
+- [2026-11-12-manual-graph](measurements/2026-11-12-manual-graph/README.md): CI 없이 만든 그래프와 `resolve_graph.py` 확인
