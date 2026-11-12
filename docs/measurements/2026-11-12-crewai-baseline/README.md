@@ -85,7 +85,7 @@ exclusion_patterns:
 | `cpg.bin` | 18.0MB | 30MB |
 | overlay | `base, controlflow, typerel, callgraph, dataflowOss, pysrc2cpg-postprocessing` | 같음 |
 
-- 적재가 끝나자 codebadger가 자기 쪽 소스 사본을 지웠다(`Reclaimed source snapshot ... (ephemeral source)`). 우리가 푼 소스 폴더는 남아 있다.
+- 적재가 끝나자 codebadger가 자기 쪽 소스 사본을 지웠다(`Reclaimed source snapshot ... (ephemeral source)`). 우리가 푼 소스 폴더(`codebases/crewAI-71d68117`)는 6단계 후속에서 지웠고, 기준 그래프는 남겼다([6단계 기록](../2026-11-12-pr-analysis/README.md) 8절).
 
 ## 3. 메모리와 CPU
 

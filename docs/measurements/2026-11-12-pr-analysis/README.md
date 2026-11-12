@@ -12,7 +12,7 @@
 | 러너에서 codebadger 연결 | 프록시 컨테이너로 MCP 4242에만 닿는다. 질의 워커, Postgres, Redis, 호스트 루프백 포트에는 닿지 않는다 | 5절, [raw/probe-network.log](raw/probe-network.log) |
 | SHA와 그래프 대응 | 커밋 상태 `codeinside/joern-cpg`의 설명에 `codebase_hash`를 남긴다 | 7절 |
 | 조상 그래프 대체 | 시험 PR #2(head `5014f84`, 부모 `848d15d`)의 그래프가 만들어지는 동안 resolver가 부모 그래프를 고르고 바뀐 파일을 돌려줬다. success 뒤에는 자기 그래프를 골랐다 | 7절, [raw/ancestor-fallback.log](raw/ancestor-fallback.log) |
-| 보관 개수 | main first-parent 최근 20개와 열린 PR head의 그래프만 남기고, ready 뒤 소스 폴더를 지운다. crewAI PR #3에서 닫힌 PR #2 그래프와 남은 소스 폴더 3개(각 623MB)가 지워진 것을 확인했다 | 7절, 8절 |
+| 보관 개수 | main first-parent 최근 20개와 열린 PR head의 그래프만 남기고, ready 뒤 소스 폴더를 지운다. crewAI PR #3에서 닫힌 PR #2 그래프와 남은 소스 폴더 3개(각 623MB)가 지워진 것을 확인했다. joern 러너가 하나라는 전제 위에서만 맞다 | 7절, 8절 |
 | main 푸시 | PR #1 병합 커밋 `898f7e6`에서 그래프와 커밋 상태가 남고 Q1~Q5가 질의됐다 | 8절 |
 
 ## 1. opensre에서 막힌 경위
@@ -243,7 +243,18 @@ PR #1 병합으로 생긴 main 머지 커밋 `898f7e6`(부모 `b4654c1`, `848d15
 - 남기는 SHA: main first-parent 최근 20개 커밋과 열린 PR의 head. main을 머지 커밋으로만 바꾸면 first-parent 커밋 하나가 푸시 하나다. 지금은 main first-parent 20개 가운데 그래프가 있는 것이 `898f7e6` 하나이고, 나머지는 포크 전 업스트림 커밋이다.
 - SHA와 `codebase_hash`의 대응은 커밋 상태에서 읽는다(GraphQL 한 번). 남길 SHA 하나라도 가리키는 `codebase_hash`는 지우지 않는다.
 - 지우는 범위는 색인에 있는 그래프뿐이다. 수동으로 만든 기준값 그래프(crewAI `fafd8959bb1b7ee0`, opensre `a5b31c170fa23d65`)는 색인에 없어 건드리지 않는다.
-- 러너가 하나뿐이라 정리 단계가 도는 동안 다른 작업이 소스를 풀고 있지 않다고 본다. 러너를 늘리면 소스 폴더 정리 조건을 다시 봐야 한다.
+- 정리 단계는 joern 러너가 하나라는 전제를 둔다. 아래에 따로 적었다.
+
+### 전제: joern 러너 하나
+
+정리 단계는 CI 소스 폴더의 `<레포 이름>-*`, `.<레포 이름>-*` 폴더를 모두 지우고, 색인 파일을 읽은 뒤 통째로 다시 쓴다. 이 동작은 정리 단계가 도는 동안 같은 폴더에 소스를 풀거나 색인에 줄을 더하는 작업이 없어야 맞다.
+
+- 지금 맞는 이유: 분석 러너는 supervisor 하나가 띄우는 컨테이너 하나(`codeinside-joern-runner`)뿐이다. ephemeral 러너라 한 번에 작업 하나만 받는다. 그래서 작업 스크립트와 정리 단계가 같은 작업 안에서 차례로 돌고, 다른 작업은 그사이에 끼어들지 않는다.
+- 워크플로 `concurrency` 그룹은 SHA별이라 서로 다른 SHA의 작업을 줄 세우지 않는다. 지금 작업이 차례로 도는 것은 러너가 하나라서다.
+- 러너를 늘리면 깨지는 것:
+  - 다른 작업이 풀고 있는 소스 폴더를 정리 단계가 지울 수 있다.
+  - 정리 단계가 색인을 다시 쓰는 사이에 다른 작업이 더한 줄이 사라질 수 있다. 그러면 그 그래프는 다음 정리에서 지울 대상으로 잡히지 않는다.
+- 결정: 러너를 늘릴 때 소스 폴더와 색인 정리를 다시 설계한다. 그전까지 joern 라벨 러너는 하나로 둔다.
 - 이 구현 전에 CI가 만든 그래프 2개(SHA 3개)는 러너 uid로 색인에 직접 채워 넣었다(`recorded_at: backfill`).
 
 ### 시험 (crewAI PR #3)
@@ -262,6 +273,20 @@ PR #1 병합으로 생긴 main 머지 커밋 `898f7e6`(부모 `b4654c1`, `848d15
 - CI 소스 폴더: 색인 파일 하나, 8.0K
 - codebadger 그래프: `846aec8c…`, `c8a03dcf…`, `fafd8959…`(기준값), `a5b31c17…`(opensre 기준값)
 - 색인: `c8a03dcf…`를 가리키는 SHA 2개(`848d15d`, `898f7e6`)와 `846aec8c…` 하나
+
+### main 푸시에서의 정리 (PR #3 머지)
+
+PR #3 머지 커밋 `3457928`에서 run `43144979879`가 돌았다([raw/crewai-main-push-retention.log](raw/crewai-main-push-retention.log)).
+
+| 시각(UTC) | 단계 | 결과 |
+| --- | --- | --- |
+| 02:58:41 | `generate_cpg` | `codebase_hash=846aec8c348118be`, 바로 ready. 머지 커밋이 PR #3 head와 파일 내용이 같다 |
+| 02:58:44 | 작업 스크립트 | 자기 소스 폴더 삭제 |
+| 02:58:50 | 정리 단계 | 남길 그래프 `846aec8c…`(main `3457928`), `c8a03dcf…`(main `898f7e6`). 열린 PR 0개, 지운 그래프 없음 |
+
+### 기준값 소스 폴더
+
+2번 측정에 쓴 crewAI 기준 커밋 소스 `/opt/codebadger/playground/codebases/crewAI-71d68117`(623MB)은 사용자 결정으로 지웠다. CI 폴더 밖이라 정리 단계의 대상이 아니었다. 기준 그래프 `fafd8959bb1b7ee0`(`cpg.bin` 18,009,135 B)은 남겼다. 잠든 그래프는 `cpg.bin`에서 다시 올리므로 질의에는 소스가 필요 없다. 같은 그래프를 다시 만들려면 기준 커밋을 다시 풀어야 한다.
 
 ## 확인 안 됨
 
@@ -286,4 +311,5 @@ PR #1 병합으로 생긴 main 머지 커밋 `898f7e6`(부모 `b4654c1`, `848d15
 | `raw/crewai-pr2-run.log`, `raw/ancestor-fallback.log` | 시험 PR #2 run과 그동안의 resolver 결과 |
 | `raw/crewai-main-push-run.log` | main 푸시 run 작업 로그와 커밋 상태 |
 | `raw/crewai-pr3-retention.log` | PR #3 run의 작업·정리 단계 출력과 정리 뒤 Xeon 상태 |
+| `raw/crewai-main-push-retention.log` | PR #3 머지 뒤 main 푸시 run의 작업·정리 단계 출력과 정리 뒤 Xeon 상태 |
 | `scripts/probe-network.sh` | 위 확인에 쓴 스크립트 |
